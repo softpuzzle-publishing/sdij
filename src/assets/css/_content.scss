@@ -1,0 +1,39 @@
+.menu-list{
+    .overflow-y-scroll{height: 100%;}
+    border: 1px solid #ddd;padding: 1rem;height: 320px;line-height: 1.6;
+    .all-list{
+        span,
+        a{display: block;padding: .1rem .25rem;}
+        a.selected{background: #fff2dc;color: #000;}
+        > li{
+            > span{font-weight: 700;}
+        }
+    }
+    .dep2{
+        > li{
+            > span{padding-left: .75rem;font-weight: 700;}
+        }
+    }
+    .dep3{
+        > li{
+            > a{padding-left: 1.5rem;}
+        }
+    }
+    .selected-list{
+        line-height: 1.6;
+        li{
+            > a{display: block;padding: .1rem .25rem;}
+        }
+    }
+}
+
+.profile{
+    width: 190px;height: 0;padding-bottom: 133.3333%;
+    background: #f8f8f8 url('../images/icon-profile.svg') no-repeat 50% 50%;background-size: 90% auto;position: relative;
+    img{width: 100%;height: 100%;position: absolute;left: 0;top: 0;object-fit: cover;}
+}
+
+.list-group-item{
+    h5{font-size: 14px;}
+    p{font-size: 13px;}
+}

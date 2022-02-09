@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('../layout/_head.ejs')%>
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <%- include('../layout/_header.ejs')%>
+
+            <div id="container-block">
+
+                <%- include('../layout/_sidebar.ejs')%>
+
+                <main id="content" role="main">
+
+                    <!-- 컨텐츠 시작 -->
+                    <h2 class="title">학원정보등록</h2>
+                    <div class="p-3 border-bottom">
+                        <div class="row justify-content-between">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">구분</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select w-auto">
+                                        <option value="">교실</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-institute-info-add">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split vertical">
+                        <div class="section init" id="split-vertical-1">
+                            <div class="p-3">
+                                <div class="row align-items-center mb-2">
+                                    <div class="col-auto">
+                                        <b>관</b>
+                                        총 ###건
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="checkbox" id="usableOnly2">
+                                        <label for="usableOnly2" class="mb-0">사용 항목만 보기</label>
+                                    </div>
+                                </div>
+                                <div class="main_search_result_list">
+                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                    <table class="table" id="datatable1">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">지역</th>
+                                                <th class="text-center">관 명</th>
+                                                <th class="text-center">관 담당자</th>
+                                                <th class="text-center">보유 교실</th>
+                                                <th class="text-center">사용</th>
+                                                <th class="text-center">등록/수정</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(var i=5; i> 0 ; i--){ %>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <%= i %>
+                                                    </td>
+                                                    <td class="text-center">대치</td>
+                                                    <td class="text-center">
+                                                        <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
+                                                    </td>
+                                                    <td class="text-center">김시대</td>
+                                                    <td class="text-center">101호, 201호</td>
+                                                    <td class="text-center">Y</td>
+                                                    <td class="text-center">
+                                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                                    </td>
+                                                </tr>
+                                                <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <%- include('../layout/_pagination.ejs')%>
+                            </div>
+                        </div>
+                        <div class="section init" id="split-vertical-2">
+                            <div class="p-3">
+                                <div class="row align-items-center mb-2">
+                                    <div class="col-auto">
+                                        <b>교실</b>
+                                        총 ###건
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="checkbox" id="usableOnly">
+                                        <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
+                                    </div>
+                                </div>
+                                <div class="main_search_result_list">
+                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                    <table class="table" id="datatable1">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">ID</th>
+                                                <th class="text-center">관 명</th>
+                                                <th class="text-center">교실명</th>
+                                                <th class="text-center">교실 구분</th>
+                                                <th class="text-center">총 좌석</th>
+                                                <th class="text-center">사용좌석</th>
+                                                <th class="text-center">카드체킹기기</th>
+                                                <th class="text-center">좌석배치표</th>
+                                                <th class="text-center">사용</th>
+                                                <th class="text-center">등록/수정</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(var i=10; i> 0 ; i--){ %>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <%= i %>
+                                                    </td>
+                                                    <td class="text-center">브릿지관</td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;">101호</a>
+                                                    </td>
+                                                    <td class="text-center">강의실</td>
+                                                    <td class="text-center">100</td>
+                                                    <td class="text-center">60</td>
+                                                    <td class="text-center">ASND2f</td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;">등록</a>
+                                                    </td>
+                                                    <td class="text-center">Y</td>
+                                                    <td class="text-center">
+                                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                                    </td>
+                                                </tr>
+                                                <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <%- include('../layout/_pagination.ejs')%>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 컨텐츠 끝 -->
+
+                </main>
+
+            </div>
+
+            <%- include('../layout/_footer.ejs')%>
+
+    </div>
+
+    <!-- modal : 학원 정보 등록/수정 -->
+    <div class="modal" tabindex="-1" id="modal-institute-info-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">학원 정보 등록/수정</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-title">관 정보</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>지역</th>
+                                <td>
+                                    <div class="row row-5 align-items-center">
+                                        <div class="col-auto">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">대치</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>사용 여부</th>
+                                <td>
+                                    <input type="radio" name="blockUse" id="blockUseY">
+                                    <label for="blockUseY">사용</label>
+                                    <input type="radio" name="blockUse" id="blockUseN">
+                                    <label for="blockUseN">미사용</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>관 명</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th>관 연락처</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>관 주소</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th>관 담당자</th>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-staff-search">검색</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>오시는 길</th>
+                                <td>
+                                    <textarea name="" id="" class="form-control" rows="3"></textarea>
+                                </td>
+                                <th>지도정보</th>
+                                <td>
+                                    <div class="row row-5 mb-2">
+                                        <div class="col">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-secondary">확인</button>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row justify-content-between align-items-end mb-2">
+                        <div class="col-auto">
+                            <div class="table-title mt-3 mb-0">보유 교실</div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-sm btn-outline-dark">추가</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark ml-1">삭제</button>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 50px;">
+                            <col style="width: 60px">
+                            <col style="width: 125px;">
+                            <col style="width: 110px">
+                            <col>
+                            <col>
+                            <col style="width: 110px">
+                            <col>
+                            <col style="width: 75px;">
+                            <col style="width: 60px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="classroom"></th>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">교실구분</th>
+                                <th class="text-center">교실명</th>
+                                <th class="text-center">총 좌석</th>
+                                <th class="text-center">사용좌석</th>
+                                <th class="text-center">체킹기기</th>
+                                <th class="text-center">중계</th>
+                                <th class="text-center">사용</th>
+                                <th class="text-center">좌석</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=4; i> 0 ; i--){ %>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="classroom"></td>
+                                <td class="text-center"><%= i %></td>
+                                <td class="text-center">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">라이브러리</option>
+                                        <option value="">강의실</option>
+                                        <option value="">급식실</option>
+                                    </select>
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td class="text-center">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">불가</option>
+                                    </select>
+                                </td>
+                                <td class="text-center">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">Y</option>
+                                    </select>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#modal-seat" class="text-underline" data-toggle="modal">등록</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" onclick="confirm('미입력 항목이 있습니다. \n무시하고 등록할까요?')">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 직원 검색 -->
+    <div class="modal" tabindex="-1" id="modal-staff-search" data-backdrop="static" data-overlap="true"> <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">직원 검색</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 45px;">
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center"></th>
+                                <th class="text-center">직원명</th>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">부서/직무</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><input type="radio" id="staff1" name="staff"></td>
+                                <td class="text-center"><label for="staff1">김시대</label></td>
+                                <td class="text-center">asdf1234</td>
+                                <td class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"><input type="radio" id="staff2" name="staff"></td>
+                                <td class="text-center"><label for="staff2">이시대</label></td>
+                                <td class="text-center">asdf1234</td>
+                                <td class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"><input type="radio" id="staff3" name="staff"></td>
+                                <td class="text-center"><label for="staff3">박시대</label></td>
+                                <td class="text-center">asdf1234</td>
+                                <td class="text-center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- modal : 좌석표 등록 -->
+     <div class="modal" tabindex="-1" id="modal-seat" data-backdrop="static" data-overlap="true"> <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">좌석표 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-titel">활성 좌석 선택</div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

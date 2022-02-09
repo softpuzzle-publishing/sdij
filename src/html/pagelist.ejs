@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>(pagelist)시대인재N 관리자</title>
+        <style>
+            body{padding:20px;position:relative;}
+            *{margin:0;padding:0;font-size:12px;color:#222;line-height:1.5em;font-family:'NanumGothic';}
+            h1{margin-bottom:20px;font-size:24px;text-align: center;}
+            table{width:100%;border-collapse:collapse;margin: 0 auto;}
+            table th,
+            table td{border:1px solid #7992b9;padding:2px 10px;word-break: keep-all}
+            table th{background:#283c5d;color:#fff;padding:10px;font-size:14px;}
+            table td a{color:#283c5d;text-decoration:none;}
+            table td a:hover{text-decoration:underline;}
+            table tbody tr:hover{background-color: #ecf8fc;}
+            .noteTable{display: table;width: 100%;}
+            .noteTable .date{display: table-cell;color: #ff523c;width: 40px;}
+            .noteTable .note{display: table-cell;}
+            .center{text-align: center;}
+            .bg{background: #fff5f5;}
+            ul.float{position:absolute;right:20px;top:20px;}
+            ul.float li{list-style:none;border:1px solid #ccc;padding:2px 5px;display:inline-block;}
+            .end{background:#ffffcc;}
+            .ing{background:#f6b1a6;}
+            .list{text-align:center;padding:0 0 20px;}
+            .list a{text-decoration:none;margin:0 10px;}
+            .list a:hover{text-decoration:underline;}
+            .box{border: 2px dotted #aaa;padding: 1rem;margin-bottom: 1rem;text-align: center;line-height: 1.6;}
+            .box > ul{display: inline-block;text-align-last: left;}
+        </style>
+    </head>
+
+
+    <body>
+        <h1>시대인재 PAGELIST</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Depth 1</th>
+                    <th>Depth 2</th>
+                    <th>Depth 3</th>
+                    <th>Depth 4</th>
+                    <th>File</th>
+                    <th>pageLink</th>
+                    <th></th>
+                    <th>Popup</th>
+                </tr>
+            </thead>
+            <tbody  id="pageList">
+                <tr>
+                    <td></td>
+                    <td>* Guide</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a target="_blank" href="_guide/guide.html">guide.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>로그인</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>/login/</td>
+                    <td><a target="_blank" href="login/login.html">login.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>학원 운영</td>
+                    <td>학원코드</td>
+                    <td>학원정보등록</td>
+                    <td></td>
+                    <td>/institute_code/</td>
+                    <td><a target="_blank" href="institute_code/code_Instituteinfo.html">code_Instituteinfo.html</a></td>
+                    <td></td>
+                    <td>학원정보등록/수정, 직원검색, 좌석표등록</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>과목 관리</td>
+                    <td></td>
+                    <td></td>
+                    <td><a target="_blank" href="institute_code/code_subject.html">code_subject.html</a></td>
+                    <td></td>
+                    <td>과목등록/수정, 분류등록/수정, 과목파일업로드</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>운영계획</td>
+                    <td></td>
+                    <td></td>
+                    <td><a target="_blank" href="institute_code/code_plan.html">code_plan.html</a></td>
+                    <td></td>
+                    <td>등록인원확인, 관운영계획등록, 과목선택, 반등록, 교시설정</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>강사등록</td>
+                    <td></td>
+                    <td></td>
+                    <td><a target="_blank" href="institute_code/code_instructor.html">code_instructor.html</a></td>
+                    <td></td>
+                    <td>거래처등록/수정, 관리자검색, 메뉴등록</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>직원 권한 관리</td>
+                    <td></td>
+                    <td></td>
+                    <td><a target="_blank" href="institute_code/code_authority.html">code_authority.html</a></td>
+                    <td></td>
+                    <td>메뉴등록</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>수강생관리</td>
+                    <td>수강생관리</td>
+                    <td></td>
+                    <td>/institute_students/</td>
+                    <td><a target="_blank" href="institute_students/students_manage.html">students_manage.html</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            var leng = document.querySelectorAll('tbody td a');
+            console.log(leng.length);
+
+            // var rows = document.getElementById("pageList").getElementsByTagName("tr");
+            // console.log(rows.length);
+        </script>
+    </body>
+</html>
