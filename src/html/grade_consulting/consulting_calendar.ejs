@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('../_layout/_head.ejs')%>
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <%- include('../_layout/_header.ejs')%>
+
+        <div id="container-block">
+
+            <%- include('../_layout/_sidebar.ejs')%>
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">상담캘린더</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">영역</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">과목</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">강사명</option>
+                                </select>
+                                <input type="text" class="form-control d-inline-block w-auto mr-2">
+                                <button type="button" class="btn btn-dark">검색</button>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-institute-info-add">등록</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-horizontal">
+                    <div class="section" id="split-horizontal-1">
+                        <div class="p-3">
+                            <div class="row align-items-center mb-2">
+                                <div class="col-auto">
+                                    총 ###건
+                                </div>
+                                <div class="col-auto">
+                                    <input type="checkbox" id="usableOnly2">
+                                    <label for="usableOnly2" class="mb-0">사용 항목만 보기</label>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">강사명</th>
+                                            <th class="text-center">영역</th>
+                                            <th class="text-center">과목</th>
+                                            <th class="text-center">대표연락처</th>
+                                            <th class="text-center">사용</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=5; i> 0 ; i--){ %>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <%= i %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#" class="text-underline">김강사</a>
+                                                </td>
+                                                <td class="text-center">사회탐구</td>
+                                                <td class="text-center">생윤,사문</td>
+                                                <td class="text-center">010-0000-0000</td>
+                                                <td class="text-center">Y</td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <%- include('../_layout/_pagination.ejs')%>
+                        </div>
+                    </div>
+                    <div class="section" id="split-horizontal-2">
+                        <div class="p-3">
+                            <div class="row justify-content-between align-items-end mb-2">
+                                <div class="col-auto">
+                                    <div class="table-title mb-0">강사 정보</div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-sm btn-dark">저장</button>
+                                    <button type="button" class="btn btn-sm btn-dark">취소</button>
+                                </div>
+                            </div>
+                            <div class="row row-20">
+                                <div class="col-auto">
+                                    <div class="profile">
+                                        <img src="../assets/images/@profile.jpg" alt="">
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <a href="javascript:;" class="btn btn-secondary">등록</a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <table class="table table-fixed">
+                                        <colgroup>
+                                            <col style="width: 100px">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>강사명</th>
+                                                <td colspan="2">
+                                                    <input type="text" class="form-control" value="김강사">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>영역</th>
+                                                <td colspan="2">
+                                                    <select name="" id="" class="custom-select">
+                                                        <option value="">입력</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>과목</th>
+                                                <td colspan="2">
+                                                    <div class="row row-10">
+                                                        <div class="col">
+                                                            <select name="" id="" class="custom-select">
+                                                                <option value="">입력</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button class="btn btn-secondary">추가</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>연락처</th>
+                                                <td colspan="2">
+                                                    <input type="text" class="form-control" value="01012345678">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>사용여부</th>
+                                                <td colspan="2">
+                                                    <input type="radio" name="instructorUse" id="instructorUseY" checked>
+                                                    <label for="instructorUseY">사용</label>
+                                                    <input type="radio" name="instructorUse" id="instructorUseN">
+                                                    <label for="instructorUseN">미사용</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>대표연락처</th>
+                                                <td colspan="2">
+                                                    <select name="" id="" class="custom-select">
+                                                        <option value="">강사연락처</option>
+                                                        <option value="" selected>연구실1</option>
+                                                        <option value="">연구실2</option>
+                                                        <option value="">연구실3</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>연구실1</th>
+                                                <td>
+                                                    <input type="text" class="form-control" value="김담당">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="02000000">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>연구실2</th>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>연구실3</th>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <table class="table table-fixed mt-3">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>프로필</th>
+                                        <td>
+                                            <textarea name="" id="" cols="" rows="5" class="form-control"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>비고</th>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>수정</th>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        <%- include('../_layout/_footer.ejs')%>
+
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

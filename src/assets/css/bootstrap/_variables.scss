@@ -9,7 +9,7 @@ $white:    #fff !default;
 $gray-100: #f7f8f8 !default;
 $gray-200: #e9ecef !default;
 $gray-300: #d7d9db !default;
-$gray-400: #ced4da !default;
+$gray-400: #c6cdd3 !default;
 $gray-500: #b1b3b6 !default;
 $gray-600: #707372 !default;
 $gray-700: #4a5158 !default;
@@ -66,7 +66,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-200 !default;
 $dark:          $gray-800 !default;
-$lightgray:          $gray-500 !default;
+$lightgray:          $gray-400 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -89,7 +89,7 @@ $theme-colors: map-merge(
 $theme-color-interval:      8% !default;
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
-$yiq-contrasted-threshold:  190 !default;
+$yiq-contrasted-threshold:  210 !default;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-text-dark:             $dark !default;
@@ -443,7 +443,7 @@ $btn-line-height-xl:          $input-btn-line-height-xl !default;
 
 $btn-border-width:            $input-btn-border-width !default;
 
-$btn-font-weight:             $font-weight-normal !default;
+$btn-font-weight:             $font-weight-medium !default;
 $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width:             $input-btn-focus-width !default;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
@@ -987,7 +987,7 @@ $modal-header-padding:              $modal-header-padding-y $modal-header-paddin
 
 $modal-xl:                          1200px !default;
 $modal-lg:                          900px !default;
-$modal-md:                          600px !default;
+$modal-md:                          620px !default;
 $modal-sm:                          380px !default;
 
 $modal-fade-transform:              translate(0, -50px) !default;

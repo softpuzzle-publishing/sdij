@@ -15,9 +15,9 @@
 
 button{border-radius: 0;border: 0;padding: 0;margin: 0;background: transparent;}
 
-.btn-round{border-radius: 50rem;}
-
 textarea{resize: none!important;}
+
+.bg-highlight{background: #deebf6;}
 
 .table-fixed{table-layout: fixed;}
 .table-center{
@@ -83,6 +83,15 @@ input[type=radio]{
 
 .form-datepicker{
     background: #fff url('../images/icon-calendar.svg') no-repeat right .5rem top 50%;padding-right: 30px;
+    &.form-control-sm{background-size: auto 15px;}
+}
+.form-timepicker{
+    background: #fff url('../images/icon-clock.svg') no-repeat right .5rem top 50%;padding-right: 30px;
+    &.form-control-sm{background-size: auto 15px;}
+}
+
+.mdtimepicker{
+    .mdtp__wrapper{bottom: auto;top: 50%;transform: translate(-50%, -50%);}
 }
 
 .datepicker-box{
@@ -209,10 +218,12 @@ textarea.form-control{resize: none;}
 
 .section{background: #fff;position: relative;overflow: hidden;}
 
-.split {
+.split-horizontal {
     display: flex;flex-direction: row;overflow-y: auto;
     overflow-x: hidden;
-    &.vertical{display: block;height: 100%;}
+}
+.split-vertical {
+    overflow-y: auto;overflow-x: hidden;height: 100%;
     .init{height: auto !important;}
 }
 

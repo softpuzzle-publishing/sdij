@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-clock</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-clock">
+            <rect id="Rectangle" x="0" y="0" width="18" height="18"></rect>
+            <path d="M9,1.5 C4.875,1.5 1.5,4.875 1.5,9 C1.5,13.125 4.875,16.5 9,16.5 C13.125,16.5 16.5,13.125 16.5,9 C16.5,4.875 13.125,1.5 9,1.5 Z M9,15 C5.6925,15 3,12.3075 3,9 C3,5.6925 5.6925,3 9,3 C12.3075,3 15,5.6925 15,9 C15,12.3075 12.3075,15 9,15 Z M9.375,5.25 L8.25,5.25 L8.25,9.75 L12.15,12.15 L12.75,11.175 L9.375,9.15 L9.375,5.25 Z" id="Shape" fill="#5A5D61" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

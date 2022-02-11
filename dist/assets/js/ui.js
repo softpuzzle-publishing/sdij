@@ -26,22 +26,33 @@ var Aside = {
 	},
 	lnb: function () {
 		//페이지 타이틀명과 비교하여 활성화
-		let title = $('h2.title').text();
-		let $active = '';
-		$('.sidebar a').each(function () {
-			if ($(this).text() == title) {
-				$active = $(this);
-			}
-		})
-		$($active).parents('li').addClass('active');
-		$($active).parents('.has-treeview').addClass('open');
-		$('.sidebar').css('opacity', '1');
+		if ($('.sidebar').length > 0) {
+			let title = $('h2.title').text();
+			let $active = '';
+			let $activeDep1 = '';
+			$('.sidebar a').each(function () {
+				if ($(this).text() == title) {
+					$active = $(this);
+					$activeDep1 = $(this).closest('.dep1');
+				}
+			})
+			$activeDep1.show();
 
-		$('.sidebar .has-treeview > a').on('click', function (e) {
-			e.preventDefault();
-			$(this).closest('li').toggleClass('open');
-		});
+			$('.gnb a').each(function () {
+				if ($(this).attr('data-gnb-code') == $activeDep1.attr('data-gnb-code')) {
+					$(this).parent('li').addClass('active');
+				}
+			});
 
+			$active.parents('li').addClass('active');
+			$active.parents('.has-treeview').addClass('open');
+			$('.dep1').css('opacity', '1');
+
+			$('.sidebar .has-treeview > a').on('click', function (e) {
+				e.preventDefault();
+				$(this).closest('li').toggleClass('open');
+			});
+		}
 	}
 };
 
@@ -89,8 +100,8 @@ var Common = {
 				snapOffset: 0,
 				onDrag: function(){
 					//pane의 높이를 auto로 지정이 불가능하여 클래스로 제어
-					$('.split.vertical').css('height', $('.split.vertical').outerHeight())
-					$('.split.vertical .init').removeClass('init');
+					$('.split-vertical').css('height', $('.split-vertical').outerHeight())
+					$('.split-vertical .init').removeClass('init');
 				}
 			});
 		}
@@ -119,7 +130,7 @@ var Common = {
 			changeYear: true,
 			monthNames: ["01","02","03","04","05","06","07","08","09","10","11","12"],
             monthNamesShort: ["01","02","03","04","05","06","07","08","09","10","11","12"],
-            dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토"],
             showMonthAfterYear:true,
             showOtherMonths: true,
             changeMonth: true,
@@ -165,6 +176,11 @@ var Common = {
 					$($(this).attr('data-byte-target')).html();
 				}
 			}
+		});
+
+		mdtimepicker('.form-timepicker', {
+			theme: 'dark',
+			is24hour: true,
 		});
 	}
 };

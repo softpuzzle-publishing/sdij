@@ -2,96 +2,96 @@
 <html lang="ko">
 
 <head>
-    <%- include('../layout/_head.ejs')%>
+    <%- include('../_layout/_head.ejs')%>
 </head>
 
 <body>
 
     <div id="wrap">
 
-        <%- include('../layout/_header.ejs')%>
+        <%- include('../_layout/_header.ejs')%>
 
-            <div id="container-block">
+        <div id="container-block">
 
-                <%- include('../layout/_sidebar.ejs')%>
+            <%- include('../_layout/_sidebar.ejs')%>
 
-                <main id="content" role="main">
+            <main id="content" role="main">
 
-                    <!-- 컨텐츠 시작 -->
-                    <h2 class="title">거래처 관리</h2>
-                    <div class="p-3 border-bottom">
-                        <div class="row justify-content-between">
-                            <div class="col-auto">
-                                <div class="d-flex align-items-center">
-                                    <select name="" id="" class="custom-select w-auto mr-2">
-                                        <option value="">구분</option>
-                                    </select>
-                                    <select name="" id="" class="custom-select w-auto">
-                                        <option value="">거래처</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-customer-add">등록</button>
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">거래처 관리</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">구분</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto">
+                                    <option value="">거래처</option>
+                                </select>
                             </div>
                         </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-customer-add">등록</button>
+                        </div>
                     </div>
-                    <div class="section">
-                        <div class="p-3">
-                            <div class="row align-items-center mb-2">
-                                <div class="col-auto">
-                                    총 ###건
-                                </div>
-                                <div class="col-auto">
-                                    <input type="checkbox" id="usableOnly">
-                                    <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
-                                </div>
+                </div>
+                <div class="section">
+                    <div class="p-3">
+                        <div class="row align-items-center mb-2">
+                            <div class="col-auto">
+                                총 ###건
                             </div>
-                            <div class="main_search_result_list">
-                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                <table class="table" id="datatable1">
-                                    <thead>
+                            <div class="col-auto">
+                                <input type="checkbox" id="usableOnly">
+                                <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
+                            </div>
+                        </div>
+                        <div class="main_search_result_list">
+                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                            <table class="table" id="datatable1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">구분</th>
+                                        <th class="text-center">거래처</th>
+                                        <th class="text-center">연락처</th>
+                                        <th class="text-center">접근메뉴</th>
+                                        <th class="text-center">비고</th>
+                                        <th class="text-center">사용</th>
+                                        <th class="text-center">등록/수정</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i=10; i> 0 ; i--){ %>
                                         <tr>
-                                            <th class="text-center">ID</th>
-                                            <th class="text-center">구분</th>
-                                            <th class="text-center">거래처</th>
-                                            <th class="text-center">연락처</th>
-                                            <th class="text-center">접근메뉴</th>
-                                            <th class="text-center">비고</th>
-                                            <th class="text-center">사용</th>
-                                            <th class="text-center">등록/수정</th>
+                                            <td class="text-center"><%= i %></td>
+                                            <td class="text-center">급식처</td>
+                                            <td class="text-center">
+                                                <a href="#modal-customer-add" data-toggle="modal" class="text-underline">오해피푸드(IDID)</a>
+                                            </td>
+                                            <td class="text-center">이급식(010-0000-0000)</td>
+                                            <td class="text-center">급식관리</td>
+                                            <td class="text-center">-</td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">
+                                                <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        <% for(var i=10; i> 0 ; i--){ %>
-                                            <tr>
-                                                <td class="text-center"><%= i %></td>
-                                                <td class="text-center">급식처</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-customer-add" data-toggle="modal" class="text-underline">오해피푸드(IDID)</a>
-                                                </td>
-                                                <td class="text-center">이급식(010-0000-0000)</td>
-                                                <td class="text-center">급식관리</td>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">
-                                                    <div class="text-nowrap">Yy/mm/dd(김시대)</div>
-                                                </td>
-                                            </tr>
-                                        <% } %>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <%- include('../layout/_pagination.ejs')%>
+                                    <% } %>
+                                </tbody>
+                            </table>
                         </div>
+                        <%- include('../_layout/_pagination.ejs')%>
                     </div>
-                    <!-- 컨텐츠 끝 -->
+                </div>
+                <!-- 컨텐츠 끝 -->
 
-                </main>
+            </main>
 
-            </div>
+        </div>
 
-            <%- include('../layout/_footer.ejs')%>
+        <%- include('../_layout/_footer.ejs')%>
 
     </div>
 

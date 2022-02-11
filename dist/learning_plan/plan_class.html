@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-Compatible" content="IE=edge">
+    <title>시대인재N 관리자</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,  viewport-fit=cover'">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/lib/mdtimepicker/mdtimepicker.min.css">
+    <link rel="stylesheet" href="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+    <script src="../assets/lib/mdtimepicker/mdtimepicker.min.js"></script>
+    <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+
+    <script src="../assets/js/ui.js" defer></script>
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <header id="header">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="left">
+                        <!-- <button type="button" class="btn-hamburger"><i class="material-icons">menu</i></button> -->
+                        <select name="" id="" class="custom-select custom-select-sm w-auto">
+                            <option value="">대치</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <nav class="gnb">
+                        <ul>
+                            <li><a href="../institute_code/code_instituteinfo.html" data-gnb-code="institute"><span>학원 운영</span></a></li>
+                            <li><a href="../learning_timetable/timetable_class.html" data-gnb-code="learning"><span>학습 관리</span></a></li>
+                            <li><a href="" data-gnb-code="grade"><span>성적 관리</span></a></li>
+                            <li><a href="" data-gnb-code="students"><span>학생 관리</span></a></li>
+                            <li><a href="" data-gnb-code="notification"><span>알림 관리</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-auto">
+                    <div class="right">
+                        <button type="button" class="btn-my-setting" id="mySetting" data-toggle="dropdown"><i class="material-icons">settings</i></button>
+                        <div class="dropdown-menu" aria-labelledby="mySetting">
+                            <a href="" class="dropdown-item">정보수정</a>
+                            <div class="dropdown-divider"></div>
+                            <p>상태 변경</p>
+                            <a href="" class="dropdown-item active"><i class="my-status-1"></i><span>소통원할</span></a>
+                            <a href="" class="dropdown-item"><i class="my-status-2"></i><span>지원 업무중</span></a>
+                            <a href="" class="dropdown-item"><i class="my-status-3"></i><span>소통불가</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a href="" class="dropdown-item">비밀번호 변경</a>
+                        </div>
+                        <button type="button" class="btn-logout" onclick="document.location.href='../login/login.html'"><i class="material-icons">logout</i></button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="container-block">
+
+            <aside id="sidebar">
+                <div class="sidebar-top">
+                    <a href="../dashboard/dashboard.html" class="logo">
+                        <img src="../assets/images/logo-white.svg" alt="시대인재N">
+                        <span>관리자</span>
+                    </a>
+                </div>
+                <nav class="sidebar">
+                    <div class="overflow-y-scroll">
+                        <!-- 학원 운영 -->
+                        <ul class="dep1" data-gnb-code="institute">
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>학원코드관리</span></a>
+                                <ul class="dep2">
+                                    <li><a href="../institute_code/code_instituteinfo.html"><span>학원정보등록</span></a></li>
+                                    <li><a href="../institute_code/code_subject.html"><span>과목 관리</span></a></li>
+                                    <li><a href="../institute_code/code_plan.html"><span>운영계획</span></a></li>
+                                    <li><a href="../institute_code/code_instructor.html"><span>강사 등록</span></a></li>
+                                    <li><a href="../institute_code/code_customer.html"><span>거래처 관리</span></a></li>
+                                    <li><a href="../institute_code/code_authority.html"><span>직원 권한 관리</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>수강생관리</span></a>
+                                <ul class="dep2">
+                                    <li><a href="../institute_students/students_manage.html"><span>수강생관리</span></a></li>
+                                    <li><a href="../institute_students/students_list.html"><span>수강생리스트</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-treeview">
+                                <a href=""><span>신청/수납</span></a>
+                                <ul class="dep2">
+                                    <li><a href=""><span>선택교재관리</span></a></li>
+                                    <li><a href=""><span>수강신청관리</span></a></li>
+                                    <li><a href=""><span>출결카드관리</span></a></li>
+                                    <li><a href=""><span>기기대여관리</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-treeview">
+                                <a href=""><span>게시판관리</span></a>
+                                <ul class="dep2">
+                                    <li><a href="../institute_board/board_faq.html"><span>FAQ</span></a></li>
+                                    <li><a href=""><span>가이드북</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""><span>급식관리</span></a>
+
+                            </li>
+                        </ul>
+                        <!-- 학습 관리 -->
+                        <ul class="dep1" data-gnb-code="learning">
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>학원시간표</span></a>
+                                <ul class="dep2">
+                                    <li><a href=""><span>수업일정표</span></a></li>
+                                    <li><a href=""><span>컨텐츠일정표</span></a></li>
+                                    <li><a href=""><span>변경일정</span></a></li>
+                                    <li><a href=""><span>주요이벤트</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>학습계획</span></a>
+                                <ul class="dep2">
+                                    <li><a href="../learning_plan/plan_class.html"><span>수업 계획</span></a></li>
+                                    <li><a href=""><span>컨텐츠 계획</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>수업/강사관리</span></a>
+                                <ul class="dep2">
+                                    <li><a href=""><span>강사 관리</span></a></li>
+                                    <li><a href=""><span>컨텐츠 배부</span></a></li>
+                                    <li><a href=""><span>수업 출결</span></a></li>
+                                    <li><a href=""><span>수업 결산</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- 성적 관리 -->
+                        <ul class="dep1" data-gnb-code="grade">
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>시험 관리</span></a>
+                                <ul class="dep2">
+                                    <li><a href=""><span>시험 구분 관리</span></a></li>
+                                    <li><a href=""><span>시험 관리</span></a></li>
+                                    <li><a href=""><span>학생 답안</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>학습 상담</span></a>
+                                <ul class="dep2">
+                                    <li><a href="../grade_consulting/consulting_calendar.html"><span>상담캘린더</span></a></li>
+                                    <li><a href=""><span>상담기록</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+        </div>
+        </nav>
+
+        <div class="quick-menu">
+            <strong>퀵 메뉴</strong>
+            <div class="btns">
+                <button class="btn-quick-setting" data-toggle="modal" data-target="#modal-quick-setting"><i class="material-icons">settings</i></button>
+                <button class="btn-quick-expand"><i class="material-icons">expand_less</i></button>
+            </div>
+            <ul id="quickMenu">
+                <li><a href="">퀵 메뉴</a></li>
+                <li><a href="">퀵 메뉴</a></li>
+                <li><a href="">퀵 메뉴</a></li>
+                <li><a href="">퀵 메뉴</a></li>
+            </ul>
+        </div>
+
+        </aside>
+
+        <main id="content" role="main">
+
+            <!-- 컨텐츠 시작 -->
+            <h2 class="title">수업 계획</h2>
+            <div class="p-3 border-bottom">
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <div class="d-flex align-items-center">
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">관</option>
+                            </select>
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">반</option>
+                            </select>
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">구분</option>
+                            </select>
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">강사</option>
+                            </select>
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">조치</option>
+                            </select>
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">상태</option>
+                            </select>
+                            <select name="" id="" class="custom-select w-auto mr-4">
+                                <option value="">정원초과</option>
+                            </select>
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">수업명</option>
+                            </select>
+                            <input type="text" class="form-control w-auto mr-2">
+                            <button type="button" class="btn btn-dark">검색</button>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-dark">파일업로드</button>
+                        <button type="button" class="btn btn-dark">파일다운로드</button>
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-plan-class-add">등록</button>
+                    </div>
+                </div>
+            </div>
+            <div class="split-vertical">
+                <div class="section init" id="split-vertical-1">
+                    <div class="p-3">
+                        <div class="row align-items-center justify-content-between mb-2">
+                            <div class="col-auto">
+                                총 ###건
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark">관별개강현황</button>
+                            </div>
+                        </div>
+                        <div class="main_search_result_list">
+                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                            <table class="table" id="datatable1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">관</th>
+                                        <th class="text-center">구분</th>
+                                        <th class="text-center">반</th>
+                                        <th class="text-center">과목</th>
+                                        <th class="text-center">수업명</th>
+                                        <th class="text-center">강사</th>
+                                        <th class="text-center">분반</th>
+                                        <th class="text-center">강의실</th>
+                                        <th class="text-center">요일</th>
+                                        <th class="text-center">교시</th>
+                                        <th class="text-center">상태</th>
+                                        <th class="text-center">조치필요</th>
+                                        <th class="text-center">모집</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            10
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            9
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            8
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            7
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            6
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            5
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            4
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            3
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            2
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            1
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">선택</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">언어와 매체</td>
+                                        <td class="text-center">김강사</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">N관 101호</td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center"><a href="" class="text-underline">모집</a></td>
+                                        <td class="text-center">
+                                            <div class="action">
+                                                <span class="active">입력</span>
+                                                <span>충돌</span>
+                                                <span class="active">보강</span>
+                                                <span>교재</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                            <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="section init" id="split-vertical-2">
+                    <div class="p-3">
+                        <div class="row align-items-center justify-content-between mb-2">
+                            <div class="col-auto">
+                                총 ###건
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark">일정 변경</button>
+                                <button type="button" class="btn btn-dark">분반 추가</button>
+                            </div>
+                        </div>
+                        <div class="main_search_result_list">
+                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                            <table class="table" id="datatable1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">관</th>
+                                        <th class="text-center">구분</th>
+                                        <th class="text-center">수업명</th>
+                                        <th class="text-center">강사</th>
+                                        <th class="text-center">분반</th>
+                                        <th class="text-center">강의실</th>
+                                        <th class="text-center">요일</th>
+                                        <th class="text-center">교시</th>
+                                        <th class="text-center">상태</th>
+                                        <th class="text-center">모집/정원</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center" rowspan="3">
+                                            10
+                                        </td>
+                                        <td class="text-center" rowspan="3">브릿지관</td>
+                                        <td class="text-center" rowspan="3">선택</td>
+                                        <td class="text-center" rowspan="3">언어와 매체</td>
+                                        <td class="text-center" rowspan="3">김강사</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">
+                                            <a href="javascript:;">N관 101호</a>
+                                        </td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center">확정</td>
+                                        <td class="text-center">120/150</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">
+                                            <a href="javascript:;">N관 102호</a>
+                                        </td>
+                                        <td class="text-center">월</td>
+                                        <td class="text-center">3-3</td>
+                                        <td class="text-center">미확정</td>
+                                        <td class="text-center">60/70</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                            <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- 컨텐츠 끝 -->
+
+        </main>
+
+    </div>
+
+    <footer id="footer">
+        <!-- <div class="inner">
+        <p>copyright</p>
+    </div> -->
+    </footer>
+
+    <!-- modal : 퀵 메뉴 등록 -->
+    <div class="modal" tabindex="-1" id="modal-quick-setting">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">퀵 메뉴 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-15 align-items-center" id="quick-dual-list">
+                        <div class="col">
+                            <div class="menu-list">
+                                <div class="overflow-y-scroll">
+                                    <ul class="all-list">
+                                        <li>
+                                            <span>학원 운영</span>
+                                            <ul class="dep2">
+                                                <li>
+                                                    <span>학원코드</span>
+                                                    <ul class="dep3">
+                                                        <li><a href="">학원정보등록</a></li>
+                                                        <li><a href="">과목 관리</a></li>
+                                                        <li><a href="">관 운영계획</a></li>
+                                                        <li><a href="">강사 등록</a></li>
+                                                        <li><a href="">거래처 관리</a></li>
+                                                        <li><a href="">직원 권한 관리</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul class="dep2">
+                                                <li>
+                                                    <span>수강생 관리</span>
+                                                    <ul class="dep3">
+                                                        <li><a href="">수강생관리</a></li>
+                                                        <li><a href="">수강생리스트</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul class="dep2">
+                                                <li>
+                                                    <span>신청/수납</span>
+                                                    <ul class="dep3">
+                                                        <li><a href="">수강신청관리</a></li>
+                                                        <li><a href="">선택교재관리</a></li>
+                                                        <li><a href="">출결카드관리</a></li>
+                                                        <li><a href="">기기대여관리</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div>
+                                <button type="button" class="btn-move-left"><i class="material-icons">arrow_back</i></button>
+                            </div>
+                            <div class="mt-4">
+                                <button type="button" class="btn-move-right"><i class="material-icons">arrow_forward</i></button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="menu-list">
+                                <div class="overflow-y-scroll">
+                                    <ul class="selected-list">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //리스트 item 클릭시
+        $('#quick-dual-list .all-list a').on('click', function(e) {
+            e.preventDefault();
+            const selectedItem = $('#quick-dual-list .all-list a.selected').length;
+            const maxItem = 6;
+
+            if (!$(this).hasClass('selected')) {
+                if (selectedItem < maxItem) {
+                    $(this).toggleClass('selected');
+                } else {
+                    alert(`최대 : ${maxItem}`);
+                }
+            } else {
+                $(this).toggleClass('selected');
+            }
+        });
+        //오른쪽으로 이동 버튼 클릭
+        $('#quick-dual-list .btn-move-right').on('click', function() {
+            $('#quick-dual-list .all-list a.selected').each(function() {
+                let $item = $(this).closest('li').detach();
+                $item.find('a').removeClass('selected');
+                $('.selected-list').append($item);
+            });
+        });
+    </script>
+
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
