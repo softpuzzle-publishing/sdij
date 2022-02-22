@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">몰입도 리포트</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">반</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">교실</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">생활담임</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-5">
+                                    <option value="">상태</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark mr-5">검색</button>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                                <span class="mx-2">~</span>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                        </div>
+                    </div>
+                </div>
+                <div class="split-horizontal">
+                    <div class="section" id="split-horizontal-1">
+                        <div class="p-3">
+                            <div class="row align-items-center justify-content-between mb-2">
+                                <div class="col-auto">
+                                    총 ###건
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                                    <button type="button" class="btn btn-dark btn-sm">리포트 발송</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="reportAll"></th>
+                                            <th class="text-center">관</th>
+                                            <th class="text-center">반</th>
+                                            <th class="text-center">학생ID</th>
+                                            <th class="text-center">좌석</th>
+                                            <th class="text-center">월</th>
+                                            <th class="text-center">화</th>
+                                            <th class="text-center">수</th>
+                                            <th class="text-center">목</th>
+                                            <th class="text-center">금</th>
+                                            <th class="text-center">상태</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="selected">
+                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
+                                            <td class="text-center">M3</td>
+                                            <td class="text-center">S</td>
+                                            <td class="text-center">김시대1234</td>
+                                            <td class="text-center">02</td>
+                                            <td class="text-center">8</td>
+                                            <td class="text-center">7</td>
+                                            <td class="text-center">8</td>
+                                            <td class="text-center">7</td>
+                                            <td class="text-center">8.5</td>
+                                            <td class="text-center">확정</td>
+                                        </tr>
+                                        @@for (var i = 15; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
+                                            <td class="text-center">M3</td>
+                                            <td class="text-center">S</td>
+                                            <td class="text-center">김시대1234</td>
+                                            <td class="text-center">02</td>
+                                            <td class="text-center">8</td>
+                                            <td class="text-center">7</td>
+                                            <td class="text-center">8</td>
+                                            <td class="text-center">7</td>
+                                            <td class="text-center">8.5</td>
+                                            <td class="text-center">확정</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                        </div>
+                    </div>
+                    <div class="section" id="split-horizontal-2">
+                        <div class="report p-3">
+                            <div class="row justify-content-between align-items-end mb-2">
+                                <div class="col-auto">
+                                    <div class="table-title mb-0">시대인재N 재수종합</div>
+                                </div>
+                                <div class="col-auto">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">mm/dd ~ mm/dd</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center mb-3 mt-3"><h3>자습 몰입도 주간리포트</h3></div>
+                            <table class="table table-bordered table-fixed table-center">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>이름</th>
+                                        <th>반</th>
+                                        <th>좌석번호</th>
+                                        <th>계열</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>조성현</td>
+                                        <td>J</td>
+                                        <td>221</td>
+                                        <td>자연계</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4 class="mt-4 mb-3">일간 자습 몰입도</h4>
+                            <div class="chart">
+                                <canvas id="myChart1" width="600" height="220"></canvas>
+                                <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+                                <script>
+                                    const ctx = document.getElementById('myChart1');
+                                    const myChart1 = new Chart(ctx, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ['월', '화', '수', '목', '금'],
+                                            datasets: [
+                                                {
+                                                    label: 'ㅇㅇㅇ 학생',
+                                                    data:  [7, 8, 6, 7, 7, 8],
+                                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                                                },
+                                                {
+                                                    label: '몰입도 상위 50% 평균',
+                                                    data:  [7.5, 8, 6.4, 7.6, 7.1, 7.7,],
+                                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                                },
+                                                {
+                                                    label: '9월 월례고사 상위 30% 평균',
+                                                    data:  [8, 8.2, 5, 7, 7.7, 6.7,],
+                                                    borderColor: 'rgba(255, 206, 86, 1)',
+                                                    backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                                                },
+                                            ]
+                                        },
+                                        options: {
+                                            //responsive: false,
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            },
+                                            plugins: {
+                                                legend: {
+                                                    position: 'bottom'
+                                                }
+                                            }
+                                        }
+                                    });
+
+                                </script>
+                            </div>
+                            <h4 class="mt-4 mb-3">시간대별 주간 자습 몰입 현황</h4>
+                            <table class="table table-bordered table-fixed table-center">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>시간</th>
+                                        <th>ㅇㅇㅇ 학생</th>
+                                        <th>몰입도 상위 30%</th>
+                                        <th>9월 월례 상위 30%</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>3교시</td>
+                                        <td>8.7</td>
+                                        <td>8.3</td>
+                                        <td>8.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4교시</td>
+                                        <td>8.7</td>
+                                        <td>8.3</td>
+                                        <td>8.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5교시</td>
+                                        <td>8.7</td>
+                                        <td>8.3</td>
+                                        <td>8.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6교시</td>
+                                        <td>8.7</td>
+                                        <td>8.3</td>
+                                        <td>8.6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4 class="mt-4 mb-3">요일/시간별 학습 몰입도 현황</h4>
+                            <table class="table table-bordered table-fixed table-center">
+                                <colgroup>
+                                    <col style="width: 140px">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>웛요일</th>
+                                        <th>화요일</th>
+                                        <th>수요일</th>
+                                        <th>목요일</th>
+                                        <th>금요일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>3교시 <br>(13:20~15:00)</td>
+                                        <td>8.7</td>
+                                        <td>공휴일</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4교시 <br>(13:20~15:00)</td>
+                                        <td>8.7</td>
+                                        <td>공휴일</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5교시 <br>(13:20~15:00)</td>
+                                        <td>8.7</td>
+                                        <td>공휴일</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6교시 <br>(13:20~15:00)</td>
+                                        <td>8.7</td>
+                                        <td>공휴일</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                        <td>수업</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4 class="mt-4 mb-3">평점 평가 기준</h4>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+</body>
+
+</html>

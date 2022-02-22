@@ -14,8 +14,8 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/lib/mdtimepicker/mdtimepicker.min.css">
     <link rel="stylesheet" href="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
 
@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <script src="../assets/lib/jquery/jquery.min.js"></script>
-    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
     <script src="../assets/lib/mdtimepicker/mdtimepicker.min.js"></script>
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -110,13 +110,26 @@
                 </select>
             </div>
             <div>
-                <input type="text" class="form-control form-datepicker">
+                <div class="row row-5 align-items-center">
+                    <div class="col">
+                        <input type="text" class="form-control form-datepicker">
+                    </div>
+                    <div class="col-auto">~</div>
+                    <div class="col">
+                        <input type="text" class="form-control form-timepicker">
+                    </div>
+                </div>
             </div>
             <div>
-                <input type="text" class="form-control form-control-sm form-datepicker">
-            </div>
-            <div>
-                <input type="text" class="form-control form-timepicker">
+                <div class="row row-5 align-items-center">
+                    <div class="col">
+                        <input type="text" class="form-control form-control-sm form-datepicker">
+                    </div>
+                    <div class="col-auto">~</div>
+                    <div class="col">
+                        <input type="text" class="form-control form-control-sm form-timepicker">
+                    </div>
+                </div>
             </div>
             <div class="row row-5">
                 <div class="col">
@@ -125,6 +138,12 @@
                 <div class="col-auto">
                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-staff-search">검색</button>
                 </div>
+            </div>
+            <div>
+                <input type="radio" name="AuthorUse" id="AuthorUseY">
+                <label for="AuthorUseY">사용</label>
+                <input type="radio" name="AuthorUse" id="AuthorUseN">
+                <label for="AuthorUseN">미사용</label>
             </div>
         </section>
         <section class="col-4">
@@ -138,6 +157,7 @@
                 <a href="#none" class="btn btn-success">버튼 기본</a>
                 <a href="#none" class="btn btn-warning">버튼 기본</a>
                 <a href="#none" class="btn btn-danger">버튼 기본</a>
+                <button type="button" class="btn btn-dark btn-foursquare">+</button>
                 <a href="#none" class="btn btn-outline-dark btn-block">버튼 block</a>
                 <a href="#none" class="btn btn-lg btn-dark">버튼 lg</a>
                 <a href="#none" class="btn btn-xl btn-dark">버튼 xl</a>
@@ -391,8 +411,8 @@
             <h1>split</h1>
             <div>
                 <p>상하스플릿 ID 규칙 : #split-vertical-1, #split-vertical-2....</p>
-                <div style="border: 2px solid #999;">
-                    <div class="split-vertical" style="height:150px">
+                <div style="min-height: 200px;border: 2px solid #999;">
+                    <div class="split-vertical">
                         <div id="split-vertical-1" class="init">1</div>
                         <div id="split-vertical-2" class="init">2</div>
                     </div>

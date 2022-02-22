@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">출결 신청</h2>
+
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    <!-- modal : 시험 정보 등록 -->
+    <div class="modal" tabindex="-1" id="modal-exams-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">시험 정보 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>시행처</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">평가원</option>
+                                    </select>
+                                </td>
+                                <th>현장시험</th>
+                                <td>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
+                                    <label for="AuthorUseY">진행</label>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
+                                    <label for="AuthorUseN">진행 안 함</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>시험 명</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th>성적표</th>
+                                <td>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
+                                    <label for="AuthorUseY">사용</label>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
+                                    <label for="AuthorUseN">사용 안 함</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>시험 유형</th>
+                                <td colspan="3">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">동시 시험</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

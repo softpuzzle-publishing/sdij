@@ -4,6 +4,10 @@ const body = document.querySelector('body');
 var Header = {
 	init : function(){
 		this.menu();
+
+		if ($('h2.title').length > 0) {
+			$('title').text($('h2.title').text() + ' | 시대인재N 관리자');
+		}
 	},
 	menu: function(e){
 		$('.btn-hamburger').on('click', function (e) {
@@ -56,8 +60,10 @@ var Aside = {
 	}
 };
 
+var splitV;
+var splitH;
 var Common = {
-	init : function(){
+	init: function () {
 		this.scrolling();
 		this.splitGird();
 		this.event();
@@ -89,18 +95,19 @@ var Common = {
 		var verticalItems = [];
 		var horizontalItems = [];
 		if ($('[id^="split-vertical"]').length > 0) {
+			var height = $('.split-vertical').parent().outerHeight();
 			$('[id^="split-vertical"]').each(function(){
 				var item = '#'+ $(this).attr('id');
 				verticalItems.push(item);
 			});
-			Split(verticalItems, {
+			splitV = Split(verticalItems, {
 				direction: 'vertical',
 				gutterSize: 8,
 				minSize: 0,
 				snapOffset: 0,
 				onDrag: function(){
 					//pane의 높이를 auto로 지정이 불가능하여 클래스로 제어
-					$('.split-vertical').css('height', $('.split-vertical').outerHeight())
+					$('.split-vertical').css('height', height);
 					$('.split-vertical .init').removeClass('init');
 				}
 			});
@@ -110,15 +117,21 @@ var Common = {
 				var item = '#'+ $(this).attr('id');
 				horizontalItems.push(item);
 			});
-			Split(horizontalItems, {
+			splitH = Split(horizontalItems, {
 				direction: 'horizontal',
 				gutterSize: 8,
 				minSize: 435,
 				snapOffset: 0,
+				onDrag: function () {
+					window.dispatchEvent(new Event('resize'));
+
+				}
 			});
 		}
 	},
 	event: function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
 		//custom scroll
 		$(".overflow-y-scroll").mCustomScrollbar({
 			theme:"dark"
@@ -176,6 +189,11 @@ var Common = {
 					$($(this).attr('data-byte-target')).html();
 				}
 			}
+		});
+
+		$('.list-group-toggle a.list-group-item').on('click', function (e) {
+			e.preventDefault();
+			$(this).closest('.item-wrap').toggleClass('active');
 		});
 
 		mdtimepicker('.form-timepicker', {

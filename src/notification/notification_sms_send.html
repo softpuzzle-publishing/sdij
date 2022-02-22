@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">문자 발송</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="p-3">
+                            <div class="table-title">발신 설정</div>
+                            <table class="table table-bordered table-fixed">
+                                <colgroup>
+                                    <col style="width: 110px">
+                                    <col>
+                                    <col style="width: 110px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>알림 구분</th>
+                                        <td></td>
+                                        <th>광고 구분</th>
+                                        <td>
+                                            <input type="radio" name="advSms" id="adv1">
+                                            <label for="adv1">광고</label>
+                                            <input type="radio" name="advSms" id="adv2">
+                                            <label for="adv2">안내</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>발송 제목</th>
+                                        <td colspan="3"><input type="text" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>발신 번호</th>
+                                        <td colspan="3">
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">대표번호</option>
+                                            </select>
+                                            <span class="align-middle">1588-1234</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>예약발송</th>
+                                        <td>
+                                            <input type="radio" name="reservUse" id="reservUseY">
+                                            <label for="reservUseY">사용</label>
+                                            <input type="radio" name="reservUse" id="reservUseN">
+                                            <label for="reservUseN">미사용</label>
+                                        </td>
+                                        <th>발송일시</th>
+                                        <td>
+                                            <div class="row row-5 align-items-center">
+                                                <div class="col">
+                                                    <input type="text" class="form-control form-datepicker">
+                                                </div>
+                                                <div class="col-auto">~</div>
+                                                <div class="col">
+                                                    <input type="text" class="form-control form-timepicker" readonly="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-title mt-3">수신 그룹 설정</div>
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>입력 방식</th>
+                                        <td>
+                                            <input type="radio" name="inputType" id="inputTypeSearch">
+                                            <label for="inputTypeSearch">조건검색</label>
+                                            <input type="radio" name="inputType" id="inputTypePreset">
+                                            <label for="inputTypePreset">프리셋</label>
+                                            <input type="radio" name="inputType" id="inputTypeExcel">
+                                            <label for="inputTypeExcel">엑셀</label>
+                                            <div class="mt-2">
+                                                <div style="display: none;" aria-labelledby="inputTypeSearch">
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">관</option>
+                                                    </select>
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">반</option>
+                                                    </select>
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">과목</option>
+                                                    </select>
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">강사</option>
+                                                    </select>
+                                                </div>
+                                                <div style="display: none;" aria-labelledby="inputTypePreset">
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">프리셋 코드</option>
+                                                    </select>
+                                                    <span class="align-middle">M3관 A반 4층 남학생</span>
+                                                </div>
+                                                <div style="display: none;" aria-labelledby="inputTypeExcel">
+                                                    <button type="button" class="btn btn-secondary mr-2">양식 다운로드</button>
+                                                    <input type="file" class="form-control d-inline-block w-auto align-middle">
+                                                </div>
+                                            </div>
+                                            <script>
+                                                $('[name=inputType]').on('change',function(){
+                                                    $(this).each(function(){
+                                                        if($(this).prop('checked') == true){
+                                                            $('[aria-labelledby]').hide();
+                                                            $('[aria-labelledby='+ $(this).attr('id') + ']').show();
+                                                        }
+                                                    })
+                                                });1
+                                            </script>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>수신자 구분</th>
+                                        <td>
+                                            <input type="radio" name="receiver" id="receiverParent">
+                                            <label for="receiverParent">학부모</label>
+                                            <input type="radio" name="receiver" id="receiverStudent">
+                                            <label for="receiverStudent">학생</label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right mt-3">
+                                <button type="button" class="btn btn-dark">설정</button>
+                            </div>
+                            <div class="table-title mt-3">수신자 목록</div>
+                            <div class="row align-items-center justify-content-between mb-2">
+                                <div class="col-auto">
+                                    총 ###건
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-preset-add">프리셋 등록</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-receiver-add">추가</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">삭제</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="receiverAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">학생ID</th>
+                                            <th class="text-center">수신자 구분</th>
+                                            <th class="text-center">연락처</th>
+                                            <th class="text-center">발송가능</th>
+                                            <th class="text-center">내용확인</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="receiverAll"></td>
+                                            <td class="text-center">`+ i +`</td>
+                                            <td class="text-center">김시대1234</td>
+                                            <td class="text-center">학생</td>
+                                            <td class="text-center">010-0000-000</td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center"><a href="#none" class="text-underline">미리보기</a></td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="p-3">
+                            <div class="row justify-content-between align-items-end mb-2">
+                                <div class="col-auto">
+                                    <div class="table-title mb-0">내용 작성</div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-template-apply">템플릿 적용</button>
+                                </div>
+                            </div>
+                            <div class="sms-area">
+                                <div class="sms-top">
+                                    <div class="row">
+                                        <div class="col">
+                                            <strong>단문(SMS)</strong>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span id="sms-byte-check">0</span> / 90byte
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sms-header">
+                                    <input type="text" class="form-control" placeholder="제목 입력(최대 30byte)">
+                                </div>
+                                <div class="sms-body">
+                                    <textarea name="" id="" rows="20" class="form-control" maxlength="2000" data-byte-target="#sms-byte-check"></textarea>
+                                    <div class="text-right mt-2">
+                                        <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-template-save">템플릿 저장</button>
+                                    </div>
+                                </div>
+                                <div class="sms-test">
+                                    <span class="mr-3">테스트 번호</span>
+                                    <input type="tel" class="form-control d-inline-block text-center" style="width: 60px">
+                                    <span class="mx-2">-</span>
+                                    <input type="tel" class="form-control d-inline-block text-center" style="width: 60px">
+                                    <span class="mx-2">-</span>
+                                    <input type="tel" class="form-control d-inline-block text-center" style="width: 60px">
+                                </div>
+                                <div class="sms-footer">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col">
+                                            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modal-sms-preview">미리 보기</button>
+                                        </div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-dark btn-block">테스트 발송</button>
+                                        </div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-danger btn-block">발송</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    <!-- modal : 템플릿 적용 -->
+    <div class="modal" tabindex="-1" id="modal-template-apply" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">템플릿 적용</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pb-3">
+                        <div class="row justify-content-between">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">알림 구분</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">구분 상세</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">광고 구분</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">템플릿 제목</option>
+                                    </select>
+                                    <input type="text" class="form-control d-inline-block w-auto mr-2">
+                                    <button type="button" class="btn btn-dark">검색</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <!-- <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="smsTemplateAll"></th> -->
+                                    <th class="text-center">코드</th>
+                                    <th class="text-center">알림 구분</th>
+                                    <th class="text-center">알림 구분 상세</th>
+                                    <th class="text-center">광고 구분</th>
+                                    <th class="text-center">제목</th>
+                                    <th class="text-center">내용</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 5; i > 0; i--) {
+                                <tr>
+                                    <!-- <td class="text-center"><input type="checkbox" name="smsTemplateAll" id="temp`+ i +`"></td> -->
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">컨텐츠</td>
+                                    <td class="text-center">부엉이 포스트</td>
+                                    <td class="text-center">안내</td>
+                                    <td class="text-center">최수준T 개강안내</td>
+                                    <td><a href="javascript:;" class="text-underline" data-toggle="tooltip" data-placement="left" title="3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다. 3/15 개강 안내입니다.">3/15 개강 안내입니다.</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                        @@include('@@webRoot/_include/_pagination.html')
+                    </div>
+                </div>
+                <!-- 템플릿 내용 클릭시 바로 적용되어야 하지 않을까요..? -->
+                <!-- <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">적용</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 템플릿 저장 -->
+    <div class="modal" tabindex="-1" id="modal-template-save" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:480px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">템플릿 저장</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px">
+                            <col>
+                            <col style="width: 100px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>알림 구분</th>
+                                <td>컨텐츠</td>
+                                <th>알림 구분 상세</th>
+                                <td>부엉이포스트</td>
+                            </tr>
+                            <tr>
+                                <th>광고 구분</th>
+                                <td colspan="3">안내</td>
+                            </tr>
+                            <tr>
+                                <th>템플릿 제목</th>
+                                <td colspan="3">
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>템플릿 내용</th>
+                                <td colspan="3">
+                                    <textarea name="" id="" rows="20" class="form-control">입력된 내용 텍스트 박스 노출 수정 가능요</textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 문자 메시지 미리 보기 -->
+    <div class="modal" tabindex="-1" id="modal-sms-preview" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:480px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">문자 메시지 미리 보기</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="message">
+                        <h6 class="message-title">문자 제목</h6>
+                        <div class="from">[Web발신]</div>
+                        <p class="message-content">(광고) 내용내용내용  내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용  <br><br> 내용내용내용 내용내용내용 내용내용내용 <br><br>  내용내용내용 내용내용내용</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 수신자 추가 -->
+    <div class="modal" tabindex="-1" id="modal-receiver-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">수신자 추가</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <strong>학생ID</strong>
+                        <ul class="mb-1">
+                            <li>-아이디 최대 20개까지 입력 가능</li>
+                            <li>-여러 개 입력 시 쉼표(,)로 구분하여 작성</li>
+                        </ul>
+                        <textarea name="" id="" cols="" rows="3" class="form-control" placeholder="김시대1234, 박시대3255"></textarea>
+                    </div>
+                    <table class="table table-bordered table-fixed mt-2">
+                        <colgroup>
+                            <col style="width: 100px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>수신자 구분</th>
+                                <td>
+                                    <input type="radio" name="receiver2" id="receiverParent2">
+                                    <label for="receiverParent2">학부모</label>
+                                    <input type="radio" name="receiver2" id="receiverStudent2">
+                                    <label for="receiverStudent2">학생</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">적용</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 프리셋 등록 -->
+    <div class="modal" tabindex="-1" id="modal-preset-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">프리셋 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <input type="text" class="form-control" placeholder="새로 등록한 프리셋 명을 입력해주세요.">
+                    </div>
+                    <div class="mt-2">
+                        <input type="text" class="form-control" placeholder="프리셋 설명을 입력해 주세요.">
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

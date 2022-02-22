@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">몰입도 관리</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">교실</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">생활담임</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-5">
+                                    <option value="">교시</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark mr-5">검색</button>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark">파일다운로드</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="min-height: calc(100vh - 193px);">
+                    <div class="split-vertical">
+                        <div class="section init" id="split-vertical-1">
+                            <div class="p-3">
+                                <div class="main_search_result_list">
+                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                    <table class="table" id="datatable1">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">관</th>
+                                                <th class="text-center">교실</th>
+                                                <th class="text-center">생활담임</th>
+                                                <th class="text-center">구분</th>
+                                                <th class="text-center">5점 <br><span>(발생시)</span></th>
+                                                <th class="text-center">6점 <br><span>(1% 미만)</span></th>
+                                                <th class="text-center">7점 <br><span>(15%)</span></th>
+                                                <th class="text-center">7.5점 <br><span>(35%)</span></th>
+                                                <th class="text-center">8점 <br><span>(30%)</span></th>
+                                                <th class="text-center">8.5점 <br><span>(15%)</span></th>
+                                                <th class="text-center">9점 <br><span>(1% 미만)</span></th>
+                                                <th class="text-center">미완료</th>
+                                                <th class="text-center">몰입도 확정</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">M3</td>
+                                                <td class="text-center">2층 A실</td>
+                                                <td class="text-center">이생담</td>
+                                                <td class="text-center">오전</td>
+                                                <td class="text-center"><a href="#" class="text-underline">0.1%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">0%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">15%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">25%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">20%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">29%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">10%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">1</a></td>
+                                                <td class="text-center"><button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#modal-immersion-confirm">확정</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">M3</td>
+                                                <td class="text-center">2층 A실</td>
+                                                <td class="text-center">박생담</td>
+                                                <td class="text-center">오후</td>
+                                                <td class="text-center"><a href="#" class="text-underline">0.1%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">0%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">15%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">25%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">20%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">29%</a></td>
+                                                <td class="text-center"><a href="#" class="text-underline">10%</a></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center">UserName</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section init" id="split-vertical-2">
+                            <div class="p-3">
+                                <div class="row align-items-center mb-2">
+                                    <div class="col-auto">
+                                        총 ###건
+                                    </div>
+                                    <div class="col">
+                                        <input type="checkbox" id="usableOnly">
+                                        <label for="usableOnly" class="mb-0">최종값만 보기</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-value-add">보정값등록</button>
+                                    </div>
+                                </div>
+                                <div class="main_search_result_list">
+                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                    <table class="table" id="datatable1">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="immersionList"></th>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">날짜</th>
+                                                <th class="text-center">학생ID</th>
+                                                <th class="text-center">관</th>
+                                                <th class="text-center">좌석번호</th>
+                                                <th class="text-center">교시</th>
+                                                <th class="text-center">차시</th>
+                                                <th class="text-center">착석</th>
+                                                <th class="text-center">구분</th>
+                                                <th class="text-center">싱테</th>
+                                                <th class="text-center">몰입도</th>
+                                                <th class="text-center">확정 몰입도(보정)</th>
+                                                <th class="text-center">등록</th>
+                                                <th class="text-center">보정</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @@for (var i = 10; i > 0; i--) {
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="immersionList"></td>
+                                                <td class="text-center">
+                                                    `+ i +`
+                                                </td>
+                                                <td class="text-center">MM/DD</td>
+                                                <td class="text-center">김시대01234</td>
+                                                <td class="text-center">M3</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">1교시</td>
+                                                <td class="text-center">2차시</td>
+                                                <td class="text-center">Y</td>
+                                                <td class="text-center">최종</td>
+                                                <td class="text-center">확정</td>
+                                                <td class="text-center">8</td>
+                                                <td class="text-center">8.5(0.5)</td>
+                                                <td class="text-center">UserName</td>
+                                                <td class="text-center">UserName</td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                                @@include('@@webRoot/_include/_pagination.html')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    <!-- modal : 몰입도 확정 -->
+    <div class="modal" tabindex="-1" id="modal-immersion-confirm" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">몰입도 확정</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">총 <b>###</b>건의 몰입도를 확정합니다. <br><br>미입력 데이터는 미착석 처리되며 <br>확정 후에는 취소가 불가능합니다.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">확인</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 보정값 등록 -->
+    <div class="modal" tabindex="-1" id="modal-value-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">보정값 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center"><b>1, 23, 24, 26, 30, 39, 49</b> <br>총 <b>#</b>명의 학생에게 보정값을 추가합니다.</p>
+                    <div class="immersion-point d-flex justify-content-center mt-3">
+                        <a href="javascript:;" role="button" class="btn btn-outline-warning mx-1">-1</a>
+                        <a href="javascript:;" role="button" class="btn btn-outline-warning mx-1">-0.5</a>
+                        <a href="javascript:;" role="button" class="btn btn-outline-warning mx-1">0.5</a>
+                        <a href="javascript:;" role="button" class="btn btn-outline-warning mx-1">1</a>
+                    </div>
+                    <script>
+                        $('.immersion-point a').on('click',function(e){
+                            e.preventDefault();
+                            $(this).addClass('active');
+                        })
+                    </script>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">확인</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

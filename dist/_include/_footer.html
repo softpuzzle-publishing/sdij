@@ -1,0 +1,112 @@
+<footer id="footer">
+
+</footer>
+
+<!-- modal : 퀵 메뉴 등록 -->
+<div class="modal" tabindex="-1" id="modal-quick-setting">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">퀵 메뉴 등록</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row row-15 align-items-center" id="quick-dual-list">
+                    <div class="col">
+                        <div class="menu-list">
+                            <div class="overflow-y-scroll">
+                                <ul class="all-list">
+                                    <li>
+                                        <span>학원 운영</span>
+                                        <ul class="dep2">
+                                            <li>
+                                                <span>학원코드</span>
+                                                <ul class="dep3">
+                                                    <li><a href="">학원정보등록</a></li>
+                                                    <li><a href="">과목 관리</a></li>
+                                                    <li><a href="">관 운영계획</a></li>
+                                                    <li><a href="">강사 등록</a></li>
+                                                    <li><a href="">거래처 관리</a></li>
+                                                    <li><a href="">직원 권한 관리</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul class="dep2">
+                                            <li>
+                                                <span>수강생 관리</span>
+                                                <ul class="dep3">
+                                                    <li><a href="">수강생관리</a></li>
+                                                    <li><a href="">수강생리스트</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul class="dep2">
+                                            <li>
+                                                <span>신청/수납</span>
+                                                <ul class="dep3">
+                                                    <li><a href="">수강신청관리</a></li>
+                                                    <li><a href="">선택교재관리</a></li>
+                                                    <li><a href="">출결카드관리</a></li>
+                                                    <li><a href="">기기대여관리</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div>
+                            <button type="button" class="btn-move-left"><i class="material-icons">arrow_back</i></button>
+                        </div>
+                        <div class="mt-4">
+                            <button type="button" class="btn-move-right"><i class="material-icons">arrow_forward</i></button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-list">
+                            <div class="overflow-y-scroll">
+                                <ul class="selected-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">저장</button>
+                <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //리스트 item 클릭시
+    $('#quick-dual-list .all-list a').on('click', function(e) {
+        e.preventDefault();
+        const selectedItem = $('#quick-dual-list .all-list a.selected').length;
+        const maxItem = 6;
+
+        if (!$(this).hasClass('selected')) {
+            if (selectedItem < maxItem) {
+                $(this).toggleClass('selected');
+            } else {
+                alert(`최대 : ${maxItem}`);
+            }
+        } else {
+            $(this).toggleClass('selected');
+        }
+    });
+    //오른쪽으로 이동 버튼 클릭
+    $('#quick-dual-list .btn-move-right').on('click', function() {
+        $('#quick-dual-list .all-list a.selected').each(function() {
+            let $item = $(this).closest('li').detach();
+            $item.find('a').removeClass('selected');
+            $('.selected-list').append($item);
+        });
+    });
+</script>

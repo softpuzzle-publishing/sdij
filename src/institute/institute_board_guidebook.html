@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">가이드북</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">공개여부</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">제목</option>
+                                    <option value="">내용</option>
+                                    <option value="">작성자</option>
+                                </select>
+                                <input type="text" class="form-control d-inline-block w-auto mr-2">
+                                <button type="button" class="btn btn-dark">검색</button>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-guidebook-category">카테고리 관리</button>
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-guidebook-write">등록</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <nav class="tab-custom px-5">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">전체(##)</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">공간(##)</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">컨텐츠(##)</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" data-toggle="tab" href="#tab4" role="tab">매니지먼트(##)</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="p-3">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                                <div class="main_search_result_list">
+                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                    <table class="table" id="datatable1">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="guidebookAll"></th>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">카테고리</th>
+                                                <th class="text-center">대상 관</th>
+                                                <th class="text-center">제목</th>
+                                                <th class="text-center">공개</th>
+                                                <th class="text-center">등록일/등록자</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @@for (var i = 10; i > 0; i--) {
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="guidebookAll"></td>
+                                                <td class="text-center">`+ i +`</td>
+                                                <td class="text-center">컨텐츠</td>
+                                                <td class="text-center">전체</td>
+                                                <td class="text-left">
+                                                    <a href="#modal-guidebook-write" data-toggle="modal" class="text-underline">내용내용내용</a>
+                                                </td>
+                                                <td class="text-center">Y</td>
+                                                <td class="text-center">2021-12-28 (김시대)</td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                                @@include('@@webRoot/_include/_pagination.html')
+                                <div>
+                                    <button type="button" class="btn btn-dark">일괄 비공개</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab2" role="tabpanel">
+                            </div>
+                            <div class="tab-pane fade" id="tab3" role="tabpanel">
+                            </div>
+                            <div class="tab-pane fade" id="tab4" role="tabpanel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    <!-- modal : 가이드북 등록 -->
+    <div class="modal" tabindex="-1" id="modal-guidebook-write" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">가이드북 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><strong class="text-danger">*</strong>대상 관</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <th><strong class="text-danger">*</strong>카테고리</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <th><strong class="text-danger">*</strong>세부 카테고리</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><strong class="text-danger">*</strong>제목</th>
+                                <td colspan="5">
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><strong class="text-danger">*</strong>내용</th>
+                                <td colspan="5">
+                                    <textarea name="" id="" cols="" rows="15" class="form-control"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>첨부파일</th>
+                                <td colspan="3">
+                                    <input type="file" class="form-control">
+                                </td>
+                                <th><strong class="text-danger">*</strong>공개여부</th>
+                                <td>
+                                    <input type="radio" name="faqUse" id="faqUseY">
+                                    <label for="faqUseY">공개</label>
+                                    <input type="radio" name="faqUse" id="faqUseN">
+                                    <label for="faqUseN">비공개</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-right mt-2">
+                        <strong>2021-01-15 10:45:48 / 김소라</strong>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">미리보기</button>
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 가이드북 카테고리 관리 -->
+    <div class="modal" tabindex="-1" id="modal-guidebook-category" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">가이드북 카테고리 관리</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-title">카테고리 등록</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><strong class="text-danger">*</strong>카테고리명</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th><strong class="text-danger">*</strong>노출 순서</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th><strong class="text-danger">*</strong>공개여부</th>
+                                <td>
+                                    <input type="radio" name="faqCategory" id="faqCategoryY">
+                                    <label for="faqCategoryY">공개</label>
+                                    <input type="radio" name="faqCategory" id="faqCategoryN">
+                                    <label for="faqCategoryN">비공개</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-title mt-2">세부 카테고리 등록</div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">세부 카테고리명</th>
+                                <th class="text-center">공개여부</th>
+                                <th class="text-center">등록/수정</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td class="text-center">
+                                    <input type="radio" name="faqCategory1" id="faqCategory1Y" checked>
+                                    <label for="faqCategory1Y">공개</label>
+                                    <input type="radio" name="faqCategory1" id="faqCategory1N">
+                                    <label for="faqCategory1N">비공개</label>
+                                </td>
+                                <td class="text-center">
+                                    2022-01-12 20:18:57 / 김소라
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-right mt-2">
+                        <button type="button" class="btn btn-dark btn-foursquare">+</button>
+                        <button type="button" class="btn btn-dark ml-1">등록</button>
+                    </div>
+                    <div class="table-title mt-3">카테고리 수정/관리</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 150px">
+                            <col>
+                            <col style="width: 70px;">
+                            <col style="width: 140px;">
+                            <col style="width: 140px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center">카테고리명</th>
+                                <th class="text-center">세부 카테고리명</th>
+                                <th class="text-center">노출순서</th>
+                                <th class="text-center">공개여부</th>
+                                <th class="text-center">등록/수정</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" value="수업/강의">
+                                </td>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col-4">
+                                            <input type="text" class="form-control" value="부엉이 라이브러리">
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" class="form-control" value="편의 공간">
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" class="form-control" value="강의 공간">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control text-center" value="1">
+                                </td>
+                                <td class="text-center">
+                                    <input type="radio" name="faqCategory1" id="faqCategory1Y" checked>
+                                    <label for="faqCategory1Y">공개</label>
+                                    <input type="radio" name="faqCategory1" id="faqCategory1N">
+                                    <label for="faqCategory1N">비공개</label>
+                                </td>
+                                <td class="text-center">
+                                    2022-01-12 20:18:57 <br>김소라
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
