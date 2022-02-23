@@ -18,7 +18,7 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">문자 발송</h2>
+                <h2 class="title">푸시 발송</h2>
                 <div class="row">
                     <div class="col">
                         <div class="p-3">
@@ -156,11 +156,11 @@
                             <div class="table-title mt-3">수신자 목록</div>
                             <div class="row align-items-center justify-content-between mb-2">
                                 <div class="col-auto">
-                                    <strong class="mr-2">발송가능</strong>총 ###건
+                                    <strong class="mr-2">발송 가능</strong> 총 ###/###명
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-sms-preset-add">프리셋 등록</button>
-                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-sms-receiver-add">추가</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-push-preset-add">프리셋 등록</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-push-receiver-add">추가</button>
                                     <button type="button" class="btn btn-dark btn-sm ml-1">삭제</button>
                                 </div>
                             </div>
@@ -172,8 +172,6 @@
                                             <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="receiverAll"></th>
                                             <th class="text-center">No</th>
                                             <th class="text-center">학생ID</th>
-                                            <th class="text-center">수신자 구분</th>
-                                            <th class="text-center">연락처</th>
                                             <th class="text-center">발송가능</th>
                                             <th class="text-center">내용확인</th>
                                         </tr>
@@ -184,14 +182,15 @@
                                             <td class="text-center"><input type="checkbox" name="receiverAll"></td>
                                             <td class="text-center">`+ i +`</td>
                                             <td class="text-center">김시대1234</td>
-                                            <td class="text-center">학생</td>
-                                            <td class="text-center">010-0000-000</td>
                                             <td class="text-center">Y</td>
                                             <td class="text-center"><a href="#none" class="text-underline">미리보기</a></td>
                                         </tr>
                                         }
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="mt-2">
+                                <button type="button" class="btn btn-outline-dark">발송 불가 회원 다운로드</button>
                             </div>
                         </div>
                     </div>
@@ -202,45 +201,44 @@
                                     <div class="table-title mb-0">내용 작성</div>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-sms-template-apply">템플릿 적용</button>
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-push-template-apply">템플릿 적용</button>
                                 </div>
                             </div>
-                            <div class="sms-area">
-                                <div class="sms-top">
-                                    <strong>단문(SMS)</strong>
-                                </div>
-                                <div class="sms-header">
-                                    <input type="text" class="form-control" placeholder="제목 입력" maxlength="30" data-byte-target="#sms-byte-check1">
-                                    <div class="text-right mt-1">
-                                        <span id="sms-byte-check1">0</span> / 30byte
+                            <div class="push-area">
+                                <div class="table-title">푸시 전체 화면</div>
+                                <div class="push-outer">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <div class="app-icon"><i class="icon-app"></i></div>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="제목 입력" maxlength="30" data-byte-target="#push-byte-check1">
+                                            <div class="text-right my-1">
+                                                <span id="push-byte-check1">0</span> / 30byte
+                                            </div>
+                                            <textarea name="" id="" rows="10" class="form-control" maxlength="90" data-byte-target="#push-byte-check2" placeholder="내용 입력"></textarea>
+                                            <div class="d-flex align-items-center justify-content-end mt-2">
+                                                <span id="push-byte-check2">0</span> / 90byte
+                                                <button type="button" class="btn btn-light btn-sm ml-2" data-toggle="modal" data-target="#modal-push-template-save">템플릿 저장</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="sms-body">
-                                    <textarea name="" id="" rows="20" class="form-control" maxlength="90" data-byte-target="#sms-byte-check2" placeholder="내용 입력"></textarea>
-                                    <div class="d-flex align-items-center justify-content-end mt-2">
-                                        <span id="sms-byte-check2">0</span> / 90byte
-                                        <button type="button" class="btn btn-dark btn-sm ml-2" data-toggle="modal" data-target="#modal-sms-template-save">템플릿 저장</button>
+                                <div class="table-title mt-3">푸시 잠금 화면</div>
+                                <div class="push-outer locked">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <div class="app-icon"><i class="icon-app"></i></div>
+                                        </div>
+                                        <div class="col">
+                                            <strong>입력한 제목 자동 반영 노출</strong>
+                                            <p>입력한 내용 자동 반영 노출 입력한 내용 자동 반영 노출 입력한 내용 자동 반영 노출 입력한 내용 자동…</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="sms-test">
-                                    <span class="mr-3">테스트 번호</span>
-                                    <input type="tel" class="form-control d-inline-block text-center" style="width: 60px">
-                                    <span class="mx-2">-</span>
-                                    <input type="tel" class="form-control d-inline-block text-center" style="width: 60px">
-                                    <span class="mx-2">-</span>
-                                    <input type="tel" class="form-control d-inline-block text-center" style="width: 60px">
                                 </div>
                             </div>
-                            <div class="row row-10 align-items-center justify-content-center mt-3">
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-sms-preview">미리 보기</button>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-dark">테스트 발송</button>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-danger">발송</button>
-                                </div>
+                            <div class="text-center mt-3">
+                                <button type="button" class="btn btn-danger">발송</button>
                             </div>
                         </div>
                     </div>
@@ -255,12 +253,12 @@
 
     </div>
 
-    <!-- modal : 문자 템플릿 적용 -->
-    <div class="modal" tabindex="-1" id="modal-sms-template-apply" data-backdrop="static">
+    <!-- modal : 푸시 템플릿 적용 -->
+    <div class="modal" tabindex="-1" id="modal-push-template-apply" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">문자 템플릿 적용</h5>
+                    <h5 class="modal-title">푸시 템플릿 적용</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -327,12 +325,12 @@
         </div>
     </div>
 
-    <!-- modal : 문자 템플릿 저장 -->
-    <div class="modal" tabindex="-1" id="modal-sms-template-save" data-backdrop="static">
+    <!-- modal : 푸시 템플릿 저장 -->
+    <div class="modal" tabindex="-1" id="modal-push-template-save" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:480px">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">문자 템플릿 저장</h5>
+                    <h5 class="modal-title">푸시 템플릿 저장</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -378,36 +376,12 @@
         </div>
     </div>
 
-    <!-- modal : 문자 메시지 미리 보기 -->
-    <div class="modal" tabindex="-1" id="modal-sms-preview" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:480px">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">문자 메시지 미리 보기</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="message">
-                        <h6 class="message-title">문자 제목</h6>
-                        <div class="from">[Web발신]</div>
-                        <p class="message-content">(광고) 내용내용내용  내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용  <br><br> 내용내용내용 내용내용내용 내용내용내용 <br><br>  내용내용내용 내용내용내용</p>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- modal : 문자 수신자 추가 -->
-    <div class="modal" tabindex="-1" id="modal-sms-receiver-add" data-backdrop="static">
+    <!-- modal : 푸시 수신자 추가 -->
+    <div class="modal" tabindex="-1" id="modal-push-receiver-add" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">문자 수신자 추가</h5>
+                    <h5 class="modal-title">푸시 수신자 추가</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -421,23 +395,6 @@
                         </ul>
                         <textarea name="" id="" cols="" rows="3" class="form-control" placeholder="김시대1234, 박시대3255"></textarea>
                     </div>
-                    <table class="table table-bordered table-fixed mt-2">
-                        <colgroup>
-                            <col style="width: 100px">
-                            <col>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th>수신자 구분</th>
-                                <td>
-                                    <input type="radio" name="receiver2" id="receiverParent2">
-                                    <label for="receiverParent2">학부모</label>
-                                    <input type="radio" name="receiver2" id="receiverStudent2">
-                                    <label for="receiverStudent2">학생</label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark">적용</button>
@@ -446,12 +403,12 @@
         </div>
     </div>
 
-    <!-- modal : 문자 프리셋 등록 -->
-    <div class="modal" tabindex="-1" id="modal-sms-preset-add" data-backdrop="static">
+    <!-- modal : 푸시 프리셋 등록 -->
+    <div class="modal" tabindex="-1" id="modal-push-preset-add" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">문자 프리셋 등록</h5>
+                    <h5 class="modal-title">푸시 프리셋 등록</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

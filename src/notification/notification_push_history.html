@@ -18,7 +18,7 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">문자 발송 내역</h2>
+                <h2 class="title">푸시 발송 내역</h2>
                 <div class="p-3 border-bottom">
                     <div class="row justify-content-between">
                         <div class="col-auto">
@@ -64,7 +64,7 @@
                             <div class="p-3">
                                 <div class="row align-items-center justify-content-between mb-2">
                                     <div class="col-auto">
-                                        <strong class="mr-2">발송 내역</strong>총 ###건
+                                        <strong class="mr-2">발송 내역</strong> 총 ###건
                                     </div>
                                     <div class="col-auto">
                                         <button type="button" class="btn btn-dark">복사 발송</button>
@@ -128,7 +128,7 @@
                             <div class="p-3">
                                 <div class="row align-items-center justify-content-between mb-2">
                                     <div class="col-auto">
-                                        <strong class="mr-2">발송 상세</strong>총 ###건
+                                        <strong class="mr-2">취소 상세 건수</strong> 총 ###건
                                     </div>
                                     <div class="col-auto">
                                         <button type="button" class="btn btn-dark">파일다운로드</button>
@@ -164,7 +164,7 @@
                                                 <td class="text-center">안내</td>
                                                 <td class="text-center">선택특강 신청 안내</td>
                                                 <td class="text-center">
-                                                    <a href="#modal-sms-preview" class="text-underline" data-toggle="modal">(안내) 선택특강 오픈 되었습니다. 오픈 되었습니다. 오픈 되...</a>
+                                                    <a href="#modal-push-preview" class="text-underline" data-toggle="modal">(안내) 선택특강 오픈 되었습니다. 오픈 되었습니다. 오픈 되...</a>
                                                 </td>
                                                 <td class="text-center">신관</td>
                                                 <td class="text-center">J</td>
@@ -193,22 +193,42 @@
 
     </div>
 
-    <!-- modal : 문자 메시지 미리 보기 -->
-    <div class="modal" tabindex="-1" id="modal-sms-preview" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:480px">
+    <!-- modal : 푸시 미리 보기 -->
+    <div class="modal" tabindex="-1" id="modal-push-preview" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">문자 메시지 미리 보기</h5>
+                    <h5 class="modal-title">푸시 미리 보기</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="message">
-                        <h6 class="message-title">문자 제목</h6>
-                        <div class="from">[Web발신]</div>
-                        <p class="message-content">(광고) 내용내용내용  내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용 내용내용내용  <br><br> 내용내용내용 내용내용내용 내용내용내용 <br><br>  내용내용내용 내용내용내용</p>
-                    </div>
+                    <div class="push-area w-100">
+                        <div class="table-title">푸시 전체 화면</div>
+                        <div class="push-outer">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="app-icon"><i class="icon-app"></i></div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" value="시대인재 브릿지관 공지" readonly>
+                                    <textarea name="" id="" rows="10" class="form-control" readonly>오늘 강의실 갑자기 바뀌었습니다. 혼선 없으시길 바랍니다. </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-title mt-3">푸시 잠금 화면</div>
+                        <div class="push-outer locked">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="app-icon"><i class="icon-app"></i></div>
+                                </div>
+                                <div class="col">
+                                    <strong>입력한 제목 자동 반영 노출</strong>
+                                    <p>입력한 내용 자동 반영 노출 입력한 내용 자동 반영 노출 입력한 내용 자동 반영 노출 입력한 내용 자동…</p>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>

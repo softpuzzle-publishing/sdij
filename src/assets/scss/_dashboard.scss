@@ -4,16 +4,12 @@
 
 .welcome{font-weight: 700;}
 
-.team-memo{
-
-}
-
 .post-it {
     padding: 0.75rem;background: #F4F39E;position: relative;
-    &::after {
-        content: "";position: absolute;bottom: -1rem;left: 0;right: 1rem;border-width: 1rem;border-style: solid;border-color: #F4F39E;
-    }
     &::before {
         content: "";position: absolute;bottom: -1rem;right: 0;border-width: 1rem 1rem 0 0;border-style: solid;border-color: darken(#F4F39E, 15%) transparent;
+    }
+    &::after {
+        content: "";position: absolute;bottom: -1rem;left: 0;right: 1rem;border-width: .5rem;border-style: solid;border-color: #F4F39E;
     }
 }

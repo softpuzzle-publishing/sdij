@@ -1,9 +1,6 @@
 [class^=icon-]{display: inline-block;background-size: contain;background-repeat: no-repeat;background-position: 0 0;font-style: normal;font-size: 0;line-height: 1;}
-.icon-x{background-image: url('../images/icon-x.svg');width: 22px;height: 22px;}
 
-.icon-arrow-left{display: inline-block;width: 12px;height: 12px;border-top: 2px solid #000;border-right: 2px solid #000;transform: rotate(-135deg);border-radius: px;vertical-align: middle;}
-.icon-arrow-right{display: inline-block;width: 12px;height: 12px;border-top: 2px solid #000;border-right: 2px solid #000;transform: rotate(45deg);border-radius: 1px;vertical-align: middle;}
-.icon-arrow-down{display: inline-block;width: 12px;height: 12px;border-top: 2px solid #fff;border-right: 2px solid #fff;transform: rotate(90deg);border-radius: 1px;vertical-align: middle;}
+.icon-app{width: 50px;height: 50px;background-image: url('../images/app-icon.svg');border-radius: 8px;}
 
 .font-size-12px{font-size: 12px !important;}
 .font-size-14px{font-size: 14px !important;}
@@ -27,6 +24,9 @@ textarea{resize: none!important;}
 
 .bg-highlight{background: #deebf6;}
 
+.table{
+    > thead > tr > th{white-space: nowrap;}
+}
 .table-fixed{table-layout: fixed;}
 .table-center{
     th,

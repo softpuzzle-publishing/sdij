@@ -139,13 +139,10 @@
 
 .report{
     max-width: 21cm;margin: 0 auto;
-    .chart{
-        canvas{}
-    }
 }
 
 .sms-area{
-    min-width: 440px;background: #f2f3f4;padding: 1.5rem;
+    width: 440px;background: #f2f3f4;padding: 1.5rem;
     .sms-header{margin-top: .5rem;}
     .sms-body{margin-top: 5px;}
     .sms-test{
@@ -158,40 +155,28 @@
 }
 
 .message {
-    position: relative;
-    margin-left: 20px;
-    padding: 10px;
-    background-color: #dae2fd;
-    width: 370px;
-    border: 1px solid #dae2fd;
-    border-radius: 10px;;
+    $msgColor: #e5e6e7;
+    position: relative;margin-left: 20px;padding: 10px;background-color: $msgColor;width: 370px;border: 1px solid $msgColor;border-radius: 10px;;
     .message-title{font-weight: 700;}
     .message-content {
-        padding: 0;
-        margin: 0;
+        padding: 0;margin: 0;
         &::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-top: 15px solid #dae2fd;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            top: 0;
-            left: -15px;
+            content: '';position: absolute;width: 0;height: 0;border-top: 15px solid $msgColor;border-left: 15px solid transparent;border-right: 15px solid transparent;top: 0;left: -15px;
         }
-
         &::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-top: 17px solid #dae2fd;
-            border-left: 16px solid transparent;
-            border-right: 16px solid transparent;
-            top: -1px;
-            left: -17px;
+            content: '';position: absolute;width: 0;height: 0;border-top: 17px solid $msgColor;border-left: 16px solid transparent;border-right: 16px solid transparent;top: -1px;left: -17px;
         }
-
     }
+}
+
+.push-area{
+    width: 560px;background: #f2f3f4;padding: 1.5rem;
+}
+
+.push-outer{
+    position: relative;border-radius: 40px;padding: 1.5rem;background: #444;
+    color: #fff;
+    .form-control{border-color: #444;}
+    &.locked{border-radius: 1rem;padding: 1rem;}
+    strong{display: block;margin-bottom: .25rem;}
 }
