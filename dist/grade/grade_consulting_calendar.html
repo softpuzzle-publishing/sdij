@@ -27,7 +27,7 @@
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
     <script src="../assets/lib/mdtimepicker/mdtimepicker.min.js"></script>
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+    <script src="../assets/lib/split.js/split.min.js"></script>
 
     <script src="../assets/js/ui.js" defer></script>
 </head>
@@ -169,7 +169,7 @@
                                 <a href="javascript:;"><span>학습 상담</span></a>
                                 <ul class="dep2">
                                     <li><a href="../grade/grade_consulting_calendar.html"><span>상담캘린더</span></a></li>
-                                    <li><a href="#"><span>상담기록</span></a></li>
+                                    <li><a href="../grade/grade_consulting_history.html"><span>상담기록</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -265,7 +265,7 @@
                                     <option value="">학습상담</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto">
-                                    <option value="">담임명</option>
+                                    <option value="">컨설턴트명</option>
                                 </select>
                             </div>
                         </div>
@@ -291,21 +291,25 @@
                             </ul>
                         </nav>
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                            <div class="tab-pane show active" id="tab1" role="tabpanel">
                                 <div class="p-3">
-                                    <div class="table-title">미확정 상담 총 <span>##</span>건</div>
+                                    <div class="row align-items-center mb-2">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">미확정 상담</strong> 총 ###건
+                                        </div>
+                                    </div>
                                     <div class="list-group list-group-toggle">
 
                                         <div class="item-wrap">
                                             <a href="javascript:;" class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between align-items-center">
                                                     <small class="text-danger">미확정</small>
-                                                    <small>김시대2104</small>
+                                                    <span>김시대2104</span>
                                                 </div>
                                                 <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
                                                 <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                    <span>신청일 1/5(수)</span>
-                                                    <span>누적 4회 / 이번 달 3회</span>
+                                                    <small>신청일 1/5(수)</small>
+                                                    <small>누적 4회 / 이번 달 3회</small>
                                                 </div>
                                             </a>
                                             <div class="list-group-detail">
@@ -315,6 +319,7 @@
                                                         <label class="mr-2">첨부파일</label>
                                                         <a href="" class="text-underline">홍길동 플래너</a>
                                                     </div>
+                                                    <div class="text-right"><button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button></div>
                                                 </div>
                                                 <div class="p-3 border-top border-bottom">
                                                     <label>상담 희망일</label>
@@ -332,12 +337,12 @@
                                             <a href="javascript:;" class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between align-items-center">
                                                     <small class="text-danger">미확정</small>
-                                                    <small>김시대2104</small>
+                                                    <span>김시대2104</span>
                                                 </div>
                                                 <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
                                                 <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                    <span>신청일 1/5(수)</span>
-                                                    <span>누적 4회 / 이번 달 3회</span>
+                                                    <small>신청일 1/5(수)</small>
+                                                    <small>누적 4회 / 이번 달 3회</small>
                                                 </div>
                                             </a>
                                             <div class="list-group-detail">
@@ -347,6 +352,7 @@
                                                         <label class="mr-2">첨부파일</label>
                                                         <a href="" class="text-underline">홍길동 플래너</a>
                                                     </div>
+                                                    <div class="text-right"><button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button></div>
                                                 </div>
                                                 <div class="p-3 border-top border-bottom">
                                                     <label>상담 희망일</label>
@@ -364,12 +370,12 @@
                                             <a href="javascript:;" class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between align-items-center">
                                                     <small class="text-danger">미확정</small>
-                                                    <small>김시대2104</small>
+                                                    <span>김시대2104</span>
                                                 </div>
                                                 <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
                                                 <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                    <span>신청일 1/5(수)</span>
-                                                    <span>누적 4회 / 이번 달 3회</span>
+                                                    <small>신청일 1/5(수)</small>
+                                                    <small>누적 4회 / 이번 달 3회</small>
                                                 </div>
                                             </a>
                                             <div class="list-group-detail">
@@ -379,6 +385,7 @@
                                                         <label class="mr-2">첨부파일</label>
                                                         <a href="" class="text-underline">홍길동 플래너</a>
                                                     </div>
+                                                    <div class="text-right"><button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button></div>
                                                 </div>
                                                 <div class="p-3 border-top border-bottom">
                                                     <label>상담 희망일</label>
@@ -396,12 +403,12 @@
                                             <a href="javascript:;" class="list-group-item">
                                                 <div class="d-flex w-100 justify-content-between align-items-center">
                                                     <small class="text-danger">미확정</small>
-                                                    <small>김시대2104</small>
+                                                    <span>김시대2104</span>
                                                 </div>
                                                 <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
                                                 <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                    <span>신청일 1/5(수)</span>
-                                                    <span>누적 4회 / 이번 달 3회</span>
+                                                    <small>신청일 1/5(수)</small>
+                                                    <small>누적 4회 / 이번 달 3회</small>
                                                 </div>
                                             </a>
                                             <div class="list-group-detail">
@@ -411,6 +418,7 @@
                                                         <label class="mr-2">첨부파일</label>
                                                         <a href="" class="text-underline">홍길동 플래너</a>
                                                     </div>
+                                                    <div class="text-right"><button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button></div>
                                                 </div>
                                                 <div class="p-3 border-top border-bottom">
                                                     <label>상담 희망일</label>
@@ -479,9 +487,13 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tab2" role="tabpanel">
+                            <div class="tab-pane" id="tab2" role="tabpanel">
                                 <div class="p-3">
-                                    <div class="table-title">확정 상담 총 <span>##</span>건</div>
+                                    <div class="row align-items-center mb-2">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">확정 상담</strong> 총 ###건
+                                        </div>
+                                    </div>
                                     <div class="list-group list-group-toggle">
 
                                         <div class="item-wrap" data-id="item-4">
@@ -508,7 +520,7 @@
                                                     <div class="row row-10">
                                                         <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
                                                         <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block">변경 일정 확인 중</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-suggestion">메시지</button></div>
+                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -538,7 +550,7 @@
                                                     <div class="row row-10">
                                                         <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
                                                         <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block">변경 일정 확인 중</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-suggestion">메시지</button></div>
+                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -568,7 +580,7 @@
                                                     <div class="row row-10">
                                                         <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
                                                         <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block">변경 일정 확인 중</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-suggestion">메시지</button></div>
+                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -598,7 +610,7 @@
                                                     <div class="row row-10">
                                                         <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
                                                         <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block">변경 일정 확인 중</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-suggestion">메시지</button></div>
+                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -833,6 +845,15 @@
                                     <input type="text" class="form-control">
                                 </td>
                             </tr>
+                            <tr>
+                                <th>공개여부</th>
+                                <td>
+                                    <input type="radio" name="openUse" id="openUseY">
+                                    <label for="openUseN">공개</label>
+                                    <input type="radio" name="openUse" id="openUseN">
+                                    <label for="openUseN">비공개</label>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -876,7 +897,59 @@
                             <tr>
                                 <th>메시지</th>
                                 <td colspan="3">
-                                    <textarea name="" id="" cols="" rows="4" class="form-control"></textarea>
+                                    <textarea name="" id="" cols="" rows="4" class="form-control" maxlength="300" data-byte-target="#push-byte-check1"></textarea>
+                                    <div class="text-right mt-1">
+                                        <span id="push-byte-check1">0</span> / 300Byte
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">전송</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 푸시 발송 -->
+    <div class="modal" tabindex="-1" id="modal-push-send" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">푸시 발송</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 60px;">
+                            <col style="width: 124px">
+                            <col style="width: 60px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>날짜</th>
+                                <td>
+                                    <input type="text" class="form-control form-datepicker" disabled>
+                                </td>
+                                <th>시간</th>
+                                <td>
+                                    <input type="text" class="form-control form-timepicker" disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>메시지</th>
+                                <td colspan="3">
+                                    <textarea name="" id="" cols="" rows="4" class="form-control" maxlength="300" data-byte-target="#push-byte-check2"></textarea>
+                                    <div class="text-right mt-1">
+                                        <span id="push-byte-check2">0</span> / 300Byte
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

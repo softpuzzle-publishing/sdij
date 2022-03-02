@@ -27,7 +27,7 @@
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
     <script src="../assets/lib/mdtimepicker/mdtimepicker.min.js"></script>
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+    <script src="../assets/lib/split.js/split.min.js"></script>
 
     <script src="../assets/js/ui.js" defer></script>
 </head>
@@ -169,7 +169,7 @@
                                 <a href="javascript:;"><span>학습 상담</span></a>
                                 <ul class="dep2">
                                     <li><a href="../grade/grade_consulting_calendar.html"><span>상담캘린더</span></a></li>
-                                    <li><a href="#"><span>상담기록</span></a></li>
+                                    <li><a href="../grade/grade_consulting_history.html"><span>상담기록</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -253,6 +253,613 @@
 
                 <!-- 컨텐츠 시작 -->
                 <h2 class="title">출결 신청</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">담임</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <div class="mx-2">~</div>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <button type="button" class="btn btn-dark">검색</button>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-info">TODAY</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="min-height: calc(100vh - 193px);">
+                    <div class="split-vertical">
+                        <div class="section init" id="split-vertical-1">
+                            <div class="p-3">
+                                <nav>
+                                    <ul class="nav nav-pills nav-justified mb-3" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" data-toggle="pill" href="#tab1-1" role="tab" aria-selected="true">바로콜</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" data-toggle="pill" href="#tab1-2" role="tab" aria-selected="false">오프라인</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="tab1-1" role="tabpanel">
+                                        <div class="main_search_result_list">
+                                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                            <table class="table table-fixed" id="datatable1">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center" rowspan="2">관</th>
+                                                        <th class="text-center" colspan="4">출결신청</th>
+                                                        <th class="text-center" rowspan="2">총 신청 건수</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">처리 필요 <br>(미승인)</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">반려</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 필요)</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 완료)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">결석</th>
+                                                        <th class="text-center">지각</th>
+                                                        <th class="text-center">조퇴</th>
+                                                        <th class="text-center">외출</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                            <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="tab-pane" id="tab1-2" role="tabpanel">
+                                        <div class="row justify-content-between mb-2">
+                                            <div class="col-auto">
+                                                <div class="d-flex align-items-center">
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">구분</option>
+                                                    </select>
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">신청 종류</option>
+                                                    </select>
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">증빙 여부</option>
+                                                    </select>
+                                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                                        <option value="">학생ID</option>
+                                                    </select>
+                                                    <input type="text" class="form-control w-auto mr-2">
+                                                    <button type="button" class="btn btn-dark">검색</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-dark">증빙완료</button>
+                                                <button type="button" class="btn btn-dark ml-1">파일업로드</button>
+                                                <button type="button" class="btn btn-dark ml-1">등록</button>
+                                            </div>
+                                        </div>
+                                        <div class="main_search_result_list">
+                                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                            <table class="table table-fixed" id="datatable1">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center" rowspan="2">관</th>
+                                                        <th class="text-center" colspan="4">출결신청</th>
+                                                        <th class="text-center" rowspan="2">총 신청 건수</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">처리 필요 <br>(미승인)</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">반려</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 필요)</th>
+                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 완료)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">결석</th>
+                                                        <th class="text-center">지각</th>
+                                                        <th class="text-center">조퇴</th>
+                                                        <th class="text-center">외출</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                                        </td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-center">5</td>
+                                                        <td class="text-center">10</td>
+                                                        <td class="text-center">19</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">9</td>
+                                                        <td class="text-center">7</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                            <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                            <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section init" id="split-vertical-2">
+                            <div class="p-3">
+                                <div class="row align-items-center mb-2">
+                                    <div class="col-auto">
+                                        <strong class="mr-2">출결 신청 전체 목록</strong>총 ###건
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between">
+                                    <div class="col-auto">
+                                        <div class="d-flex align-items-center">
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">신청경로</option>
+                                            </select>
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">출결구분</option>
+                                            </select>
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">상태</option>
+                                            </select>
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">학생ID</option>
+                                            </select>
+                                            <input type="text" class="form-control w-auto mr-2">
+                                            <button type="button" class="btn btn-dark">검색</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-end mb-2 mt-2">
+                                    <div class="col-auto">
+                                        <div class="d-flex align-items-center">
+                                            <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                                <option value="">접수일</option>
+                                            </select>
+                                            <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
+                                            <div class="mx-2">~</div>
+                                            <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                                        <button type="button" class="btn btn-dark btn-sm ml-1">푸시</button>
+                                        <button type="button" class="btn btn-dark btn-sm ml-1">문자</button>
+                                        <button type="button" class="btn btn-dark btn-sm ml-1">승인</button>
+                                        <button type="button" class="btn btn-dark btn-sm ml-1" data-target="#modal-return" data-toggle="modal">반려</button>
+                                        <button type="button" class="btn btn-dark btn-sm ml-1" onclick="confirm('선택한 출결 신청과 관련하여 \n학생의 증빙 서류를 확인하셨습니까?')">증빙완료</button>
+                                    </div>
+                                </div>
+                                <div class="main_search_result_list">
+                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                    <table class="table" id="datatable1">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="attendanceAll"></th>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">신청경로</th>
+                                                <th class="text-center">관</th>
+                                                <th class="text-center">학생ID</th>
+                                                <th class="text-center">좌석번호</th>
+                                                <th class="text-center">구분</th>
+                                                <th class="text-center">요청일</th>
+                                                <th class="text-center">시작</th>
+                                                <th class="text-center">종료</th>
+                                                <th class="text-center">요청사유</th>
+                                                <th class="text-center">증빙</th>
+                                                <th class="text-center">접수일</th>
+                                                <th class="text-center">상태</th>
+                                                <th class="text-center">비고(메세지)</th>
+                                                <th class="text-center">승인일</th>
+                                                <th class="text-center">승인자</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                                <td class="text-center">5</td>
+                                                <td class="text-center">바로콜</td>
+                                                <td class="text-center">N</td>
+                                                <td class="text-center">김학생1234</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">지각</td>
+                                                <td class="text-center">12-03(금)</td>
+                                                <td class="text-center">08:30</td>
+                                                <td class="text-center">09:30</td>
+                                                <td class="text-center">병원 정기 검진</td>
+                                                <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">접수</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">User name <br>(UserID)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">바로콜</td>
+                                                <td class="text-center">N</td>
+                                                <td class="text-center">김학생1234</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">지각</td>
+                                                <td class="text-center">12-03(금)</td>
+                                                <td class="text-center">08:30</td>
+                                                <td class="text-center">09:30</td>
+                                                <td class="text-center">병원 정기 검진</td>
+                                                <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">접수</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">User name <br>(UserID)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                                <td class="text-center">3</td>
+                                                <td class="text-center">바로콜</td>
+                                                <td class="text-center">N</td>
+                                                <td class="text-center">김학생1234</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">지각</td>
+                                                <td class="text-center">12-03(금)</td>
+                                                <td class="text-center">08:30</td>
+                                                <td class="text-center">09:30</td>
+                                                <td class="text-center">병원 정기 검진</td>
+                                                <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">접수</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">User name <br>(UserID)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">바로콜</td>
+                                                <td class="text-center">N</td>
+                                                <td class="text-center">김학생1234</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">지각</td>
+                                                <td class="text-center">12-03(금)</td>
+                                                <td class="text-center">08:30</td>
+                                                <td class="text-center">09:30</td>
+                                                <td class="text-center">병원 정기 검진</td>
+                                                <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">접수</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">User name <br>(UserID)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">바로콜</td>
+                                                <td class="text-center">N</td>
+                                                <td class="text-center">김학생1234</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">지각</td>
+                                                <td class="text-center">12-03(금)</td>
+                                                <td class="text-center">08:30</td>
+                                                <td class="text-center">09:30</td>
+                                                <td class="text-center">병원 정기 검진</td>
+                                                <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">접수</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">mm/dd <br>00:00</td>
+                                                <td class="text-center">User name <br>(UserID)</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                    <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                    <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                    <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                        <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                    <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                    <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                    <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-dark">요청 취소</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- 컨텐츠 끝 -->
 
@@ -375,63 +982,19 @@
 
     </div>
 
-    <!-- modal : 시험 정보 등록 -->
-    <div class="modal" tabindex="-1" id="modal-exams-add" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+    <!-- modal : 출결 반려 -->
+    <div class="modal" tabindex="-1" id="modal-return" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">시험 정보 등록</h5>
+                    <h5 class="modal-title">출결 반려</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-bordered table-fixed">
-                        <colgroup>
-                            <col style="width: 100px;">
-                            <col>
-                            <col style="width: 100px;">
-                            <col>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th>시행처</th>
-                                <td>
-                                    <select name="" id="" class="custom-select">
-                                        <option value="">평가원</option>
-                                    </select>
-                                </td>
-                                <th>현장시험</th>
-                                <td>
-                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
-                                    <label for="AuthorUseY">진행</label>
-                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
-                                    <label for="AuthorUseN">진행 안 함</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>시험 명</th>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                                <th>성적표</th>
-                                <td>
-                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
-                                    <label for="AuthorUseY">사용</label>
-                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
-                                    <label for="AuthorUseN">사용 안 함</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>시험 유형</th>
-                                <td colspan="3">
-                                    <select name="" id="" class="custom-select">
-                                        <option value="">동시 시험</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p class="mb-2">선택한 출결 신청을 반려합니다. <br>반려 사유를 작성해 주세요.</p>
+                    <textarea name="" id="" cols="" rows="3" class="form-control"></textarea>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark">저장</button>

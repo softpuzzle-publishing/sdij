@@ -24,6 +24,8 @@ textarea{resize: none!important;}
 
 .bg-highlight{background: #deebf6;}
 
+.required{background-color: #fae6df !important;border-color: #ddcac4;}
+
 .table{
     > thead > tr > th{white-space: nowrap;}
 }
@@ -33,9 +35,10 @@ textarea{resize: none!important;}
     td{text-align: center;}
 }
 .table-title{font-weight: 700;margin-bottom: .5rem;}
+.table-bg-1{background: #e6e7e8 !important;}
 
 input[type=text]{
-    &[disabled]{background: #f2f2f2;}
+    &[disabled]{background-color: #f2f2f2;}
 }
 
 input[type=checkbox]{
@@ -181,6 +184,10 @@ textarea.form-control{resize: none;}
             }
         }
     }
+}
+
+.nav-justified{
+    .nav-link:not(.active){background: #f1f2f3;}
 }
 
 .more{

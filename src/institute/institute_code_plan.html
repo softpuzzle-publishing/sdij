@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-auto">
                             <button type="button" class="btn btn-dark">파일 다운로드</button>
-                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-plan-add">등록</button>
+                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-plan-add">등록</button>
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,12 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">ID</th>
-                                        <th class="text-center">운영연도</th>
+                                        <th class="text-center">연도</th>
                                         <th class="text-center">지역</th>
+                                        <th class="text-center">운영계획명</th>
                                         <th class="text-center">운영 상태</th>
-                                        <th class="text-center">과목</th>
-                                        <th class="text-center">교시설정</th>
+                                        <th class="text-center">과목 등록</th>
+                                        <th class="text-center">교시 설정</th>
                                         <th class="text-center">운영관(반)</th>
                                         <th class="text-center">등록인원</th>
                                         <th class="text-center">사용</th>
@@ -71,11 +72,12 @@
                                 <tbody>
                                     @@for (var i = 10; i > 0; i--) {
                                     <tr>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">`+ i +`</td>
                                         <td class="text-center">2022</td>
                                         <td class="text-center">대치</td>
+                                        <td class="text-center">2학기</td>
                                         <td class="text-center">모집중</td>
-                                        <td class="text-center">등록완료</td>
+                                        <td class="text-center">완료</td>
                                         <td class="text-center">
                                             <a href="#modal-period-set" data-toggle="modal" class="text-underline">완료</a>
                                         </td>
@@ -110,12 +112,12 @@
 
     </div>
 
-    <!-- modal : 운영계획 등록/수정 -->
+    <!-- modal : 관 운영계획 등록/수정 -->
     <div class="modal" tabindex="-1" id="modal-plan-add" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">운영계획 등록/수정</h5>
+                    <h5 class="modal-title">관 운영계획 등록/수정</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -124,10 +126,10 @@
                     <div class="table-title">관 운영 계획</div>
                     <table class="table table-bordered table-fixed">
                         <colgroup>
-                            <col style="width: 100px;">
+                            <col style="width: 80px;">
                             <col>
-                            <col style="width: 100px;">
-                            <col>
+                            <col style="width: 80px;">
+                            <col style="width: 180px">
                         </colgroup>
                         <tbody>
                             <tr>
@@ -143,6 +145,24 @@
                                     <label for="planUseY">사용</label>
                                     <input type="radio" name="planUse" id="planUseN">
                                     <label for="planUseN">미사용</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>운영기간</th>
+                                <td>
+                                    <div class="row row-5 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker" readonly>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>운영계획명</th>
+                                <td>
+                                    <input type="text" class="form-control">
                                 </td>
                             </tr>
                             <tr>
@@ -163,16 +183,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>운영시작일</th>
-                                <td>
-                                    <input type="text" class="form-control form-datepicker">
-                                </td>
-                                <th>운영종료일</th>
-                                <td>
-                                    <input type="text" class="form-control form-datepicker">
-                                </td>
-                            </tr>
-                            <tr>
                                 <th>운영 과목</th>
                                 <td colspan="3">
                                     <span class="align-middle">국어(종합), 화법과 작문, 언어와 매체, 수학(종합), 확률과 통계</span>
@@ -187,9 +197,9 @@
                             <div class="table-title mt-3 mb-0">운영 반</div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#modal-class-add">추가</button>
-                            <button type="button" class="btn btn-sm btn-outline-dark ml-1" data-toggle="modal" data-target="#modal-class-add">수정</button>
-                            <button type="button" class="btn btn-sm btn-outline-dark ml-1" onclick="alert('선택한 항목이 없습니다.')">삭제</button>
+                            <button type="button" class="btn btn-sm btn-dark">추가</button>
+                            <!-- <button type="button" class="btn btn-sm btn-dark ml-1" data-toggle="modal" data-target="#modal-class-add">수정</button> -->
+                            <button type="button" class="btn btn-sm btn-dark ml-1" onclick="alert('선택한 항목이 없습니다.')">삭제</button>
                         </div>
                     </div>
                     <table class="table table-bordered table-fixed">
@@ -472,19 +482,21 @@
                             <div class="table-title mb-0">교시별 설정</div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-sm btn-outline-dark">추가</button>
-                            <button type="button" class="btn btn-sm btn-outline-dark ml-1">삭제</button>
+                            <button type="button" class="btn btn-sm btn-dark">추가</button>
+                            <button type="button" class="btn btn-sm btn-dark ml-1">삭제</button>
                         </div>
                     </div>
                     <table class="table table-bordered table-fixed">
                         <colgroup>
-                            <col style="width: 70px">
+                            <col style="width: 40px">
+                            <col style="width: 60px">
                             <col>
                             <col>
-                            <col style="width: 70px">
+                            <col style="width: 60px">
                         </colgroup>
                         <thead>
                             <tr>
+                                <th class="text-center"><input type="checkbox"></th>
                                 <th class="text-center">교시명</th>
                                 <th class="text-center">시작</th>
                                 <th class="text-center">종료</th>
@@ -493,6 +505,7 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td class="text-center"><input type="checkbox"></td>
                                 <td>
                                     <input type="text" class="form-control text-center" value="1">
                                 </td>
@@ -507,6 +520,7 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td class="text-center"><input type="checkbox"></td>
                                 <td>
                                     <input type="text" class="form-control text-center">
                                 </td>

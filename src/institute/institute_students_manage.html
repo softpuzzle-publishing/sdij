@@ -50,7 +50,7 @@
                         <div style="min-height: calc(100vh - 193px);">
                             <div class="split-vertical">
                                 <div class="p-3 overflow-hidden init" id="split-vertical-1">
-                                    <div class="row align-items-center mb-2">
+                                    <div class="row align-items-center justify-content-between mb-2">
                                         <div class="col-auto">
                                             <strong class="mr-2">학생</strong>총 ###건
                                         </div>
@@ -96,6 +96,12 @@
                                         </div>
                                     </div>
                                     <table class="table table-bordered table-fixed">
+                                        <colgroup>
+                                            <col style="width: 100px">
+                                            <col>
+                                            <col style="width: 100px">
+                                            <col>
+                                        </colgroup>
                                         <tbody>
                                             <tr>
                                                 <th>관/반</th>
@@ -175,7 +181,7 @@
                             </ul>
                         </nav>
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                            <div class="tab-pane show active" id="tab1" role="tabpanel">
                                 <div class="p-3 border-bottom">
                                     <div class="form-inline">
                                         <label for="" class="my-1 mr-3">기간</label>
@@ -302,7 +308,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tab2" role="tabpanel">
+                            <div class="tab-pane" id="tab2" role="tabpanel">
                                 <div class="p-3">
                                     <table class="table table-bordered">
                                         <thead>
@@ -361,7 +367,7 @@
                                         <thead>
                                             <tr>
                                                 <th colspan="5">신청</th>
-                                                <th colspan="3" class="text-danger">무단</th>
+                                                <th colspan="4" class="text-danger">무단</th>
                                                 <th></th>
                                             </tr>
                                             <tr>
@@ -373,6 +379,7 @@
                                                 <th class="text-danger">이탈</th>
                                                 <th class="text-danger">지각</th>
                                                 <th class="text-danger">결석</th>
+                                                <th class="text-danger">조퇴</th>
                                                 <th>벌점</th>
                                             </tr>
                                         </thead>
@@ -383,6 +390,7 @@
                                                 <td>2</td>
                                                 <td>3</td>
                                                 <td>2</td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -421,21 +429,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @@for (var i = 10; i > 0; i--) {
+                                            <tr>
+                                                <td>01230401</td>
+                                                <td>Mm/dd</td>
+                                                <td>00:00:00</td>
+                                                <td>N관 402호</td>
+                                                <td>
+                                                    <select name="" id="" class="custom-select custom-select-sm w-auto">
+                                                        <option value="">수강X</option>
+                                                    </select>
+                                                </td>
+                                                <td>완료</td>
+                                            </tr>
+                                            @@for (var i = 5; i > 0; i--) {
                                             <tr>
                                                 <td>01230401</td>
                                                 <td>Mm/dd</td>
                                                 <td>00:00:00</td>
                                                 <td>N관 402호</td>
                                                 <td>입실</td>
-                                                <td></td>
+                                                <td>수정</td>
                                             </tr>
                                             }
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tab3" role="tabpanel">
+                            <div class="tab-pane" id="tab3" role="tabpanel">
                                 <div class="p-3">
                                     <div class="row justify-content-between align-items-end mb-2">
                                         <div class="col-auto">
@@ -469,13 +489,13 @@
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <div class="status">조퇴</div>
-                                                        <div class="time">13:00~22:00</div>
+                                                        <div class="status font-weight-bold">조퇴</div>
+                                                        <div class="time font-weight-bold">13:00~22:00</div>
                                                     </td>
                                                     <td></td>
                                                     <td>
-                                                        <div class="status">결석</div>
-                                                        <div class="time">13:00~22:00</div>
+                                                        <div class="status font-weight-bold">결석</div>
+                                                        <div class="time font-weight-bold">13:00~22:00</div>
                                                     </td>
                                                     <td></td>
                                                     <td></td>
@@ -573,10 +593,6 @@
                                         <div class="col-auto">
                                             <div class="table-title mb-0">수강 강의 목록</div>
                                         </div>
-                                        <div class="col-auto">
-                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#">등록</button>
-                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#">변경</button>
-                                        </div>
                                     </div>
                                     <table class="table table-bordered table-center">
                                         <thead>
@@ -608,7 +624,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tab4" role="tabpanel">
+                            <div class="tab-pane" id="tab4" role="tabpanel">
                                 <div class="p-3">
                                     <div class="row justify-content-between align-items-end mb-2">
                                         <div class="col-auto">
@@ -685,7 +701,7 @@
                                     <a class="nav-link active" data-toggle="tab" href="#tab5" role="tab">이슈/소통</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-toggle="tab" href="#tab6" role="tab">문자내역</a>
+                                    <a class="nav-link" data-toggle="tab" href="#tab6" role="tab">알림내역</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" data-toggle="tab" href="#tab7" role="tab">학생정보</a>
@@ -693,7 +709,7 @@
                             </ul>
                         </nav>
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="tab5" role="tabpanel">
+                            <div class="tab-pane show active" id="tab5" role="tabpanel">
                                 <div class="p-3">
                                     <div class="table-title">소통 내역 작성</div>
                                     <form action="">
@@ -728,11 +744,17 @@
                                     @@include('@@webRoot/_include/_pagination.html')
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tab6" role="tabpanel">
+                            <div class="tab-pane" id="tab6" role="tabpanel">
                                 <div class="p-3">
-                                    <div class="row align-items-center mb-2">
+                                    <div class="row align-items-center justify-content-between mb-2">
                                         <div class="col-auto">
                                             <strong class="mr-2">발송 내역</strong>총 ###건
+                                        </div>
+                                        <div class="col-auto">
+                                            <select name="" id="" class="custom-select custom-select-sm">
+                                                <option value="">문자</option>
+                                                <option value="">푸시</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="main_search_result_list">
@@ -755,7 +777,7 @@
                                                     <td class="text-center">
                                                         N
                                                         <br>
-                                                        <a href="" class="text-underline"><small>재발송</small></a>
+                                                        <a href="" class="text-underline"><small>[재발송]</small></a>
                                                     </td>
                                                     <td class="text-center">yyyy-mm-dd <br>00:00:00</td>
                                                 </tr>
@@ -774,7 +796,7 @@
                                     @@include('@@webRoot/_include/_pagination.html')
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tab7" role="tabpanel">
+                            <div class="tab-pane" id="tab7" role="tabpanel">
                                 <div class="p-3">
                                     <table class="table table-bordered table-fixed">
                                         <tbody>
@@ -909,9 +931,9 @@
                             <div class="table-title mb-0">컨텐츠 신청</div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#modal-subject-category">추가</button>
-                            <button type="button" class="btn btn-sm btn-outline-dark ml-1" data-toggle="modal" data-target="#modal-subject-category">수정</button>
-                            <button type="button" class="btn btn-sm btn-outline-dark ml-1" onclick="alert('선택한 항목이 없습니다.')">삭제</button>
+                            <button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#modal-subject-category">추가</button>
+                            <button type="button" class="btn btn-sm btn-dark ml-1" data-toggle="modal" data-target="#modal-subject-category">수정</button>
+                            <button type="button" class="btn btn-sm btn-dark ml-1" onclick="alert('선택한 항목이 없습니다.')">삭제</button>
                         </div>
                     </div>
                     <table class="table table-bordered table-fixed">
@@ -1056,12 +1078,12 @@
         </div>
     </div>
 
-    <!-- modal : 기기 반납 -->
+    <!-- modal : 기기 등록/반납 -->
     <div class="modal" tabindex="-1" id="modal-device-return" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">기기 반납</h5>
+                    <h5 class="modal-title">기기 등록/반납</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1118,9 +1140,16 @@
                                 </td>
                                 <th>반납 사유</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
-                                        <option value="">입금완료</option>
-                                    </select>
+                                    <div class="row row-5">
+                                        <div class="col-auto">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">기타</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -1203,14 +1232,20 @@
                                 <th class="font-weight-bold">추가결제</th>
                                 <td class="font-weight-bold"></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th>환급정보</th>
                                 <td colspan="3">국민 000-000-000000 (이부모)</td>
-                            </tr>
+                            </tr> -->
                             <tr>
+                                <th>환급 여부</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">추가결제</option>
+                                    </select>
+                                </td>
                                 <th>상태</th>
-                                <td colspan="3">
-                                    <select name="" id="" class="custom-select w-auto">
+                                <td>
+                                    <select name="" id="" class="custom-select">
                                         <option value="">결제대기</option>
                                     </select>
                                 </td>
@@ -1275,10 +1310,28 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="table-title mt-3">결과 입력</div>
+                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                        <div class="col-auto">
+                            <div class="table-title mb-0">결과 입력</div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#">추가</button>
+                            <!-- <button type="button" class="btn btn-sm btn-dark ml-1" data-toggle="modal" data-target="#">수정</button> -->
+                            <button type="button" class="btn btn-sm btn-dark ml-1" onclick="alert('선택한 항목이 없습니다.')">삭제</button>
+                        </div>
+                    </div>
                     <table class="table table-bordered table-fixed text-center">
+                        <colgroup>
+                            <col style="width: 40px">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
                         <thead>
                             <tr>
+                                <th><input type="checkbox" data-event="checkAll" data-target="resultAll"></th>
                                 <th>과목</th>
                                 <th>선택</th>
                                 <th>원점수</th>
@@ -1288,6 +1341,7 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td><input type="checkbox" name="resultAll"></td>
                                 <td>국어</td>
                                 <td>언매</td>
                                 <td>
@@ -1301,6 +1355,7 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td><input type="checkbox" name="resultAll"></td>
                                 <td>수학</td>
                                 <td>기하</td>
                                 <td>
@@ -1314,8 +1369,31 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td><input type="checkbox" name="resultAll"></td>
                                 <td>영어</td>
                                 <td></td>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="resultAll"></td>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">입력</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">입력</option>
+                                    </select>
+                                </td>
                                 <td>
                                     <input type="text" class="form-control">
                                 </td>
@@ -1370,9 +1448,9 @@
                             <div class="table-title mb-0">지원 내역</div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#">추가</button>
-                            <button type="button" class="btn btn-sm btn-outline-dark ml-1" data-toggle="modal" data-target="#">수정</button>
-                            <button type="button" class="btn btn-sm btn-outline-dark ml-1" onclick="alert('선택한 항목이 없습니다.')">삭제</button>
+                            <button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#">추가</button>
+                            <!-- <button type="button" class="btn btn-sm btn-dark ml-1" data-toggle="modal" data-target="#">수정</button> -->
+                            <button type="button" class="btn btn-sm btn-dark ml-1" onclick="alert('선택한 항목이 없습니다.')">삭제</button>
                         </div>
                     </div>
                     <table class="table table-bordered table-fixed">

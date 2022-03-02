@@ -27,7 +27,7 @@
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
     <script src="../assets/lib/mdtimepicker/mdtimepicker.min.js"></script>
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+    <script src="../assets/lib/split.js/split.min.js"></script>
 
     <script src="../assets/js/ui.js" defer></script>
 </head>
@@ -169,7 +169,7 @@
                                 <a href="javascript:;"><span>학습 상담</span></a>
                                 <ul class="dep2">
                                     <li><a href="../grade/grade_consulting_calendar.html"><span>상담캘린더</span></a></li>
-                                    <li><a href="#"><span>상담기록</span></a></li>
+                                    <li><a href="../grade/grade_consulting_history.html"><span>상담기록</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -267,6 +267,9 @@
                                     <option value="">반</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">미입력정보</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
                                     <option value="">학생ID</option>
                                     <option value="">카드번호</option>
                                 </select>
@@ -276,8 +279,8 @@
                         </div>
                         <div class="col-auto">
                             <button type="button" class="btn btn-dark">파일업로드</button>
-                            <button type="button" class="btn btn-dark">파일다운로드</button>
-                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-student-add">등록</button>
+                            <button type="button" class="btn btn-dark ml-1">파일다운로드</button>
+                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-student-add">등록</button>
                         </div>
                     </div>
                 </div>
@@ -297,29 +300,37 @@
                             <table class="table" id="datatable1">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">No</th>
-                                        <th class="text-center">관</th>
-                                        <th class="text-center">학생ID</th>
-                                        <th class="text-center">반</th>
-                                        <th class="text-center">계열</th>
-                                        <th class="text-center">좌석</th>
-                                        <th class="text-center">카드번호</th>
-                                        <th class="text-center">재원</th>
-                                        <th class="text-center">입학구분</th>
-                                        <th class="text-center">최초등원일</th>
-                                        <th class="text-center">정보입력</th>
-                                        <th class="text-center">입결결과</th>
-                                        <th class="text-center">수정</th>
+                                        <th class="text-center" rowspan="2">No</th>
+                                        <th class="text-center" rowspan="2">학생ID</th>
+                                        <th class="text-center" rowspan="2">관</th>
+                                        <th class="text-center" rowspan="2">반</th>
+                                        <th class="text-center" rowspan="2">계열</th>
+                                        <th class="text-center" rowspan="2">좌석</th>
+                                        <th class="text-center" rowspan="2">카드번호</th>
+                                        <th class="text-center" rowspan="2">재원</th>
+                                        <th class="text-center" rowspan="2">입학구분</th>
+                                        <th class="text-center" rowspan="2">최초등원일</th>
+                                        <th class="text-center" colspan="7">정보입력</th>
+                                        <th class="text-center" rowspan="2">수정</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">기본</th>
+                                        <th class="text-center">카드</th>
+                                        <th class="text-center">반배정</th>
+                                        <th class="text-center">수강</th>
+                                        <th class="text-center">급식</th>
+                                        <th class="text-center">자습실</th>
+                                        <th class="text-center">입결</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <tr>
                                         <td class="text-center">10</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -327,17 +338,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">9</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -345,17 +361,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">8</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -363,17 +384,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">7</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -381,17 +407,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">6</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -399,17 +430,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">5</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -417,17 +453,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">4</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -435,17 +476,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">3</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -453,17 +499,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">2</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -471,17 +522,22 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">1</td>
-                                        <td class="text-center">신관</td>
                                         <td class="text-center">
                                             <a href="#modal-student-add" data-toggle="modal" class="text-underline">IDIDID</a>
                                         </td>
+                                        <td class="text-center">신관</td>
                                         <td class="text-center">S</td>
                                         <td class="text-center"></td>
                                         <td class="text-center">123</td>
@@ -489,8 +545,13 @@
                                         <td class="text-center">Y</td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
+                                        <td class="text-center">N</td>
                                         <td class="text-center"></td>
                                     </tr>
 
@@ -694,7 +755,7 @@
                             <tr>
                                 <th>학생명</th>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control required">
                                 </td>
                                 <th>학생ID</th>
                                 <td>
@@ -707,12 +768,12 @@
                                     <div class="row row-5">
                                         <div class="col">
                                             <select name="" id="" class="custom-select">
-                                                <option value=""></option>
+                                                <option value="">관</option>
                                             </select>
                                         </div>
                                         <div class="col">
                                             <select name="" id="" class="custom-select">
-                                                <option value=""></option>
+                                                <option value="">반</option>
                                             </select>
                                         </div>
                                     </div>
@@ -739,18 +800,18 @@
                                 <td>
                                     <div class="row row-5">
                                         <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
+                                            <select name="" id="" class="custom-select required">
                                                 <option value="">Y</option>
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control required">
                                         </div>
                                     </div>
                                 </td>
                                 <th>재원여부</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="" class="custom-select required">
                                         <option value="">재원</option>
                                     </select>
                                 </td>
@@ -760,13 +821,13 @@
                                 <td>
                                     <div class="row row-5">
                                         <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
+                                            <select name="" id="" class="custom-select required">
                                                 <option value="">부</option>
                                                 <option value="">모</option>
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control required">
                                         </div>
                                     </div>
                                 </td>
@@ -778,25 +839,25 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>생활담임(오전)</th>
+                                <th>담임(오전)</th>
                                 <td>
 
                                 </td>
                                 <th>장학</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="" class="custom-select required">
                                         <option value="">무시험</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <th>생활담임(오후)</th>
+                                <th>담임(오후)</th>
                                 <td>
 
                                 </td>
                                 <th>입학일</th>
                                 <td>
-                                    <input type="text" class="form-control form-datepicker">
+                                    <input type="text" class="form-control form-datepicker required">
                                 </td>
                             </tr>
                             <tr>
@@ -806,7 +867,7 @@
                                 </td>
                                 <th>퇴원일</th>
                                 <td>
-                                    <input type="text" class="form-control form-datepicker">
+                                    <input type="text" class="form-control form-datepicker required" readonly>
                                 </td>
                             </tr>
                         </tbody>
@@ -822,13 +883,13 @@
                             <tr>
                                 <th>성별</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="" class="custom-select required">
                                         <option value="">남</option>
                                     </select>
                                 </td>
                                 <th>계열구분</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="" class="custom-select required">
                                         <option value=""></option>
                                     </select>
                                 </td>
@@ -836,7 +897,7 @@
                             <tr>
                                 <th>생년월일</th>
                                 <td>
-                                    <input type="text" class="form-control form-datepicker">
+                                    <input type="text" class="form-control form-datepicker required">
                                 </td>
                                 <th>1차 등원일</th>
                                 <td>
@@ -865,11 +926,18 @@
                             <tr>
                                 <th>출신고교</th>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="text" class="form-control required">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-highschool">수정</button>
+                                        </div>
+                                    </div>
                                 </td>
                                 <th>졸업년도</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="" class="custom-select required">
                                         <option value="">2021</option>
                                     </select>
                                 </td>
@@ -897,8 +965,8 @@
                             <div class="table-title mb-0">수강과목</div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-outline-dark btn-sm mr-1" data-toggle="modal" data-target="#modal-class-admin">수정</button>
-                            <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#modal-exams-result-add">입시결과등록</button>
+                            <button type="button" class="btn btn-dark btn-sm mr-1" data-toggle="modal" data-target="#modal-class-admin">수정</button>
+                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-exams-result-add">입시결과등록</button>
                         </div>
                     </div>
                     <table class="table table-bordered table-fixed mt-2">
@@ -936,6 +1004,60 @@
         </div>
     </div>
 
+    <!-- modal : 고등학교 검색 -->
+    <div class="modal" tabindex="-1" id="modal-highschool" data-backdrop="static" data-overlap="true">
+        <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">고등학교 검색</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-3">
+                        <input type="text" class="form-control d-inline-block w-auto align-middle">
+                        <button type="button" class="btn btn-dark ml-1">검색</button>
+                    </div>
+                    <table class="table table-bordered table-center">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>학교명</th>
+                                <th>지역</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="radio" id="rdo1">
+                                </td>
+                                <td>
+                                    <label for="rdo1">합포고</label>
+                                </td>
+                                <td>경상남도 창원</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" id="rdo2">
+                                </td>
+                                <td>
+                                    <label for="rdo2">마포고</label>
+                                </td>
+                                <td>서울시 마포구</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- modal : 수강과목등록/수정 -->
     <div class="modal" tabindex="-1" id="modal-class-admin" data-backdrop="static" data-overlap="true">
         <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
@@ -957,19 +1079,19 @@
                         <tbody>
                             <tr>
                                 <th>공통과목</th>
-                                <td>국어(종합), 수학(종합), 영어</td>
+                                <td>국어(종합), 수학(종합), 영어 <button type="button" class="btn btn-secondary btn-sm ml-2">수정</button></td>
                             </tr>
                             <tr>
                                 <th>선택과목</th>
-                                <td>국어(언어와 매체), 수학(확률과 통계)</td>
+                                <td>국어(언어와 매체), 수학(확률과 통계) <button type="button" class="btn btn-secondary btn-sm ml-2">수정</button></td>
                             </tr>
                             <tr>
                                 <th>탐구과목</th>
-                                <td>사탐(세계지리), 과탐(지구과학)</td>
+                                <td><button type="button" class="btn btn-secondary btn-sm">선택</button></td>
                             </tr>
                             <tr>
                                 <th>기타</th>
-                                <td>한국사, 인문논술</td>
+                                <td>한국사, 인문논술 <button type="button" class="btn btn-secondary btn-sm ml-2">수정</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -992,20 +1114,47 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             <tr>
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
-                                <td class="text-center"></td>
+                                <td class="text-center"><button type="button" class="btn btn-secondary btn-sm">선택</button></td>
                             </tr>
+
                             <tr>
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
-                                <td class="text-center"></td>
+                                <td class="text-center"><button type="button" class="btn btn-secondary btn-sm">선택</button></td>
                             </tr>
+
+                            <tr>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"><button type="button" class="btn btn-secondary btn-sm">선택</button></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"><button type="button" class="btn btn-secondary btn-sm">선택</button></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"><button type="button" class="btn btn-secondary btn-sm">선택</button></td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>

@@ -72,22 +72,26 @@
     .fc-header-toolbar{
         .fc-center{
             > div{display: flex;align-items: center;}
-            button{margin: 0 10px;padding: 5px;}
-            h2{font-size: 20px;}
+            button{margin: 0 10px;padding: 3px;
+                .fc-icon{vertical-align: top;}
+            }
+            h2{font-size: 18px;}
         }
     }
     .fc-day-header{padding: 5px 0;}
     .fc-time-grid-event{
-        .fc-time{font-size: 12px;font-weight: 500;}
-        &.fc-short .fc-title{font-size: 12px;font-weight: 500;}
+        .fc-time{font-size: 12px;font-weight: 500;padding-top: 2px;}
+        .fc-title{font-size: 12px;font-weight: 500;padding-top: 2px;}
+        &.fc-short .fc-title{font-size: 12px;font-weight: 500;padding-top: 2px;}
     }
     .fc-event{cursor: pointer;}
+    .fc-time-grid .fc-slats td{height: 1.8em;}
 }
 
 .list-group-toggle{
     a.list-group-item{text-decoration: none;}
     .list-group-detail{
-        border: 1px solid #ddd;border-top: 0;border-bottom: 0;display: none;
+        border: 1px solid #ddd;border-top: 0;border-bottom: 0;display: none;position: relative;
         > p{font-weight: 500;}
         label{color: $secondary;}
     }

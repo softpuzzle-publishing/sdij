@@ -60,7 +60,8 @@ var Aside = {
 	}
 };
 
-var splitV;
+var splitV_1;
+var splitV_2;
 var splitH;
 var Common = {
 	init: function () {
@@ -92,26 +93,8 @@ var Common = {
 		}
 	},
 	splitGird: function () {
-		var verticalItems = [];
+		// 좌우 split
 		var horizontalItems = [];
-		if ($('[id^="split-vertical"]').length > 0) {
-			var height = $('.split-vertical').parent().outerHeight();
-			$('[id^="split-vertical"]').each(function(){
-				var item = '#'+ $(this).attr('id');
-				verticalItems.push(item);
-			});
-			splitV = Split(verticalItems, {
-				direction: 'vertical',
-				gutterSize: 8,
-				minSize: 0,
-				snapOffset: 0,
-				onDrag: function(){
-					//pane의 높이를 auto로 지정이 불가능하여 클래스로 제어
-					$('.split-vertical').css('height', height);
-					$('.split-vertical .init').removeClass('init');
-				}
-			});
-		}
 		if ($('[id^="split-horizontal"]').length > 0) {
 			$('[id^="split-horizontal"]').each(function(){
 				var item = '#'+ $(this).attr('id');
@@ -125,6 +108,39 @@ var Common = {
 				onDrag: function () {
 					window.dispatchEvent(new Event('resize'));
 
+				}
+			});
+		}
+		// 상하 split
+		if ($('#split-vertical-1').length > 0) {
+			var $parent = $('#split-vertical-1').closest('.split-vertical');
+			var height = $parent.outerHeight() + 8;
+			$parent.css('height', height);
+			splitV_1 = Split(['#split-vertical-1', '#split-vertical-2'], {
+				direction: 'vertical',
+				gutterSize: 8,
+				minSize: 0,
+				snapOffset: 0,
+				onDrag: function(){
+					//pane의 높이를 auto로 지정이 불가능하여 클래스로 제어
+					$parent.css('height', height);
+					$('#split-vertical-1, #split-vertical-2').removeClass('init');
+				}
+			});
+		}
+		if ($('#split-vertical-3').length > 0) {
+			var $parent = $('#split-vertical-3').closest('.split-vertical');
+			var height = $parent.outerHeight() + 8;
+			$parent.css('height', height);
+			splitV_2 = Split(['#split-vertical-3', '#split-vertical-4'], {
+				direction: 'vertical',
+				gutterSize: 8,
+				minSize: 0,
+				snapOffset: 0,
+				onDrag: function(){
+					//pane의 높이를 auto로 지정이 불가능하여 클래스로 제어
+					$parent.css('height', height);
+					$('#split-vertical-3, #split-vertical-4').removeClass('init');
 				}
 			});
 		}
@@ -193,7 +209,8 @@ var Common = {
 
 		$('.list-group-toggle a.list-group-item').on('click', function (e) {
 			e.preventDefault();
-			$(this).closest('.item-wrap').toggleClass('active');
+			$(this).closest('.item-wrap').siblings('.item-wrap').removeClass('active');
+			$(this).closest('.item-wrap').addClass('active');
 		});
 
 		mdtimepicker('.form-timepicker', {
