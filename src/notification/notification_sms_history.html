@@ -58,130 +58,123 @@
                         </div>
                     </div>
                 </div>
-                <div style="min-height: calc(100vh - 193px);">
-                    <div class="split-vertical">
-                        <div class="section init" id="split-vertical-1">
-                            <div class="p-3">
-                                <div class="row align-items-center justify-content-between mb-2">
-                                    <div class="col-auto">
-                                        <strong class="mr-2">발송 내역</strong>총 ###건
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="button" class="btn btn-dark">복사 발송</button>
-                                        <button type="button" class="btn btn-dark ml-1">예약 취소</button>
-                                    </div>
-                                </div>
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="smsAll"></th>
-                                                <th class="text-center">코드</th>
-                                                <th class="text-center">수신그룹</th>
-                                                <th class="text-center">수신 그룹 상세</th>
-                                                <th class="text-center">알림 구분</th>
-                                                <th class="text-center">알림 구분 상세</th>
-                                                <th class="text-center">광고 구분</th>
-                                                <th class="text-center">수신자 구분</th>
-                                                <th class="text-center">발송 제목</th>
-                                                <th class="text-center">등록 일시</th>
-                                                <th class="text-center">발송 일시</th>
-                                                <th class="text-center">발송 상태</th>
-                                                <th class="text-center">총 인원</th>
-                                                <th class="text-center">완료</th>
-                                                <th class="text-center">실패</th>
-                                                <th class="text-center">발송자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for (var i = 5; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="smsAll"></td>
-                                                <td class="text-center">`+ i +`</td>
-                                                <td class="text-center">조건검색</td>
-                                                <td class="text-center">브릿지관,오르새</td>
-                                                <td class="text-center">컨텐츠</td>
-                                                <td class="text-center">부엉이포스트 외 2건</td>
-                                                <td class="text-center">광고</td>
-                                                <td class="text-center">학부모, 학생</td>
-                                                <td class="text-center">오르새 강의실 변경 안내</td>
-                                                <td class="text-center">Yy/mm/dd <br>00:00:00</td>
-                                                <td class="text-center">Yy/mm/dd <br>00:00:00</td>
-                                                <td class="text-center">
-                                                    발송 예약 <br>
-                                                    <a href="javascript:;" class="text-underline"><small>[수정]</small></a>
-                                                </td>
-                                                <td class="text-center"><a href="" class="text-underline">15명</a></td>
-                                                <td class="text-center"><a href="" class="text-underline">15명</a></td>
-                                                <td class="text-center"><a href="" class="text-underline">15명</a></td>
-                                                <td class="text-center">Username <br>(ID)</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                    @@include('@@webRoot/_include/_pagination.html')
-                                </div>
-                            </div>
+                <div class="p-3">
+                    <div class="row align-items-center justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">발송 내역</strong>총 ###건
                         </div>
-                        <div class="section init" id="split-vertical-2">
-                            <div class="p-3">
-                                <div class="row align-items-center justify-content-between mb-2">
-                                    <div class="col-auto">
-                                        <strong class="mr-2">발송 상세</strong>총 ###건
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="button" class="btn btn-dark">파일다운로드</button>
-                                        <button type="button" class="btn btn-dark ml-1">발송 실패 일괄 재발송</button>
-                                    </div>
-                                </div>
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">알림 구분</th>
-                                                <th class="text-center">알림 구분 상세</th>
-                                                <th class="text-center">광고 구분</th>
-                                                <th class="text-center">문자 제목</th>
-                                                <th class="text-center">문자 내용</th>
-                                                <th class="text-center">관</th>
-                                                <th class="text-center">반</th>
-                                                <th class="text-center">학생ID</th>
-                                                <th class="text-center">수신자 구분</th>
-                                                <th class="text-center">예약 일시</th>
-                                                <th class="text-center">발신 번호</th>
-                                                <th class="text-center">발송 상태</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for (var i = 5; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center">`+ i +`</td>
-                                                <td class="text-center">컨텐츠</td>
-                                                <td class="text-center">부엉이포스트</td>
-                                                <td class="text-center">안내</td>
-                                                <td class="text-center">선택특강 신청 안내</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-sms-preview" class="text-underline" data-toggle="modal">(안내) 선택특강 오픈 되었습니다. 오픈 되었습니다. 오픈 되...</a>
-                                                </td>
-                                                <td class="text-center">신관</td>
-                                                <td class="text-center">J</td>
-                                                <td class="text-center">김시대1234</td>
-                                                <td class="text-center">학생</td>
-                                                <td class="text-center">2022-05-01 <br>00:00:00</td>
-                                                <td class="text-center">대치 <br>02-0123-1234</td>
-                                                <td class="text-center">발송 예약</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                @@include('@@webRoot/_include/_pagination.html')
-                            </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark">복사 발송</button>
+                            <button type="button" class="btn btn-dark ml-1">예약 취소</button>
                         </div>
                     </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="smsAll"></th>
+                                    <th class="text-center">코드</th>
+                                    <th class="text-center">수신그룹</th>
+                                    <th class="text-center">수신 그룹 상세</th>
+                                    <th class="text-center">알림 구분</th>
+                                    <th class="text-center">알림 구분 상세</th>
+                                    <th class="text-center">광고 구분</th>
+                                    <th class="text-center">수신자 구분</th>
+                                    <th class="text-center">발송 제목</th>
+                                    <th class="text-center">등록 일시</th>
+                                    <th class="text-center">발송 일시</th>
+                                    <th class="text-center">발송 상태</th>
+                                    <th class="text-center">총 인원</th>
+                                    <th class="text-center">완료</th>
+                                    <th class="text-center">실패</th>
+                                    <th class="text-center">발송자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 5; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="smsAll"></td>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">조건검색</td>
+                                    <td class="text-center">브릿지관,오르새</td>
+                                    <td class="text-center">컨텐츠</td>
+                                    <td class="text-center">부엉이포스트 외 2건</td>
+                                    <td class="text-center">광고</td>
+                                    <td class="text-center">학부모, 학생</td>
+                                    <td class="text-center">오르새 강의실 변경 안내</td>
+                                    <td class="text-center">Yy/mm/dd <br>00:00:00</td>
+                                    <td class="text-center">Yy/mm/dd <br>00:00:00</td>
+                                    <td class="text-center">
+                                        발송 예약 <br>
+                                        <a href="javascript:;" class="text-underline"><small>[수정]</small></a>
+                                    </td>
+                                    <td class="text-center"><a href="" class="text-underline">15명</a></td>
+                                    <td class="text-center"><a href="" class="text-underline">15명</a></td>
+                                    <td class="text-center"><a href="" class="text-underline">15명</a></td>
+                                    <td class="text-center">Username <br>(ID)</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                        @@include('@@webRoot/_include/_pagination.html')
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="p-3">
+                    <div class="row align-items-center justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">발송 상세</strong>총 ###건
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark">파일다운로드</button>
+                            <button type="button" class="btn btn-dark ml-1">발송 실패 일괄 재발송</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">알림 구분</th>
+                                    <th class="text-center">알림 구분 상세</th>
+                                    <th class="text-center">광고 구분</th>
+                                    <th class="text-center">문자 제목</th>
+                                    <th class="text-center">문자 내용</th>
+                                    <th class="text-center">관</th>
+                                    <th class="text-center">반</th>
+                                    <th class="text-center">학생ID</th>
+                                    <th class="text-center">수신자 구분</th>
+                                    <th class="text-center">예약 일시</th>
+                                    <th class="text-center">발신 번호</th>
+                                    <th class="text-center">발송 상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 5; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">컨텐츠</td>
+                                    <td class="text-center">부엉이포스트</td>
+                                    <td class="text-center">안내</td>
+                                    <td class="text-center">선택특강 신청 안내</td>
+                                    <td class="text-center">
+                                        <a href="#modal-sms-preview" class="text-underline" data-toggle="modal">(안내) 선택특강 오픈 되었습니다. 오픈 되었습니다. 오픈 되...</a>
+                                    </td>
+                                    <td class="text-center">신관</td>
+                                    <td class="text-center">J</td>
+                                    <td class="text-center">김시대1234</td>
+                                    <td class="text-center">학생</td>
+                                    <td class="text-center">2022-05-01 <br>00:00:00</td>
+                                    <td class="text-center">대치 <br>02-0123-1234</td>
+                                    <td class="text-center">발송 예약</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
                 </div>
                 <!-- 컨텐츠 끝 -->
 

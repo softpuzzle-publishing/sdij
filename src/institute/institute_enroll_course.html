@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">수강신청관리</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">과목</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-3">
+                                    <option value="">수업상태</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                    <option value="">수업명</option>
+                                    <option value="">강사명</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark mr-3">검색</button>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">접수일</option>
+                                    <option value="">수강시작일</option>
+                                    <option value="">수강종료일</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <div class="mr-2">~</div>
+                                <input type="text" class="form-control form-datepicker" style="width:120px">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark">파일업로드</button>
+                            <button type="button" class="btn btn-dark ml-1">파일다운로드</button>
+                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-enroll-student-add">수강생 추가등록</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">강의 목록</strong>총 ###건
+                        </div>
+                        <div class="col">
+                            <input type="checkbox" id="usableOnly">
+                            <label for="usableOnly" class="mb-0">신청 가능 항목만 보기</label>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-enroll-setting">수강신청설정</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">구분</th>
+                                    <th class="text-center">관</th>
+                                    <th class="text-center">수업 명</th>
+                                    <th class="text-center">강사 명</th>
+                                    <th class="text-center">수업상태</th>
+                                    <th class="text-center">금주 수강생(신규)</th>
+                                    <th class="text-center">수강정원</th>
+                                    <th class="text-center">대기자</th>
+                                    <th class="text-center">추가 등록</th>
+                                    <th class="text-center">설정</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 5; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">필수</td>
+                                    <td class="text-center">
+                                        <a href="javascript:;" class="text-underline">브릿지관</a>
+                                    </td>
+                                    <td class="text-center">S반 수학 (1)</td>
+                                    <td class="text-center">김시대</td>
+                                    <td class="text-center">진행중</td>
+                                    <td class="text-center"><a href="" class="text-underline">321 (12)</a></td>
+                                    <td class="text-center"><a href="" class="text-underline">350</a></td>
+                                    <td class="text-center"><a href="" class="text-underline">-</a></td>
+                                    <td class="text-center">가능</td>
+                                    <td class="text-center"><a href="javascript;" class="text-underline">디폴트</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
+                </div>
+                <div class="hr"></div>
+                <div class="p-3">
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">강의 신청</strong>총 ###건
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">관</th>
+                                    <th class="text-center">학생ID</th>
+                                    <th class="text-center">영역</th>
+                                    <th class="text-center">수업명</th>
+                                    <th class="text-center">강사명</th>
+                                    <th class="text-center">신청 구분</th>
+                                    <th class="text-center">수강상태</th>
+                                    <th class="text-center">신청일</th>
+                                    <th class="text-center">수강시작일</th>
+                                    <th class="text-center">수강종료일</th>
+                                    <th class="text-center">등록/수정</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 10; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">브릿지관</td>
+                                    <td class="text-center">김학생1234</td>
+                                    <td class="text-center">수학</td>
+                                    <td class="text-center">미적분</td>
+                                    <td class="text-center">김시대</td>
+                                    <td class="text-center">앱등록</td>
+                                    <td class="text-center">수강예정</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    <!-- modal : 수강생 추가등록 -->
+    <div class="modal" tabindex="-1" id="modal-enroll-student-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">수강생 추가등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-title">강의 선택</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>관</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <th>과목</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강사명</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                                <th>수업 구분</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>수업명</th>
+                                <td colspan="3">
+                                    <select name="" id="" class="custom-select">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-title mt-3">수강생 등록</div>
+                    <table class="table table-bordered table-fixed mb-3">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>등록가능유무</th>
+                                <td>Y</td>
+                                <th>수강시작일</th>
+                                <td>2022-03-02</td>
+                            </tr>
+                            <tr>
+                                <th>학생추가</th>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-staff-search">검색</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">학생ID</th>
+                                    <th class="text-center">관/반</th>
+                                    <th class="text-center">상태</th>
+                                    <th class="text-center">사유</th>
+                                    <th class="text-center">삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 4; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">김시대1234</td>
+                                    <td class="text-center">M3 / S</td>
+                                    <td class="text-center">가능</td>
+                                    <td class="text-center">충돌(월 3)</td>
+                                    <td class="text-center">
+                                        <a href="javascript:;" class="text-underline">삭제</a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" onclick="confirm('미입력 항목이 있습니다. \n무시하고 등록할까요?')">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 수강신청 설정 -->
+    <div class="modal" tabindex="-1" id="modal-enroll-setting" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 560px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">수강신청 설정</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-title">디폴트 설정</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>신청 구분</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">앱 신청만 허용</option>
+                                        <option value="">직접 신청만 허용</option>
+                                        <option value="">모두 허용</option>
+                                        <option value="">모두 불가</option>
+                                    </select>
+                                </td>
+                                <th>추가 등록</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">가능</option>
+                                        <option value="">불가</option>
+                                        <option value="">자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>신청 대기</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">허용</option>
+                                        <option value="">허용 안 함</option>
+                                    </select>
+                                </td>
+                                <th>재신청</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">허용</option>
+                                        <option value="">허용 안 함</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>신청 마감일</th>
+                                <td>
+                                    <div class="row row-10">
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">매주</option>
+                                                <option value="">매월</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">요일</option>
+                                                <option value="">날짜</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>신청 반영일</th>
+                                <td>
+                                    <div class="row row-10">
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">매주</option>
+                                                <option value="">매월</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">요일</option>
+                                                <option value="">날짜</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>버퍼 인원</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th>정원 설정</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">1단계</option>
+                                        <option value="">2단계</option>
+                                        <option value="">총 정원</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" onclick="confirm('미입력 항목이 있습니다. \n무시하고 등록할까요?')">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

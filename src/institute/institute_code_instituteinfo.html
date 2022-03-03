@@ -36,115 +36,104 @@
                         </div>
                     </div>
                 </div>
-                <div style="min-height: calc(100vh - 193px);">
-                    <div class="split-vertical">
-                        <div class="section init" id="split-vertical-1">
-                            <div class="p-3">
-                                <div class="row align-items-center mb-2">
-                                    <div class="col-auto">
-                                        <strong class="mr-2">관</strong>총 ###건
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="checkbox" id="usableOnly2">
-                                        <label for="usableOnly2" class="mb-0">사용 항목만 보기</label>
-                                    </div>
-                                </div>
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">지역</th>
-                                                <th class="text-center">관 명</th>
-                                                <th class="text-center">관 담당자</th>
-                                                <th class="text-center">보유 교실</th>
-                                                <th class="text-center">사용</th>
-                                                <th class="text-center">등록/수정</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for (var i = 5; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center">
-                                                    `+ i +`
-                                                </td>
-                                                <td class="text-center">대치</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
-                                                </td>
-                                                <td class="text-center">김시대</td>
-                                                <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">
-                                                    <div class="text-nowrap">Yy/mm/dd(김시대)</div>
-                                                </td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                @@include('@@webRoot/_include/_pagination.html')
-                            </div>
+                <div class="p-3">
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">관</strong>총 ###건
                         </div>
-                        <div class="section init" id="split-vertical-2">
-                            <div class="p-3">
-                                <div class="row align-items-center mb-2">
-                                    <div class="col-auto">
-                                        <strong class="mr-2">교실</strong>총 ###건
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="checkbox" id="usableOnly">
-                                        <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
-                                    </div>
-                                </div>
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">ID</th>
-                                                <th class="text-center">관 명</th>
-                                                <th class="text-center">교실명</th>
-                                                <th class="text-center">교실 구분</th>
-                                                <th class="text-center">총 좌석</th>
-                                                <th class="text-center">사용좌석</th>
-                                                <th class="text-center">카드체킹기기</th>
-                                                <th class="text-center">좌석배치표</th>
-                                                <th class="text-center">사용</th>
-                                                <th class="text-center">등록/수정</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for (var i = 10; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center">
-                                                    `+ i +`
-                                                </td>
-                                                <td class="text-center">브릿지관</td>
-                                                <td class="text-center">
-                                                    <a href="javascript:;">101호</a>
-                                                </td>
-                                                <td class="text-center">강의실</td>
-                                                <td class="text-center">100</td>
-                                                <td class="text-center">60</td>
-                                                <td class="text-center">ASND2f</td>
-                                                <td class="text-center">
-                                                    <a href="javascript:;">등록</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">
-                                                    <div class="text-nowrap">Yy/mm/dd(김시대)</div>
-                                                </td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                @@include('@@webRoot/_include/_pagination.html')
-                            </div>
+                        <div class="col-auto">
+                            <input type="checkbox" id="usableOnly2">
+                            <label for="usableOnly2" class="mb-0">사용 항목만 보기</label>
                         </div>
                     </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">지역</th>
+                                    <th class="text-center">관 명</th>
+                                    <th class="text-center">관 담당자</th>
+                                    <th class="text-center">보유 교실</th>
+                                    <th class="text-center">사용</th>
+                                    <th class="text-center">등록/수정</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 5; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">대치</td>
+                                    <td class="text-center">
+                                        <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
+                                    </td>
+                                    <td class="text-center">김시대</td>
+                                    <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
+                </div>
+                <div class="hr"></div>
+                <div class="p-3">
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">교실</strong>총 ###건
+                        </div>
+                        <div class="col-auto">
+                            <input type="checkbox" id="usableOnly">
+                            <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">관 명</th>
+                                    <th class="text-center">교실명</th>
+                                    <th class="text-center">교실 구분</th>
+                                    <th class="text-center">총 좌석</th>
+                                    <th class="text-center">사용좌석</th>
+                                    <th class="text-center">카드체킹기기</th>
+                                    <th class="text-center">좌석배치표</th>
+                                    <th class="text-center">사용</th>
+                                    <th class="text-center">등록/수정</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 10; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">브릿지관</td>
+                                    <td class="text-center">
+                                        <a href="javascript:;" class="text-underline">101호</a>
+                                    </td>
+                                    <td class="text-center">강의실</td>
+                                    <td class="text-center">100</td>
+                                    <td class="text-center">60</td>
+                                    <td class="text-center">ASND2f</td>
+                                    <td class="text-center">
+                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    </td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
                 </div>
                 <!-- 컨텐츠 끝 -->
 

@@ -40,235 +40,342 @@
                         </div>
                     </div>
                 </div>
-                <div style="min-height: calc(100vh - 193px);">
-                    <div class="split-vertical">
-                        <div class="section init" id="split-vertical-1">
-                            <div class="p-3">
-                                <nav>
-                                    <ul class="nav nav-pills nav-justified mb-3" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <a class="nav-link active" data-toggle="pill" href="#tab1-1" role="tab" aria-selected="true">바로콜</a>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <a class="nav-link" data-toggle="pill" href="#tab1-2" role="tab" aria-selected="false">오프라인</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="tab1-1" role="tabpanel">
-                                        <div class="main_search_result_list">
-                                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                            <table class="table table-fixed" id="datatable1">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center" rowspan="2">관</th>
-                                                        <th class="text-center" colspan="4">출결신청</th>
-                                                        <th class="text-center" rowspan="2">총 신청 건수</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">처리 필요 <br>(미승인)</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">반려</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 필요)</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 완료)</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-center">결석</th>
-                                                        <th class="text-center">지각</th>
-                                                        <th class="text-center">조퇴</th>
-                                                        <th class="text-center">외출</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @@for (var i = 5; i > 0; i--) {
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
-                                                        </td>
-                                                        <td class="text-center">1</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">5</td>
-                                                        <td class="text-center">10</td>
-                                                        <td class="text-center">19</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">1</td>
-                                                        <td class="text-center">9</td>
-                                                        <td class="text-center">7</td>
-                                                    </tr>
-                                                    }
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        @@include('@@webRoot/_include/_pagination.html')
-                                    </div>
-                                    <div class="tab-pane" id="tab1-2" role="tabpanel">
-                                        <div class="row justify-content-between mb-2">
-                                            <div class="col-auto">
-                                                <div class="d-flex align-items-center">
-                                                    <select name="" id="" class="custom-select w-auto mr-2">
-                                                        <option value="">구분</option>
-                                                    </select>
-                                                    <select name="" id="" class="custom-select w-auto mr-2">
-                                                        <option value="">신청 종류</option>
-                                                    </select>
-                                                    <select name="" id="" class="custom-select w-auto mr-2">
-                                                        <option value="">증빙 여부</option>
-                                                    </select>
-                                                    <select name="" id="" class="custom-select w-auto mr-2">
-                                                        <option value="">학생ID</option>
-                                                    </select>
-                                                    <input type="text" class="form-control w-auto mr-2">
-                                                    <button type="button" class="btn btn-dark">검색</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <button type="button" class="btn btn-dark">증빙완료</button>
-                                                <button type="button" class="btn btn-dark ml-1">파일업로드</button>
-                                                <button type="button" class="btn btn-dark ml-1">등록</button>
-                                            </div>
-                                        </div>
-                                        <div class="main_search_result_list">
-                                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                            <table class="table table-fixed" id="datatable1">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center" rowspan="2">관</th>
-                                                        <th class="text-center" colspan="4">출결신청</th>
-                                                        <th class="text-center" rowspan="2">총 신청 건수</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">처리 필요 <br>(미승인)</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">반려</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 필요)</th>
-                                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 완료)</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-center">결석</th>
-                                                        <th class="text-center">지각</th>
-                                                        <th class="text-center">조퇴</th>
-                                                        <th class="text-center">외출</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @@for (var i = 5; i > 0; i--) {
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            <a href="javascript:;" class="text-underline">브릿지관</a>
-                                                        </td>
-                                                        <td class="text-center">1</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">5</td>
-                                                        <td class="text-center">10</td>
-                                                        <td class="text-center">19</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">1</td>
-                                                        <td class="text-center">9</td>
-                                                        <td class="text-center">7</td>
-                                                    </tr>
-                                                    }
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        @@include('@@webRoot/_include/_pagination.html')
+                <nav class="pt-3 pl-3 pr-3">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1-1" role="tab" aria-selected="true">바로콜</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab1-2" role="tab" aria-selected="false">오프라인</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tab-content">
+                    <div class="tab-pane show active" id="tab1-1" role="tabpanel">
+                        <div class="p-3">
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-fixed" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" rowspan="2">관</th>
+                                            <th class="text-center" colspan="4">출결신청</th>
+                                            <th class="text-center" rowspan="2">총 신청 건수</th>
+                                            <th class="text-center table-bg-1" rowspan="2">처리 필요 <br>(미승인)</th>
+                                            <th class="text-center table-bg-1" rowspan="2">반려</th>
+                                            <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 필요)</th>
+                                            <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 완료)</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center">결석</th>
+                                            <th class="text-center">지각</th>
+                                            <th class="text-center">조퇴</th>
+                                            <th class="text-center">외출</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center">
+                                                <a href="javascript:;" class="text-underline">브릿지관</a>
+                                            </td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center">5</td>
+                                            <td class="text-center">10</td>
+                                            <td class="text-center">19</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">9</td>
+                                            <td class="text-center">7</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                        </div>
+                        <div class="hr"></div>
+                        <div class="p-3">
+                            <div class="row align-items-center mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">출결 신청 전체 목록</strong>총 ###건
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center">
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">신청경로</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">출결구분</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">상태</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">학생ID</option>
+                                        </select>
+                                        <input type="text" class="form-control w-auto mr-2">
+                                        <button type="button" class="btn btn-dark">검색</button>
                                     </div>
                                 </div>
                             </div>
+                            <div class="row justify-content-between align-items-end mb-2 mt-2">
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center">
+                                        <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                            <option value="">접수일</option>
+                                        </select>
+                                        <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
+                                        <div class="mx-2">~</div>
+                                        <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">푸시</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">문자</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">승인</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-target="#modal-return" data-toggle="modal">반려</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" onclick="confirm('선택한 출결 신청과 관련하여 \n학생의 증빙 서류를 확인하셨습니까?')">증빙완료</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="attendanceAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">신청경로</th>
+                                            <th class="text-center">관</th>
+                                            <th class="text-center">학생ID</th>
+                                            <th class="text-center">좌석번호</th>
+                                            <th class="text-center">구분</th>
+                                            <th class="text-center">요청일</th>
+                                            <th class="text-center">시작</th>
+                                            <th class="text-center">종료</th>
+                                            <th class="text-center">요청사유</th>
+                                            <th class="text-center">증빙</th>
+                                            <th class="text-center">접수일</th>
+                                            <th class="text-center">상태</th>
+                                            <th class="text-center">비고(메세지)</th>
+                                            <th class="text-center">승인일</th>
+                                            <th class="text-center">승인자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                            <td class="text-center">`+ i +`</td>
+                                            <td class="text-center">바로콜</td>
+                                            <td class="text-center">N</td>
+                                            <td class="text-center">김학생1234</td>
+                                            <td class="text-center">123</td>
+                                            <td class="text-center">지각</td>
+                                            <td class="text-center">12-03(금)</td>
+                                            <td class="text-center">08:30</td>
+                                            <td class="text-center">09:30</td>
+                                            <td class="text-center">병원 정기 검진</td>
+                                            <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
+                                            <td class="text-center">mm/dd <br>00:00</td>
+                                            <td class="text-center">접수</td>
+                                            <td class="text-center">-</td>
+                                            <td class="text-center">mm/dd <br>00:00</td>
+                                            <td class="text-center">User name <br>(UserID)</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                            <div class="text-right">
+                                <button type="button" class="btn btn-dark">요청 취소</button>
+                            </div>
                         </div>
-                        <div class="section init" id="split-vertical-2">
-                            <div class="p-3">
-                                <div class="row align-items-center mb-2">
-                                    <div class="col-auto">
-                                        <strong class="mr-2">출결 신청 전체 목록</strong>총 ###건
+                    </div>
+                    <div class="tab-pane" id="tab1-2" role="tabpanel">
+                        <div class="p-3">
+                            <div class="row justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center">
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">구분</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">신청 종류</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">증빙 여부</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">학생ID</option>
+                                        </select>
+                                        <input type="text" class="form-control w-auto mr-2">
+                                        <button type="button" class="btn btn-dark">검색</button>
                                     </div>
                                 </div>
-                                <div class="row justify-content-between">
-                                    <div class="col-auto">
-                                        <div class="d-flex align-items-center">
-                                            <select name="" id="" class="custom-select w-auto mr-2">
-                                                <option value="">신청경로</option>
-                                            </select>
-                                            <select name="" id="" class="custom-select w-auto mr-2">
-                                                <option value="">출결구분</option>
-                                            </select>
-                                            <select name="" id="" class="custom-select w-auto mr-2">
-                                                <option value="">상태</option>
-                                            </select>
-                                            <select name="" id="" class="custom-select w-auto mr-2">
-                                                <option value="">학생ID</option>
-                                            </select>
-                                            <input type="text" class="form-control w-auto mr-2">
-                                            <button type="button" class="btn btn-dark">검색</button>
-                                        </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-document-finish">증빙완료</button>
+                                    <button type="button" class="btn btn-dark ml-1">파일업로드</button>
+                                    <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-attendance-add">등록</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="offlineAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">관</th>
+                                            <th class="text-center">학생ID</th>
+                                            <th class="text-center">좌석번호</th>
+                                            <th class="text-center">구분</th>
+                                            <th class="text-center">신청종류</th>
+                                            <th class="text-center">요청 시작일</th>
+                                            <th class="text-center">요청 종료일</th>
+                                            <th class="text-center">요일반복</th>
+                                            <th class="text-center">시작</th>
+                                            <th class="text-center">종료</th>
+                                            <th class="text-center">요청사유</th>
+                                            <th class="text-center">증빙여부</th>
+                                            <th class="text-center">비고(메시지)</th>
+                                            <th class="text-center">접수일</th>
+                                            <th class="text-center">접수자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="offlineAll"></td>
+                                            <td class="text-center">`+ i +`</td>
+                                            <td class="text-center">N</td>
+                                            <td class="text-center">
+                                                <a href="javascript:;" class="text-underline">김학생0123</a>
+                                            </td>
+                                            <td class="text-center">123</td>
+                                            <td class="text-center">지각</td>
+                                            <td class="text-center">정기</td>
+                                            <td class="text-center">01-03(월)</td>
+                                            <td class="text-center">01-31(화)</td>
+                                            <td class="text-center">월,목</td>
+                                            <td class="text-center">08:30</td>
+                                            <td class="text-center">09:30</td>
+                                            <td class="text-center">병원 정기 검진</td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">-</td>
+                                            <td class="text-center">mm/dd <br>00:00</td>
+                                            <td class="text-center">User name <br>(UserID)</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                        </div>
+                        <div class="hr"></div>
+                        <div class="p-3">
+                            <div class="row align-items-center mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">출결 신청 전체 목록</strong>총 ###건
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center">
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">신청경로</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">출결구분</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">상태</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">학생ID</option>
+                                        </select>
+                                        <input type="text" class="form-control w-auto mr-2">
+                                        <button type="button" class="btn btn-dark">검색</button>
                                     </div>
                                 </div>
-                                <div class="row justify-content-between align-items-end mb-2 mt-2">
-                                    <div class="col-auto">
-                                        <div class="d-flex align-items-center">
-                                            <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
-                                                <option value="">접수일</option>
-                                            </select>
-                                            <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
-                                            <div class="mx-2">~</div>
-                                            <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
-                                        <button type="button" class="btn btn-dark btn-sm ml-1">푸시</button>
-                                        <button type="button" class="btn btn-dark btn-sm ml-1">문자</button>
-                                        <button type="button" class="btn btn-dark btn-sm ml-1">승인</button>
-                                        <button type="button" class="btn btn-dark btn-sm ml-1" data-target="#modal-return" data-toggle="modal">반려</button>
-                                        <button type="button" class="btn btn-dark btn-sm ml-1" onclick="confirm('선택한 출결 신청과 관련하여 \n학생의 증빙 서류를 확인하셨습니까?')">증빙완료</button>
+                            </div>
+                            <div class="row justify-content-between align-items-end mb-2 mt-2">
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center">
+                                        <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                            <option value="">접수일</option>
+                                        </select>
+                                        <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
+                                        <div class="mx-2">~</div>
+                                        <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
                                     </div>
                                 </div>
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="attendanceAll"></th>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">신청경로</th>
-                                                <th class="text-center">관</th>
-                                                <th class="text-center">학생ID</th>
-                                                <th class="text-center">좌석번호</th>
-                                                <th class="text-center">구분</th>
-                                                <th class="text-center">요청일</th>
-                                                <th class="text-center">시작</th>
-                                                <th class="text-center">종료</th>
-                                                <th class="text-center">요청사유</th>
-                                                <th class="text-center">증빙</th>
-                                                <th class="text-center">접수일</th>
-                                                <th class="text-center">상태</th>
-                                                <th class="text-center">비고(메세지)</th>
-                                                <th class="text-center">승인일</th>
-                                                <th class="text-center">승인자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for (var i = 5; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
-                                                <td class="text-center">`+ i +`</td>
-                                                <td class="text-center">바로콜</td>
-                                                <td class="text-center">N</td>
-                                                <td class="text-center">김학생1234</td>
-                                                <td class="text-center">123</td>
-                                                <td class="text-center">지각</td>
-                                                <td class="text-center">12-03(금)</td>
-                                                <td class="text-center">08:30</td>
-                                                <td class="text-center">09:30</td>
-                                                <td class="text-center">병원 정기 검진</td>
-                                                <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
-                                                <td class="text-center">mm/dd <br>00:00</td>
-                                                <td class="text-center">접수</td>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">mm/dd <br>00:00</td>
-                                                <td class="text-center">User name <br>(UserID)</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">푸시</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">문자</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">승인</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" data-target="#modal-return" data-toggle="modal">반려</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1" onclick="confirm('선택한 출결 신청과 관련하여 \n학생의 증빙 서류를 확인하셨습니까?')">증빙완료</button>
                                 </div>
-                                @@include('@@webRoot/_include/_pagination.html')
-                                <div class="text-right">
-                                    <button type="button" class="btn btn-dark">요청 취소</button>
-                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="attendanceAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">신청경로</th>
+                                            <th class="text-center">관</th>
+                                            <th class="text-center">학생ID</th>
+                                            <th class="text-center">좌석번호</th>
+                                            <th class="text-center">구분</th>
+                                            <th class="text-center">요청일</th>
+                                            <th class="text-center">시작</th>
+                                            <th class="text-center">종료</th>
+                                            <th class="text-center">요청사유</th>
+                                            <th class="text-center">증빙</th>
+                                            <th class="text-center">접수일</th>
+                                            <th class="text-center">상태</th>
+                                            <th class="text-center">비고(메세지)</th>
+                                            <th class="text-center">승인일</th>
+                                            <th class="text-center">승인자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                            <td class="text-center">`+ i +`</td>
+                                            <td class="text-center">바로콜</td>
+                                            <td class="text-center">N</td>
+                                            <td class="text-center">김학생1234</td>
+                                            <td class="text-center">123</td>
+                                            <td class="text-center">지각</td>
+                                            <td class="text-center">12-03(금)</td>
+                                            <td class="text-center">08:30</td>
+                                            <td class="text-center">09:30</td>
+                                            <td class="text-center">병원 정기 검진</td>
+                                            <td class="text-center"><a href="#none" class="text-underline">파일명.확장자</a></td>
+                                            <td class="text-center">mm/dd <br>00:00</td>
+                                            <td class="text-center">접수</td>
+                                            <td class="text-center">-</td>
+                                            <td class="text-center">mm/dd <br>00:00</td>
+                                            <td class="text-center">User name <br>(UserID)</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                            <div class="text-right">
+                                <button type="button" class="btn btn-dark">요청 취소</button>
                             </div>
                         </div>
                     </div>
@@ -297,6 +404,312 @@
                 <div class="modal-body">
                     <p class="mb-2">선택한 출결 신청을 반려합니다. <br>반려 사유를 작성해 주세요.</p>
                     <textarea name="" id="" cols="" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 출결 신청 등록 -->
+    <div class="modal" tabindex="-1" id="modal-attendance-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 520px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">출결 신청 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pb-3">
+                        <div class="row justify-content-between">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">관</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">반</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select w-auto mr-2">
+                                        <option value="">학생ID</option>
+                                        <option value="">좌석번호</option>
+                                    </select>
+                                    <input type="text" class="form-control mr-2" style="width:120px">
+                                    <button type="button" class="btn btn-dark">검색</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">선택</th>
+                                <th class="text-center">학생ID</th>
+                                <th class="text-center">관</th>
+                                <th class="text-center">반</th>
+                                <th class="text-center">좌석번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" id="check1">
+                                </td>
+                                <td class="text-center">
+                                    <a href="#modal-attendance-history" data-toggle="modal" class="text-underline">김시대1231</a>
+                                </td>
+                                <td class="text-center">신관</td>
+                                <td class="text-center">A반</td>
+                                <td class="text-center">125</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center mt-3 mb-3">
+                        <button type="button" class="btn btn-dark">적용</button>
+                    </div>
+                    <table class="table table-bordered table-fixed ">
+                        <colgroup>
+                            <col style="width: 120px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>학생 정보</th>
+                                <td>김시대1234 ( 관 / 반 /  좌석번호)</td>
+                            </tr>
+                            <tr>
+                                <th>신청 종류</th>
+                                <td>
+                                    <input type="radio" name="applyTerm" id="applyTermShort">
+                                    <label for="applyTermShort">단기</label>
+                                    <input type="radio" name="applyTerm" id="applyTermLong">
+                                    <label for="applyTermLong">장기</label>
+                                    <script>
+                                        $('[name=applyTerm]').on('change',function(){
+                                            if ($('#applyTermShort').is(':checked')){
+                                                $('.tr-long').hide();
+                                                $('.tr-short').show();
+                                            } else if ($('#applyTermLong').is(':checked')){
+                                                $('.tr-short').hide();
+                                                $('.tr-long').show();
+                                            }
+                                        });
+                                    </script>
+                                </td>
+                            </tr>
+                            <!-- 신청종류 : 단기 -->
+                            <tr class="tr-short" style="display:none">
+                                <th>출결 구분</th>
+                                <td>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy1">
+                                    <label for="attendanceClassfy1">결석</label>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy2">
+                                    <label for="attendanceClassfy2">지각</label>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy3">
+                                    <label for="attendanceClassfy3">조퇴</label>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy4">
+                                    <label for="attendanceClassfy4">외출</label>
+                                </td>
+                            </tr>
+                            <tr class="tr-short" style="display:none">
+                                <th>요청일</th>
+                                <td>
+                                    <input type="text" class="form-control form-datepicker">
+                                </td>
+                            </tr>
+                            <tr class="tr-short" style="display:none">
+                                <th>시작/종료 시간</th>
+                                <td>
+                                    <div class="row row-5 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-timepicker">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-timepicker">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="tr-short" style="display:none">
+                                <th>요청 사유</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr class="tr-short" style="display:none">
+                                <th>증빙 여부</th>
+                                <td>
+                                    <input type="radio" name="doc" id="docY">
+                                    <label for="docY">Y</label>
+                                    <input type="radio" name="doc" id="docN">
+                                    <label for="docN">N</label>
+                                </td>
+                            </tr>
+                            <tr class="tr-short" style="display:none">
+                                <th>비고 <br>(메세지)</th>
+                                <td>
+                                    <textarea name="" id="" cols="" rows="2" class="form-control"></textarea>
+                                </td>
+                            </tr>
+                            <!-- //신청종류 : 단기 -->
+                            <!-- 신청종류 : 장기 -->
+                            <tr class="tr-long" style="display:none">
+                                <th>출결 구분</th>
+                                <td>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy1">
+                                    <label for="attendanceClassfy1">결석</label>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy2">
+                                    <label for="attendanceClassfy2">지각</label>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy3">
+                                    <label for="attendanceClassfy3">조퇴</label>
+                                    <input type="radio" name="attendanceClassfy" id="attendanceClassfy4">
+                                    <label for="attendanceClassfy4">외출</label>
+                                </td>
+                            </tr>
+                            <tr class="tr-long" style="display:none">
+                                <th>요청일</th>
+                                <td>
+                                    <div class="row row-5 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="tr-long" style="display:none">
+                                <th>시작/종료 시간</th>
+                                <td>
+                                    <div class="row row-5 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-timepicker">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-timepicker">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="tr-long" style="display:none">
+                                <th>반복여부</th>
+                                <td>
+                                    <input type="checkbox" name="repeat" id="repeatMon">
+                                    <label for="repeatMon">월</label>
+                                    <input type="checkbox" name="repeat" id="repeatTue">
+                                    <label for="repeatTue">화</label>
+                                    <input type="checkbox" name="repeat" id="repeatWed">
+                                    <label for="repeatWed">수</label>
+                                    <input type="checkbox" name="repeat" id="repeatThur">
+                                    <label for="repeatThur">목</label>
+                                    <input type="checkbox" name="repeat" id="repeatFri">
+                                    <label for="repeatFri">금</label>
+                                </td>
+                            </tr>
+                            <tr class="tr-long" style="display:none">
+                                <th>요청 사유</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr class="tr-long" style="display:none">
+                                <th>증빙 여부</th>
+                                <td>
+                                    <input type="radio" name="doc" id="docY">
+                                    <label for="docY">Y</label>
+                                    <input type="radio" name="doc" id="docN">
+                                    <label for="docN">N</label>
+                                </td>
+                            </tr>
+                            <tr class="tr-long" style="display:none">
+                                <th>비고 <br>(메세지)</th>
+                                <td>
+                                    <textarea name="" id="" cols="" rows="2" class="form-control"></textarea>
+                                </td>
+                            </tr>
+                            <!-- //신청종류 : 장기 -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 출결 신청 내역 -->
+    <div class="modal" tabindex="-1" id="modal-attendance-history" data-backdrop="static" data-overlap="true"> <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" style="max-width: 560px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">출결 신청 내역</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">김시대1234 신청 내역</strong> 총 ###건
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">구분</th>
+                                <th class="text-center">승인일</th>
+                                <th class="text-center">시작</th>
+                                <th class="text-center">종료</th>
+                                <th class="text-center">상태</th>
+                                <th class="text-center">승인자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @@for (var i = 5; i > 0; i--) {
+                            <tr>
+                                <td class="text-center">`+ i +`</td>
+                                <td class="text-center">지각</td>
+                                <td class="text-center">12-03(금)</td>
+                                <td class="text-center">08:30</td>
+                                <td class="text-center">09:30</td>
+                                <td class="text-center">접수</td>
+                                <td class="text-center">Username(USERID)</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 증빙완료 -->
+    <div class="modal" tabindex="-1" id="modal-document-finish" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">정기 출결 증빙완료</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>선택한 출결 신청과 관련하여 <br>학생의 증빙 서류를 확인하셨습니까?</p>
+                    <p class="my-2">※ 비고(메시지) 수정이 필요하면 작성 해주세요.</p>
+                    <textarea name="" id="" cols="" rows="3" class="form-control"></textarea>
+                    <p class="text-secondary mt-2">*증빙 완료와 함께 반영 됩니다. <br>*여러 건을 선택한 경우 일괄 적용 됩니다.</p>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark">저장</button>

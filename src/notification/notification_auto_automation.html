@@ -43,130 +43,123 @@
                         </div>
                     </div>
                 </div>
-                <div style="min-height: calc(100vh - 193px);">
-                    <div class="split-vertical">
-                        <div class="section init" id="split-vertical-1">
-                            <div class="p-3">
-                                <div class="row align-items-center mb-2">
-                                    <div class="col-auto">
-                                        <strong class="mr-2">알림 조건</strong>총 ###건
-                                    </div>
-                                </div>
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">알림 구분</th>
-                                                <th class="text-center">알림 그룹 기준</th>
-                                                <th class="text-center">알림 내용</th>
-                                                <th class="text-center">알림 대상</th>
-                                                <th class="text-center">방송시점</th>
-                                                <th class="text-center">게시판</th>
-                                                <th class="text-center">문자</th>
-                                                <th class="text-center">푸시</th>
-                                                <th class="text-center">자동 알림</th>
-                                                <th class="text-center">사용여부</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @@for (var i = 5; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center">
-                                                    `+ i +`
-                                                </td>
-                                                <td class="text-center">[강의]휴강</td>
-                                                <td class="text-center">수업</td>
-                                                <td class="text-center">
-                                                    <a href="" data-toggle="modal" class="text-underline">수정</a>
-                                                </td>
-                                                <td class="text-center">학생</td>
-                                                <td class="text-center">발생 즉시</td>
-                                                <td class="text-center">N</td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">N</td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">Y</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                @@include('@@webRoot/_include/_pagination.html')
-                            </div>
+                <div class="p-3">
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">알림 조건</strong>총 ###건
                         </div>
-                        <div class="section init" id="split-vertical-2">
-                            <nav class="tab-custom px-5">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">게시판 일림</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">문자 알림</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">푸시 알림</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="p-3">
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="tab1" role="tabpanel">
-                                        <div class="row align-items-end justify-content-between mb-2">
-                                            <div class="col-auto">
-                                                <strong class="mr-2">[강의] 휴강 관련 게시판</strong>총 ###건
-                                            </div>
-                                            <div class="col-auto">
-                                                <div class="d-flex align-items-center">
-                                                    <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
-                                                        <option value="">알림 그룹</option>
-                                                    </select>
-                                                    <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width: 120px">
-                                                    <span class="mr-2">~</span>
-                                                    <input type="text" class="form-control form-control-sm form-datepicker" style="width: 120px">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main_search_result_list">
-                                            <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                            <table class="table" id="datatable1">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">No.</th>
-                                                        <th class="text-center">게시일</th>
-                                                        <th class="text-center">알림 그룹</th>
-                                                        <th class="text-center">조회수</th>
-                                                        <th class="text-center">공개 여부</th>
-                                                        <th class="text-center">게시글 제목</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @@for (var i = 10; i > 0; i--) {
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            `+ i +`
-                                                        </td>
-                                                        <td class="text-center">yy-mm-dd</td>
-                                                        <td class="text-center">M3관  S반 국어 김은양T</td>
-                                                        <td class="text-center"></td>
-                                                        <td class="text-center"></td>
-                                                        <td class="text-center">
-                                                            <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                                        </td>
-                                                    </tr>
-                                                    }
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        @@include('@@webRoot/_include/_pagination.html')
-                                    </div>
-                                    <div class="tab-pane" id="tab2" role="tabpanel">2
-                                    </div>
-                                    <div class="tab-pane" id="tab3" role="tabpanel">3
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">알림 구분</th>
+                                    <th class="text-center">알림 그룹 기준</th>
+                                    <th class="text-center">알림 내용</th>
+                                    <th class="text-center">알림 대상</th>
+                                    <th class="text-center">방송시점</th>
+                                    <th class="text-center">게시판</th>
+                                    <th class="text-center">문자</th>
+                                    <th class="text-center">푸시</th>
+                                    <th class="text-center">자동 알림</th>
+                                    <th class="text-center">사용여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 5; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center">
+                                        `+ i +`
+                                    </td>
+                                    <td class="text-center">[강의]휴강</td>
+                                    <td class="text-center">수업</td>
+                                    <td class="text-center">
+                                        <a href="" data-toggle="modal" class="text-underline">수정</a>
+                                    </td>
+                                    <td class="text-center">학생</td>
+                                    <td class="text-center">발생 즉시</td>
+                                    <td class="text-center">N</td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">N</td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">Y</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
+                </div>
+                <div class="hr"></div>
+                <nav class="tab-custom px-5">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">게시판 일림</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">문자 알림</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">푸시 알림</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1" role="tabpanel">
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">[강의] 휴강 관련 게시판</strong>총 ###건
+                                </div>
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center">
+                                        <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                            <option value="">알림 그룹</option>
+                                        </select>
+                                        <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width: 120px">
+                                        <span class="mr-2">~</span>
+                                        <input type="text" class="form-control form-control-sm form-datepicker" style="width: 120px">
                                     </div>
                                 </div>
                             </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">No.</th>
+                                            <th class="text-center">게시일</th>
+                                            <th class="text-center">알림 그룹</th>
+                                            <th class="text-center">조회수</th>
+                                            <th class="text-center">공개 여부</th>
+                                            <th class="text-center">게시글 제목</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 10; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center">
+                                                `+ i +`
+                                            </td>
+                                            <td class="text-center">yy-mm-dd</td>
+                                            <td class="text-center">M3관  S반 국어 김은양T</td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center">
+                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                        </div>
+                        <div class="tab-pane" id="tab2" role="tabpanel">2
+                        </div>
+                        <div class="tab-pane" id="tab3" role="tabpanel">3
                         </div>
                     </div>
                 </div>

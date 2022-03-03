@@ -255,7 +255,7 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">자동알림관리</h2>
+                <h2 class="title">기타 신청</h2>
                 <div class="p-3 border-bottom">
                     <div class="row justify-content-between">
                         <div class="col-auto">
@@ -264,136 +264,106 @@
                                     <option value="">관</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">알림 구분</option>
+                                    <option value="">담임</option>
                                 </select>
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">게시판</option>
-                                </select>
-                                <select name="" id="" class="custom-select w-auto">
-                                    <option value="">자동알림</option>
-                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <div class="mx-2">~</div>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <button type="button" class="btn btn-dark">검색</button>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-dark">파일다운로드</button>
-                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-noti-classify">알림구분관리</button>
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-etc-manage">기타 요청 관리</button>
+                            <button type="button" class="btn btn-info ml-1">TODAY</button>
                         </div>
                     </div>
                 </div>
                 <div class="p-3">
-                    <div class="row align-items-center mb-2">
-                        <div class="col-auto">
-                            <strong class="mr-2">알림 조건</strong>총 ###건
-                        </div>
-                    </div>
                     <div class="main_search_result_list">
                         <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table" id="datatable1">
+                        <table class="table table-fixed" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th class="text-center">No</th>
-                                    <th class="text-center">알림 구분</th>
-                                    <th class="text-center">알림 그룹 기준</th>
-                                    <th class="text-center">알림 내용</th>
-                                    <th class="text-center">알림 대상</th>
-                                    <th class="text-center">방송시점</th>
-                                    <th class="text-center">게시판</th>
-                                    <th class="text-center">문자</th>
-                                    <th class="text-center">푸시</th>
-                                    <th class="text-center">자동 알림</th>
-                                    <th class="text-center">사용여부</th>
+                                    <th class="text-center" rowspan="2">관</th>
+                                    <th class="text-center" colspan="4">기타 요청</th>
+                                    <th class="text-center" rowspan="2">총 신청 건수</th>
+                                    <th class="text-center table-bg-1" rowspan="2">접수</th>
+                                    <th class="text-center table-bg-1" rowspan="2">확인중</th>
+                                    <th class="text-center table-bg-1" rowspan="2">반려</th>
+                                    <th class="text-center table-bg-1" rowspan="2">처리완료 <br>(승인)</th>
+                                    <th class="text-center table-bg-1" rowspan="2">답변 <br>(승인)</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center">기타요청</th>
+                                    <th class="text-center">방해신고</th>
+                                    <th class="text-center">추가1</th>
+                                    <th class="text-center">추가2</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <tr>
                                     <td class="text-center">
-                                        5
+                                        <a href="javascript:;" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">[강의]휴강</td>
-                                    <td class="text-center">수업</td>
-                                    <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">수정</a>
-                                    </td>
-                                    <td class="text-center">학생</td>
-                                    <td class="text-center">발생 즉시</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">19</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">9</td>
+                                    <td class="text-center">7</td>
+                                    <td class="text-center">0</td>
                                 </tr>
 
                                 <tr>
                                     <td class="text-center">
-                                        4
+                                        <a href="javascript:;" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">[강의]휴강</td>
-                                    <td class="text-center">수업</td>
-                                    <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">수정</a>
-                                    </td>
-                                    <td class="text-center">학생</td>
-                                    <td class="text-center">발생 즉시</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">19</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">9</td>
+                                    <td class="text-center">7</td>
+                                    <td class="text-center">0</td>
                                 </tr>
 
                                 <tr>
                                     <td class="text-center">
-                                        3
+                                        <a href="javascript:;" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">[강의]휴강</td>
-                                    <td class="text-center">수업</td>
-                                    <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">수정</a>
-                                    </td>
-                                    <td class="text-center">학생</td>
-                                    <td class="text-center">발생 즉시</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">19</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">9</td>
+                                    <td class="text-center">7</td>
+                                    <td class="text-center">0</td>
                                 </tr>
 
                                 <tr>
                                     <td class="text-center">
-                                        2
+                                        <a href="javascript:;" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">[강의]휴강</td>
-                                    <td class="text-center">수업</td>
-                                    <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">수정</a>
-                                    </td>
-                                    <td class="text-center">학생</td>
-                                    <td class="text-center">발생 즉시</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center">
-                                        1
-                                    </td>
-                                    <td class="text-center">[강의]휴강</td>
-                                    <td class="text-center">수업</td>
-                                    <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">수정</a>
-                                    </td>
-                                    <td class="text-center">학생</td>
-                                    <td class="text-center">발생 즉시</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">N</td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">19</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">9</td>
+                                    <td class="text-center">7</td>
+                                    <td class="text-center">0</td>
                                 </tr>
 
                             </tbody>
@@ -453,244 +423,210 @@
                     </nav>
                 </div>
                 <div class="hr"></div>
-                <nav class="tab-custom px-5">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">게시판 일림</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">문자 알림</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">푸시 알림</a>
-                        </li>
-                    </ul>
-                </nav>
                 <div class="p-3">
-                    <div class="tab-content">
-                        <div class="tab-pane show active" id="tab1" role="tabpanel">
-                            <div class="row align-items-end justify-content-between mb-2">
-                                <div class="col-auto">
-                                    <strong class="mr-2">[강의] 휴강 관련 게시판</strong>총 ###건
-                                </div>
-                                <div class="col-auto">
-                                    <div class="d-flex align-items-center">
-                                        <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
-                                            <option value="">알림 그룹</option>
-                                        </select>
-                                        <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width: 120px">
-                                        <span class="mr-2">~</span>
-                                        <input type="text" class="form-control form-control-sm form-datepicker" style="width: 120px">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main_search_result_list">
-                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                <table class="table" id="datatable1">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center">No.</th>
-                                            <th class="text-center">게시일</th>
-                                            <th class="text-center">알림 그룹</th>
-                                            <th class="text-center">조회수</th>
-                                            <th class="text-center">공개 여부</th>
-                                            <th class="text-center">게시글 제목</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                10
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                9
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                8
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                7
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                6
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                5
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                4
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                3
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                2
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">
-                                                1
-                                            </td>
-                                            <td class="text-center">yy-mm-dd</td>
-                                            <td class="text-center">M3관 S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                                    <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                                <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                            </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="tab-pane" id="tab2" role="tabpanel">2
-                        </div>
-                        <div class="tab-pane" id="tab3" role="tabpanel">3
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">기타 요청 목록</strong>총 ###건
                         </div>
                     </div>
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">요청구분</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">상태</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark">검색</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between align-items-end mb-2 mt-2">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                    <option value="">접수일</option>
+                                </select>
+                                <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
+                                <div class="mx-2">~</div>
+                                <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width:120px">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1">확인중</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1" data-target="#modal-etc-return" data-toggle="modal">반려</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1" data-target="#modal-etc-answer" data-toggle="modal">답변</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1">처리완료</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="attendanceAll"></th>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">관</th>
+                                    <th class="text-center">학생ID</th>
+                                    <th class="text-center">좌석번호</th>
+                                    <th class="text-center">요청구분</th>
+                                    <th class="text-center">요청사유</th>
+                                    <th class="text-center">위치</th>
+                                    <th class="text-center">접수일</th>
+                                    <th class="text-center">상태</th>
+                                    <th class="text-center">메시지</th>
+                                    <th class="text-center">승인일</th>
+                                    <th class="text-center">승인자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">M3</td>
+                                    <td class="text-center">김학생1234</td>
+                                    <td class="text-center">123</td>
+                                    <td class="text-center">방해신고</td>
+                                    <td class="text-center">문의 내용 앞자리 애가 잠 자는데 너무 시끄럽게 코를 골아요. 좀 어떻게 해주세요 ㅠㅠ</td>
+                                    <td class="text-center">2층 제일 앞좌석</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">접수</td>
+                                    <td class="text-center">가장 가까운곳은 3층 ##앞입니다….</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">User name <br>(UserID)</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">M3</td>
+                                    <td class="text-center">김학생1234</td>
+                                    <td class="text-center">123</td>
+                                    <td class="text-center">방해신고</td>
+                                    <td class="text-center">문의 내용 앞자리 애가 잠 자는데 너무 시끄럽게 코를 골아요. 좀 어떻게 해주세요 ㅠㅠ</td>
+                                    <td class="text-center">2층 제일 앞좌석</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">접수</td>
+                                    <td class="text-center">가장 가까운곳은 3층 ##앞입니다….</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">User name <br>(UserID)</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">M3</td>
+                                    <td class="text-center">김학생1234</td>
+                                    <td class="text-center">123</td>
+                                    <td class="text-center">방해신고</td>
+                                    <td class="text-center">문의 내용 앞자리 애가 잠 자는데 너무 시끄럽게 코를 골아요. 좀 어떻게 해주세요 ㅠㅠ</td>
+                                    <td class="text-center">2층 제일 앞좌석</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">접수</td>
+                                    <td class="text-center">가장 가까운곳은 3층 ##앞입니다….</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">User name <br>(UserID)</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">M3</td>
+                                    <td class="text-center">김학생1234</td>
+                                    <td class="text-center">123</td>
+                                    <td class="text-center">방해신고</td>
+                                    <td class="text-center">문의 내용 앞자리 애가 잠 자는데 너무 시끄럽게 코를 골아요. 좀 어떻게 해주세요 ㅠㅠ</td>
+                                    <td class="text-center">2층 제일 앞좌석</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">접수</td>
+                                    <td class="text-center">가장 가까운곳은 3층 ##앞입니다….</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">User name <br>(UserID)</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="attendanceAll"></td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">M3</td>
+                                    <td class="text-center">김학생1234</td>
+                                    <td class="text-center">123</td>
+                                    <td class="text-center">방해신고</td>
+                                    <td class="text-center">문의 내용 앞자리 애가 잠 자는데 너무 시끄럽게 코를 골아요. 좀 어떻게 해주세요 ㅠㅠ</td>
+                                    <td class="text-center">2층 제일 앞좌석</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">접수</td>
+                                    <td class="text-center">가장 가까운곳은 3층 ##앞입니다….</td>
+                                    <td class="text-center">mm/dd <br>00:00</td>
+                                    <td class="text-center">User name <br>(UserID)</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-dark">요청 취소</button>
+                    </div>
                 </div>
+
                 <!-- 컨텐츠 끝 -->
 
             </main>
@@ -812,82 +748,34 @@
 
     </div>
 
-    <!-- modal : 알림 구분 관리 -->
-    <div class="modal" tabindex="-1" id="modal-noti-classify" data-backdrop="static">
+    <!-- modal : 기타 요청 관리 -->
+    <div class="modal" tabindex="-1" id="modal-etc-manage" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">알림 구분 관리</h5>
+                    <h5 class="modal-title">기타 요청 관리</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row justify-content-between align-items-end mb-2">
-                        <div class="col-auto">
-                            <div class="table-title mb-0">알림 구분 등록</div>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-dark btn-sm">추가</button>
+                    <div class="pb-3">
+                        <div class="row justify-content-between">
+                            <div class="col-auto">
+
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark">추가</button>
+                            </div>
                         </div>
                     </div>
-                    <table class="table table-bordered table-fixed">
-                        <colgroup>
-                            <col style="width: 100px;">
-                            <col>
-                            <col style="width: 100px;">
-                            <col>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th>알림 구분명</th>
-                                <td>
-                                    <div class="row row-5">
-                                        <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
-                                                <option value="">입력</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </td>
-                                <th>노출 순서</th>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>알림 구분 상세</th>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                                <th>사용 여부</th>
-                                <td>
-                                    <input type="radio" name="notiUse" id="notiUseY">
-                                    <label for="notiUseY">사용</label>
-                                    <input type="radio" name="notiUse" id="notiUseN">
-                                    <label for="notiUseN">사용 안 함</label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="table-title mt-3">알림 구분 관리</div>
-                    <table class="table table-fixed">
-                        <colgroup>
-                            <col style="width: 60px">
-                            <col>
-                            <col>
-                            <col>
-                            <col style="width: 150px;">
-                            <col>
-                        </colgroup>
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th class="text-center">No.</th>
-                                <th class="text-center">알림 구분</th>
-                                <th class="text-center">알림 구분 상세</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">구분명</th>
+                                <th class="text-center">사유 예시</th>
+                                <th class="text-center">위치 예시</th>
                                 <th class="text-center">순서</th>
                                 <th class="text-center">사용 여부</th>
                                 <th class="text-center">등록/수정</th>
@@ -895,48 +783,130 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-center"></td>
+                                <td class="text-center">1</td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="수업/강의">
+                                    <input type="text" class="form-control" value="위생/청결">
                                 </td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="휴/보강">
+                                    <input type="text" class="form-control" value="변기 고장">
                                 </td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="1">
+                                    <input type="text" class="form-control" value="3층 화장실 두번째칸">
                                 </td>
                                 <td class="text-center">
-                                    <input type="radio" name="notiUse1" id="notiUse1Y" checked>
-                                    <label for="notiUse1Y">사용</label>
-                                    <input type="radio" name="notiUse1" id="notiUseN1">
-                                    <label for="notiUse1N">사용 안 함</label>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">1</option>
+                                    </select>
                                 </td>
-                                <td class="text-center"></td>
+                                <td class="text-center">
+                                    <input type="radio" name="etcUse" id="etcUseY">
+                                    <label for="etcUseY">사용</label>
+                                    <input type="radio" name="etcUse" id="etcUseN" checked>
+                                    <label for="etcUseN">미사용</label>
+                                </td>
+                                <td class="text-center">
+                                    2022-02-17 <br>김소라
+                                </td>
                             </tr>
                             <tr>
-                                <td class="text-center"></td>
+                                <td class="text-center">2</td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="수업/강의">
+                                    <input type="text" class="form-control" value="와이파이">
                                 </td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="교실변경">
+                                    <input type="text" class="form-control" value="">
                                 </td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="2">
+                                    <input type="text" class="form-control" value="">
                                 </td>
                                 <td class="text-center">
-                                    <input type="radio" name="notiUse2" id="notiUse2Y">
-                                    <label for="notiUse2Y">사용</label>
-                                    <input type="radio" name="notiUse2" id="notiUse2N" checked>
-                                    <label for="notiUse2N">사용 안 함</label>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">2</option>
+                                    </select>
                                 </td>
-                                <td class="text-center"></td>
+                                <td class="text-center">
+                                    <input type="radio" name="etcUse1" id="etcUse1-Y" checked>
+                                    <label for="etcUse1-Y">사용</label>
+                                    <input type="radio" name="etcUse1" id="etcUse1-N">
+                                    <label for="etcUse1-N">미사용</label>
+                                </td>
+                                <td class="text-center">
+                                    2022-02-17 <br>김소라
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control" value="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control" value="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control" value="">
+                                </td>
+                                <td class="text-center">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">3</option>
+                                    </select>
+                                </td>
+                                <td class="text-center">
+                                    <input type="radio" name="etcUse2" id="etcUse2-Y">
+                                    <label for="etcUse2-Y">사용</label>
+                                    <input type="radio" name="etcUse2" id="etcUse2-N">
+                                    <label for="etcUse2-N">미사용</label>
+                                </td>
+                                <td class="text-center">
+                                    2022-02-17 <br>김소라
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 문의/요청 처리 반려 -->
+    <div class="modal" tabindex="-1" id="modal-etc-return" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">문의/요청 처리 반려</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-2">선택한 문의/요청을 반려합니다. <br>반려 사유를 작성해 주세요.</p>
+                    <textarea name="" id="" cols="" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">반려</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 문의/요청 처리 답변 -->
+    <div class="modal" tabindex="-1" id="modal-etc-answer" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">문의/요청 처리 답변</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-2">선택한 문의/요청과 관련하여 <br>답변을 작성해 주세요. <br>(여러 건을 선택한 경우 일괄 답변 됩니다)</p>
+                    <textarea name="" id="" cols="" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">답변</button>
                     <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
                 </div>
             </div>

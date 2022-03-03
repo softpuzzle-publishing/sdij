@@ -10,6 +10,9 @@
 
 .min-width-100px{min-width: 100px;}
 
+hr{margin: 0;border-width: 5px;border-color: #eee;}
+.hr{border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;height: 8px;background: #f1f2f3;}
+
 button{border-radius: 0;border: 0;padding: 0;margin: 0;background: transparent;}
 
 .material-icons{color: $dark;}
@@ -37,6 +40,10 @@ textarea{resize: none!important;}
 .table-title{font-weight: 700;margin-bottom: .5rem;}
 .table-bg-1{background: #e6e7e8 !important;}
 
+input[type=file].form-control{
+    padding-top: 3px;
+}
+
 input[type=text]{
     &[disabled]{background-color: #f2f2f2;}
 }
@@ -44,6 +51,7 @@ input[type=text]{
 input[type=checkbox]{
     vertical-align: middle;
     & + label{margin-left: 3px;vertical-align: middle;}
+    label + &{margin-left: 12px;}
 }
 
 input[type=radio]{
@@ -100,7 +108,7 @@ input[type=radio]{
 }
 
 .mdtimepicker{
-    .mdtp__wrapper{bottom: auto;top: 50%;transform: translate(-50%, -50%);}
+    .mdtp__wrapper{bottom: auto;top: 50%;transform: translate(-50%, -50%);transition: none;}
 }
 
 .datepicker-box{
@@ -234,10 +242,6 @@ textarea.form-control{resize: none;}
 .split-horizontal {
     display: flex;flex-direction: row;overflow-y: auto;
     overflow-x: hidden;
-}
-.split-vertical {
-    overflow-y: auto;overflow-x: hidden;height: 100%;
-    .init{height: auto !important;}
 }
 
 .gutter {

@@ -110,8 +110,8 @@
                             <li class="has-treeview">
                                 <a href="javascript:;"><span>신청/수납</span></a>
                                 <ul class="dep2">
+                                    <li><a href="../institute/institute_enroll_course.html"><span>수강신청관리</span></a></li>
                                     <li><a href="#"><span>선택교재관리</span></a></li>
-                                    <li><a href="#"><span>수강신청관리</span></a></li>
                                     <li><a href="#"><span>출결카드관리</span></a></li>
                                     <li><a href="#"><span>기기대여관리</span></a></li>
                                 </ul>
@@ -123,8 +123,11 @@
                                     <li><a href="../institute/institute_board_guidebook.html"><span>가이드북</span></a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#"><span>급식관리</span></a>
+                            <li class="has-treeview">
+                                <a href="javascript:;"><span>급식관리</span></a>
+                                <ul class="dep2">
+                                    <li><a href="../institute/institute_meal.html"><span>급식관리</span></a></li>
+                                </ul>
                             </li>
                         </ul>
                         <!-- 학습 관리 -->
@@ -179,7 +182,7 @@
                                 <a href="javascript:;"><span>바로콜 관리</span></a>
                                 <ul class="dep2">
                                     <li><a href="../students/students_call_attendance.html"><span>출결 신청</span></a></li>
-                                    <li><a href="#"><span>기타 신청</span></a></li>
+                                    <li><a href="../students/students_call_etc.html"><span>기타 신청</span></a></li>
                                 </ul>
                             </li>
                             <li class="has-treeview">
@@ -281,208 +284,205 @@
                 </div>
                 <div class="split-horizontal">
                     <div class="section" id="split-horizontal-1">
-                        <div style="min-height: calc(100vh - 193px);">
-                            <div class="split-vertical">
-                                <div class="p-3 overflow-hidden init" id="split-vertical-1">
-                                    <div class="row align-items-center justify-content-between mb-2">
-                                        <div class="col-auto">
-                                            <strong class="mr-2">학생</strong>총 ###건
-                                        </div>
-                                        <div class="col-auto">
-                                            <input type="checkbox" id="usableOnly">
-                                            <label for="usableOnly" class="mb-0">수강중 학생만 보기</label>
-                                        </div>
-                                    </div>
-                                    <div class="main_search_result_list">
-                                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                        <table class="table" id="datatable1">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-center">ID</th>
-                                                    <th class="text-center">학생ID</th>
-                                                    <th class="text-center">사용카드</th>
-                                                    <th class="text-center">이전카드</th>
-                                                    <th class="text-center">수정</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                                <tr>
-                                                    <td class="text-center">5</td>
-                                                    <td class="text-center"><a href="" class="text-underline">id</a></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="text-center">4</td>
-                                                    <td class="text-center"><a href="" class="text-underline">id</a></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="text-center">3</td>
-                                                    <td class="text-center"><a href="" class="text-underline">id</a></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="text-center">2</td>
-                                                    <td class="text-center"><a href="" class="text-underline">id</a></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="text-center">1</td>
-                                                    <td class="text-center"><a href="" class="text-underline">id</a></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                    <td class="text-center"></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                        <div class="p-3">
+                            <div class="row align-items-center justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">학생</strong>총 ###건
                                 </div>
-                                <div class="p-3 overflow-hidden init" id="split-vertical-2">
-                                    <div class="row justify-content-between align-items-end mb-2">
-                                        <div class="col-auto">
-                                            <div class="table-title mb-0">김시대01234(012340401)</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <button type="button" class="btn btn-dark btn-sm">정보수정</button>
-                                        </div>
-                                    </div>
-                                    <table class="table table-bordered table-fixed">
-                                        <colgroup>
-                                            <col style="width: 100px">
-                                            <col>
-                                            <col style="width: 100px">
-                                            <col>
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <th>관/반</th>
-                                                <td></td>
-                                                <th>좌석</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th>부모님연락처</th>
-                                                <td></td>
-                                                <th>등원상태</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th>생활담임(오전)</th>
-                                                <td></td>
-                                                <th>생활담임(오후)</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th>학습담임</th>
-                                                <td></td>
-                                                <th></th>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="table-title mt-3">즉시 문자 발송</div>
-                                    <form action="">
-                                        <input type="text" class="form-control m-b-5">
-                                        <textarea name="" id="" rows="3" class="form-control" maxlength="2000" data-byte-target="#byte-check"></textarea>
-                                        <div class="text-right mt-1">
-                                            <span id="byte-check">0</span>/2000 byte
-                                        </div>
-                                        <div class="row justify-content-between align-items-center mt-2">
-                                            <div class="col-auto">
-                                                <select name="" id="" class="custom-select w-auto">
-                                                    <option value="">구분</option>
-                                                    <option value="">광고</option>
-                                                    <option value="">안내</option>
-                                                </select>
-                                                <select name="" id="" class="custom-select w-auto">
-                                                    <option value="">수신자</option>
-                                                    <option value="">학생</option>
-                                                    <option value="">학부모</option>
-                                                </select>
-                                                <select name="" id="" class="custom-select w-auto">
-                                                    <option value="">발신번호</option>
-                                                    <option value="">학원번호</option>
-                                                    <option value="">관번호</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-auto">
-                                                <button type="button" class="btn btn-danger" onclick="confirm('해당 내용으로 문자를 발송합니다.')">발송</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                <div class="col-auto">
+                                    <input type="checkbox" id="usableOnly">
+                                    <label for="usableOnly" class="mb-0">수강중 학생만 보기</label>
                                 </div>
                             </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">학생ID</th>
+                                            <th class="text-center">사용카드</th>
+                                            <th class="text-center">이전카드</th>
+                                            <th class="text-center">수정</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td class="text-center">5</td>
+                                            <td class="text-center"><a href="" class="text-underline">id</a></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">4</td>
+                                            <td class="text-center"><a href="" class="text-underline">id</a></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center"><a href="" class="text-underline">id</a></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center"><a href="" class="text-underline">id</a></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center"><a href="" class="text-underline">id</a></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="p-3">
+                            <div class="row justify-content-between align-items-end mb-2">
+                                <div class="col-auto">
+                                    <div class="table-title mb-0">김시대01234(012340401)</div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm">정보수정</button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-fixed">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>관/반</th>
+                                        <td></td>
+                                        <th>좌석</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>부모님연락처</th>
+                                        <td></td>
+                                        <th>등원상태</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>생활담임(오전)</th>
+                                        <td></td>
+                                        <th>생활담임(오후)</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>학습담임</th>
+                                        <td></td>
+                                        <th></th>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-title mt-3">즉시 문자 발송</div>
+                            <form action="">
+                                <input type="text" class="form-control m-b-5">
+                                <textarea name="" id="" rows="3" class="form-control" maxlength="2000" data-byte-target="#byte-check"></textarea>
+                                <div class="text-right mt-1">
+                                    <span id="byte-check">0</span>/2000 byte
+                                </div>
+                                <div class="row justify-content-between align-items-center mt-2">
+                                    <div class="col-auto">
+                                        <select name="" id="" class="custom-select w-auto">
+                                            <option value="">구분</option>
+                                            <option value="">광고</option>
+                                            <option value="">안내</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto">
+                                            <option value="">수신자</option>
+                                            <option value="">학생</option>
+                                            <option value="">학부모</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto">
+                                            <option value="">발신번호</option>
+                                            <option value="">학원번호</option>
+                                            <option value="">관번호</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-danger" onclick="confirm('해당 내용으로 문자를 발송합니다.')">발송</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="section" id="split-horizontal-2">
                         <nav class="tab-custom">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">신청내역</a>
                                 </li>
@@ -1160,7 +1160,7 @@
                     </div>
                     <div class="section" id="split-horizontal-3">
                         <nav class="tab-custom">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" data-toggle="tab" href="#tab5" role="tab">이슈/소통</a>
                                 </li>
