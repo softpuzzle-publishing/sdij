@@ -11,7 +11,10 @@
 .min-width-100px{min-width: 100px;}
 
 hr{margin: 0;border-width: 5px;border-color: #eee;}
-.hr{border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;height: 8px;background: #f1f2f3;}
+.hr{
+    border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;height: 8px;background: #f1f2f3;
+    &.vertical{border-top: 0;border-bottom: 0;border-left: 1px solid #e5e5e5;border-right: 1px solid #e5e5e5;width: 8px;height: auto;}
+}
 
 button{border-radius: 0;border: 0;padding: 0;margin: 0;background: transparent;}
 

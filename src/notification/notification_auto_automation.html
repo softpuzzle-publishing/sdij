@@ -46,7 +46,11 @@
                 <div class="p-3">
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <strong class="mr-2">알림 조건</strong>총 ###건
+                            <strong class="mr-2">자동 알림 목록</strong>총 ###건
+                        </div>
+                        <div class="col-auto">
+                            <input type="checkbox" id="usableOnly">
+                            <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
                         </div>
                     </div>
                     <div class="main_search_result_list">
@@ -56,35 +60,37 @@
                                 <tr>
                                     <th class="text-center">No</th>
                                     <th class="text-center">알림 구분</th>
+                                    <th class="text-center">알림 구분 상세</th>
                                     <th class="text-center">알림 그룹 기준</th>
-                                    <th class="text-center">알림 내용</th>
-                                    <th class="text-center">알림 대상</th>
-                                    <th class="text-center">방송시점</th>
+                                    <th class="text-center">알림 조건</th>
+                                    <th class="text-center">알림대상</th>
+                                    <th class="text-center">알림시점</th>
+                                    <th class="text-center">알림시점 상세</th>
                                     <th class="text-center">게시판</th>
                                     <th class="text-center">문자</th>
                                     <th class="text-center">푸시</th>
-                                    <th class="text-center">자동 알림</th>
                                     <th class="text-center">사용여부</th>
+                                    <th class="text-center">알림 기록</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @@for (var i = 5; i > 0; i--) {
                                 <tr>
-                                    <td class="text-center">
-                                        `+ i +`
-                                    </td>
-                                    <td class="text-center">[강의]휴강</td>
+                                    <td class="text-center">`+ i +`</td>
+                                    <td class="text-center">강의</td>
+                                    <td class="text-center">휴강</td>
                                     <td class="text-center">수업</td>
-                                    <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">수정</a>
-                                    </td>
+                                    <td class="text-center">강의 휴강 설정 처리한 경우</td>
                                     <td class="text-center">학생</td>
                                     <td class="text-center">발생 즉시</td>
+                                    <td class="text-center">매 주, 수, 6PM</td>
+                                    <td class="text-center">N</td>
                                     <td class="text-center">N</td>
                                     <td class="text-center">Y</td>
-                                    <td class="text-center">N</td>
                                     <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <a href="" data-toggle="modal" class="text-underline">상세</a>
+                                    </td>
                                 </tr>
                                 }
                             </tbody>
@@ -93,6 +99,30 @@
                     @@include('@@webRoot/_include/_pagination.html')
                 </div>
                 <div class="hr"></div>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">반</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">과목</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">강사</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <div class="mr-2">~</div>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <button type="button" class="btn btn-dark ml-1">검색</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <nav class="tab-custom px-5">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item" role="presentation">
@@ -106,22 +136,16 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="p-3">
-                    <div class="tab-content">
-                        <div class="tab-pane show active" id="tab1" role="tabpanel">
-                            <div class="row align-items-end justify-content-between mb-2">
+                <div class="tab-content">
+                    <div class="tab-pane show active" id="tab1" role="tabpanel">
+                        <div class="p-3">
+                            <div class="row align-items-center mb-2">
                                 <div class="col-auto">
                                     <strong class="mr-2">[강의] 휴강 관련 게시판</strong>총 ###건
                                 </div>
                                 <div class="col-auto">
-                                    <div class="d-flex align-items-center">
-                                        <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
-                                            <option value="">알림 그룹</option>
-                                        </select>
-                                        <input type="text" class="form-control form-control-sm form-datepicker mr-2" style="width: 120px">
-                                        <span class="mr-2">~</span>
-                                        <input type="text" class="form-control form-control-sm form-datepicker" style="width: 120px">
-                                    </div>
+                                    <input type="checkbox" id="usableOnly2">
+                                    <label for="usableOnly2" class="mb-0">사용 항목만 보기</label>
                                 </div>
                             </div>
                             <div class="main_search_result_list">
@@ -130,7 +154,7 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">No.</th>
-                                            <th class="text-center">게시일</th>
+                                            <th class="text-center">게시일시</th>
                                             <th class="text-center">알림 그룹</th>
                                             <th class="text-center">조회수</th>
                                             <th class="text-center">공개 여부</th>
@@ -138,16 +162,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @@for (var i = 10; i > 0; i--) {
+                                        @@for (var i = 5; i > 0; i--) {
                                         <tr>
                                             <td class="text-center">
                                                 `+ i +`
                                             </td>
                                             <td class="text-center">yy-mm-dd</td>
                                             <td class="text-center">M3관  S반 국어 김은양T</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">
+                                            <td class="text-center">1,358</td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-left">
                                                 <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
                                             </td>
                                         </tr>
@@ -157,9 +181,193 @@
                             </div>
                             @@include('@@webRoot/_include/_pagination.html')
                         </div>
-                        <div class="tab-pane" id="tab2" role="tabpanel">2
+                    </div>
+                    <div class="tab-pane" id="tab2" role="tabpanel">
+                        <div class="row">
+                            <div class="col">
+                                <div class="p-3">
+                                    <div class="row align-items-end justify-content-between mb-2">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">[강의] 휴강 관련 문자</strong>총 ###건
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-dark btn-sm">파일다운로드</button>
+                                        </div>
+                                    </div>
+                                    <div class="main_search_result_list">
+                                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                        <table class="table" id="datatable1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="smsAll"></th>
+                                                    <th class="text-center">No.</th>
+                                                    <th class="text-center">발송일시</th>
+                                                    <th class="text-center">발신 번호</th>
+                                                    <th class="text-center">알림 그룹</th>
+                                                    <th class="text-center">발송 제목</th>
+                                                    <th class="text-center">알림 대상</th>
+                                                    <th class="text-center">총 인원</th>
+                                                    <th class="text-center">성공</th>
+                                                    <th class="text-center">싪패</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @@for (var i = 5; i > 0; i--) {
+                                                <tr>
+                                                    <td class="text-center"><input type="checkbox" name="smsAll"></td>
+                                                    <td class="text-center">`+ i +`</td>
+                                                    <td class="text-center">mm/dd(aaa) <br>20:00</td>
+                                                    <td class="text-center">대치 <br>02-1234-5678</td>
+                                                    <td class="text-center">M3관, S반, 국어, 은양T</td>
+                                                    <td class="text-left">
+                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    </td>
+                                                    <td class="text-center">학부모</td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;" class="text-underline">125명</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;" class="text-underline">100명</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;" class="text-underline">25명</a>
+                                                    </td>
+                                                </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    @@include('@@webRoot/_include/_pagination.html')
+                                </div>
+                            </div>
+                            <div class="hr vertical"></div>
+                            <div class="col-4">
+                                <div class="p-3">
+                                    <div class="row align-items-end justify-content-between mb-2">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">발송 상세 내역</strong>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-dark btn-sm">발송 실패 일괄 재발송</button>
+                                        </div>
+                                    </div>
+                                    <div class="main_search_result_list">
+                                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                        <table class="table" id="datatable1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">No.</th>
+                                                    <th class="text-center">학생ID</th>
+                                                    <th class="text-center">발송 상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @@for (var i = 5; i > 0; i--) {
+                                                <tr>
+                                                    <td class="text-center">`+ i +`</td>
+                                                    <td class="text-center">김시대1234</td>
+                                                    <td class="text-center">실패 <br><a href="javascript:;"><small>[재발송]</small></a></td>
+                                                </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    @@include('@@webRoot/_include/_pagination.html')
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-pane" id="tab3" role="tabpanel">3
+                    </div>
+                    <div class="tab-pane" id="tab3" role="tabpanel">
+                        <div class="row">
+                            <div class="col">
+                                <div class="p-3">
+                                    <div class="row align-items-end justify-content-between mb-2">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">[강의] 휴강 관련 푸시</strong>총 ###건
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-dark btn-sm">파일다운로드</button>
+                                        </div>
+                                    </div>
+                                    <div class="main_search_result_list">
+                                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                        <table class="table" id="datatable1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="pushAll"></th>
+                                                    <th class="text-center">No.</th>
+                                                    <th class="text-center">발송일시</th>
+                                                    <th class="text-center">알림 그룹</th>
+                                                    <th class="text-center">발송 제목</th>
+                                                    <th class="text-center">알림 대상</th>
+                                                    <th class="text-center">총 인원</th>
+                                                    <th class="text-center">성공</th>
+                                                    <th class="text-center">싪패</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @@for (var i = 5; i > 0; i--) {
+                                                <tr>
+                                                    <td class="text-center"><input type="checkbox" name="pushAll"></td>
+                                                    <td class="text-center">`+ i +`</td>
+                                                    <td class="text-center">mm/dd(aaa) <br>20:00</td>
+                                                    <td class="text-center">M3관, S반, 국어, 은양T</td>
+                                                    <td class="text-left">
+                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    </td>
+                                                    <td class="text-center">학생</td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;" class="text-underline">125명</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;" class="text-underline">100명</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="javascript:;" class="text-underline">25명</a>
+                                                    </td>
+                                                </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    @@include('@@webRoot/_include/_pagination.html')
+                                </div>
+                            </div>
+                            <div class="hr vertical"></div>
+                            <div class="col-4">
+                                <div class="p-3">
+                                    <div class="row align-items-end justify-content-between mb-2">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">발송 상세 내역</strong>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-dark btn-sm">발송 실패 일괄 재발송</button>
+                                        </div>
+                                    </div>
+                                    <div class="main_search_result_list">
+                                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                        <table class="table" id="datatable1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">No.</th>
+                                                    <th class="text-center">학생ID</th>
+                                                    <th class="text-center">발송 상태</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @@for (var i = 5; i > 0; i--) {
+                                                <tr>
+                                                    <td class="text-center">`+ i +`</td>
+                                                    <td class="text-center">김시대1234</td>
+                                                    <td class="text-center">실패 <br><a href="javascript:;"><small>[재발송]</small></a></td>
+                                                </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    @@include('@@webRoot/_include/_pagination.html')
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,65 +392,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row justify-content-between align-items-end mb-2">
-                        <div class="col-auto">
-                            <div class="table-title mb-0">알림 구분 등록</div>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-dark btn-sm">추가</button>
-                        </div>
+                    <div class="text-right mb-2">
+                        <button type="button" class="btn btn-dark btn-sm">추가</button>
                     </div>
-                    <table class="table table-bordered table-fixed">
-                        <colgroup>
-                            <col style="width: 100px;">
-                            <col>
-                            <col style="width: 100px;">
-                            <col>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th>알림 구분명</th>
-                                <td>
-                                    <div class="row row-5">
-                                        <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
-                                                <option value="">입력</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </td>
-                                <th>노출 순서</th>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>알림 구분 상세</th>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                                <th>사용 여부</th>
-                                <td>
-                                    <input type="radio" name="notiUse" id="notiUseY">
-                                    <label for="notiUseY">사용</label>
-                                    <input type="radio" name="notiUse" id="notiUseN">
-                                    <label for="notiUseN">사용 안 함</label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="table-title mt-3">알림 구분 관리</div>
                     <table class="table table-fixed">
                         <colgroup>
+                            <col style="width: 50px">
+                            <col>
+                            <col>
+                            <col style="width: 80px">
+                            <col style="width: 100px">
+                            <col style="width: 130px">
                             <col style="width: 60px">
-                            <col>
-                            <col>
-                            <col>
-                            <col style="width: 150px;">
-                            <col>
                         </colgroup>
                         <thead>
                             <tr>
@@ -252,30 +413,55 @@
                                 <th class="text-center">순서</th>
                                 <th class="text-center">사용 여부</th>
                                 <th class="text-center">등록/수정</th>
+                                <th class="text-center">삭제</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-center"></td>
+                                <td class="text-center">1</td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="수업/강의">
+                                    <div class="row row-5 align-items-center">
+                                        <div class="col-auto">
+                                            <select name="" id="alarmCategory" class="custom-select">
+                                                <option value="">강의</option>
+                                                <option value="입력">입력</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" id="alarmCategoryInput" disabled>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $('#alarmCategory').on('change', function(){
+                                            if($(this).val() == '입력'){
+                                                $('#alarmCategoryInput').attr('disabled', false).focus();
+                                            }else{
+                                                $('#alarmCategoryInput').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <td class="text-center">
                                     <input type="text" class="form-control" value="휴/보강">
                                 </td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="1">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">1</option>
+                                    </select>
                                 </td>
                                 <td class="text-center">
                                     <input type="radio" name="notiUse1" id="notiUse1Y" checked>
-                                    <label for="notiUse1Y">사용</label>
+                                    <label for="notiUse1Y">Y</label>
                                     <input type="radio" name="notiUse1" id="notiUseN1">
-                                    <label for="notiUse1N">사용 안 함</label>
+                                    <label for="notiUse1N">N</label>
                                 </td>
-                                <td class="text-center"></td>
+                                <td class="text-center">2022-02-17/김소라</td>
+                                <td class="text-center">
+                                    <a href="javascript:;" class="text-underline">삭제</a>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="text-center"></td>
+                                <td class="text-center">2</td>
                                 <td class="text-center">
                                     <input type="text" class="form-control" value="수업/강의">
                                 </td>
@@ -283,15 +469,44 @@
                                     <input type="text" class="form-control" value="교실변경">
                                 </td>
                                 <td class="text-center">
-                                    <input type="text" class="form-control" value="2">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">2</option>
+                                    </select>
                                 </td>
                                 <td class="text-center">
                                     <input type="radio" name="notiUse2" id="notiUse2Y">
-                                    <label for="notiUse2Y">사용</label>
+                                    <label for="notiUse2Y">Y</label>
                                     <input type="radio" name="notiUse2" id="notiUse2N" checked>
-                                    <label for="notiUse2N">사용 안 함</label>
+                                    <label for="notiUse2N">N</label>
+                                </td>
+                                <td class="text-center">2022-02-17/김소라</td>
+                                <td class="text-center">
+                                    <a href="javascript:;" class="text-underline">삭제</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td class="text-center">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">3</option>
+                                    </select>
+                                </td>
+                                <td class="text-center">
+                                    <input type="radio" name="notiUse3" id="notiUse3Y">
+                                    <label for="notiUse3Y">Y</label>
+                                    <input type="radio" name="notiUse3" id="notiUse3N">
+                                    <label for="notiUse3N">N</label>
                                 </td>
                                 <td class="text-center"></td>
+                                <td class="text-center">
+                                    <a href="javascript:;" class="text-underline">삭제</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

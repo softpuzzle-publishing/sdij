@@ -170,14 +170,24 @@
                                 <td>
                                     <div class="row row-5 align-items-center">
                                         <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
+                                            <select name="" id="area" class="custom-select">
                                                 <option value="">대치</option>
+                                                <option value="입력">입력</option>
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" id="areaEtcInput">
                                         </div>
                                     </div>
+                                    <script>
+                                        $('#area').on('change', function(){
+                                            if($(this).val() == '입력'){
+                                                $('#areaEtcInput').attr('disabled', false).focus();
+                                            }else{
+                                                $('#areaEtcInput').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <th>사용 여부</th>
                                 <td>
