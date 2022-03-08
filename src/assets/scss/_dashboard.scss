@@ -1,15 +1,49 @@
+.body-dashboard{
+    header{padding-left: 0;}
+    header .left .logo{display: flex;}
+}
+
 .dashboard{
-    background: #f7f8f9;height: calc(100vh - 65px);padding: 2rem;margin-left: -220px;
+    background: #f7f8f9;min-height: calc(100vh - 65px);padding: 3rem 5rem;margin-left: -220px;
+    .weekly-schedule{
+        font-size: 13px;
+        .table{
+            height: 380px;
+            tbody th,
+            tbody td{height: auto;}
+        }
+    }
 }
 
 .welcome{font-weight: 700;}
 
+$memo-color : #f5f5ee;
+$memo-point-color : #fcf7b0;
 .post-it {
-    padding: 0.75rem;background: #F4F39E;position: relative;
+    padding: 0.75rem;background: $memo-color;position: relative;
+    & + &{margin-top: 1.75rem;}
     &::before {
-        content: "";position: absolute;bottom: -1rem;right: 0;border-width: 1rem 1rem 0 0;border-style: solid;border-color: darken(#F4F39E, 15%) transparent;
+        content: "";position: absolute;bottom: -1rem;right: 0;border-width: 1rem 1rem 0 0;border-style: solid;border-color: darken($memo-color, 15%) transparent;
     }
     &::after {
-        content: "";position: absolute;bottom: -1rem;left: 0;right: 1rem;border-width: .5rem;border-style: solid;border-color: #F4F39E;
+        content: "";position: absolute;bottom: -1rem;left: 0;right: 1rem;border-width: .5rem;border-style: solid;border-color: $memo-color;
     }
+    &.highlight{
+        background: $memo-point-color ;
+        &::before{border-color: darken($memo-point-color , 15%) transparent;}
+        &::after{border-color: $memo-point-color ;}
+    }
+}
+
+.btn-memo-add{position: absolute;right: 1rem;top: 50%;transform: translateY(-50%);}
+
+.team-memo{
+    .range{display: block;margin-bottom: .25rem;}
+    .memo{margin-bottom: .5rem;}
+    .info{color: #888;font-size: 12px;position: absolute;left: .75rem;bottom: -.25rem;z-index: 1;}
+    .dropdown-menu{min-width: 5rem;}
+}
+
+.btn-memo-more{position: absolute;right: 0;
+    i{font-size: 18px;}
 }

@@ -82,10 +82,12 @@ var Common = {
     } //scrollbar bottom check
 
 
-    if ($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
-      $('html').addClass('is-bottom');
-    } else {
-      $('html').removeClass('is-bottom');
+    if ($('html').hasClass('is-scrolled')) {
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
+        $('html').addClass('is-bottom');
+      } else {
+        $('html').removeClass('is-bottom');
+      }
     }
   },
   splitGird: function splitGird() {

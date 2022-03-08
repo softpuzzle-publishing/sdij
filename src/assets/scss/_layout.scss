@@ -16,13 +16,14 @@ body{overflow-x: hidden;width: 100%;min-width: 1400px;}
     span{color: #fff;font-weight: 600;font-size: 18px;margin-left: 10px;transform: translateY(-1px);white-space: nowrap;}
 }
 header{
-    transition: .2s ease-out;border-bottom: 1px solid #32373c ;background: #32373c;
+    transition: .2s ease-out;border-bottom: 1px solid #32373c ;background: #32373c;padding-left: 220px;
     .left{
         display: flex;align-items: center;height: 64px;
         .btn-hamburger{
             width: 40px;height: 40px;display: flex;align-items: center;justify-content: center;
             i{vertical-align: top;font-size: 26px;color: #fff;}
         }
+        .logo{display: none;}
 
     }
     .right{
@@ -55,8 +56,12 @@ header{
 }
 
 aside{
-    position: fixed;overflow: hidden;transition: .5s;width: 220px;opacity: 1;background: #47474e;height: 100vh;z-index: 1;top: 65px;left: 0;
+    position: fixed;overflow: hidden;transition: .5s;width: 220px;opacity: 1;background: #47474e;height: 100vh;z-index: 1;top: 0;left: 0;
 }
+.sidebar-top{
+    background: #32373c;height: 65px;display: flex;align-items: center;justify-content: center;
+}
+
 .sidebar{
     white-space: nowrap;height: 100%;transition: opacity .2s;
     a{text-decoration: none;}

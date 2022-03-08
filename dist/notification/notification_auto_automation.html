@@ -84,7 +84,10 @@
 
             <aside id="sidebar">
                 <div class="sidebar-top">
-
+                    <a href="../dashboard/dashboard.html" class="logo">
+                        <img src="../assets/images/logo-white.svg" alt="시대인재N">
+                        <span>관리자</span>
+                    </a>
                 </div>
                 <nav class="sidebar">
                     <div class="overflow-y-scroll">
@@ -262,17 +265,15 @@
                         <div class="col-auto">
                             <div class="d-flex align-items-center">
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">관</option>
-                                </select>
-                                <select name="" id="" class="custom-select w-auto mr-2">
                                     <option value="">알림 구분</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">게시판</option>
+                                    <option value="">구분 상세</option>
                                 </select>
-                                <select name="" id="" class="custom-select w-auto">
-                                    <option value="">자동알림</option>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">알림 그룹 기준</option>
                                 </select>
+                                <button type="button" class="btn btn-dark">검색</button>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -325,9 +326,11 @@
                                     <td class="text-center">N</td>
                                     <td class="text-center">N</td>
                                     <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
                                     <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">상세</a>
+                                        <a href="#modal-noti-condition" class="text-underline" data-toggle="modal">Y</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="" data-toggle="modal" class="text-underline">상세보기</a>
                                     </td>
                                 </tr>
 
@@ -343,9 +346,11 @@
                                     <td class="text-center">N</td>
                                     <td class="text-center">N</td>
                                     <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
                                     <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">상세</a>
+                                        <a href="#modal-noti-condition" class="text-underline" data-toggle="modal">Y</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="" data-toggle="modal" class="text-underline">상세보기</a>
                                     </td>
                                 </tr>
 
@@ -361,9 +366,11 @@
                                     <td class="text-center">N</td>
                                     <td class="text-center">N</td>
                                     <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
                                     <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">상세</a>
+                                        <a href="#modal-noti-condition" class="text-underline" data-toggle="modal">Y</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="" data-toggle="modal" class="text-underline">상세보기</a>
                                     </td>
                                 </tr>
 
@@ -379,9 +386,11 @@
                                     <td class="text-center">N</td>
                                     <td class="text-center">N</td>
                                     <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
                                     <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">상세</a>
+                                        <a href="#modal-noti-condition" class="text-underline" data-toggle="modal">Y</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="" data-toggle="modal" class="text-underline">상세보기</a>
                                     </td>
                                 </tr>
 
@@ -397,9 +406,11 @@
                                     <td class="text-center">N</td>
                                     <td class="text-center">N</td>
                                     <td class="text-center">Y</td>
-                                    <td class="text-center">Y</td>
                                     <td class="text-center">
-                                        <a href="" data-toggle="modal" class="text-underline">상세</a>
+                                        <a href="#modal-noti-condition" class="text-underline" data-toggle="modal">Y</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="" data-toggle="modal" class="text-underline">상세보기</a>
                                     </td>
                                 </tr>
 
@@ -487,18 +498,18 @@
                 <nav class="tab-custom px-5">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">게시판 일림</a>
+                            <a class="nav-link active" data-toggle="tab" href="#tab1-1" role="tab">게시판 일림</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">문자 알림</a>
+                            <a class="nav-link" data-toggle="tab" href="#tab1-2" role="tab">문자 알림</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">푸시 알림</a>
+                            <a class="nav-link" data-toggle="tab" href="#tab1-3" role="tab">푸시 알림</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="tab-content">
-                    <div class="tab-pane show active" id="tab1" role="tabpanel">
+                    <div class="tab-pane show active" id="tab1-1" role="tabpanel">
                         <div class="p-3">
                             <div class="row align-items-center mb-2">
                                 <div class="col-auto">
@@ -532,8 +543,9 @@
                                             <td class="text-center">M3관 S반 국어 김은양T</td>
                                             <td class="text-center">1,358</td>
                                             <td class="text-center">Y</td>
-                                            <td class="text-left">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                            <td class="text-center">
+                                                [S반 국어 김은양T] [강의 휴강] 안내
+                                                <a href="javascript:;" class="text-underline">[상세보기]</a>
                                             </td>
                                         </tr>
 
@@ -545,8 +557,9 @@
                                             <td class="text-center">M3관 S반 국어 김은양T</td>
                                             <td class="text-center">1,358</td>
                                             <td class="text-center">Y</td>
-                                            <td class="text-left">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                            <td class="text-center">
+                                                [S반 국어 김은양T] [강의 휴강] 안내
+                                                <a href="javascript:;" class="text-underline">[상세보기]</a>
                                             </td>
                                         </tr>
 
@@ -558,8 +571,9 @@
                                             <td class="text-center">M3관 S반 국어 김은양T</td>
                                             <td class="text-center">1,358</td>
                                             <td class="text-center">Y</td>
-                                            <td class="text-left">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                            <td class="text-center">
+                                                [S반 국어 김은양T] [강의 휴강] 안내
+                                                <a href="javascript:;" class="text-underline">[상세보기]</a>
                                             </td>
                                         </tr>
 
@@ -571,8 +585,9 @@
                                             <td class="text-center">M3관 S반 국어 김은양T</td>
                                             <td class="text-center">1,358</td>
                                             <td class="text-center">Y</td>
-                                            <td class="text-left">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                            <td class="text-center">
+                                                [S반 국어 김은양T] [강의 휴강] 안내
+                                                <a href="javascript:;" class="text-underline">[상세보기]</a>
                                             </td>
                                         </tr>
 
@@ -584,8 +599,9 @@
                                             <td class="text-center">M3관 S반 국어 김은양T</td>
                                             <td class="text-center">1,358</td>
                                             <td class="text-center">Y</td>
-                                            <td class="text-left">
-                                                <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                            <td class="text-center">
+                                                [S반 국어 김은양T] [강의 휴강] 안내
+                                                <a href="javascript:;" class="text-underline">[상세보기]</a>
                                             </td>
                                         </tr>
 
@@ -646,7 +662,7 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="tab-pane" id="tab2" role="tabpanel">
+                    <div class="tab-pane" id="tab1-2" role="tabpanel">
                         <div class="row">
                             <div class="col">
                                 <div class="p-3">
@@ -683,8 +699,9 @@
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">대치 <br>02-1234-5678</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학부모</td>
                                                     <td class="text-center">
@@ -704,8 +721,9 @@
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">대치 <br>02-1234-5678</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학부모</td>
                                                     <td class="text-center">
@@ -725,8 +743,9 @@
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">대치 <br>02-1234-5678</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학부모</td>
                                                     <td class="text-center">
@@ -746,8 +765,9 @@
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">대치 <br>02-1234-5678</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학부모</td>
                                                     <td class="text-center">
@@ -767,8 +787,9 @@
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">대치 <br>02-1234-5678</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학부모</td>
                                                     <td class="text-center">
@@ -951,7 +972,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="tab3" role="tabpanel">
+                    <div class="tab-pane" id="tab1-3" role="tabpanel">
                         <div class="row">
                             <div class="col">
                                 <div class="p-3">
@@ -986,8 +1007,9 @@
                                                     <td class="text-center">5</td>
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학생</td>
                                                     <td class="text-center">
@@ -1006,8 +1028,9 @@
                                                     <td class="text-center">4</td>
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학생</td>
                                                     <td class="text-center">
@@ -1026,8 +1049,9 @@
                                                     <td class="text-center">3</td>
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학생</td>
                                                     <td class="text-center">
@@ -1046,8 +1070,9 @@
                                                     <td class="text-center">2</td>
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학생</td>
                                                     <td class="text-center">
@@ -1066,8 +1091,9 @@
                                                     <td class="text-center">1</td>
                                                     <td class="text-center">mm/dd(aaa) <br>20:00</td>
                                                     <td class="text-center">M3관, S반, 국어, 은양T</td>
-                                                    <td class="text-left">
-                                                        <a href="javascript:;" class="text-underline">[S반 국어 김은양T] [강의 휴강] 안내</a>
+                                                    <td class="text-center">
+                                                        [S반 국어 김은양T] [강의 휴강] 안내
+                                                        <a href="javascript:;" class="text-underline">[상세보기]</a>
                                                     </td>
                                                     <td class="text-center">학생</td>
                                                     <td class="text-center">
@@ -1501,6 +1527,206 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 알림 조건 상세 -->
+    <div class="modal" tabindex="-1" id="modal-noti-condition" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">알림 조건 상세</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-fixed">
+                        <colgroup>
+                            <col style="width: 100px">
+                            <col>
+                            <col style="width: 90px">
+                            <col>
+                            <col style="width: 90px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>구분</th>
+                                <td>강의</td>
+                                <th>상세</th>
+                                <td>휴강</td>
+                                <th>그룹기준</th>
+                                <td>수업</td>
+                            </tr>
+                            <tr>
+                                <th>조건</th>
+                                <td colspan="5">Ex) 강의 상태값 휴강으로 변경 시</td>
+                            </tr>
+                            <tr>
+                                <th>범위</th>
+                                <td colspan="3">
+                                    <input type="checkbox" name="alarmRange" id="alarmRangeSms">
+                                    <label for="alarmRangeSms">문자</label>
+                                    <input type="checkbox" name="alarmRange" id="alarmRangePush">
+                                    <label for="alarmRangePush">푸시</label>
+                                    <input type="checkbox" name="alarmRange" id="alarmRangeBoard">
+                                    <label for="alarmRangeBoard">게시판</label>
+                                    <script>
+                                        $('[name=alarmRange]').on('change', function() {
+                                            if ($('#alarmRangeSms').is(':checked')) {
+                                                $('.tr-sms').show();
+                                            } else {
+                                                $('.tr-sms').hide();
+                                            }
+                                        });
+                                    </script>
+                                </td>
+                                <th>사용여부</th>
+                                <td>
+                                    <select name="" id="alarmCategory" class="custom-select">
+                                        <option value="">사용</option>
+                                        <option value="">미사용</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>알림시점</th>
+                                <td colspan="5">
+                                    <div class="row row-10">
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">특정시점</option>
+                                                <option value="">발생즉시</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">매주</option>
+                                                <option value="">매월</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">수</option>
+                                                <option value="">1일</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">6PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="tr-sms" style="display:none">
+                                <th>문자 수신자</th>
+                                <td colspan="2">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">학생</option>
+                                        <option value="">학부모</option>
+                                    </select>
+                                </td>
+                                <th>문자 발신번호</th>
+                                <td colspan="2">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">대표번호</option>
+                                        <option value="">브릿지관</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ml-n3 mr-n3 mt-3">
+                        <nav class="tab-custom mb-3">
+                            <ul class="nav nav-tabs ml-n2 mr-n2" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-toggle="tab" href="#tab2-1" role="tab">게시판 알림</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-toggle="tab" href="#tab2-2" role="tab">문자 알림</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-toggle="tab" href="#tab2-3" role="tab">푸시 알림</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab2-1" role="tabpanel">
+                            <table class="table table-fixed">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>공지 제목</th>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>공지 내용</th>
+                                        <td>
+                                            <textarea name="" id="" cols="" rows="10" class="form-control"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="tab2-2" role="tabpanel">
+                            <table class="table table-fixed">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>문자 제목</th>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>문자 내용</th>
+                                        <td>
+                                            <textarea name="" id="" cols="" rows="10" class="form-control"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="tab2-3" role="tabpanel">
+                            <table class="table table-fixed">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>푸시 제목</th>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>푸시 내용</th>
+                                        <td>
+                                            <textarea name="" id="" cols="" rows="10" class="form-control"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark">저장</button>

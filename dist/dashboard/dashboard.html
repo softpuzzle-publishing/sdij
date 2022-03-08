@@ -32,7 +32,8 @@
     <script src="../assets/js/ui.js" defer></script>
 </head>
 
-<body>
+<body class="body-dashboard">
+    <!-- 대시보드만 .body-dashboard 추가 -->
 
     <div id="wrap">
 
@@ -95,13 +96,40 @@
                         <input type="text" class="form-control form-datepicker ml-2 w-auto">
                     </div>
                     <div class="row row-20 mt-3">
-                        <div class="col-2">
+                        <div class="col-3">
                             <div class="card h-100">
-                                <h2 class="card-header">팀 메모 보드</h2>
+                                <h2 class="card-header position-relative">
+                                    팀 메모 보드
+                                    <a href="#modal-memo-add" role="button" class="btn-memo-add" data-toggle="modal"><i class="material-icons align-top">add</i></a>
+                                </h2>
                                 <div class="card-body">
                                     <div class="team-memo">
                                         <div class="post-it">
-                                            <p>팀 메모</p>
+                                            <div class="dropdown">
+                                                <a href="javascript:;" role="button" class="btn-memo-more" data-toggle="dropdown" aria-expanded="false"><i class="material-icons align-top">more_vert</i></a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#">수정</a>
+                                                    <a class="dropdown-item" href="#">삭제</a>
+                                                    <a class="dropdown-item" href="#">강조</a>
+                                                </div>
+                                            </div>
+                                            <strong class="range">대치-브릿지관</strong>
+                                            <p class="memo">팀 메모</p>
+                                            <div class="info">김시대(본관) 22/03/02</div>
+                                        </div>
+                                        <div class="post-it highlight">
+                                            <!-- 강조 .highlight -->
+                                            <div class="dropdown">
+                                                <a href="javascript:;" role="button" class="btn-memo-more" data-toggle="dropdown" aria-expanded="false"><i class="material-icons align-top">more_vert</i></a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#">수정</a>
+                                                    <a class="dropdown-item" href="#">삭제</a>
+                                                    <a class="dropdown-item" href="#">강조</a>
+                                                </div>
+                                            </div>
+                                            <strong class="range">전체</strong>
+                                            <p class="memo">수업일정 확정 되었습니다 선생님들께 최종 확인 해주세요 3월 10일까지!!</p>
+                                            <div class="info">김시대(본관) 22/03/02</div>
                                         </div>
                                     </div>
                                 </div>
@@ -111,124 +139,165 @@
                             <div class="card h-100">
                                 <h2 class="card-header">학원 일정표</h2>
                                 <div class="card-body">
-                                    <table class="table table-bordered table-fixed table-center">
+                                    <div class="weekly-schedule">
+                                        <table class="table table-bordered table-fixed table-center">
+                                            <thead>
+                                                <tr>
+                                                    <th>시간</th>
+                                                    <th>L층 102호</th>
+                                                    <th>L층 101호</th>
+                                                    <th>302호</th>
+                                                    <th>301호</th>
+                                                    <th>304호</th>
+                                                    <th>305호</th>
+                                                    <th>306호</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>1</th>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>3</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="bg-4">
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4.5</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>5</th>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>6</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="table-title mt-3">변경 내용</div>
+                                    <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>시간</th>
-                                                <th>L층 102호</th>
-                                                <th>L층 101호</th>
-                                                <th>302호</th>
-                                                <th>301호</th>
-                                                <th>304호</th>
-                                                <th>305호</th>
-                                                <th>306호</th>
+                                                <th class="text-center">구분</th>
+                                                <th class="text-center">수업명</th>
+                                                <th class="text-center">강사</th>
+                                                <th class="text-center">강의실</th>
+                                                <th class="text-center">수업시간</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+
                                             <tr>
-                                                <th>1</th>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td class="text-center">강의실 변경</td>
+                                                <td class="text-center">S반 수학</td>
+                                                <td class="text-center">김강사</td>
+                                                <td class="text-center">303호</td>
+                                                <td class="text-center">월3</td>
                                             </tr>
+
                                             <tr>
-                                                <th>2</th>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td class="text-center">강의실 변경</td>
+                                                <td class="text-center">S반 수학</td>
+                                                <td class="text-center">김강사</td>
+                                                <td class="text-center">303호</td>
+                                                <td class="text-center">월3</td>
                                             </tr>
+
                                             <tr>
-                                                <th>3</th>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td class="text-center">강의실 변경</td>
+                                                <td class="text-center">S반 수학</td>
+                                                <td class="text-center">김강사</td>
+                                                <td class="text-center">303호</td>
+                                                <td class="text-center">월3</td>
                                             </tr>
-                                            <tr>
-                                                <th>4</th>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th>4.5</th>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th>5</th>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th>6</th>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td>
-                                                    <div class="subject">국어</div>
-                                                    <div class="name">이강사</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -246,68 +315,86 @@
                                 </ul>
                             </div>
                             <div class="card m-t-20">
-                                <h2 class="card-header">문자 발송</h2>
+                                <div class="card-header">
+                                    <nav class="tab-custom border-bottom-0">
+                                        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" data-toggle="tab" href="#tab-sms" role="tab">문자 발송</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" data-toggle="tab" href="#tab-push" role="tab">푸시 발송</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
                                 <div class="card-body">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">구분</th>
-                                                <th class="text-center">발송 명</th>
-                                                <th class="text-center">수신자</th>
-                                                <th class="text-center">발신</th>
-                                                <th class="text-center">건수</th>
-                                                <th class="text-center">상태</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="tab-sms" role="tabpanel">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">구분</th>
+                                                        <th class="text-center">발송 명</th>
+                                                        <th class="text-center">수신자</th>
+                                                        <th class="text-center">발신</th>
+                                                        <th class="text-center">건수</th>
+                                                        <th class="text-center">상태</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                            <tr>
-                                                <td class="text-center">안내</td>
-                                                <td class="text-center">6평 응시자 조사</td>
-                                                <td class="text-center">학생</td>
-                                                <td class="text-center">MB관</td>
-                                                <td class="text-center">235</td>
-                                                <td class="text-center">완료</td>
-                                            </tr>
+                                                    <tr>
+                                                        <td class="text-center">안내</td>
+                                                        <td class="text-center"><a href="../notification/notification_sms_history.html" class="text-underline">6평 응시자 조사</a></td>
+                                                        <td class="text-center">학생</td>
+                                                        <td class="text-center">MB관</td>
+                                                        <td class="text-center">235</td>
+                                                        <td class="text-center">완료</td>
+                                                    </tr>
 
-                                            <tr>
-                                                <td class="text-center">안내</td>
-                                                <td class="text-center">6평 응시자 조사</td>
-                                                <td class="text-center">학생</td>
-                                                <td class="text-center">MB관</td>
-                                                <td class="text-center">235</td>
-                                                <td class="text-center">완료</td>
-                                            </tr>
+                                                    <tr>
+                                                        <td class="text-center">안내</td>
+                                                        <td class="text-center"><a href="../notification/notification_sms_history.html" class="text-underline">6평 응시자 조사</a></td>
+                                                        <td class="text-center">학생</td>
+                                                        <td class="text-center">MB관</td>
+                                                        <td class="text-center">235</td>
+                                                        <td class="text-center">완료</td>
+                                                    </tr>
 
-                                            <tr>
-                                                <td class="text-center">안내</td>
-                                                <td class="text-center">6평 응시자 조사</td>
-                                                <td class="text-center">학생</td>
-                                                <td class="text-center">MB관</td>
-                                                <td class="text-center">235</td>
-                                                <td class="text-center">완료</td>
-                                            </tr>
+                                                    <tr>
+                                                        <td class="text-center">안내</td>
+                                                        <td class="text-center"><a href="../notification/notification_sms_history.html" class="text-underline">6평 응시자 조사</a></td>
+                                                        <td class="text-center">학생</td>
+                                                        <td class="text-center">MB관</td>
+                                                        <td class="text-center">235</td>
+                                                        <td class="text-center">완료</td>
+                                                    </tr>
 
-                                            <tr>
-                                                <td class="text-center">안내</td>
-                                                <td class="text-center">6평 응시자 조사</td>
-                                                <td class="text-center">학생</td>
-                                                <td class="text-center">MB관</td>
-                                                <td class="text-center">235</td>
-                                                <td class="text-center">완료</td>
-                                            </tr>
+                                                    <tr>
+                                                        <td class="text-center">안내</td>
+                                                        <td class="text-center"><a href="../notification/notification_sms_history.html" class="text-underline">6평 응시자 조사</a></td>
+                                                        <td class="text-center">학생</td>
+                                                        <td class="text-center">MB관</td>
+                                                        <td class="text-center">235</td>
+                                                        <td class="text-center">완료</td>
+                                                    </tr>
 
-                                            <tr>
-                                                <td class="text-center">안내</td>
-                                                <td class="text-center">6평 응시자 조사</td>
-                                                <td class="text-center">학생</td>
-                                                <td class="text-center">MB관</td>
-                                                <td class="text-center">235</td>
-                                                <td class="text-center">완료</td>
-                                            </tr>
+                                                    <tr>
+                                                        <td class="text-center">안내</td>
+                                                        <td class="text-center"><a href="../notification/notification_sms_history.html" class="text-underline">6평 응시자 조사</a></td>
+                                                        <td class="text-center">학생</td>
+                                                        <td class="text-center">MB관</td>
+                                                        <td class="text-center">235</td>
+                                                        <td class="text-center">완료</td>
+                                                    </tr>
 
-                                        </tbody>
-                                    </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab-push" role="tabpanel">
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -431,6 +518,64 @@
 
     </div>
 
+    <!-- modal : 메모 작성 -->
+    <div class="modal" tabindex="-1" id="modal-memo-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">메모 작성</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <textarea name="" id="" cols="" rows="5" class="form-control"></textarea>
+                    </div>
+                    <table class="table table-fixed">
+                        <colgroup>
+                            <col style="width:70px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>대상</th>
+                                <td>
+                                    <input type="checkbox" name="memoRange" id="area1">
+                                    <label for="area1">대치</label>
+                                    <input type="checkbox" name="memoRange" id="area2">
+                                    <label for="area2">목동</label>
+                                    <div class="mt-2 pt-2 border-top">
+                                        <input type="checkbox" name="memoRange2" id="area1-1">
+                                        <label for="area1-1">관명</label>
+                                        <input type="checkbox" name="memoRange2" id="area1-2">
+                                        <label for="area1-2">관명</label>
+                                        <input type="checkbox" name="memoRange2" id="area1-3">
+                                        <label for="area1-3">관명</label>
+                                        <input type="checkbox" name="memoRange2" id="area1-4">
+                                        <label for="area1-4">관명</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강조</th>
+                                <td>
+                                    <input type="radio" name="pointUse" id="pointUseY">
+                                    <label for="pointUseY">사용</label>
+                                    <input type="radio" name="pointUse" id="pointUseN">
+                                    <label for="pointUseN">미사용</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
 

@@ -84,7 +84,10 @@
 
             <aside id="sidebar">
                 <div class="sidebar-top">
-
+                    <a href="../dashboard/dashboard.html" class="logo">
+                        <img src="../assets/images/logo-white.svg" alt="시대인재N">
+                        <span>관리자</span>
+                    </a>
                 </div>
                 <nav class="sidebar">
                     <div class="overflow-y-scroll">
@@ -394,7 +397,7 @@
                             <div class="table-title mt-3">수신자 목록</div>
                             <div class="row align-items-center justify-content-between mb-2">
                                 <div class="col-auto">
-                                    <strong class="mr-2">발송가능</strong>총 ###건
+                                    <strong class="mr-2">발송가능</strong>총 ###/###명
                                 </div>
                                 <div class="col-auto">
                                     <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-sms-preset-add">프리셋 등록</button>
@@ -860,7 +863,7 @@
 
     <!-- modal : 문자 메시지 미리 보기 -->
     <div class="modal" tabindex="-1" id="modal-sms-preview" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:480px">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">문자 메시지 미리 보기</h5>

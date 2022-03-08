@@ -32,7 +32,7 @@
                                             <option value="">교실</option>
                                         </select>
                                         <select name="" id="" class="custom-select w-auto mr-2">
-                                            <option value="">생활담임</option>
+                                            <option value="">담임</option>
                                         </select>
                                         <select name="" id="" class="custom-select w-auto mr-2">
                                             <option value="">교시</option>
@@ -122,7 +122,7 @@
                                             <dt><i data-seat-status="warning"></i></dt>
                                             <dd>태깅X</dd>
                                             <dt><i data-seat-status="learning"></i></dt>
-                                            <dd>수업</dd>
+                                            <dd>일정</dd>
                                             <dt><i data-seat-status="approval"></i></dt>
                                             <dd>출결승인</dd>
                                         </dl>
@@ -204,7 +204,7 @@
                                     <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modal-immersion-batch2">미착석 등록</button>
                                 </div>
                             </div>
-                            <table class="table table-fixed text-center mt-3">
+                            <table class="table text-center mt-3">
                                 <thead>
                                     <tr>
                                         <th>좌석</th>
@@ -218,8 +218,15 @@
                                     <tr>
                                         <td>1</td>
                                         <td>김시대1234</td>
-                                        <td><input type="text" class="form-control text-center d-inline-block" style="max-width: 100px;"></td>
-                                        <td>N</td>
+                                        <td>
+                                            <input type="text" class="form-control text-center d-inline-block" style="max-width: 100px;">
+                                        </td>
+                                        <td>
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">Y</option>
+                                                <option value="">N</option>
+                                            </select>
+                                        </td>
                                         <td>수업</td>
                                     </tr>
                                 </tbody>
@@ -362,14 +369,14 @@
                             <tr>
                                 <td class="text-center">1</td>
                                 <td class="text-center">김시대1234</td>
-                                <td class="text-left">
+                                <td class="text-center">
                                     <strong>1교시에 2회 이상 연속으로 미착석</strong>하여 <strong>벌점(+3)</strong> 처리 됩니다.
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-center">12</td>
                                 <td class="text-center">이시대1234</td>
-                                <td class="text-left">
+                                <td class="text-center">
                                     <strong>1교시에 2회 이상 연속으로 미착석</strong>하여 <strong>벌점(+3)</strong> 처리 됩니다.
                                 </td>
                             </tr>

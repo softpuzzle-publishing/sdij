@@ -85,7 +85,7 @@
                                                 <td class="text-center">`+ i +`</td>
                                                 <td class="text-center">컨텐츠</td>
                                                 <td class="text-center">전체</td>
-                                                <td class="text-left">
+                                                <td class="text-center">
                                                     <a href="#modal-guidebook-write" data-toggle="modal" class="text-underline">내용내용내용</a>
                                                 </td>
                                                 <td class="text-center">Y</td>
@@ -201,7 +201,7 @@
     </div>
     <!-- modal : 가이드북 카테고리 관리 -->
     <div class="modal" tabindex="-1" id="modal-guidebook-category" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width:700px">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">가이드북 카테고리 관리</h5>
@@ -210,115 +210,49 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="table-title">카테고리 등록</div>
-                    <table class="table table-bordered table-fixed">
-                        <colgroup>
-                            <col style="width: 100px;">
-                            <col>
-                            <col style="width: 100px;">
-                            <col>
-                            <col style="width: 100px;">
-                            <col>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th><strong class="text-danger">*</strong>카테고리명</th>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                                <th><strong class="text-danger">*</strong>노출 순서</th>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                                <th><strong class="text-danger">*</strong>공개여부</th>
-                                <td>
-                                    <input type="radio" name="faqCategory" id="faqCategoryY">
-                                    <label for="faqCategoryY">공개</label>
-                                    <input type="radio" name="faqCategory" id="faqCategoryN">
-                                    <label for="faqCategoryN">비공개</label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="table-title mt-2">세부 카테고리 등록</div>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">세부 카테고리명</th>
-                                <th class="text-center">공개여부</th>
-                                <th class="text-center">등록/수정</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td>
-                                    <input type="text" class="form-control">
-                                </td>
-                                <td class="text-center">
-                                    <input type="radio" name="faqCategory1" id="faqCategory1Y" checked>
-                                    <label for="faqCategory1Y">공개</label>
-                                    <input type="radio" name="faqCategory1" id="faqCategory1N">
-                                    <label for="faqCategory1N">비공개</label>
-                                </td>
-                                <td class="text-center">
-                                    2022-01-12 20:18:57 / 김소라
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="text-right mt-2">
-                        <button type="button" class="btn btn-dark btn-foursquare">+</button>
-                        <button type="button" class="btn btn-dark ml-1">등록</button>
+                    <div class="text-right mb-2">
+                        <button type="button" class="btn btn-dark btn-sm">삭제</button>
+                        <button type="button" class="btn btn-dark btn-sm ml-1">추가</button>
                     </div>
-                    <div class="table-title mt-3">카테고리 수정/관리</div>
-                    <table class="table table-bordered table-fixed">
+                    <table class="table table-fixed table-center">
                         <colgroup>
-                            <col style="width: 150px">
+                            <col style="width: 40px;">
                             <col>
-                            <col style="width: 70px;">
+                            <col style="width: 90px;">
                             <col style="width: 140px;">
                             <col style="width: 140px;">
+                            <col style="width: 60px;">
                         </colgroup>
                         <thead>
                             <tr>
-                                <th class="text-center">카테고리명</th>
-                                <th class="text-center">세부 카테고리명</th>
-                                <th class="text-center">노출순서</th>
-                                <th class="text-center">공개여부</th>
-                                <th class="text-center">등록/수정</th>
+                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="guideAll"></th>
+                                <th>카테고리명</th>
+                                <th>노출순서</th>
+                                <th>공개여부</th>
+                                <th>등록/수정</th>
+                                <th>삭제</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td class="text-center"><input type="checkbox" name="guideAll"></td>
                                 <td>
                                     <input type="text" class="form-control" value="수업/강의">
                                 </td>
                                 <td>
-                                    <div class="row row-5">
-                                        <div class="col-4">
-                                            <input type="text" class="form-control" value="부엉이 라이브러리">
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" class="form-control" value="편의 공간">
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" class="form-control" value="강의 공간">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
                                     <input type="text" class="form-control text-center" value="1">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="radio" name="faqCategory1" id="faqCategory1Y" checked>
                                     <label for="faqCategory1Y">공개</label>
                                     <input type="radio" name="faqCategory1" id="faqCategory1N">
                                     <label for="faqCategory1N">비공개</label>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     2022-01-12 20:18:57 <br>김소라
+                                </td>
+                                <td>
+                                    <a href="javascript:;" class="text-underline">삭제</a>
                                 </td>
                             </tr>
                         </tbody>
