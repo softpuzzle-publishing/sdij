@@ -13,7 +13,7 @@ body{overflow-x: hidden;width: 100%;min-width: 1400px;}
 .logo{
     display: flex;align-items: center;justify-content: center;flex: none;text-decoration: none;width: 220px;
     img{height: 18px;vertical-align: top;}
-    span{color: #fff;font-weight: 600;font-size: 18px;margin-left: 10px;transform: translateY(-1px);white-space: nowrap;}
+    span{color: #fff;font-weight: 600;font-size: 18px;margin-left: 10px;white-space: nowrap;}
 }
 header{
     transition: .2s ease-out;border-bottom: 1px solid #32373c ;background: #32373c;padding-left: 220px;

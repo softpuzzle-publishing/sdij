@@ -52,66 +52,62 @@
                 </nav>
                 <div class="tab-content">
                     <div class="tab-pane show active" id="tab1-1" role="tabpanel">
-                        <div class="p-3">
-                            <div class="main_search_result_list">
-                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                <table class="table table-fixed" id="datatable1">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center" rowspan="2">관</th>
-                                            <th class="text-center" colspan="4">출결신청</th>
-                                            <th class="text-center" rowspan="2">총 신청 건수</th>
-                                            <th class="text-center table-bg-1" rowspan="2">처리 필요 <br>(미승인)</th>
-                                            <th class="text-center table-bg-1" rowspan="2">반려</th>
-                                            <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 필요)</th>
-                                            <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 완료)</th>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-center">결석</th>
-                                            <th class="text-center">지각</th>
-                                            <th class="text-center">조퇴</th>
-                                            <th class="text-center">외출</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @@for (var i = 5; i > 0; i--) {
-                                        <tr>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">브릿지관</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">1</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">3</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">5</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">1</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">9</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">2</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">1</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">9</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="javascript:;" class="text-underline">7</a>
-                                            </td>
-                                        </tr>
-                                        }
-                                    </tbody>
-                                </table>
-                            </div>
-                            @@include('@@webRoot/_include/_pagination.html')
+                        <div class="p-3 table-dashboard-style">
+                            <table class="table table-bordered table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" rowspan="2">관</th>
+                                        <th class="text-center" colspan="4">출결신청</th>
+                                        <th class="text-center" rowspan="2">총 신청 건수</th>
+                                        <th class="text-center table-bg-1" rowspan="2">처리 필요 <br>(미승인)</th>
+                                        <th class="text-center table-bg-1" rowspan="2">반려</th>
+                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 필요)</th>
+                                        <th class="text-center table-bg-1" rowspan="2">승인 <br>(증빙 완료)</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">결석</th>
+                                        <th class="text-center">지각</th>
+                                        <th class="text-center">조퇴</th>
+                                        <th class="text-center">외출</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @@for (var i = 5; i > 0; i--) {
+                                    <tr>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">브릿지관</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">1</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">3</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">5</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">1</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">9</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">2</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">1</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">9</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="javascript:;" class="text-underline">7</a>
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                         <div class="hr"></div>
                         <div class="p-3">

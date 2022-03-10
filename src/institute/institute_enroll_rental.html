@@ -52,17 +52,8 @@
                     </div>
                 </div>
                 <div class="p-3">
-                    <div class="row align-items-center justify-content-between mb-2">
-                        <div class="col-auto">
-                            <strong class="mr-2">기기대여 목록</strong>총 ###건
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-dark btn-sm">빠른 반납</button>
-                        </div>
-                    </div>
-                    <div class="main_search_result_list">
-                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table" id="datatable1">
+                    <div class="table-dashboard-style">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th class="text-center">관</th>
@@ -89,7 +80,6 @@
                             </tbody>
                         </table>
                     </div>
-                    @@include('@@webRoot/_include/_pagination.html')
                 </div>
                 <div class="hr"></div>
                 <div class="p-3">

@@ -123,7 +123,7 @@
                                                 <select name="" id="" class="custom-select w-auto mr-2">
                                                     <option value="">신청일</option>
                                                 </select>
-                                                <input type="text" class="form-control form-datepicker mr-2" style="width: 100px">
+                                                <input type="text" class="form-control form-datepicker mr-2" style="width: 110px">
                                                 <button type="button" class="btn btn-dark">검색</button>
                                             </div>
                                         </div>
@@ -133,20 +133,22 @@
                                     <div class="list-group list-group-toggle">
                                         @@for (var i = 3; i > 0; i--) {
                                         <div class="item-wrap" data-id="item-`+ i +`">
-                                            <a href="javascript:;" class="list-group-item">
-                                                <div class="d-flex w-100 justify-content-between align-items-center">
-                                                    <div>
-                                                        <small class="text-info">확정</small>
-                                                        <span class="ml-2">1/7(토) 09:00</span>
+                                            <div class="list-group-top">
+                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">김시대2104</a>
+                                                <a href="javascript:;" class="list-group-item">
+                                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                                        <div>
+                                                            <small class="text-info">확정</small>
+                                                            <small class="ml-2">1/7(토) 09:00</small>
+                                                        </div>
                                                     </div>
-                                                    <small>김시대2104</small>
-                                                </div>
-                                                <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                    <span>신청일 1/5(수)</span>
-                                                    <span>누적 4회 / 이번 달 3회</span>
-                                                </div>
-                                            </a>
+                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
+                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
+                                                        <small>신청일 1/5(수)</small>
+                                                        <small>누적 4회 / 이번 달 3회</small>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
                                         }
                                     </div>

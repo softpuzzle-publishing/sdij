@@ -52,7 +52,7 @@
                                     <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">미확정</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">일정확정</a>
+                                    <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">일정 확정</a>
                                 </li>
                             </ul>
                         </nav>
@@ -67,17 +67,19 @@
                                     <div class="list-group list-group-toggle">
                                         @@for (var i = 4; i > 0; i--) {
                                         <div class="item-wrap">
-                                            <a href="javascript:;" class="list-group-item">
-                                                <div class="d-flex w-100 justify-content-between align-items-center">
-                                                    <small class="text-danger">미확정</small>
-                                                    <span>김시대2104</span>
-                                                </div>
-                                                <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                    <small>신청일 1/5(수)</small>
-                                                    <small>누적 4회 / 이번 달 3회</small>
-                                                </div>
-                                            </a>
+                                            <div class="list-group-top">
+                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">김시대2104</a>
+                                                <a href="javascript:;" class="list-group-item">
+                                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                                        <small class="text-danger">미확정</small>
+                                                    </div>
+                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
+                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
+                                                        <small>신청일 1/5(수) 15:15:30</small>
+                                                        <small>누적 4회 / 이번 달 3회</small>
+                                                    </div>
+                                                </a>
+                                            </div>
                                             <div class="list-group-detail">
                                                 <div class="p-3">
                                                     <p>요즘 너무 힘이 들어요  <br>저한테 관심 좀 ㅜㅜ</p>
@@ -113,17 +115,19 @@
                                     <div class="list-group list-group-toggle">
                                         @@for (var i = 4; i > 0; i--) {
                                         <div class="item-wrap" data-id="item-`+ i +`">
-                                            <a href="javascript:;" class="list-group-item">
-                                                <div class="d-flex w-100 justify-content-between align-items-center">
-                                                    <small class="text-info">확정</small>
-                                                    <small>김시대2104</small>
-                                                </div>
-                                                <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                    <span>신청일 1/5(수)</span>
-                                                    <span>누적 4회 / 이번 달 3회</span>
-                                                </div>
-                                            </a>
+                                            <div class="list-group-top">
+                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">이시대1234</a>
+                                                <a href="javascript:;" class="list-group-item">
+                                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                                        <small class="text-info">확정</small>
+                                                    </div>
+                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
+                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
+                                                        <small>신청일 1/5(수) 15:15:30</small>
+                                                        <small>누적 4회 / 이번 달 3회</small>
+                                                    </div>
+                                                </a>
+                                            </div>
                                             <div class="list-group-detail">
                                                 <div class="p-3">
                                                     <p>요즘 너무 힘이 들어요  <br>저한테 관심 좀 ㅜㅜ</p>
@@ -131,6 +135,7 @@
                                                         <label class="mr-2">첨부파일</label>
                                                         <a href="" class="text-underline">홍길동 플래너</a>
                                                     </div>
+                                                    <div class="text-right"><button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button></div>
                                                 </div>
                                                 <div class="p-3 border-top border-bottom">
                                                     <div class="row row-10">
@@ -327,6 +332,28 @@
         </div>
     </div>
 
+    <!-- modal : 수강생 프로필 -->
+    <div class="modal" tabindex="-1" id="modal-profile" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">김시대1231</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img src="../assets/images/@profile.jpg" alt="" style="max-height: 300px">
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- fullcalander v4 -->
     <link href='../assets/lib/fullcalendar/core/main.css' rel='stylesheet' />
     <link href='../assets/lib/fullcalendar/daygrid/main.css' rel='stylesheet' />
@@ -352,13 +379,15 @@
                     center: 'prev,title,next',
                     right: ''
                 },
-                defaultDate: '2021-01-20',
+                defaultDate: '2022-03-21',
                 defaultView: 'timeGridWeek',
                 allDaySlot: false,
                 height: 'parent',
                 eventDisplay: 'block',
                 minTime: '09:00:00',
-                maxTime: '22:00:00',
+                maxTime: '23:00:00',
+                slotDuration: '01:00:00', //1시간 단위
+                firstDay: 1, //월요일부터 시작
                 selectable: true,
                 dateClick: function(info) { //날짜 클릭
                     alert('Clicked on: ' + info.dateStr);
@@ -371,16 +400,16 @@
                 },
                 events: [
                     {
-                        start:"2021-01-20T16:30:00",
-                        end:"2021-01-20T17:00:00",
+                        start:"2022-03-21T16:00:00",
+                        end:"2022-03-21T17:00:00",
                         title:"김시대2104",
                         textColor:"#fff",
                         borderColor:"#c2cfe3",
                         backgroundColor:"#c2cfe3"
                     },
                     {
-                        start:"2021-01-22T10:30:00",
-                        end:"2021-01-22T11:00:00",
+                        start:"2022-03-25T10:00:00",
+                        end:"2022-03-25T11:00:00",
                         title:"김시대2104",
                         textColor:"#fff",
                         borderColor:"#4c90f9",
