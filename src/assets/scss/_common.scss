@@ -23,7 +23,10 @@ button{border-radius: 0;border: 0;padding: 0;margin: 0;background: transparent;}
     .material-icons{color: #fff;font-size: 17px;transform: translateY(-1px);}
 }
 .btn{
-    &.btn-foursquare{padding: 0;line-height: 30.5px;width: 32.5px;font-size: 18px;}
+    &.btn-foursquare{
+        padding: 0;line-height: 30.5px;width: 32.5px;font-size: 18px;
+        &.btn-sm{width: 27px;line-height: 25px;}
+    }
 }
 
 textarea{resize: none!important;}

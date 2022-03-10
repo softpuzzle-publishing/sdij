@@ -72,8 +72,9 @@
                                                     <th class="text-center">순서</th>
                                                     <th class="text-center">관</th>
                                                     <th class="text-center">학생ID</th>
-                                                    <th class="text-center">미진행상담</th>
-                                                    <th class="text-center">누적상담</th>
+                                                    <th class="text-center">미진행</th>
+                                                    <th class="text-center">생활</th>
+                                                    <th class="text-center">학습</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -86,6 +87,7 @@
                                                     </td>
                                                     <td class="text-center">Y</td>
                                                     <td class="text-center">5</td>
+                                                    <td class="text-center">-</td>
                                                 </tr>
                                                 }
                                             </tbody>
@@ -136,11 +138,9 @@
                                             <div class="list-group-top">
                                                 <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">김시대2104</a>
                                                 <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex w-100 justify-content-between align-items-center">
-                                                        <div>
-                                                            <small class="text-info">확정</small>
-                                                            <small class="ml-2">1/7(토) 09:00</small>
-                                                        </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <small class="text-info">확정</small>
+                                                        <small class="font-weight-medium ml-2">1/8(토) 09:00</small>
                                                     </div>
                                                     <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
                                                     <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
@@ -200,15 +200,15 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <th>학습담임</th>
+                                        <th>학습컨설턴트</th>
                                         <td></td>
                                         <th>입학구분(장학)</th>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <th>생활담임(오전)</th>
+                                        <th>담임(오전)</th>
                                         <td></td>
-                                        <th>생활담임(오후)</th>
+                                        <th>담임(오후)</th>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -284,7 +284,7 @@
                         <div class="pt-3 px-3">
                             <div class="row justify-content-between align-items-end mb-2">
                                 <div class="col-auto">
-                                    <div class="table-title mb-0">성적 기록</div>
+                                    <div class="table-title mb-0">성적기록</div>
                                 </div>
                                 <div class="col-auto">
                                     <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-">몰입도리포트</button>
@@ -361,71 +361,67 @@
                             </div>
                         </div>
                         <div class="hr"></div>
-                        <div class="pt-3 px-3">
-                            <div class="row align-items-end mb-2">
+                        <div class="p-3">
+                            <div class="row align-items-end justify-content-between mb-2">
                                 <div class="col-auto">
                                     <strong class="mr-2">상담기록</strong>
                                     총 ###건
                                 </div>
+                            </div>
+                            <div class="row align-items-end justify-content-between mb-2">
                                 <div class="col-auto">
-                                    <input type="checkbox" id="usableOnly">
-                                    <label for="usableOnly" class="mb-0">완료 제외</label>
+                                    <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                        <option value="">구분</option>
+                                        <option value="">생활</option>
+                                        <option value="">학습</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm w-auto">
+                                        <option value="">상태</option>
+                                        <option value="">진행예정</option>
+                                        <option value="">일정조정</option>
+                                        <option value="">상담완료</option>
+                                        <option value="">기록완료</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-consulting-add">상담 등록</button>
+                                    <button type="button" class="btn btn-dark btn-sm btn-foursquare ml-1">+</button>
                                 </div>
                             </div>
-                        </div>
-                        <nav class="tab-custom">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" data-toggle="tab" href="#tab3-1" role="tab">학습상단(##건)</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-toggle="tab" href="#tab3-2" role="tab">생활상담(##건)</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="tab-content">
-                            <div class="tab-pane show active" id="tab3-1" role="tabpanel">
-                                <div class="p-3">
-                                    <div class="text-right mb-2">
-                                        <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-consulting-add">상담 등록</button>
-                                    </div>
-                                    <div class="main_search_result_list">
-                                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                        <table class="table" id="datatable1">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-center">No</th>
-                                                    <th class="text-center">신청 제목</th>
-                                                    <th class="text-center">상태</th>
-                                                    <th class="text-center">상담일</th>
-                                                    <th class="text-center">상담 내용(요약)</th>
-                                                    <th class="text-center">실 상담사</th>
-                                                    <th class="text-center">등록/수정</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @@for (var i = 5; i > 0; i--) {
-                                                <tr>
-                                                    <td class="text-center">`+ i +`</td>
-                                                    <td class="text-center">상담신청합니다 ㅠㅠㅠㅠㅠㅠㅠㅠ</td>
-                                                    <td class="text-center">진행예정</td>
-                                                    <td class="text-center">1/15</td>
-                                                    <td class="text-center">
-                                                        <a href="#modal-consulting-detial" data-toggle="modal" class="text-underline">작성</a>
-                                                    </td>
-                                                    <td class="text-center">김담임</td>
-                                                    <td class="text-center">2022-01-11</td>
-                                                </tr>
-                                                }
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                            <div class="text-right mb-2">
                             </div>
-                            <div class="tab-pane" id="tab3-2" role="tabpanel">
-                                <div class="p-3">
-
-                                </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="consultingAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">구분</th>
+                                            <th class="text-center">신청 제목</th>
+                                            <th class="text-center">상태</th>
+                                            <th class="text-center">상담일</th>
+                                            <th class="text-center">상담 내용(요약)</th>
+                                            <th class="text-center">등록/수정</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="consultingAll"></td>
+                                            <td class="text-center">`+ i +`</td>
+                                            <td class="text-center">상담신청합니다 ㅠㅠㅠㅠㅠㅠㅠㅠ</td>
+                                            <td class="text-center">생활</td>
+                                            <td class="text-center">진행예정</td>
+                                            <td class="text-center">1/15</td>
+                                            <td class="text-center">
+                                                <a href="#modal-consulting-detial" data-toggle="modal" class="text-underline">작성</a>
+                                            </td>
+                                            <td class="text-center">2022-01-11</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -538,29 +534,6 @@
                                 <td colspan="3"><a href="#none" class="text-underline">박시대_성적표.jpg</a></td>
                                 <th>공개 여부</th>
                                 <td colspan="3">Y</td>
-                            </tr>
-                            <tr>
-                                <th>접근 권한 추가</th>
-                                <td colspan="7">
-                                    <div class="row align-items-center row-5">
-                                        <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
-                                                <option value="">관</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-auto">
-                                            <select name="" id="" class="custom-select">
-                                                <option value="">컨설턴트명</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-auto">
-                                            <button type="button" class="btn btn-secondary">추가</button>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control" value="박담임, 김담임" readonly>
-                                        </div>
-                                    </div>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
