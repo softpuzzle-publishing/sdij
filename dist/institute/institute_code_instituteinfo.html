@@ -26,7 +26,7 @@
     <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
     <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
-    <script src="../assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="../assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> <!-- https://jdewit.github.io/bootstrap-timepicker/ -->
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="../assets/lib/split.js/split.min.js"></script>
 
@@ -71,11 +71,58 @@
                             <p>상태 변경</p>
                             <a href="" class="dropdown-item active"><i class="my-status-1"></i><span>소통원할</span></a>
                             <a href="" class="dropdown-item"><i class="my-status-2"></i><span>지원 업무중</span></a>
-                            <a href="" class="dropdown-item"><i class="my-status-3"></i><span>소통불가</span></a>
+                            <a href="" class="dropdown-item"><i class="my-status-3"></i><span>소통지연</span></a>
                             <div class="dropdown-divider"></div>
-                            <a href="" class="dropdown-item">비밀번호 변경</a>
+                            <a href="#modal-password" data-toggle="modal" class="dropdown-item">비밀번호 변경</a>
                         </div>
                         <button type="button" class="btn-logout" onclick="document.location.href='../login/login.html'"><i class="material-icons">logout</i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- modal : 비밀번호 변경 -->
+            <div class="modal" tabindex="-1" id="modal-password" data-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">비밀번호 변경</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <table class="table table-bordered table-fixed">
+                                    <colgroup>
+                                        <col style="width: 125px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>현재 비밀번호</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="current-password">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>변경 비밀번호</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="new-password">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>변경 비밀번호 확인</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="new-password">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-dark">저장</button>
+                            <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -266,7 +313,7 @@
                         <div class="col-auto">
                             <div class="d-flex align-items-center">
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">구분</option>
+                                    <option value="">관</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto">
                                     <option value="">교실</option>
@@ -290,86 +337,86 @@
                     </div>
                     <div class="main_search_result_list">
                         <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table" id="datatable1">
+                        <table class="table table-center" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th class="text-center">No</th>
-                                    <th class="text-center">지역</th>
-                                    <th class="text-center">관 명</th>
-                                    <th class="text-center">관 담당자</th>
-                                    <th class="text-center">보유 교실</th>
-                                    <th class="text-center">사용</th>
-                                    <th class="text-center">등록/수정</th>
+                                    <th>No</th>
+                                    <th>지역</th>
+                                    <th>관 명</th>
+                                    <th>관 담당자</th>
+                                    <th>보유 교실</th>
+                                    <th>사용</th>
+                                    <th>등록/수정</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <tr>
-                                    <td class="text-center">5</td>
-                                    <td class="text-center">대치</td>
-                                    <td class="text-center">
+                                    <td>5</td>
+                                    <td>대치</td>
+                                    <td>
                                         <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">김시대</td>
-                                    <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>김시대</td>
+                                    <td><a href="javascript:;" class="text-underline">101호, 201호</a></td>
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">4</td>
-                                    <td class="text-center">대치</td>
-                                    <td class="text-center">
+                                    <td>4</td>
+                                    <td>대치</td>
+                                    <td>
                                         <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">김시대</td>
-                                    <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>김시대</td>
+                                    <td><a href="javascript:;" class="text-underline">101호, 201호</a></td>
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">대치</td>
-                                    <td class="text-center">
+                                    <td>3</td>
+                                    <td>대치</td>
+                                    <td>
                                         <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">김시대</td>
-                                    <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>김시대</td>
+                                    <td><a href="javascript:;" class="text-underline">101호, 201호</a></td>
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">대치</td>
-                                    <td class="text-center">
+                                    <td>2</td>
+                                    <td>대치</td>
+                                    <td>
                                         <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">김시대</td>
-                                    <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>김시대</td>
+                                    <td><a href="javascript:;" class="text-underline">101호, 201호</a></td>
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">대치</td>
-                                    <td class="text-center">
+                                    <td>1</td>
+                                    <td>대치</td>
+                                    <td>
                                         <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">김시대</td>
-                                    <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>김시대</td>
+                                    <td><a href="javascript:;" class="text-underline">101호, 201호</a></td>
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
@@ -443,209 +490,209 @@
                     </div>
                     <div class="main_search_result_list">
                         <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table" id="datatable1">
+                        <table class="table table-center" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th class="text-center">ID</th>
-                                    <th class="text-center">관 명</th>
-                                    <th class="text-center">교실명</th>
-                                    <th class="text-center">교실 구분</th>
-                                    <th class="text-center">총 좌석</th>
-                                    <th class="text-center">사용좌석</th>
-                                    <th class="text-center">카드체킹기기</th>
-                                    <th class="text-center">좌석배치표</th>
-                                    <th class="text-center">사용</th>
-                                    <th class="text-center">등록/수정</th>
+                                    <th>ID</th>
+                                    <th>관 명</th>
+                                    <th>교실명</th>
+                                    <th>교실 구분</th>
+                                    <th>총 좌석</th>
+                                    <th>사용좌석</th>
+                                    <th>카드체킹기기</th>
+                                    <th>좌석배치표</th>
+                                    <th>사용</th>
+                                    <th>등록/수정</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <tr>
-                                    <td class="text-center">10</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>10</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">9</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>9</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">8</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>8</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">7</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>7</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">6</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>6</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">5</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>5</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">4</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>4</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>3</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>2</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>1</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
@@ -1183,7 +1230,7 @@
     <!-- modal : 좌석표 등록 -->
     <div class="modal" tabindex="-1" id="modal-seat" data-backdrop="static" data-overlap="true">
         <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">좌석표 등록</h5>
@@ -1192,7 +1239,994 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="table-titel">활성 좌석 선택</div>
+                    <div class="table-title">활성 좌석 선택</div>
+                    <div class="seat">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                    <th data-selectable="column"></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                    <td class="selectable"></td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <script src="https://unpkg.com/selectable.js@latest/selectable.min.js"></script>
+                        <!-- https://github.com/Mobius1/Selectable -->
+                        <script src="https://unpkg.com/selectable-table-plugin@latest/selectable.table.min.js"></script>
+                        <script>
+                            //좌석선택 selectable
+                            const selectable = new Selectable({
+                                filter: ".selectable",
+                                toggle: true
+                            });
+                            // enable table plugin
+                            selectable.table();
+                        </script>
+                    </div>
+                    <div class="table-title mt-3">좌석 번호 입력</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>시작 좌석</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">좌 상단</option>
+                                    </select>
+                                </td>
+                                <th>행/렬 끝</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">처음부터</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>번호 좌석</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">아래로</option>
+                                    </select>
+                                </td>
+                                <th>총 좌석수</th>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <th>시작 번호</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark">저장</button>

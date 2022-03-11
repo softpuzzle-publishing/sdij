@@ -26,7 +26,7 @@
     <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
     <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
-    <script src="../assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="../assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> <!-- https://jdewit.github.io/bootstrap-timepicker/ -->
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="../assets/lib/split.js/split.min.js"></script>
 
@@ -71,11 +71,58 @@
                             <p>상태 변경</p>
                             <a href="" class="dropdown-item active"><i class="my-status-1"></i><span>소통원할</span></a>
                             <a href="" class="dropdown-item"><i class="my-status-2"></i><span>지원 업무중</span></a>
-                            <a href="" class="dropdown-item"><i class="my-status-3"></i><span>소통불가</span></a>
+                            <a href="" class="dropdown-item"><i class="my-status-3"></i><span>소통지연</span></a>
                             <div class="dropdown-divider"></div>
-                            <a href="" class="dropdown-item">비밀번호 변경</a>
+                            <a href="#modal-password" data-toggle="modal" class="dropdown-item">비밀번호 변경</a>
                         </div>
                         <button type="button" class="btn-logout" onclick="document.location.href='../login/login.html'"><i class="material-icons">logout</i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- modal : 비밀번호 변경 -->
+            <div class="modal" tabindex="-1" id="modal-password" data-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">비밀번호 변경</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <table class="table table-bordered table-fixed">
+                                    <colgroup>
+                                        <col style="width: 125px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>현재 비밀번호</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="current-password">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>변경 비밀번호</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="new-password">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>변경 비밀번호 확인</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="new-password">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-dark">저장</button>
+                            <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -302,7 +349,7 @@
                                         <th class="text-center">학년구분</th>
                                         <th class="text-center">영역</th>
                                         <th class="text-center">과목</th>
-                                        <th class="text-center">평가요쇼(대분류)</th>
+                                        <th class="text-center">대단원</th>
                                         <th class="text-center">별명</th>
                                         <th class="text-center">선택</th>
                                         <th class="text-center">순서</th>
@@ -662,7 +709,7 @@
 
     <!-- modal : 과목 등록/수정 -->
     <div class="modal" tabindex="-1" id="modal-subject-add" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 750px">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">과목 등록/수정</h5>
@@ -766,15 +813,15 @@
                             <col>
                             <col>
                             <col>
-                            <col style="width:100px">
+                            <col style="width:80px">
                         </colgroup>
                         <thead>
                             <tr>
                                 <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="evaluation"></th>
                                 <th class="text-center">No</th>
-                                <th class="text-center">대분류</th>
-                                <th class="text-center">중분류</th>
-                                <th class="text-center">소분류</th>
+                                <th class="text-center">대단원</th>
+                                <th class="text-center">중단원</th>
+                                <th class="text-center">소단원</th>
                                 <th class="text-center">사용</th>
                             </tr>
                         </thead>
@@ -843,13 +890,13 @@
         </div>
     </div>
 
-    <!-- modal : 분류 등록/수정 -->
+    <!-- modal : 평가 요소 등록/수정 -->
     <div class="modal" tabindex="-1" id="modal-subject-category" data-backdrop="static" data-overlap="true">
         <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">분류 등록 / 수정</h5>
+                    <h5 class="modal-title">평가 요소 등록 / 수정</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -864,36 +911,66 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th>대분류</th>
+                                <th>대단원</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="category1" class="custom-select">
                                         <option value="">수1</option>
+                                        <option value="입력">입력</option>
                                     </select>
+                                    <script>
+                                        $('#category1').on('change', function() {
+                                            if ($(this).val() == '입력') {
+                                                $('#category1Input').attr('disabled', false).focus();
+                                            } else {
+                                                $('#category1Input').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="category1Input" disabled>
                                 </td>
                             </tr>
                             <tr>
-                                <th>중분류</th>
+                                <th>중단원</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="category2" class="custom-select">
                                         <option value="">수열</option>
+                                        <option value="입력">입력</option>
                                     </select>
+                                    <script>
+                                        $('#category2').on('change', function() {
+                                            if ($(this).val() == '입력') {
+                                                $('#category2Input').attr('disabled', false).focus();
+                                            } else {
+                                                $('#category2Input').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="category2Input" disabled>
                                 </td>
                             </tr>
                             <tr>
-                                <th>소분류</th>
+                                <th>소단원</th>
                                 <td>
                                     <select name="" id="" class="custom-select">
-                                        <option value="">입력</option>
+                                        <option value="">선택</option>
+                                        <option value="입력">입력</option>
                                     </select>
+                                    <script>
+                                        $('#category3').on('change', function() {
+                                            if ($(this).val() == '입력') {
+                                                $('#category3Input').attr('disabled', false).focus();
+                                            } else {
+                                                $('#category3Input').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="category3Input" disabled>
                                 </td>
                             </tr>
                             <tr>
@@ -980,29 +1057,13 @@
                                 <th class="text-center">과목</th>
                                 <th class="text-center">과목(별명)</th>
                                 <th class="text-center">선택</th>
-                                <th class="text-center">대분류</th>
-                                <th class="text-center">중분류</th>
-                                <th class="text-center">소분류</th>
+                                <th class="text-center">대단원</th>
+                                <th class="text-center">중단원</th>
+                                <th class="text-center">소단원</th>
                                 <th class="text-center">사용</th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td class="text-center">
-                                    <input type="checkbox" name="uploadItem">
-                                </td>
-                                <td class="text-center">0</td>
-                                <td class="text-center">고 3,N</td>
-                                <td class="text-center">수학</td>
-                                <td class="text-center">수학(종합)</td>
-                                <td class="text-center">수학</td>
-                                <td class="text-center">공통</td>
-                                <td class="text-center">수1</td>
-                                <td class="text-center">지수함수와 로그함수</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
 
                             <tr>
                                 <td class="text-center">
@@ -1057,6 +1118,22 @@
                                     <input type="checkbox" name="uploadItem">
                                 </td>
                                 <td class="text-center">4</td>
+                                <td class="text-center">고 3,N</td>
+                                <td class="text-center">수학</td>
+                                <td class="text-center">수학(종합)</td>
+                                <td class="text-center">수학</td>
+                                <td class="text-center">공통</td>
+                                <td class="text-center">수1</td>
+                                <td class="text-center">지수함수와 로그함수</td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" name="uploadItem">
+                                </td>
+                                <td class="text-center">5</td>
                                 <td class="text-center">고 3,N</td>
                                 <td class="text-center">수학</td>
                                 <td class="text-center">수학(종합)</td>

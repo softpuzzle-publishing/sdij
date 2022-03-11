@@ -60,7 +60,7 @@
                                         <th class="text-center">학년구분</th>
                                         <th class="text-center">영역</th>
                                         <th class="text-center">과목</th>
-                                        <th class="text-center">평가요쇼(대분류)</th>
+                                        <th class="text-center">대단원</th>
                                         <th class="text-center">별명</th>
                                         <th class="text-center">선택</th>
                                         <th class="text-center">순서</th>
@@ -105,7 +105,7 @@
 
     <!-- modal : 과목 등록/수정 -->
     <div class="modal" tabindex="-1" id="modal-subject-add" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 750px">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">과목 등록/수정</h5>
@@ -209,15 +209,15 @@
                             <col>
                             <col>
                             <col>
-                            <col style="width:100px">
+                            <col style="width:80px">
                         </colgroup>
                         <thead>
                             <tr>
                                 <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="evaluation"></th>
                                 <th class="text-center">No</th>
-                                <th class="text-center">대분류</th>
-                                <th class="text-center">중분류</th>
-                                <th class="text-center">소분류</th>
+                                <th class="text-center">대단원</th>
+                                <th class="text-center">중단원</th>
+                                <th class="text-center">소단원</th>
                                 <th class="text-center">사용</th>
                             </tr>
                         </thead>
@@ -247,12 +247,12 @@
         </div>
     </div>
 
-    <!-- modal : 분류 등록/수정 -->
+    <!-- modal : 평가 요소 등록/수정 -->
     <div class="modal" tabindex="-1" id="modal-subject-category" data-backdrop="static" data-overlap="true"> <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">분류 등록 / 수정</h5>
+                    <h5 class="modal-title">평가 요소 등록 / 수정</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -267,36 +267,66 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th>대분류</th>
+                                <th>대단원</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="category1" class="custom-select">
                                         <option value="">수1</option>
+                                        <option value="입력">입력</option>
                                     </select>
+                                    <script>
+                                        $('#category1').on('change', function(){
+                                            if($(this).val() == '입력'){
+                                                $('#category1Input').attr('disabled', false).focus();
+                                            }else{
+                                                $('#category1Input').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="category1Input" disabled>
                                 </td>
                             </tr>
                             <tr>
-                                <th>중분류</th>
+                                <th>중단원</th>
                                 <td>
-                                    <select name="" id="" class="custom-select">
+                                    <select name="" id="category2" class="custom-select">
                                         <option value="">수열</option>
+                                        <option value="입력">입력</option>
                                     </select>
+                                    <script>
+                                        $('#category2').on('change', function(){
+                                            if($(this).val() == '입력'){
+                                                $('#category2Input').attr('disabled', false).focus();
+                                            }else{
+                                                $('#category2Input').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="category2Input" disabled>
                                 </td>
                             </tr>
                             <tr>
-                                <th>소분류</th>
+                                <th>소단원</th>
                                 <td>
                                     <select name="" id="" class="custom-select">
-                                        <option value="">입력</option>
+                                        <option value="">선택</option>
+                                        <option value="입력">입력</option>
                                     </select>
+                                    <script>
+                                        $('#category3').on('change', function(){
+                                            if($(this).val() == '입력'){
+                                                $('#category3Input').attr('disabled', false).focus();
+                                            }else{
+                                                $('#category3Input').val('').attr('disabled', true);
+                                            }
+                                        })
+                                    </script>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="category3Input" disabled>
                                 </td>
                             </tr>
                             <tr>
@@ -383,14 +413,14 @@
                                 <th class="text-center">과목</th>
                                 <th class="text-center">과목(별명)</th>
                                 <th class="text-center">선택</th>
-                                <th class="text-center">대분류</th>
-                                <th class="text-center">중분류</th>
-                                <th class="text-center">소분류</th>
+                                <th class="text-center">대단원</th>
+                                <th class="text-center">중단원</th>
+                                <th class="text-center">소단원</th>
                                 <th class="text-center">사용</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @@for (var i = 0; i < 5; i++) {
+                            @@for (var i = 1; i < 6; i++) {
                             <tr>
                                 <td class="text-center">
                                     <input type="checkbox" name="uploadItem">

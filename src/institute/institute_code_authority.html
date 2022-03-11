@@ -66,14 +66,12 @@
                                     <tbody>
                                         @@for (var i = 10; i > 0; i--) {
                                         <tr>
+                                            <td class="text-center">`+ i +`</td>
                                             <td class="text-center">
-                                                `+ i +`
+                                                <a href="javascript:;" class="text-underline">김직원</a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="text-underline">김직원</a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="" class="text-underline">asdf1234</a>
+                                                <a href="javascript:;" class="text-underline">asdf1234</a>
                                             </td>
                                             <td class="text-center">담임</td>
                                             <td class="text-center">일반</td>
@@ -99,18 +97,22 @@
                             </div>
                             <div class="row row-20">
                                 <div class="col-auto">
-                                    <div class="profile">
+                                    <div class="profile" id="instructor-profile">
                                         <img src="../assets/images/@profile.jpg" alt="">
                                     </div>
                                     <div class="text-center mt-2">
                                         <input type="file" class="sr-only">
                                         <a href="javascript:;" class="btn btn-dark" id="btn-photo-upload">등록</a>
-                                        <a href="javascript:;" class="btn btn-secondary">삭제</a>
+                                        <a href="javascript:;" class="btn btn-secondary ml-1" id="btn-photo-del" role="button">삭제</a>
                                         <script>
-                                            $('#btn-photo-upload').on('click',function(e){
+                                             $('#btn-photo-upload').on('click',function(e){
                                                 e.preventDefault();
                                                 $(this).prev('input[type=file]').click();
-                                            })
+                                            });
+                                            $('#btn-photo-del').on('click',function(e){
+                                                e.preventDefault();
+                                                $('#instructor-profile').find('img').remove();
+                                            });
                                         </script>
                                     </div>
                                 </div>

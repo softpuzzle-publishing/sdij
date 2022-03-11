@@ -93,16 +93,28 @@
                                 </div>
                                 <div class="col-auto">
                                     <button type="button" class="btn btn-sm btn-dark">저장</button>
-                                    <button type="button" class="btn btn-sm btn-dark">취소</button>
+                                    <button type="button" class="btn btn-sm btn-dark ml-1">취소</button>
                                 </div>
                             </div>
                             <div class="row row-20">
                                 <div class="col-auto">
-                                    <div class="profile">
+                                    <div class="profile" id="instructor-profile">
                                         <img src="../assets/images/@profile.jpg" alt="">
                                     </div>
                                     <div class="text-center mt-2">
-                                        <a href="javascript:;" class="btn btn-secondary">등록</a>
+                                        <input type="file" class="sr-only">
+                                        <a href="javascript:;" class="btn btn-dark" id="btn-photo-upload">등록</a>
+                                        <a href="javascript:;" class="btn btn-secondary ml-1" id="btn-photo-del" role="button">삭제</a>
+                                        <script>
+                                             $('#btn-photo-upload').on('click',function(e){
+                                                e.preventDefault();
+                                                $(this).prev('input[type=file]').click();
+                                            });
+                                            $('#btn-photo-del').on('click',function(e){
+                                                e.preventDefault();
+                                                $('#instructor-profile').find('img').remove();
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                                 <div class="col">

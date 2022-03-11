@@ -200,3 +200,25 @@
         }
     }
 }
+
+.seat{
+    .table{
+        thead{display: none;}
+        td{
+            height: 25px;padding: 0;
+            &:hover, &.hover {
+                background-color: lighten($light, 10);
+            }
+            &.ui-selecting {
+                background-color: darken($yellow, 15);border-color: #e2ca9d;
+                &.ui-selected {
+                    background-color: darken($yellow, 15);
+                }
+            }
+            &.ui-selected {
+                background-color: $yellow;border-color: #f7e1b9;
+            }
+        }
+    }
+}
+.ui-lasso {display: none;}

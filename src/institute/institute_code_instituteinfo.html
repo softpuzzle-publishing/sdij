@@ -24,7 +24,7 @@
                         <div class="col-auto">
                             <div class="d-flex align-items-center">
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">구분</option>
+                                    <option value="">관</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto">
                                     <option value="">교실</option>
@@ -48,30 +48,30 @@
                     </div>
                     <div class="main_search_result_list">
                         <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table" id="datatable1">
+                        <table class="table table-center" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th class="text-center">No</th>
-                                    <th class="text-center">지역</th>
-                                    <th class="text-center">관 명</th>
-                                    <th class="text-center">관 담당자</th>
-                                    <th class="text-center">보유 교실</th>
-                                    <th class="text-center">사용</th>
-                                    <th class="text-center">등록/수정</th>
+                                    <th>No</th>
+                                    <th>지역</th>
+                                    <th>관 명</th>
+                                    <th>관 담당자</th>
+                                    <th>보유 교실</th>
+                                    <th>사용</th>
+                                    <th>등록/수정</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @@for (var i = 5; i > 0; i--) {
                                 <tr>
-                                    <td class="text-center">`+ i +`</td>
-                                    <td class="text-center">대치</td>
-                                    <td class="text-center">
+                                    <td>`+ i +`</td>
+                                    <td>대치</td>
+                                    <td>
                                         <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
                                     </td>
-                                    <td class="text-center">김시대</td>
-                                    <td class="text-center"><a href="javascript;" class="text-underline">101호, 201호</a></td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>김시대</td>
+                                    <td><a href="javascript:;" class="text-underline">101호, 201호</a></td>
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
@@ -94,38 +94,38 @@
                     </div>
                     <div class="main_search_result_list">
                         <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table" id="datatable1">
+                        <table class="table table-center" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th class="text-center">ID</th>
-                                    <th class="text-center">관 명</th>
-                                    <th class="text-center">교실명</th>
-                                    <th class="text-center">교실 구분</th>
-                                    <th class="text-center">총 좌석</th>
-                                    <th class="text-center">사용좌석</th>
-                                    <th class="text-center">카드체킹기기</th>
-                                    <th class="text-center">좌석배치표</th>
-                                    <th class="text-center">사용</th>
-                                    <th class="text-center">등록/수정</th>
+                                    <th>ID</th>
+                                    <th>관 명</th>
+                                    <th>교실명</th>
+                                    <th>교실 구분</th>
+                                    <th>총 좌석</th>
+                                    <th>사용좌석</th>
+                                    <th>카드체킹기기</th>
+                                    <th>좌석배치표</th>
+                                    <th>사용</th>
+                                    <th>등록/수정</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @@for (var i = 10; i > 0; i--) {
                                 <tr>
-                                    <td class="text-center">`+ i +`</td>
-                                    <td class="text-center">브릿지관</td>
-                                    <td class="text-center">
+                                    <td>`+ i +`</td>
+                                    <td>브릿지관</td>
+                                    <td>
                                         <a href="javascript:;" class="text-underline">101호</a>
                                     </td>
-                                    <td class="text-center">강의실</td>
-                                    <td class="text-center">100</td>
-                                    <td class="text-center">60</td>
-                                    <td class="text-center">ASND2f</td>
-                                    <td class="text-center">
-                                        <a href="javascript:;" class="text-underline">등록</a>
+                                    <td>강의실</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>ASND2f</td>
+                                    <td>
+                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
                                     </td>
-                                    <td class="text-center">Y</td>
-                                    <td class="text-center">
+                                    <td>Y</td>
+                                    <td>
                                         <div class="text-nowrap">Yy/mm/dd(김시대)</div>
                                     </td>
                                 </tr>
@@ -386,9 +386,9 @@
         </div>
     </div>
 
-     <!-- modal : 좌석표 등록 -->
-     <div class="modal" tabindex="-1" id="modal-seat" data-backdrop="static" data-overlap="true"> <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <!-- modal : 좌석표 등록 -->
+    <div class="modal" tabindex="-1" id="modal-seat" data-backdrop="static" data-overlap="true"> <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">좌석표 등록</h5>
@@ -397,7 +397,82 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="table-titel">활성 좌석 선택</div>
+                    <div class="table-title">활성 좌석 선택</div>
+                    <div class="seat">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    @@for (var i = 0; i < 20; i++) {
+                                    <th data-selectable="column"></th>
+                                    }
+                                </tr>
+                              </thead>
+                            <tbody>
+                                @@for (var i = 0; i < 20; i++) {
+                                <tr>
+                                    @@for (var j = 0; j < 20; j++) {
+                                    <td class="selectable"></td>
+                                    }
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <script src="https://unpkg.com/selectable.js@latest/selectable.min.js"></script>
+                        <!-- https://github.com/Mobius1/Selectable -->
+                        <script src="https://unpkg.com/selectable-table-plugin@latest/selectable.table.min.js"></script>
+                        <script>
+                            //좌석선택 selectable
+                            const selectable = new Selectable({
+                                filter: ".selectable",
+                                toggle: true
+                            });
+                            // enable table plugin
+                            selectable.table();
+                        </script>
+                    </div>
+                    <div class="table-title mt-3">좌석 번호 입력</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>시작 좌석</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">좌 상단</option>
+                                    </select>
+                                </td>
+                                <th>행/렬 끝</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">처음부터</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>번호 좌석</th>
+                                <td>
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">아래로</option>
+                                    </select>
+                                </td>
+                                <th>총 좌석수</th>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <th>시작 번호</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark">저장</button>

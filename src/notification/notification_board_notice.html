@@ -78,11 +78,42 @@
                                                 <th class="text-center">게시글 제목</th>
                                                 <th class="text-center">공개</th>
                                                 <th class="text-center">조회수</th>
+                                                <th class="text-center">게시 기간</th>
                                                 <th class="text-center">등록일/등록자</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @@for (var i = 15; i > 0; i--) {
+                                            <tr class="bg-highlight">
+                                                <td class="text-center"><input type="checkbox" name="noticeAll"></td>
+                                                <td class="text-center">필독</td>
+                                                <td class="text-center">Y</td>
+                                                <td class="text-center">강의</td>
+                                                <td class="text-center">강의실 변경</td>
+                                                <td class="text-center">국어, 김승리 T</td>
+                                                <td class="text-center">
+                                                    <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
+                                                </td>
+                                                <td class="text-center">Y</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~</td>
+                                                <td class="text-center">2021-12-28 (김시대)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><input type="checkbox" name="noticeAll"></td>
+                                                <td class="text-center">14</td>
+                                                <td class="text-center">Y</td>
+                                                <td class="text-center">강의</td>
+                                                <td class="text-center">종강</td>
+                                                <td class="text-center">국어, 김승리 T</td>
+                                                <td class="text-center">
+                                                    <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 종강 안내</a>
+                                                </td>
+                                                <td class="text-center">Y</td>
+                                                <td class="text-center">123</td>
+                                                <td class="text-center"><i class="far fa-clock mr-1"></i>2022-03-10 ~ 2022-03-21</td>
+                                                <td class="text-center">2021-12-28 (김시대)</td>
+                                            </tr>
+                                            @@for (var i = 13; i > 0; i--) {
                                             <tr>
                                                 <td class="text-center"><input type="checkbox" name="noticeAll"></td>
                                                 <td class="text-center">`+ i +`</td>
@@ -95,6 +126,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
                                             }
@@ -146,26 +178,21 @@
                         <tbody>
                             <tr>
                                 <th><strong class="text-danger">*</strong>알림 구분</th>
-                                <td>
+                                <td colspan="3">
                                     <select name="" id="" class="custom-select w-auto">
                                         <option value="">전체</option>
                                     </select>
                                     <select name="" id="" class="custom-select w-auto ml-1">
                                         <option value="">직접입력</option>
                                     </select>
-                                    <input type="text" class="form-control d-inline-block align-middle w-auto ml-1">
-                                </td>
-                                <th><strong class="text-danger">*</strong>추가알림</th>
-                                <td>
-                                    <input type="checkbox" id="additionalPush">
-                                    <label for="additionalPush">푸시</label>
-                                    <input type="checkbox" id="additionalSms">
-                                    <label for="additionalSms">문자</label>
+                                    <input type="text" class="form-control d-inline-block align-middle w-auto ml-1 mr-2">
+                                    <input type="checkbox" id="requiredReading">
+                                    <label for="requiredReading">필독</label>
                                 </td>
                             <tr>
                             </tr>
                                 <th><strong class="text-danger">*</strong>카테고리</th>
-                                <td colspan="3">
+                                <td>
                                     <select name="" id="" class="custom-select w-auto">
                                         <option value="">관</option>
                                     </select>
@@ -178,6 +205,13 @@
                                     <select name="" id="" class="custom-select w-auto ml-1">
                                         <option value="">강사</option>
                                     </select>
+                                </td>
+                                <th>추가알림</th>
+                                <td>
+                                    <input type="checkbox" id="additionalPush">
+                                    <label for="additionalPush">푸시</label>
+                                    <input type="checkbox" id="additionalSms">
+                                    <label for="additionalSms">문자</label>
                                 </td>
                             </tr>
                             <tr>
@@ -210,6 +244,42 @@
                                     <label for="faqUseY">공개</label>
                                     <input type="radio" name="faqUse" id="faqUseN">
                                     <label for="faqUseN">비공개</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="chkReservation">예약설정</label>
+                                    <input type="checkbox" id="chkReservation" class="ml-1">
+                                </th>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker">
+                                        </div>
+                                        <div class="col">
+                                            <div class="input-group bootstrap-timepicker timepicker">
+                                                <input type="text" class="form-control form-timepicker">
+                                                <a hre="javascript:;" class="input-group-addon"><i class="far fa-clock"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>
+                                    <label for="chkTerm">기한설정</label>
+                                    <input type="checkbox" id="chkTerm" class="ml-1">
+                                </th>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker">
+                                        </div>
+                                        <div class="col">
+                                            <div class="input-group bootstrap-timepicker timepicker">
+                                                <input type="text" class="form-control form-timepicker">
+                                                <a hre="javascript:;" class="input-group-addon"><i class="far fa-clock"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

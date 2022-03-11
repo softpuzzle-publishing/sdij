@@ -144,6 +144,7 @@ var Common = {
 		$('.form-timepicker').each(function () {
 			$(this).timepicker({
 				showMeridian: false,
+				defaultTime: '00:00'
 			});
 		})
 
@@ -194,3 +195,4 @@ var Common = {
 Header.init();
 Aside.init();
 Common.init();
+

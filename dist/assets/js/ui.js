@@ -135,7 +135,8 @@ var Common = {
 
     $('.form-timepicker').each(function () {
       $(this).timepicker({
-        showMeridian: false
+        showMeridian: false,
+        defaultTime: '00:00'
       });
     }); //중첩된 모달이 닫힐때 스타일 삭제 방지
 

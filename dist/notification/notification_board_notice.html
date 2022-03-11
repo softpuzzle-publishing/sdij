@@ -26,7 +26,7 @@
     <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
     <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
-    <script src="../assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="../assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> <!-- https://jdewit.github.io/bootstrap-timepicker/ -->
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="../assets/lib/split.js/split.min.js"></script>
 
@@ -71,11 +71,58 @@
                             <p>상태 변경</p>
                             <a href="" class="dropdown-item active"><i class="my-status-1"></i><span>소통원할</span></a>
                             <a href="" class="dropdown-item"><i class="my-status-2"></i><span>지원 업무중</span></a>
-                            <a href="" class="dropdown-item"><i class="my-status-3"></i><span>소통불가</span></a>
+                            <a href="" class="dropdown-item"><i class="my-status-3"></i><span>소통지연</span></a>
                             <div class="dropdown-divider"></div>
-                            <a href="" class="dropdown-item">비밀번호 변경</a>
+                            <a href="#modal-password" data-toggle="modal" class="dropdown-item">비밀번호 변경</a>
                         </div>
                         <button type="button" class="btn-logout" onclick="document.location.href='../login/login.html'"><i class="material-icons">logout</i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- modal : 비밀번호 변경 -->
+            <div class="modal" tabindex="-1" id="modal-password" data-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">비밀번호 변경</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <table class="table table-bordered table-fixed">
+                                    <colgroup>
+                                        <col style="width: 125px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>현재 비밀번호</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="current-password">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>변경 비밀번호</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="new-password">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>변경 비밀번호 확인</th>
+                                            <td>
+                                                <input type="password" class="form-control" autocomplete="new-password">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-dark">저장</button>
+                            <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -320,26 +367,26 @@
                                                 <th class="text-center">게시글 제목</th>
                                                 <th class="text-center">공개</th>
                                                 <th class="text-center">조회수</th>
+                                                <th class="text-center">게시 기간</th>
                                                 <th class="text-center">등록일/등록자</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-
-                                            <tr>
+                                            <tr class="bg-highlight">
                                                 <td class="text-center"><input type="checkbox" name="noticeAll"></td>
-                                                <td class="text-center">15</td>
+                                                <td class="text-center">필독</td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">강의</td>
-                                                <td class="text-center">종강</td>
+                                                <td class="text-center">강의실 변경</td>
                                                 <td class="text-center">국어, 김승리 T</td>
                                                 <td class="text-center">
-                                                    <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 종강 안내</a>
+                                                    <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
-
                                             <tr>
                                                 <td class="text-center"><input type="checkbox" name="noticeAll"></td>
                                                 <td class="text-center">14</td>
@@ -352,6 +399,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center"><i class="far fa-clock mr-1"></i>2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -367,6 +415,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -382,6 +431,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -397,6 +447,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -412,6 +463,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -427,6 +479,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -442,6 +495,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -457,6 +511,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -472,6 +527,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -487,6 +543,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -502,6 +559,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -517,6 +575,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -532,6 +591,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -547,6 +607,7 @@
                                                 </td>
                                                 <td class="text-center">Y</td>
                                                 <td class="text-center">123</td>
+                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
                                                 <td class="text-center">2021-12-28 (김시대)</td>
                                             </tr>
 
@@ -760,26 +821,21 @@
                         <tbody>
                             <tr>
                                 <th><strong class="text-danger">*</strong>알림 구분</th>
-                                <td>
+                                <td colspan="3">
                                     <select name="" id="" class="custom-select w-auto">
                                         <option value="">전체</option>
                                     </select>
                                     <select name="" id="" class="custom-select w-auto ml-1">
                                         <option value="">직접입력</option>
                                     </select>
-                                    <input type="text" class="form-control d-inline-block align-middle w-auto ml-1">
-                                </td>
-                                <th><strong class="text-danger">*</strong>추가알림</th>
-                                <td>
-                                    <input type="checkbox" id="additionalPush">
-                                    <label for="additionalPush">푸시</label>
-                                    <input type="checkbox" id="additionalSms">
-                                    <label for="additionalSms">문자</label>
+                                    <input type="text" class="form-control d-inline-block align-middle w-auto ml-1 mr-2">
+                                    <input type="checkbox" id="requiredReading">
+                                    <label for="requiredReading">필독</label>
                                 </td>
                             <tr>
                             </tr>
                             <th><strong class="text-danger">*</strong>카테고리</th>
-                            <td colspan="3">
+                            <td>
                                 <select name="" id="" class="custom-select w-auto">
                                     <option value="">관</option>
                                 </select>
@@ -792,6 +848,13 @@
                                 <select name="" id="" class="custom-select w-auto ml-1">
                                     <option value="">강사</option>
                                 </select>
+                            </td>
+                            <th>추가알림</th>
+                            <td>
+                                <input type="checkbox" id="additionalPush">
+                                <label for="additionalPush">푸시</label>
+                                <input type="checkbox" id="additionalSms">
+                                <label for="additionalSms">문자</label>
                             </td>
                             </tr>
                             <tr>
@@ -824,6 +887,42 @@
                                     <label for="faqUseY">공개</label>
                                     <input type="radio" name="faqUse" id="faqUseN">
                                     <label for="faqUseN">비공개</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="chkReservation">예약설정</label>
+                                    <input type="checkbox" id="chkReservation" class="ml-1">
+                                </th>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker">
+                                        </div>
+                                        <div class="col">
+                                            <div class="input-group bootstrap-timepicker timepicker">
+                                                <input type="text" class="form-control form-timepicker">
+                                                <a hre="javascript:;" class="input-group-addon"><i class="far fa-clock"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>
+                                    <label for="chkTerm">기한설정</label>
+                                    <input type="checkbox" id="chkTerm" class="ml-1">
+                                </th>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker">
+                                        </div>
+                                        <div class="col">
+                                            <div class="input-group bootstrap-timepicker timepicker">
+                                                <input type="text" class="form-control form-timepicker">
+                                                <a hre="javascript:;" class="input-group-addon"><i class="far fa-clock"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
