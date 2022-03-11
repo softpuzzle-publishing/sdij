@@ -51,6 +51,7 @@ input[type=file].form-control{
 }
 
 input[type=text]{
+    font-family: arial,'Noto Sans KR';
     &[disabled]{background-color: #f2f2f2;}
 }
 
@@ -108,10 +109,11 @@ input[type=radio]{
     background: #fff url('../images/icon-calendar.svg') no-repeat right .5rem top 50%;padding-right: 30px;
     &.form-control-sm{background-size: auto 13px;}
 }
-.form-timepicker{
+
+/* .form-timepicker{
     background: #fff url('../images/icon-clock.svg') no-repeat right .5rem top 50%;padding-right: 30px;
     &.form-control-sm{background-size: auto 14px;}
-}
+} */
 
 .mdtimepicker{
     .mdtp__wrapper{bottom: auto;top: 50%;transform: translate(-50%, -50%);transition: none;}
@@ -272,4 +274,18 @@ textarea.form-control{resize: none;}
 tr.selected{
     th,
     td{background: #fff3dc;}
+}
+
+.bootstrap-timepicker{
+    .input-group-addon{
+        position: absolute;right: .5rem;top: 50%;z-index: 3;transform: translateY(-50%);line-height: 1;
+        i{font-size: 16px;color: #888a8d;}
+    }
+    .form-control-sm + .input-group-addon{
+        i{font-size: 13px;width: 13px;height: 13px;}
+    }
+}
+.bootstrap-timepicker-widget{
+    box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.06);
+    table td input{width: 30px;}
 }

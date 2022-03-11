@@ -11,11 +11,12 @@
     <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32">
 
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../assets/lib/mdtimepicker/mdtimepicker.min.css">
+    <link rel="stylesheet" href="../assets/lib/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
 
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -25,7 +26,7 @@
     <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
     <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
-    <script src="../assets/lib/mdtimepicker/mdtimepicker.min.js"></script>
+    <script src="../assets/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
     <script src="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="../assets/lib/split.js/split.min.js"></script>
 
@@ -309,7 +310,10 @@
                                                     <input type="text" class="form-control form-datepicker">
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text" class="form-control form-timepicker" readonly="">
+                                                    <div class="input-group bootstrap-timepicker timepicker">
+                                                        <input type="text" class="form-control form-timepicker" readonly>
+                                                        <a hre="javascript:;" class="input-group-addon"><i class="far fa-clock"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </td>

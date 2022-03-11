@@ -121,7 +121,9 @@ var Common = {
 		});
 
 		//datepicker
+		var currentDate = new Date();
 		$('.form-datepicker').datepicker({
+			defaultDate: +7,
 			changeMonth: true,
 			changeYear: true,
 			monthNames: ["01","02","03","04","05","06","07","08","09","10","11","12"],
@@ -135,8 +137,15 @@ var Common = {
 			gotoCurrent: true,
 			beforeShow: function(input, inst) {
 				$('#ui-datepicker-div').addClass('datepicker-box');
-			}
-		});
+			},
+		}).datepicker('setDate', 'today');
+
+		//timepicker
+		$('.form-timepicker').each(function () {
+			$(this).timepicker({
+				showMeridian: false,
+			});
+		})
 
 		//중첩된 모달이 닫힐때 스타일 삭제 방지
         $('[data-overlap="true"]').on('hidden.bs.modal', function (e) {
@@ -178,11 +187,6 @@ var Common = {
 			e.preventDefault();
 			$(this).closest('.item-wrap').siblings('.item-wrap').removeClass('active');
 			$(this).closest('.item-wrap').addClass('active');
-		});
-
-		mdtimepicker('.form-timepicker', {
-			theme: 'dark',
-			is24hour: true,
 		});
 	}
 };
