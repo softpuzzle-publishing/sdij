@@ -216,7 +216,7 @@
                                 <a href="javascript:;"><span>시험 관리</span></a>
                                 <ul class="dep2">
                                     <li><a href="../grade/grade_exams_manage.html"><span>시험 관리</span></a></li>
-                                    <li><a href="#"><span>시험 회차 관리</span></a></li>
+                                    <li><a href="../grade/grade_exams_session_manage.html"><span>시험 회차 관리</span></a></li>
                                     <li><a href="#"><span>학생 답안</span></a></li>
                                 </ul>
                             </li>
@@ -982,179 +982,193 @@
                             <button type="button" class="btn btn-sm btn-dark ml-1">삭제</button>
                         </div>
                     </div>
-                    <table class="table table-bordered table-fixed">
+                    <table class="table table-bordered table-center table-fixed">
                         <colgroup>
-                            <col style="width: 50px;">
-                            <col style="width: 60px">
-                            <col style="width: 125px;">
+                            <col style="width: 40px;">
+                            <col style="width: 45px">
+                            <col style="width: 130px;">
+                            <col style="width: 115px">
+                            <col>
+                            <col>
+                            <col>
                             <col style="width: 110px">
-                            <col>
-                            <col>
-                            <col style="width: 110px">
-                            <col>
-                            <col style="width: 75px;">
-                            <col style="width: 60px">
+                            <col style="width: 80px">
+                            <col style="width: 70px;">
+                            <col style="width: 50px">
                         </colgroup>
                         <thead>
                             <tr>
-                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="classroom"></th>
-                                <th class="text-center">ID</th>
-                                <th class="text-center">교실구분</th>
-                                <th class="text-center">교실명</th>
-                                <th class="text-center">총 좌석</th>
-                                <th class="text-center">사용좌석</th>
-                                <th class="text-center">체킹기기</th>
-                                <th class="text-center">중계</th>
-                                <th class="text-center">사용</th>
-                                <th class="text-center">좌석</th>
+                                <th><input type="checkbox" data-event="checkAll" data-target="classroom"></th>
+                                <th>ID</th>
+                                <th>교실구분</th>
+                                <th>교실명</th>
+                                <th>정원</th>
+                                <th>1단계</th>
+                                <th>2단계</th>
+                                <th>체킹기기</th>
+                                <th>중계</th>
+                                <th>사용</th>
+                                <th>좌석</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <tr>
-                                <td class="text-center"><input type="checkbox" name="classroom"></td>
-                                <td class="text-center">4</td>
-                                <td class="text-center">
+                                <td><input type="checkbox" name="classroom"></td>
+                                <td>4</td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">라이브러리</option>
                                         <option value="">강의실</option>
                                         <option value="">급식실</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">불가</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">Y</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <a href="#modal-seat" class="text-underline" data-toggle="modal">등록</a>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td class="text-center"><input type="checkbox" name="classroom"></td>
-                                <td class="text-center">3</td>
-                                <td class="text-center">
+                                <td><input type="checkbox" name="classroom"></td>
+                                <td>3</td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">라이브러리</option>
                                         <option value="">강의실</option>
                                         <option value="">급식실</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">불가</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">Y</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <a href="#modal-seat" class="text-underline" data-toggle="modal">등록</a>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td class="text-center"><input type="checkbox" name="classroom"></td>
-                                <td class="text-center">2</td>
-                                <td class="text-center">
+                                <td><input type="checkbox" name="classroom"></td>
+                                <td>2</td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">라이브러리</option>
                                         <option value="">강의실</option>
                                         <option value="">급식실</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">불가</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">Y</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <a href="#modal-seat" class="text-underline" data-toggle="modal">등록</a>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td class="text-center"><input type="checkbox" name="classroom"></td>
-                                <td class="text-center">1</td>
-                                <td class="text-center">
+                                <td><input type="checkbox" name="classroom"></td>
+                                <td>1</td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">라이브러리</option>
                                         <option value="">강의실</option>
                                         <option value="">급식실</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <input type="text" class="form-control">
                                 </td>
-                                <td class="text-center">
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">불가</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <select name="" id="" class="custom-select">
                                         <option value="">Y</option>
                                     </select>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <a href="#modal-seat" class="text-underline" data-toggle="modal">등록</a>
                                 </td>
                             </tr>
@@ -1182,7 +1196,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-bordered table-fixed">
+                    <table class="table table-bordered table-center table-fixed">
                         <colgroup>
                             <col style="width: 45px;">
                             <col>
@@ -1191,30 +1205,30 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th class="text-center"></th>
-                                <th class="text-center">직원명</th>
-                                <th class="text-center">ID</th>
-                                <th class="text-center">부서/직무</th>
+                                <th></th>
+                                <th>직원명</th>
+                                <th>ID</th>
+                                <th>부서/직무</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-center"><input type="radio" id="staff1" name="staff"></td>
-                                <td class="text-center"><label for="staff1">김시대</label></td>
-                                <td class="text-center">asdf1234</td>
-                                <td class="text-center"></td>
+                                <td><input type="radio" id="staff1" name="staff"></td>
+                                <td><label for="staff1">김시대</label></td>
+                                <td>asdf1234</td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td class="text-center"><input type="radio" id="staff2" name="staff"></td>
-                                <td class="text-center"><label for="staff2">이시대</label></td>
-                                <td class="text-center">asdf1234</td>
-                                <td class="text-center"></td>
+                                <td><input type="radio" id="staff2" name="staff"></td>
+                                <td><label for="staff2">이시대</label></td>
+                                <td>asdf1234</td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td class="text-center"><input type="radio" id="staff3" name="staff"></td>
-                                <td class="text-center"><label for="staff3">박시대</label></td>
-                                <td class="text-center">asdf1234</td>
-                                <td class="text-center"></td>
+                                <td><input type="radio" id="staff3" name="staff"></td>
+                                <td><label for="staff3">박시대</label></td>
+                                <td>asdf1234</td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>

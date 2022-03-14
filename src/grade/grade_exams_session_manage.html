@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">시험 회차 관리</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">시험</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">과목</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">상태</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">시행일</option>
+                                    <option value="">등록일</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <div class="mr-2">~</div>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <button type="button" class="btn btn-dark">검색</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="row align-items-end justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">시험 회차</strong> 총 ###건
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm">파일업로드</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1">파일다운로드</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1">등록</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-center" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>시험</th>
+                                    <th>영역</th>
+                                    <th>회차</th>
+                                    <th>시행일</th>
+                                    <th>사용 컨텐츠</th>
+                                    <th>상태</th>
+                                    <th>총인원</th>
+                                    <th>응시인원</th>
+                                    <th>문항정보</th>
+                                    <th>OMR 입력</th>
+                                    <th>성적</th>
+                                    <th>부엉이 포스트</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td><a href="#modal-question-add" class="text-underline">등록</a></td>
+                                    <td>등록</td>
+                                    <td>계산(<a href="" class="text-underline">보기</a>)</td>
+                                    <td>공개</td>
+                                </tr>
+                                @@for (var i = 5; i > 0; i--) {
+                                <tr>
+                                    <td>`+ i +`</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td>30</td>
+                                    <td>210</td>
+                                    <td>계산(<a href="" class="text-underline">보기</a>)</td>
+                                    <td>공개</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
+                </div>
+                <div class="hr"></div>
+                <nav class="tab-custom px-5">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1-1" role="tab">OMR 등록</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab1-2" role="tab">문항 정보</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1-1" role="tabpanel">
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">OMR 입력</strong> 총 ###건
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-omr-add">파일업로드</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">파일다운로드</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>시험</th>
+                                            <th>영역</th>
+                                            <th>회차</th>
+                                            <th>교실</th>
+                                            <th>수업명</th>
+                                            <th>시험 일시</th>
+                                            <th>총인원</th>
+                                            <th>출석인원</th>
+                                            <th>OMR</th>
+                                            <th>상태</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td>`+ i +`</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>수학</td>
+                                            <td>1</td>
+                                            <td>브릿지 201호</td>
+                                            <td>S반 영어 서바이벌</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                        </div>
+                        <div class="tab-pane" id="tab1-2" role="tabpanel">
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">OMR 입력</strong> 총 ###건
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-omr-add">파일업로드</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">파일다운로드</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>시험</th>
+                                            <th>과목(선택)</th>
+                                            <th>회차</th>
+                                            <th>문번</th>
+                                            <th>배점</th>
+                                            <th>정답</th>
+                                            <th>과목</th>
+                                            <th>평가요소(대)</th>
+                                            <th>평가요소(중)</th>
+                                            <th>평가요소(소)</th>
+                                            <th>문제 유형</th>
+                                            <th>난이도</th>
+                                            <th>킬러 여부</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td>`+ i +`</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>국어(언매)</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>영어</td>
+                                            <td>듣기/말하기</td>
+                                            <td>말하기</td>
+                                            <td></td>
+                                            <td>객관식</td>
+                                            <td>A</td>
+                                            <td>킬러</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    <!-- modal : 문항 정보 등록 -->
+    <div class="modal" tabindex="-1" id="modal-question-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">문항 정보 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-title">문항 정보</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>문항 정보</th>
+                                <td>
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="file" class="form-control">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-secondary">삭제</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-title">통계 기준 등록</div>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>자동 통계</th>
+                                <td>
+                                    <input type="radio" name="auto" id="autoY">
+                                    <label for="autoY">자동</label>
+                                    <input type="radio" name="auto" id="autoN">
+                                    <label for="autoN">수동</label>
+                                </td>
+                                <th>최고점</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>1등급 컷</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th>2등급 컷</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>난이도 구분</th>
+                                <td>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : OMR 등록 -->
+    <div class="modal" tabindex="-1" id="modal-omr-add" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">OMR 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width: 70px;">
+                            <col>
+                            <col style="width: 70px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>시험명</th>
+                                <td colspan="3">재종 서바이벌</td>
+                            </tr>
+                            <tr>
+                                <th>영역</th>
+                                <td>수학</td>
+                                <th>회차</th>
+                                <td>3회</td>
+                            </tr>
+                            <tr>
+                                <th>OMR정보</th>
+                                <td colspan="3">
+                                    <div class="row row-5">
+                                        <div class="col">
+                                            <input type="file" class="form-control">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-secondary">삭제</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark">저장</button>
+                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

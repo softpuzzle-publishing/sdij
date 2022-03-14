@@ -216,7 +216,7 @@
                                 <a href="javascript:;"><span>시험 관리</span></a>
                                 <ul class="dep2">
                                     <li><a href="../grade/grade_exams_manage.html"><span>시험 관리</span></a></li>
-                                    <li><a href="#"><span>시험 회차 관리</span></a></li>
+                                    <li><a href="../grade/grade_exams_session_manage.html"><span>시험 회차 관리</span></a></li>
                                     <li><a href="#"><span>학생 답안</span></a></li>
                                 </ul>
                             </li>
@@ -333,238 +333,236 @@
                         </div>
                     </div>
                 </div>
-                <div class="section">
-                    <nav class="tab-custom px-5">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">전체(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">출석(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">급식(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab4" role="tab">TA(##)</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="p-3">
-                        <div class="tab-content">
-                            <div class="tab-pane show active" id="tab1" role="tabpanel">
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="faqAll"></th>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">카테고리</th>
-                                                <th class="text-center">대상 관</th>
-                                                <th class="text-center">제목</th>
-                                                <th class="text-center">공개</th>
-                                                <th class="text-center">등록일/등록자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="bg-highlight">
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">TOP 5</td>
-                                                <td class="text-center">급식</td>
-                                                <td class="text-center">S</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                <nav class="tab-custom px-5">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">전체(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">출석(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">급식(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab4" role="tab">TA(##)</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1" role="tabpanel">
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="faqAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">카테고리</th>
+                                            <th class="text-center">대상 관</th>
+                                            <th class="text-center">제목</th>
+                                            <th class="text-center">공개</th>
+                                            <th class="text-center">등록일/등록자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-highlight">
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">TOP 5</td>
+                                            <td class="text-center">급식</td>
+                                            <td class="text-center">S</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">10</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">10</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">9</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">9</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">8</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">8</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">7</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">7</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">6</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">6</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">5</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">4</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">4</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">3</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">1</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                    <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                                    <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                    <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                                        <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                    <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                    <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                                    <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <div>
-                                    <button type="button" class="btn btn-dark">일괄 비공개</button>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="tab-pane" id="tab2" role="tabpanel">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div>
+                                <button type="button" class="btn btn-dark">일괄 비공개</button>
                             </div>
-                            <div class="tab-pane" id="tab3" role="tabpanel">
-                            </div>
-                            <div class="tab-pane" id="tab4" role="tabpanel">
-                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab2" role="tabpanel">
+                        </div>
+                        <div class="tab-pane" id="tab3" role="tabpanel">
+                        </div>
+                        <div class="tab-pane" id="tab4" role="tabpanel">
                         </div>
                     </div>
                 </div>

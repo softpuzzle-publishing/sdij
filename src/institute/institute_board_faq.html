@@ -44,79 +44,77 @@
                         </div>
                     </div>
                 </div>
-                <div class="section">
-                    <nav class="tab-custom px-5">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">전체(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">출석(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">급식(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab4" role="tab">TA(##)</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="p-3">
-                        <div class="tab-content">
-                            <div class="tab-pane show active" id="tab1" role="tabpanel">
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="faqAll"></th>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">카테고리</th>
-                                                <th class="text-center">대상 관</th>
-                                                <th class="text-center">제목</th>
-                                                <th class="text-center">공개</th>
-                                                <th class="text-center">등록일/등록자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="bg-highlight">
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">TOP 5</td>
-                                                <td class="text-center">급식</td>
-                                                <td class="text-center">S</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
-                                            @@for (var i = 10; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                                <td class="text-center">`+ i +`</td>
-                                                <td class="text-center">출석</td>
-                                                <td class="text-center">전체</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                @@include('@@webRoot/_include/_pagination.html')
-                                <div>
-                                    <button type="button" class="btn btn-dark">일괄 비공개</button>
-                                </div>
+                <nav class="tab-custom px-5">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">전체(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">출석(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">급식(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab4" role="tab">TA(##)</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1" role="tabpanel">
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="faqAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">카테고리</th>
+                                            <th class="text-center">대상 관</th>
+                                            <th class="text-center">제목</th>
+                                            <th class="text-center">공개</th>
+                                            <th class="text-center">등록일/등록자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-highlight">
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">TOP 5</td>
+                                            <td class="text-center">급식</td>
+                                            <td class="text-center">S</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
+                                        @@for (var i = 10; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
+                                            <td class="text-center">`+ i +`</td>
+                                            <td class="text-center">출석</td>
+                                            <td class="text-center">전체</td>
+                                            <td class="text-center">
+                                                <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="tab-pane" id="tab2" role="tabpanel">
+                            @@include('@@webRoot/_include/_pagination.html')
+                            <div>
+                                <button type="button" class="btn btn-dark">일괄 비공개</button>
                             </div>
-                            <div class="tab-pane" id="tab3" role="tabpanel">
-                            </div>
-                            <div class="tab-pane" id="tab4" role="tabpanel">
-                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab2" role="tabpanel">
+                        </div>
+                        <div class="tab-pane" id="tab3" role="tabpanel">
+                        </div>
+                        <div class="tab-pane" id="tab4" role="tabpanel">
                         </div>
                     </div>
                 </div>

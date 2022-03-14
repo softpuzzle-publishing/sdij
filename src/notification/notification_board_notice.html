@@ -40,110 +40,108 @@
                         </div>
                     </div>
                 </div>
-                <div class="section">
-                    <nav class="tab-custom px-5 d-flex justify-content-between">
-                        <ul class="nav nav-tabs float-left" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">전체(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">학원(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">강의(##)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#tab4" role="tab">컨텐츠(##)</a>
-                            </li>
-                        </ul>
-                        <div class="pt-1">
-                            <input type="checkbox" id="usableOnly">
-                            <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
+                <nav class="tab-custom px-5 d-flex justify-content-between">
+                    <ul class="nav nav-tabs float-left" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">전체(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">학원(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">강의(##)</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab4" role="tab">컨텐츠(##)</a>
+                        </li>
+                    </ul>
+                    <div class="pt-1">
+                        <input type="checkbox" id="usableOnly">
+                        <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
+                    </div>
+                </nav>
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1" role="tabpanel">
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="noticeAll"></th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">자동</th>
+                                            <th class="text-center">알림 구분</th>
+                                            <th class="text-center">알림 구분 상세</th>
+                                            <th class="text-center">알림 그룹</th>
+                                            <th class="text-center">게시글 제목</th>
+                                            <th class="text-center">공개</th>
+                                            <th class="text-center">조회수</th>
+                                            <th class="text-center">게시 기간</th>
+                                            <th class="text-center">등록일/등록자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-highlight">
+                                            <td class="text-center"><input type="checkbox" name="noticeAll"></td>
+                                            <td class="text-center">필독</td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">강의</td>
+                                            <td class="text-center">강의실 변경</td>
+                                            <td class="text-center">국어, 김승리 T</td>
+                                            <td class="text-center">
+                                                <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">123</td>
+                                            <td class="text-center">2022-03-10 ~</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="noticeAll"></td>
+                                            <td class="text-center">14</td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">강의</td>
+                                            <td class="text-center">종강</td>
+                                            <td class="text-center">국어, 김승리 T</td>
+                                            <td class="text-center">
+                                                <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 종강 안내</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">123</td>
+                                            <td class="text-center"><i class="far fa-clock mr-1"></i>2022-03-10 ~ 2022-03-21</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
+                                        @@for (var i = 13; i > 0; i--) {
+                                        <tr>
+                                            <td class="text-center"><input type="checkbox" name="noticeAll"></td>
+                                            <td class="text-center">`+ i +`</td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">강의</td>
+                                            <td class="text-center">종강</td>
+                                            <td class="text-center">국어, 김승리 T</td>
+                                            <td class="text-center">
+                                                <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 종강 안내</a>
+                                            </td>
+                                            <td class="text-center">Y</td>
+                                            <td class="text-center">123</td>
+                                            <td class="text-center">2022-03-10 ~ 2022-03-21</td>
+                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @@include('@@webRoot/_include/_pagination.html')
+                            <div>
+                                <button type="button" class="btn btn-dark">일괄 비공개</button>
+                            </div>
                         </div>
-                    </nav>
-                    <div class="p-3">
-                        <div class="tab-content">
-                            <div class="tab-pane show active" id="tab1" role="tabpanel">
-                                <div class="main_search_result_list">
-                                    <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                    <table class="table" id="datatable1">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="noticeAll"></th>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">자동</th>
-                                                <th class="text-center">알림 구분</th>
-                                                <th class="text-center">알림 구분 상세</th>
-                                                <th class="text-center">알림 그룹</th>
-                                                <th class="text-center">게시글 제목</th>
-                                                <th class="text-center">공개</th>
-                                                <th class="text-center">조회수</th>
-                                                <th class="text-center">게시 기간</th>
-                                                <th class="text-center">등록일/등록자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="bg-highlight">
-                                                <td class="text-center"><input type="checkbox" name="noticeAll"></td>
-                                                <td class="text-center">필독</td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">강의</td>
-                                                <td class="text-center">강의실 변경</td>
-                                                <td class="text-center">국어, 김승리 T</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">123</td>
-                                                <td class="text-center">2022-03-10 ~</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="noticeAll"></td>
-                                                <td class="text-center">14</td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">강의</td>
-                                                <td class="text-center">종강</td>
-                                                <td class="text-center">국어, 김승리 T</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 종강 안내</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">123</td>
-                                                <td class="text-center"><i class="far fa-clock mr-1"></i>2022-03-10 ~ 2022-03-21</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
-                                            @@for (var i = 13; i > 0; i--) {
-                                            <tr>
-                                                <td class="text-center"><input type="checkbox" name="noticeAll"></td>
-                                                <td class="text-center">`+ i +`</td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">강의</td>
-                                                <td class="text-center">종강</td>
-                                                <td class="text-center">국어, 김승리 T</td>
-                                                <td class="text-center">
-                                                    <a href="#modal-notice-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 종강 안내</a>
-                                                </td>
-                                                <td class="text-center">Y</td>
-                                                <td class="text-center">123</td>
-                                                <td class="text-center">2022-03-10 ~ 2022-03-21</td>
-                                                <td class="text-center">2021-12-28 (김시대)</td>
-                                            </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                @@include('@@webRoot/_include/_pagination.html')
-                                <div>
-                                    <button type="button" class="btn btn-dark">일괄 비공개</button>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab2" role="tabpanel">
-                            </div>
-                            <div class="tab-pane" id="tab3" role="tabpanel">
-                            </div>
-                            <div class="tab-pane" id="tab4" role="tabpanel">
-                            </div>
+                        <div class="tab-pane" id="tab2" role="tabpanel">
+                        </div>
+                        <div class="tab-pane" id="tab3" role="tabpanel">
+                        </div>
+                        <div class="tab-pane" id="tab4" role="tabpanel">
                         </div>
                     </div>
                 </div>

@@ -216,7 +216,7 @@
                                 <a href="javascript:;"><span>시험 관리</span></a>
                                 <ul class="dep2">
                                     <li><a href="../grade/grade_exams_manage.html"><span>시험 관리</span></a></li>
-                                    <li><a href="../grade/grade_exams_session_manage.html"><span>시험 회차 관리</span></a></li>
+                                    <li><a href="#"><span>시험 회차 관리</span></a></li>
                                     <li><a href="#"><span>학생 답안</span></a></li>
                                 </ul>
                             </li>
@@ -307,117 +307,20 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">기기대여관리</h2>
+                <h2 class="title">시험 관리</h2>
                 <div class="p-3 border-bottom">
                     <div class="row justify-content-between">
                         <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">관</option>
-                                </select>
-                                <select name="" id="" class="custom-select w-auto mr-3">
-                                    <option value="">상태</option>
-                                </select>
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">학생명</option>
-                                    <option value="">수정자</option>
-                                    <option value="">강사명</option>
-                                </select>
-                                <input type="text" class="form-control w-auto mr-2">
-                                <button type="button" class="btn btn-dark mr-3">검색</button>
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">등록일</option>
-                                    <option value="">반납일</option>
-                                </select>
-                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
-                                <div class="mr-2">~</div>
-                                <input type="text" class="form-control form-datepicker" style="width:120px">
-                            </div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-dark ml-1">파일다운로드</button>
-                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-enroll-rental-add">등록</button>
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-exams-add">등록</button>
                         </div>
                     </div>
                 </div>
                 <div class="p-3">
-                    <div class="table-dashboard-style">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">관</th>
-                                    <th class="text-center">대여수</th>
-                                    <th class="text-center">반납 완료</th>
-                                    <th class="text-center">반납 왑료 (환급 차감)</th>
-                                    <th class="text-center">반납 완료 (제품 대체)</th>
-                                    <th class="text-center">미반납</th>
-                                    <th class="text-center">환급 완료</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">브릿지</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">102</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">100</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">2</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">브릿지</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">102</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">100</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">2</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">브릿지</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">102</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">100</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">2</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">브릿지</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">102</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">100</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">2</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">브릿지</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">102</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">100</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">2</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                    <td class="text-center"><a href="javascript:;" class="text-underline">1</a></td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="hr"></div>
-                <div class="p-3">
-                    <div class="row align-items-center justify-content-between mb-2">
+                    <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <strong class="mr-2">기기대여 목록</strong>총 ###건
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-dark btn-sm">빠른 반납</button>
+                            <strong class="mr-2">시험</strong> 총 ###건
                         </div>
                     </div>
                     <div class="main_search_result_list">
@@ -425,147 +328,153 @@
                         <table class="table" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="rentalAll"></th>
                                     <th class="text-center">No</th>
-                                    <th class="text-center">관/반</th>
-                                    <th class="text-center">학생ID</th>
-                                    <th class="text-center">대여일</th>
-                                    <th class="text-center">기기일련번호</th>
-                                    <th class="text-center">상태</th>
-                                    <th class="text-center">미반납품목</th>
-                                    <th class="text-center">반납일</th>
-                                    <th class="text-center">반납사유</th>
-                                    <th class="text-center">등록/수정</th>
+                                    <th class="text-center">시행처</th>
+                                    <th class="text-center">시험 명</th>
+                                    <th class="text-center">시험 유형</th>
+                                    <th class="text-center">현장시험</th>
+                                    <th class="text-center">성적표</th>
+                                    <th class="text-center">수정</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <tr>
-                                    <td class="text-center"><input type="checkbox" name="rentalAll"></td>
-                                    <td class="text-center">5</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"><span class="text-danger">반납완료</span></td>
-                                    <td class="text-center">충전기</td>
-                                    <td class="text-center">11-10</td>
-                                    <td class="text-center">퇴원</td>
-                                    <td class="text-center">Yy/mm/dd (username)</td>
+                                    <td class="text-center">
+                                        5
+                                    </td>
+                                    <td class="text-center">평가원</td>
+                                    <td class="text-center">
+                                        <a href="#modal-exams-add" data-toggle="modal" class="text-underline">평가원 모의고사</a>
+                                    </td>
+                                    <td class="text-center">과목 동시</td>
+                                    <td class="text-center">N</td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center"><input type="checkbox" name="rentalAll"></td>
-                                    <td class="text-center">4</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"><span class="text-danger">반납완료</span></td>
-                                    <td class="text-center">충전기</td>
-                                    <td class="text-center">11-10</td>
-                                    <td class="text-center">퇴원</td>
-                                    <td class="text-center">Yy/mm/dd (username)</td>
+                                    <td class="text-center">
+                                        4
+                                    </td>
+                                    <td class="text-center">평가원</td>
+                                    <td class="text-center">
+                                        <a href="#modal-exams-add" data-toggle="modal" class="text-underline">평가원 모의고사</a>
+                                    </td>
+                                    <td class="text-center">과목 동시</td>
+                                    <td class="text-center">N</td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center"><input type="checkbox" name="rentalAll"></td>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"><span class="text-danger">반납완료</span></td>
-                                    <td class="text-center">충전기</td>
-                                    <td class="text-center">11-10</td>
-                                    <td class="text-center">퇴원</td>
-                                    <td class="text-center">Yy/mm/dd (username)</td>
+                                    <td class="text-center">
+                                        3
+                                    </td>
+                                    <td class="text-center">평가원</td>
+                                    <td class="text-center">
+                                        <a href="#modal-exams-add" data-toggle="modal" class="text-underline">평가원 모의고사</a>
+                                    </td>
+                                    <td class="text-center">과목 동시</td>
+                                    <td class="text-center">N</td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center"><input type="checkbox" name="rentalAll"></td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"><span class="text-danger">반납완료</span></td>
-                                    <td class="text-center">충전기</td>
-                                    <td class="text-center">11-10</td>
-                                    <td class="text-center">퇴원</td>
-                                    <td class="text-center">Yy/mm/dd (username)</td>
+                                    <td class="text-center">
+                                        2
+                                    </td>
+                                    <td class="text-center">평가원</td>
+                                    <td class="text-center">
+                                        <a href="#modal-exams-add" data-toggle="modal" class="text-underline">평가원 모의고사</a>
+                                    </td>
+                                    <td class="text-center">과목 동시</td>
+                                    <td class="text-center">N</td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
                                 </tr>
 
                                 <tr>
-                                    <td class="text-center"><input type="checkbox" name="rentalAll"></td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"><span class="text-danger">반납완료</span></td>
-                                    <td class="text-center">충전기</td>
-                                    <td class="text-center">11-10</td>
-                                    <td class="text-center">퇴원</td>
-                                    <td class="text-center">Yy/mm/dd (username)</td>
+                                    <td class="text-center">
+                                        1
+                                    </td>
+                                    <td class="text-center">평가원</td>
+                                    <td class="text-center">
+                                        <a href="#modal-exams-add" data-toggle="modal" class="text-underline">평가원 모의고사</a>
+                                    </td>
+                                    <td class="text-center">과목 동시</td>
+                                    <td class="text-center">N</td>
+                                    <td class="text-center">Y</td>
+                                    <td class="text-center">
+                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                    </td>
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                    <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                    <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                    <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                        <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                    <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                    <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                    <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
                 <!-- 컨텐츠 끝 -->
 
             </main>
@@ -687,27 +596,17 @@
 
     </div>
 
-    <!-- modal : 기기 등록/반납 -->
-    <div class="modal" tabindex="-1" id="modal-enroll-rental-add" data-backdrop="static">
+    <!-- modal : 시험 정보 등록 -->
+    <div class="modal" tabindex="-1" id="modal-exams-add" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">기기 등록/반납 </h5>
+                    <h5 class="modal-title">시험 정보 등록</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="text-center">
-                        <div class="row row-5 justify-content-center mb-3">
-                            <div class="col-auto">
-                                <input type="text" class="form-control w-auto" placeholder="학생ID">
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-dark">등록</button>
-                            </div>
-                        </div>
-                    </div>
                     <table class="table table-bordered table-fixed">
                         <colgroup>
                             <col style="width: 100px;">
@@ -717,153 +616,56 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th>관</th>
-                                <td colspan="3">
-                                    <div class="text-info">브릿지관 S반</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>수납상태</th>
+                                <th>시행처</th>
                                 <td>
                                     <select name="" id="" class="custom-select">
-                                        <option value="">입금완료</option>
-                                        <option value="">입금대기중</option>
+                                        <option value="">자체</option>
+                                        <option value="">평가원</option>
+                                        <option value="">기타</option>
                                     </select>
                                 </td>
-                                <th>반납 사유</th>
+                                <th>현장시험</th>
                                 <td>
-                                    <div class="row row-5 justify-content-center">
-                                        <div class="col-auto">
-                                            <select name="" id="returnReason" class="custom-select">
-                                                <option value="">종강</option>
-                                                <option value="">퇴원</option>
-                                                <option value="">개인구매</option>
-                                                <option value="기타">기타</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control" id="returnReasonInput" disabled>
-                                        </div>
-                                    </div>
-                                    <script>
-                                        $('#returnReason').on('change', function() {
-                                            if ($(this).val() == '기타') {
-                                                $('#returnReasonInput').attr('disabled', false).focus();
-                                            } else {
-                                                $('#returnReasonInput').val('').attr('disabled', true);
-                                            }
-                                        })
-                                    </script>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
+                                    <label for="AuthorUseY">진행</label>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
+                                    <label for="AuthorUseN">진행 안 함</label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>대여상태</th>
+                                <th>시험 명</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                                <th>성적표</th>
+                                <td>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
+                                    <label for="AuthorUseY">사용</label>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
+                                    <label for="AuthorUseN">사용 안 함</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>시험 유형</th>
                                 <td>
                                     <select name="" id="" class="custom-select">
-                                        <option value="">반납완료</option>
-                                        <option value="">반납완료(차감)</option>
-                                        <option value="">반납완료(대체)</option>
-                                        <option value="">미반납</option>
+                                        <option value="">과목 동시</option>
+                                        <option value="">과목 별시</option>
                                     </select>
                                 </td>
-                                <th>사용기간</th>
-                                <td>3월 1주 ~ 10월 4주</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="table-title mt-3">기기 등록/반납</div>
-                    <table class="table table-bordered table-fixed">
-                        <colgroup>
-                            <col style="width: 100px">
-                            <col style="width: 110px">
-                            <col>
-                            <col style="width: 120px">
-                            <col style="width: 120px">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th class="text-center"></th>
-                                <th class="text-center">품목</th>
-                                <th class="text-center">일련번호</th>
-                                <th class="text-center">품목별 상태</th>
-                                <th class="text-center">반납일</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-center" rowspan="4">미반납기기</td>
-                                <td class="text-center">아이패드 본품</td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control">
-                                </td>
-                                <td class="text-center">
-                                    <select name="" id="" class="custom-select">
-                                        <option value="">대여중</option>
-                                        <option value="">미반납</option>
-                                        <option value="">환급차감</option>
-                                        <option value="">대체반납</option>
-                                    </select>
-                                </td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control form-datepicker">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">케이블</td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control">
-                                </td>
-                                <td class="text-center">
-                                    <select name="" id="" class="custom-select">
-                                        <option value="">대여중</option>
-                                        <option value="">미반납</option>
-                                        <option value="">환급차감</option>
-                                        <option value="">대체반납</option>
-                                    </select>
-                                </td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control form-datepicker">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">펜슬</td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control">
-                                </td>
-                                <td class="text-center">
-                                    <select name="" id="" class="custom-select">
-                                        <option value="">대여중</option>
-                                        <option value="">미반납</option>
-                                        <option value="">환급차감</option>
-                                        <option value="">대체반납</option>
-                                    </select>
-                                </td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control form-datepicker">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">케이스</td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control">
-                                </td>
-                                <td class="text-center">
-                                    <select name="" id="" class="custom-select">
-                                        <option value="">대여중</option>
-                                        <option value="">미반납</option>
-                                        <option value="">환급차감</option>
-                                        <option value="">대체반납</option>
-                                    </select>
-                                </td>
-                                <td class="text-center">
-                                    <input type="text" class="form-control form-datepicker">
+                                <th>주요시험</th>
+                                <td>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
+                                    <label for="AuthorUseY">대상</label>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
+                                    <label for="AuthorUseN">대상 아님</label>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-dark" onclick="confirm('미입력 항목이 있습니다. \n무시하고 등록할까요?')">저장</button>
+                    <button type="button" class="btn btn-dark">저장</button>
                     <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
                 </div>
             </div>

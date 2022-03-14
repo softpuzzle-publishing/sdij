@@ -274,10 +274,10 @@
         templateContent;
 
       if (this.showInputs) {
-        hourTemplate = '<input type="text" class="bootstrap-timepicker-hour" maxlength="2"/>';
-        minuteTemplate = '<input type="text" class="bootstrap-timepicker-minute" maxlength="2"/>';
-        secondTemplate = '<input type="text" class="bootstrap-timepicker-second" maxlength="2"/>';
-        meridianTemplate = '<input type="text" class="bootstrap-timepicker-meridian" maxlength="2"/>';
+        hourTemplate = '<input type="text" class="bootstrap-timepicker-hour" maxlength="2" readonly />';
+        minuteTemplate = '<input type="text" class="bootstrap-timepicker-minute" maxlength="2" readonly />';
+        secondTemplate = '<input type="text" class="bootstrap-timepicker-second" maxlength="2" readonly />';
+        meridianTemplate = '<input type="text" class="bootstrap-timepicker-meridian" maxlength="2" readonly />';
       } else {
         hourTemplate = '<span class="bootstrap-timepicker-hour"></span>';
         minuteTemplate = '<span class="bootstrap-timepicker-minute"></span>';

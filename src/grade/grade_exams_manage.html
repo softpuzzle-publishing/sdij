@@ -69,8 +69,8 @@
                             </tbody>
                         </table>
                     </div>
+                    @@include('@@webRoot/_include/_pagination.html')
                 </div>
-                @@include('@@webRoot/_include/_pagination.html')
                 <!-- 컨텐츠 끝 -->
 
             </main>
@@ -104,7 +104,9 @@
                                 <th>시행처</th>
                                 <td>
                                     <select name="" id="" class="custom-select">
+                                        <option value="">자체</option>
                                         <option value="">평가원</option>
+                                        <option value="">기타</option>
                                     </select>
                                 </td>
                                 <th>현장시험</th>
@@ -130,10 +132,18 @@
                             </tr>
                             <tr>
                                 <th>시험 유형</th>
-                                <td colspan="3">
+                                <td>
                                     <select name="" id="" class="custom-select">
-                                        <option value="">동시 시험</option>
+                                        <option value="">과목 동시</option>
+                                        <option value="">과목 별시</option>
                                     </select>
+                                </td>
+                                <th>주요시험</th>
+                                <td>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseY">
+                                    <label for="AuthorUseY">대상</label>
+                                    <input type="radio" name="AuthorUse" id="AuthorUseN">
+                                    <label for="AuthorUseN">대상 아님</label>
                                 </td>
                             </tr>
                         </tbody>
