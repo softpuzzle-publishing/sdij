@@ -55,7 +55,6 @@ input[type=file].form-control{
 }
 
 input[type=text]{
-    font-family: sans-serif,'Noto Sans KR';
     &[disabled]{background-color: #f2f2f2;}
 }
 
@@ -140,6 +139,7 @@ input[type=radio]{
     .ui-state-highlight{background: $light;color: #000;}
     .ui-state-active{background: $primary;color: #fff !important;}
     .ui-datepicker-calendar{
+        font-size: inherit;
         > thead th{border-top: 1px solid #ececea;border-bottom: 1px solid #ececea;}
         > thead th.ui-datepicker-week-end:first-child,
         > tbody td.ui-datepicker-week-end:first-child a{color: $danger;}
@@ -147,15 +147,17 @@ input[type=radio]{
         > tbody tr:first-child span{margin-top: 8px;}
     }
     .ui-datepicker-prev{
+        cursor: pointer;
         .ui-icon{display: none;}
         &::before{content: '';display: inline-block;width: 0;height: 0;border-style: solid;border-width: 5px 7px 5px 0;border-color: transparent $primary transparent transparent;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);}
     }
     .ui-datepicker-next{
+        cursor: pointer;
         .ui-icon{display: none;}
         &::before{content: '';display: inline-block;width: 0;height: 0;border-style: solid;border-width: 5px 0 5px 7px;border-color: transparent transparent transparent $primary;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);}
     }
     select.ui-datepicker-month,
-    select.ui-datepicker-year{width: auto;border: 0;}
+    select.ui-datepicker-year{width: auto;border: 0;font-size: 15px;}
     select.ui-datepicker-month{margin-left: 12px;}
 }
 
@@ -185,6 +187,7 @@ textarea.form-control{resize: none;}
 
 .mCSB_scrollTools{width: 12px;}
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{width: 5px;border-radius: 6px;}
+.mCSB_inside>.mCSB_container{margin-right: 20px;}
 
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
     background-image: url('../images/icon-arrow-left.svg');background-size: contain;width: 12.8px;height: 23px;margin-top: -11.5px;

@@ -38,6 +38,12 @@
     p{font-size: 13px;}
 }
 
+.bg-1{background: #fff2cb;}
+.bg-2{background: #d6dce5;}
+.bg-3{background: #e2f0d9;}
+.bg-4{background: #fbe5d6;}
+.bg-5{background: #f3f3f3 !important;}
+
 .weekly-schedule{
     line-height: 1.2;font-size: 12px;
     .table{
@@ -51,10 +57,6 @@
             }
         }
     }
-    .bg-1{background: #fff2cb;}
-    .bg-2{background: #d6dce5;}
-    .bg-3{background: #e2f0d9;}
-    .bg-4{background: #fbe5d6;}
     .first-cell td{height: 30px !important;padding: 3px !important;}
 }
 
@@ -62,7 +64,7 @@
     display: inline-flex;align-items: center;
     > span{margin: 0 2px;border: 1px solid #eee;border-radius: 3px;display: inline-block;padding: 3px 5px;color: #d5d5d5;font-size: 12px;line-height: 1;font-weight: 500;
         &.active{
-            border-color: $danger;color: $danger;
+            border-color: $danger;color: $danger;cursor: pointer;
         }
     }
 
@@ -87,6 +89,33 @@
     }
     .fc-event{cursor: pointer;}
     .fc-time-grid .fc-slats td{height: 2.3vh;}
+    .fc-button{padding-top: .21em;padding-bottom: .25em;}
+
+    .level-1{border-color: lighten($black,95);background-color: lighten($black,95);}
+    .level-2{border-color: lighten($black,85);background-color: lighten($black,85);}
+    .level-3{border-color: lighten($black,70);background-color: lighten($black,70);}
+    .level-4{border-color: lighten($black,60);background-color: lighten($black,60);}
+    .scheduled{border-color: #4c90f9;background-color: #4c90f9;color: #fff !important;}
+}
+.make-up{
+    .fc{
+        .fc-header-toolbar{
+            .fc-center{
+                h2{font-size: 16px;}
+            }
+        }
+        .fc-time-grid-event{
+            color: #444;
+            .fc-content{height: 100%;display: flex;align-items: center;justify-content: center;}
+            .fc-time{display: none;}
+            .fc-title{font-weight: 700;}
+        }
+        .fc-time-grid{
+            .fc-slats{
+                td{height: 1.8vh;}
+            }
+        }
+    }
 }
 
 .list-group-toggle{
@@ -222,3 +251,13 @@
     }
 }
 .ui-lasso {display: none;}
+
+.selectedInstructor{
+    & + &::before{content: ', ';}
+}
+
+.student-assign{
+    .table{
+        td{padding-top: .3rem;padding-bottom: 0.3rem;}
+    }
+}
