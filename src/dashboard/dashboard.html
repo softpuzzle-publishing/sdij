@@ -268,64 +268,7 @@
 
     </div>
 
-    <!-- modal : 메모 작성 -->
-    <div class="modal" tabindex="-1" id="modal-memo-add" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">메모 작성</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <textarea name="" id="" cols="" rows="5" class="form-control"></textarea>
-                    </div>
-                    <table class="table table-fixed">
-                        <colgroup>
-                            <col style="width:70px">
-                            <col>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th>대상</th>
-                                <td>
-                                    <input type="checkbox" name="memoRange" id="area1">
-                                    <label for="area1">대치</label>
-                                    <input type="checkbox" name="memoRange" id="area2">
-                                    <label for="area2">목동</label>
-                                    <div class="mt-2 pt-2 border-top">
-                                        <input type="checkbox" name="memoRange2" id="area1-1">
-                                        <label for="area1-1">관명</label>
-                                        <input type="checkbox" name="memoRange2" id="area1-2">
-                                        <label for="area1-2">관명</label>
-                                        <input type="checkbox" name="memoRange2" id="area1-3">
-                                        <label for="area1-3">관명</label>
-                                        <input type="checkbox" name="memoRange2" id="area1-4">
-                                        <label for="area1-4">관명</label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>강조</th>
-                                <td>
-                                    <input type="radio" name="pointUse" id="pointUseY">
-                                    <label for="pointUseY">사용</label>
-                                    <input type="radio" name="pointUse" id="pointUseN">
-                                    <label for="pointUseN">미사용</label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-dark">저장</button>
-                    <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    @@include('@@webRoot/_include/_modal.html')
 
     <script>
 

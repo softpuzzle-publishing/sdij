@@ -181,50 +181,12 @@
 
     </div>
 
-    <!-- modal : 푸시 미리 보기 -->
-    <div class="modal" tabindex="-1" id="modal-push-preview" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">푸시 미리 보기</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="push-area w-100">
-                        <div class="table-title">푸시 전체 화면</div>
-                        <div class="push-outer">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <div class="app-icon"><i class="icon-app"></i></div>
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" value="시대인재 브릿지관 공지" readonly>
-                                    <textarea name="" id="" rows="10" class="form-control" readonly>오늘 강의실 갑자기 바뀌었습니다. 혼선 없으시길 바랍니다. </textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-title mt-3">푸시 잠금 화면</div>
-                        <div class="push-outer locked">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <div class="app-icon"><i class="icon-app"></i></div>
-                                </div>
-                                <div class="col">
-                                    <strong>입력한 제목 자동 반영 노출</strong>
-                                    <p>입력한 내용 자동 반영 노출 입력한 내용 자동 반영 노출 입력한 내용 자동 반영 노출 입력한 내용 자동…</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
 </body>
 
 </html>

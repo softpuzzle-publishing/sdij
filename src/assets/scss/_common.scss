@@ -41,6 +41,7 @@ textarea{resize: none!important;}
     td{
         [type=checkbox]{margin-top: -2px;}
     }
+    > tfoot > tr > td{background: #f3f3f3;border-top: 2px solid $table-border-color;}
 }
 .table-fixed{table-layout: fixed;}
 .table-center{
@@ -109,7 +110,7 @@ input[type=radio]{
 }
 
 .form-datepicker{
-    background: #fff url('../images/icon-calendar.svg') no-repeat right .5rem top 50%;padding-right: 30px;
+    background: #fff url('../images/icon-calendar.svg') no-repeat right .5rem top 50%;padding-right: 28px;
     &.form-control-sm{background-size: auto 13px;}
 }
 
