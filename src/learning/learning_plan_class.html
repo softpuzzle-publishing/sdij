@@ -201,9 +201,6 @@
     @@include('@@webRoot/_include/_modal.html')
 
     <!-- fullcalander v4 -->
-    <link href='../assets/lib/fullcalendar/core/main.css' rel='stylesheet' />
-    <link href='../assets/lib/fullcalendar/daygrid/main.css' rel='stylesheet' />
-    <link href='../assets/lib/fullcalendar/timegrid/main.css' rel='stylesheet' />
     <script src='../assets/lib/fullcalendar/core/main.js'></script>
     <script src='../assets/lib/fullcalendar/core/locales/ko.js'></script>
     <script src='../assets/lib/fullcalendar/interaction/main.js'></script>
@@ -213,7 +210,7 @@
     <script>
         var calendarEl = document.getElementById('calendar');
         var calendar;
-        //보강개설 팝업 열때
+        //보강 개설 팝업 열때
         $('#modal-make-up').on('shown.bs.modal', function (event) {
             calendar = new FullCalendar.Calendar(calendarEl, {
                 locale: 'ko',
@@ -281,7 +278,7 @@
             });
             calendar.render();
         });
-        //보강개설 팝업 닫을때
+        //보강 개설 팝업 닫을때
         $('#modal-make-up').on('hidden.bs.modal', function (event) {
             calendar.destroy();
         });

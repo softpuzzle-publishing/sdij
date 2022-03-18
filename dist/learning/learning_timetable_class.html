@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/lib/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="../assets/lib/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <link href='../assets/lib/fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='../assets/lib/fullcalendar/daygrid/main.css' rel='stylesheet' />
+    <link href='../assets/lib/fullcalendar/timegrid/main.css' rel='stylesheet' />
 
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -187,7 +190,7 @@
                             <li class="has-treeview">
                                 <a href="javascript:;"><span>학원시간표</span></a>
                                 <ul class="dep2">
-                                    <li><a href="../learning/learning_plan_class.html"><span>수업일정표</span></a></li>
+                                    <li><a href="../learning/learning_timetable_class.html"><span>수업일정표</span></a></li>
                                     <li><a href="#"><span>컨텐츠일정표</span></a></li>
                                     <li><a href="#"><span>변경일정</span></a></li>
                                     <li><a href="#"><span>주요이벤트</span></a></li>
@@ -332,8 +335,185 @@
                 <div class="split-horizontal">
                     <div class="section" id="split-horizontal-1">
                         <div class="p-3">
-                            <div class="calendar-wrap">
-                                <div id="calendar"></div>
+                            <div class="class-schedule">
+                                <div class="fc-toolbar fc-header-toolbar">
+                                    <div class="fc-left"></div>
+                                    <div class="fc-center">
+                                        <div>
+                                            <button type="button" class="fc-prev-button fc-button fc-button-primary" aria-label="prev"><span class="fc-icon fc-icon-chevron-left"></span></button>
+                                            <h2>3월 1주 월요일</h2>
+                                            <button type="button" class="fc-next-button fc-button fc-button-primary" aria-label="next"><span class="fc-icon fc-icon-chevron-right"></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="fc-right">
+                                        <input type="checkbox" id="usableOnly">
+                                        <label for="usableOnly" class="mb-0">관 소속 학생 수업만 보기</label>
+                                    </div>
+                                </div>
+                                <table class="table table-bordered table-fixed table-center">
+                                    <colgroup>
+                                        <col style="width: 60px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th colspan="8">N관</th>
+                                            <th colspan="2">타관</th>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th>L층 102호</th>
+                                            <th>L층 101호</th>
+                                            <th>301호</th>
+                                            <th>302호</th>
+                                            <th>303호</th>
+                                            <th>304호</th>
+                                            <th>304호</th>
+                                            <th>304호</th>
+                                            <th>엣지관 3층</th>
+                                            <th>W관 301호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1교시 <div class="mt-1">(08:30 - 10:10)</div>
+                                            </th>
+                                            <td data-subject="korean" data-dividing="true" data-type="formal">
+                                                <div>중계 (1)</div>
+                                                <div class="subject">국어</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td data-subject="social" data-type="formal">
+                                                <div class="subject">사탐</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>2교시 <div class="mt-1">(08:30 - 10:10)</div>
+                                            </th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td data-subject="english" data-type="formal">
+                                                <div class="subject">영어</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>3교시 <div class="mt-1">(08:30 - 10:10)</div>
+                                            </th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td data-subject="science" data-type="formal">
+                                                <div class="subject">지구과학2</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td data-subject="science" data-type="formal">
+                                                <div class="subject">지구과학2</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>4교시 <div class="mt-1">(08:30 - 10:10)</div>
+                                            </th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td data-subject="korean" data-type="optional">
+                                                <div class="subject">국어</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>4.5교시 <div class="mt-1">(08:30 - 10:10)</div>
+                                            </th>
+                                            <td></td>
+                                            <td data-subject="math" data-type="formal">
+                                                <div class="subject">수학</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td data-subject="math" data-type="formal">
+                                                <div class="subject">수학</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td></td>
+                                            <td data-subject="social" data-type="optional">
+                                                <div class="subject">사탐</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>5교시 <div class="mt-1">(08:30 - 10:10)</div>
+                                            </th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>6교시 <div>(08:30 - 10:10)</div>
+                                            </th>
+                                            <td></td>
+                                            <td></td>
+                                            <td data-subject="english" data-type="optional">
+                                                <div class="subject">영어</div>
+                                                <div class="name">이강사</div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        </thead>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -351,442 +531,215 @@
                         <div class="tab-content">
                             <div class="tab-pane show active" id="tab1-1" role="tabpanel">
                                 <div class="p-3">
-                                    <div class="row align-items-center mb-2">
-                                        <div class="col-auto">
-                                            <strong class="mr-2">미확정 상담</strong> 총 ###건
+                                    <div class="schedule-highlight">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <input type="checkbox" id="schedulePoint-1" name="schedulePoint">
+                                                <label for="schedulePoint-1" class="mb-0">선택 구분 강조</label>
+                                                <a href="javascript:;" class="toggler"><i class="material-icons">arrow_drop_down</i></a>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="highlight-formal" name="highClassType">
+                                                        <label for="highlight-formal" class="mb-0">정규수업</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="highlight-optional" name="highClassType">
+                                                        <label for="highlight-optional" class="mb-0">선택수업</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <input type="checkbox" id="schedulePoint-2" name="schedulePoint">
+                                                <label for="schedulePoint-2" class="mb-0 text-success">분반여부 강조</label>
+                                                <a href="javascript:;" class="toggler"><i class="material-icons">arrow_drop_down</i></a>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="highDividingY" name="highDividing">
+                                                        <label for="highDividingY" class="mb-0">분반수업</label>
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox" id="highDividingType1" name="highDividingType">
+                                                                <label for="highDividingType1" class="mb-0">중계수업</label>
+                                                            <li>
+                                                            </li>
+                                                            <input type="checkbox" id="highDividingType2" name="highDividingType">
+                                                            <label for="highDividingType2" class="mb-0">현장수업</label>
+                                                    </li>
+                                                </ul>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="highDividingN" name="highDividing">
+                                                    <label for="highDividingN" class="mb-0">단독수업</label>
+                                                </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <input type="checkbox" id="schedulePoint-3" name="schedulePoint">
+                                                <label for="schedulePoint-3" class="mb-0">과목별 강조</label>
+                                                <a href="javascript:;" class="toggler"><i class="material-icons">arrow_drop_down</i></a>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li>
+                                                        <input type="checkbox" id="highlight-korean" name="hightSubject">
+                                                        <label for="highlight-korean" class="mb-0" style="color:#6fc531">국어</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" id="highlight-math" name="hightSubject">
+                                                        <label for="highlight-math" class="mb-0" style="color: #ff4949">수학</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" id="highlight-english" name="hightSubject">
+                                                        <label for="highlight-english" class="mb-0" style="color: #e4b529">영어</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" id="highlight-science" name="hightSubject">
+                                                        <label for="highlight-science" class="mb-0" style="color: #5b9af8">과학탐구</label>
+                                                        <a href="javascript:;" class="toggler-sub"><i class="material-icons">arrow_drop_down</i></a>
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox" id="highSubjectSubA-1" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-1" class="mb-0">물1</label>
+                                                                <input type="checkbox" id="highSubjectSubA-2" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-2" class="mb-0">물2</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="highSubjectSubA-3" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-3" class="mb-0">화1</label>
+                                                                <input type="checkbox" id="highSubjectSubA-4" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-4" class="mb-0">화2</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="highSubjectSubA-5" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-5" class="mb-0">생1</label>
+                                                                <input type="checkbox" id="highSubjectSubA-6" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-6" class="mb-0">생2</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox" id="highSubjectSubA-7" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-7" class="mb-0">지1</label>
+                                                                <input type="checkbox" id="highSubjectSubA-8" name="highSubjectSubA">
+                                                                <label for="highSubjectSubA-8" class="mb-0">지2</label>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" id="highlight-social" name="hightSubject">
+                                                        <label for="highlight-social" class="mb-0" style="color: #d366ff">사회탐구</label>
+                                                        <a href="javascript:;" class="toggler-sub"><i class="material-icons">arrow_drop_down</i></a>
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox" id="highSubjectSubB-1" name="highSubjectSubB">
+                                                                <label for="highSubjectSubB-1" class="mb-0">사탐1</label>
+                                                                <input type="checkbox" id="highSubjectSubB-2" name="highSubjectSubB">
+                                                                <label for="highSubjectSubB-2" class="mb-0">사탐2</label>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="list-group list-group-toggle">
-
-                                        <div class="item-wrap">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">김시대2104</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-danger">미확정</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <label>상담 희망일</label>
-                                                    <div class="row row-10 mt-1">
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm"><del>1/6(목)</del></a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="#modal-suggestion" class="btn btn-outline-secondary btn-sm active" data-toggle="modal">일정 제안</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-wrap">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">김시대2104</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-danger">미확정</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <label>상담 희망일</label>
-                                                    <div class="row row-10 mt-1">
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm"><del>1/6(목)</del></a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="#modal-suggestion" class="btn btn-outline-secondary btn-sm active" data-toggle="modal">일정 제안</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-wrap">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">김시대2104</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-danger">미확정</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <label>상담 희망일</label>
-                                                    <div class="row row-10 mt-1">
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm"><del>1/6(목)</del></a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="#modal-suggestion" class="btn btn-outline-secondary btn-sm active" data-toggle="modal">일정 제안</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-wrap">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">김시대2104</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-danger">미확정</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <label>상담 희망일</label>
-                                                    <div class="row row-10 mt-1">
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm"><del>1/6(목)</del></a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="javascript:;" class="btn btn-outline-secondary btn-sm">1/8(토)</a></div>
-                                                        <div class="col-auto"><a href="#modal-suggestion" class="btn btn-outline-secondary btn-sm active" data-toggle="modal">일정 제안</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab1-2" role="tabpanel">
                                 <div class="p-3">
-                                    <div class="row align-items-center mb-2">
-                                        <div class="col-auto">
-                                            <strong class="mr-2">확정 상담</strong> 총 ###건
-                                        </div>
+                                    <div class="text-right mb-2">
+                                        <button type="button" class="btn btn-dark btn-sm">상세관리</button>
                                     </div>
-                                    <div class="list-group list-group-toggle">
-
-                                        <div class="item-wrap" data-id="item-4">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">이시대1234</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-info">확정</small>
-                                                        <small class="font-weight-medium ml-2">1/8(토) 09:00</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <div class="row row-10">
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block" data-toggle="modal" data-target="#modal-schedule-change">일정 변경</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-wrap" data-id="item-3">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">이시대1234</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-info">확정</small>
-                                                        <small class="font-weight-medium ml-2">1/8(토) 09:00</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <div class="row row-10">
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block" data-toggle="modal" data-target="#modal-schedule-change">일정 변경</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-wrap" data-id="item-2">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">이시대1234</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-info">확정</small>
-                                                        <small class="font-weight-medium ml-2">1/8(토) 09:00</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <div class="row row-10">
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block" data-toggle="modal" data-target="#modal-schedule-change">일정 변경</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-wrap" data-id="item-1">
-                                            <div class="list-group-top">
-                                                <a href="#modal-profile" role="button" data-toggle="modal" class="student-name text-underline">이시대1234</a>
-                                                <a href="javascript:;" class="list-group-item">
-                                                    <div class="d-flex align-items-center">
-                                                        <small class="text-info">확정</small>
-                                                        <small class="font-weight-medium ml-2">1/8(토) 09:00</small>
-                                                    </div>
-                                                    <p class="mt-1 mb-1">상담신청합니다 ㅠㅠㅠㅠ</p>
-                                                    <div class="d-flex w-100 justify-content-between align-items-center text-secondary">
-                                                        <small>신청일 1/5(수) 15:15</small>
-                                                        <small>누적 4회 / 이번 달 3회</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="list-group-detail">
-                                                <div class="p-3">
-                                                    <p>요즘 너무 힘이 들어요 <br>저한테 관심 좀 ㅜㅜ</p>
-                                                    <div class="row align-items-center mt-3">
-                                                        <div class="col">
-                                                            <label class="mr-2">첨부파일</label>
-                                                            <a href="#none" class="text-underline">홍길동 플래너</a>
-
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="button" class="btn btn-outline-dark btn-sm">학생시간표</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-top border-bottom">
-                                                    <div class="row row-10">
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block">상담 진행</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-danger btn-block" data-toggle="modal" data-target="#modal-schedule-change">일정 변경</button></div>
-                                                        <div class="col"><button type="button" class="btn btn-sm btn-dark btn-block" data-toggle="modal" data-target="#modal-push-send">푸시 발송</button></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <th>강사명</th>
+                                                <td>이동준</td>
+                                            </tr>
+                                            <tr>
+                                                <th>구분</th>
+                                                <td>현장</td>
+                                            </tr>
+                                            <tr>
+                                                <th>수업명</th>
+                                                <td>H반 수학</td>
+                                            </tr>
+                                            <tr>
+                                                <th>수업일시</th>
+                                                <td>8/1(월) 08:30-10:10</td>
+                                            </tr>
+                                            <tr>
+                                                <th>수업장소</th>
+                                                <td>N관 L층 102호</td>
+                                            </tr>
+                                            <tr>
+                                                <th>준비사항</th>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="table-title mt-3">분반 수업</div>
+                                    <table class="table table-bordered table-center">
+                                        <tbody>
+                                            <tr>
+                                                <td>현장</td>
+                                                <td>분반1</td>
+                                                <td>N관 L층 101호</td>
+                                            </tr>
+                                            <tr>
+                                                <td>중계</td>
+                                                <td>분반2</td>
+                                                <td>N관 L층 102호</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="table-title mt-3">연결 수업</div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>수업명</th>
+                                                <th>강의실</th>
+                                                <th>수업일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>D반 수학</td>
+                                                <td>브릿지관 101호</td>
+                                                <td>월 5-5</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="table-title mt-3">변경 내역</div>
+                                    <textarea name="" id="" cols="" rows="4" class="form-control" readonly>[강의실변경]
+[일정변경]
+[일정취소]
+[일정추가]
+                                    </textarea>
+                                    <div class="table-title mt-3">금주 학생 공지 내역</div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>공지요청사항</th>
+                                                <th>요청일</th>
+                                                <th>상태</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -11519,86 +11472,75 @@
 
     </div>
 
-    <!-- fullcalander v4 -->
-    <link href='../assets/lib/fullcalendar/core/main.css' rel='stylesheet' />
-    <link href='../assets/lib/fullcalendar/daygrid/main.css' rel='stylesheet' />
-    <link href='../assets/lib/fullcalendar/timegrid/main.css' rel='stylesheet' />
-    <script src='../assets/lib/fullcalendar/core/main.js'></script>
-    <script src='../assets/lib/fullcalendar/core/locales/ko.js'></script>
-    <script src='../assets/lib/fullcalendar/interaction/main.js'></script>
-    <script src='../assets/lib/fullcalendar/daygrid/main.js'></script>
-    <script src='../assets/lib/fullcalendar/timegrid/main.js'></script>
-
     <script>
         setTimeout(function() {
-            splitH.setSizes([65, 35])
+            splitH.setSizes([70, 30])
         }, 100);
 
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            locale: 'ko',
-            plugins: ['interaction', 'dayGrid', 'timeGrid'],
-            header: {
-                left: 'today',
-                center: 'prev,title,next',
-                right: ''
-            },
-            defaultDate: '2022-03-15',
-            defaultView: 'timeGridWeek',
-            allDaySlot: false,
-            height: 'parent',
-            eventDisplay: 'block',
-            minTime: '08:00:00',
-            maxTime: '23:00:00',
-            //slotDuration: '01:00:00', //1시간 단위
-            slotLabelInterval: 30,
-            slotLabelFormat: {
-                hour: 'numeric',
-                minute: '2-digit',
-                omitZeroMinute: false,
-                hour12: false
-            },
-            firstDay: 1, //월요일부터 시작
-            selectable: true,
-            dateClick: function(info) { //날짜 클릭
-                alert('Clicked on: ' + info.dateStr);
-            },
-            eventClick: function(info) { //일정 클릭
-                alert('Event: ' + info.event.title);
-            },
-            events: [{
-                    start: "2022-03-16T11:00:00",
-                    end: "2022-03-16T11:30:00",
-                    title: "1",
-                    className: "level-1"
-                },
-                {
-                    start: "2022-03-16T11:30:00",
-                    end: "2022-03-16T12:00:00",
-                    title: "15",
-                    className: "level-2"
-                },
-                {
-                    start: "2022-03-16T13:00:00",
-                    end: "2022-03-16T13:30:00",
-                    title: "40",
-                    className: "level-3"
-                },
-                {
-                    start: "2022-03-16T13:30:00",
-                    end: "2022-03-16T14:00:00",
-                    title: "70",
-                    className: "level-4"
-                },
-                {
-                    start: "2022-03-18T10:00:00",
-                    end: "2022-03-18T12:00:00",
-                    title: "강사일정",
-                    className: "scheduled"
-                }
-            ]
+        $('.schedule-highlight .toggler').on('click', function(e) {
+            e.preventDefault();
+            $(this).closest('.card').toggleClass('collapsed');
         });
-        calendar.render();
+        $('.schedule-highlight .toggler-sub').on('click', function(e) {
+            e.preventDefault();
+            $(this).next('ul').toggleClass('collapsed');
+        });
+
+        $('.class-schedule tbody td').on('click', function() {
+            $('.class-schedule tbody td').removeClass('clicked');
+            $(this).addClass('clicked');
+            $('[href="#tab1-2"]').tab('show');
+        });
+
+        var $calenderWrap = $('.class-schedule');
+        $('.schedule-highlight input').on('change', function() {
+            /* 선택 구분 강조 */
+            if ($('#schedulePoint-1').is(':checked')) {
+                $calenderWrap.addClass('highlight-formal highlight-optional');
+            } else {
+                $calenderWrap.removeClass('highlight-formal highlight-optional');
+            }
+
+            /* 분반여부 강조 */
+            if ($('#schedulePoint-2').is(':checked')) {
+                $calenderWrap.addClass('highlight-dividing');
+            } else {
+                $calenderWrap.removeClass('highlight-dividing');
+            }
+
+            /* 과목별 강조 */
+            if ($('#schedulePoint-3').is(':checked')) {
+                $calenderWrap.addClass('highlight-korean highlight-math highlight-english highlight-science highlight-social');
+            } else {
+                $calenderWrap.removeClass('highlight-korean highlight-math highlight-english highlight-science highlight-social');
+            }
+
+            /* if($('#highlight-korean').is(':checked')){
+                $calenderWrap.addClass('highlight-korean');
+            }else{
+                $calenderWrap.removeClass('highlight-korean');
+            }
+            if($('#highlight-math').is(':checked')){
+                $calenderWrap.addClass('highlight-math');
+            }else{
+                $calenderWrap.removeClass('highlight-math');
+            }
+            if($('#highlight-english').is(':checked')){
+                $calenderWrap.addClass('highlight-english');
+            }else{
+                $calenderWrap.removeClass('highlight-english');
+            }
+            if($('#highlight-science').is(':checked')){
+                $calenderWrap.addClass('highlight-science');
+            }else{
+                $calenderWrap.removeClass('highlight-science');
+            }
+            if($('#highlight-social').is(':checked')){
+                $calenderWrap.addClass('highlight-social');
+            }else{
+                $calenderWrap.removeClass('highlight-social');
+            } */
+        });
     </script>
 
 </body>

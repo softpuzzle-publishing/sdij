@@ -113,6 +113,8 @@ var Common = {
 		}
 	},
 	event: function () {
+		$('.collapse').collapse();
+
 		$('[data-toggle="tooltip"]').tooltip();
 
 		//custom scroll

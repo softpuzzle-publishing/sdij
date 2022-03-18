@@ -113,6 +113,7 @@ var Common = {
   event: function event() {
     var _$$datepicker;
 
+    $('.collapse').collapse();
     $('[data-toggle="tooltip"]').tooltip(); //custom scroll
 
     $(".overflow-y-scroll").mCustomScrollbar({
