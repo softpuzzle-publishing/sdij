@@ -206,7 +206,7 @@
                             <li class="has-treeview">
                                 <a href="javascript:;"><span>수업/강사관리</span></a>
                                 <ul class="dep2">
-                                    <li><a href="#"><span>강사 관리</span></a></li>
+                                    <li><a href="../learning/learning_class_instructor.html"><span>강사 관리</span></a></li>
                                     <li><a href="#"><span>컨텐츠 배부</span></a></li>
                                     <li><a href="#"><span>수업 출결</span></a></li>
                                     <li><a href="#"><span>수업 결산</span></a></li>
@@ -252,9 +252,9 @@
                                 <a href="javascript:;"><span>상/벌 관리</span></a>
                                 <ul class="dep2">
                                     <li><a href="../students/students_demerit_manage.html"><span>상벌점 관리</span></a></li>
-                                    <li><a href="#"><span>챌린지</span></a></li>
-                                    <li><a href="#"><span>징계관리</span></a></li>
-                                    <li><a href="#"><span>부엉이배지</span></a></li>
+                                    <li><a href="../students/students_demerit_challange.html"><span>챌린지</span></a></li>
+                                    <li><a href="../students/students_demerit_punishment.html"><span>징계관리</span></a></li>
+                                    <li><a href="../students/students_demerit_badge.html"><span>부엉이배지</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -310,284 +310,1269 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">상벌점 관리</h2>
+                <h2 class="title">강사 관리</h2>
                 <div class="p-3 border-bottom">
                     <div class="row justify-content-between">
                         <div class="col-auto">
                             <div class="d-flex align-items-center">
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">관</option>
+                                    <option value="">영역</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">담임</option>
+                                    <option value="">과목</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">벌점구분</option>
+                                    <option value="">강사명</option>
                                 </select>
-                                <select name="" id="" class="custom-select w-auto mr-3">
-                                    <option value="">벌점</option>
-                                </select>
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">학생ID</option>
-                                </select>
-                                <input type="text" class="form-control w-auto mr-2">
-                                <button type="button" class="btn btn-dark mr-3">검색</button>
-
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">부여일</option>
-                                </select>
-                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
-                                <span class="mx-2">~</span>
-                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-dark">파일업로드</button>
-                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-demerit">벌점 부여</button>
+                            <button type="button" class="btn btn-dark">파일다운로드</button>
                         </div>
                     </div>
                 </div>
-                <div class="p-3">
-                    <div class="row align-items-center mb-2">
-                        <div class="col-auto">
-                            <strong class="mr-2">상벌점 부여 목록</strong>총 ###건
-                        </div>
-                        <div class="col">
-                            <select name="" id="" class="custom-select w-auto">
-                                <option value="">상태</option>
-                            </select>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
-                            <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-demerit-cancel-alert">취소 처리</button>
+                <div class="split-horizontal">
+                    <div class="section" id="split-horizontal-1">
+                        <div class="p-3">
+                            <div class="table-title">강사 정보</div>
+                            <table class="table table-bordered table-fixed">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>강사명</th>
+                                        <td>김강사</td>
+                                    </tr>
+                                    <tr>
+                                        <th>과목</th>
+                                        <td>수학(종합)</td>
+                                    </tr>
+                                    <tr>
+                                        <th>대표연락처</th>
+                                        <td>연구실 010-0000-0000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                <div class="col-auto">
+                                    <div class="table-title mb-0">주간 시간표</div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-new-class-add">개설</button>
+                                </div>
+                            </div>
+                            <div class="weekly-schedule mb-3">
+                                <table class="table table-bordered table-fixed table-center" style="height: 300px">
+                                    <colgroup>
+                                        <col style="width: 45px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>교시</th>
+                                            <th>월</th>
+                                            <th>화</th>
+                                            <th>수</th>
+                                            <th>목</th>
+                                            <th>금</th>
+                                        </tr>
+                                        <tr>
+                                            <th>1</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>4</th>
+                                            <td class="bg-2">
+                                                <div class="where">7관 3층</div>
+                                                <div class="subject">S반 수학</div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>4.5</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>5</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>6</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-3">
+                                                <div class="where">7관 3층</div>
+                                                <div class="subject">I반 수학</div>
+                                            </td>
+                                            <td class="bg-3">
+                                                <div class="where">7관 3층</div>
+                                                <div class="subject">I반 수학</div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>관</th>
+                                            <th>구분</th>
+                                            <th>수업명</th>
+                                            <th>요일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>브릿지</td>
+                                            <td>필수</td>
+                                            <td>S반 수학</td>
+                                            <td>월3</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2</td>
+                                            <td>브릿지</td>
+                                            <td>필수</td>
+                                            <td>S반 수학</td>
+                                            <td>월3</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>3</td>
+                                            <td>브릿지</td>
+                                            <td>필수</td>
+                                            <td>S반 수학</td>
+                                            <td>월3</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>4</td>
+                                            <td>브릿지</td>
+                                            <td>필수</td>
+                                            <td>S반 수학</td>
+                                            <td>월3</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>5</td>
+                                            <td>브릿지</td>
+                                            <td>필수</td>
+                                            <td>S반 수학</td>
+                                            <td>월3</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <div class="main_search_result_list">
-                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table table-center" id="datatable1">
-                            <thead>
-                                <tr>
-                                    <th><input type="checkbox" data-event="checkAll" data-target="demeritAll"></th>
-                                    <th>상벌ID</th>
-                                    <th>관</th>
-                                    <th>반</th>
-                                    <th>학생ID</th>
-                                    <th>벌점구분</th>
-                                    <th>사유</th>
-                                    <th>부여벌점</th>
-                                    <th>누적벌점</th>
-                                    <th>부여일</th>
-                                    <th>상태</th>
-                                    <th>등록/수정자</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <div class="section" id="split-horizontal-2">
+                        <nav class="tab-custom">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-toggle="tab" href="#tab1-1" role="tab">수업 정보</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-toggle="tab" href="#tab1-2" role="tab">회차 정보</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="tab1-1" role="tabpanel">
+                                <div class="p-3">
+                                    <div class="row justify-content-between align-items-end mb-2">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">기본 정보</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm">수정</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-fixed">
+                                        <colgroup>
+                                            <col style="width: 100px">
+                                            <col>
+                                            <col style="width: 100px">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>상태</th>
+                                                <td>진행중</td>
+                                                <th>수강생</th>
+                                                <td>291명</td>
+                                            </tr>
+                                            <tr>
+                                                <th>구분</th>
+                                                <td>필수</td>
+                                                <th>과목</th>
+                                                <td>수학(종합)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>수업명</th>
+                                                <td>S반 수학</td>
+                                                <th>중계</th>
+                                                <td>Y</td>
+                                            </tr>
+                                            <tr>
+                                                <th>교실</th>
+                                                <td>S관 301</td>
+                                                <th>개강일</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>수업일</th>
+                                                <td>월 3-3</td>
+                                                <th>종강일</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>설명</th>
+                                                <td colspan="3">
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">교재 정보</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-material-add">추가</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>교재명</th>
+                                                <th>배부일</th>
+                                                <th>배부시점</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>일반교재</td>
+                                                <td>D반 수학</td>
+                                                <td>3월 2주</td>
+                                                <td>수업전</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">분반 수업</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-dividing-add">추가</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>분반</th>
+                                                <th>교실</th>
+                                                <th>수강생</th>
+                                                <th>운영 여부</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>N관 L층 101호</td>
+                                                <td>60</td>
+                                                <td>Y</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>N관 L층 102호</td>
+                                                <td>70</td>
+                                                <td>Y</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">수업 연결</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-">추가</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>관</th>
+                                                <th>수업명</th>
+                                                <th>수업일</th>
+                                                <th>연결상태</th>
+                                                <th>해제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>브릿지</td>
+                                                <td>D반 수학</td>
+                                                <td>월 5-5</td>
+                                                <td>Y</td>
+                                                <td>
+                                                    <a href="javascript:;" class="text-underline">해제</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">변경 히스토리</div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">(03-24) 분반 등록 – S관 S반 수학(2)</li>
+                                        <li class="list-group-item">(03-24) 수업 연결 - D반 수학(브릿지), S반 수학(M3), I반 수학(M3)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab1-2" role="tabpanel">
+                                <div class="p-3">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">현재 일정</th>
+                                                <th class="text-center">일정 상세</th>
+                                                <th class="text-center">일정 상태</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">수업</td>
+                                                <td class="text-center">S반 국어 김은양_N관 402호</td>
+                                                <td class="text-center">수업 중</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">출결 카드</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-enroll-card-add">등록</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>카드번호</th>
+                                                <th>사용</th>
+                                                <th>사용기간</th>
+                                                <th>발급사유</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>01234567</td>
+                                                <td>Y</td>
+                                                <td>Mm/dd~mm/dd</td>
+                                                <td>분실</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">월 출결 현황</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#">벌점기록</button>
+                                            <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#">바로콜내역</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="5">신청</th>
+                                                <th colspan="4" class="text-danger">무단</th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <th>월</th>
+                                                <th>결석</th>
+                                                <th>지각</th>
+                                                <th>외출</th>
+                                                <th>조퇴</th>
+                                                <th class="text-danger">이탈</th>
+                                                <th class="text-danger">지각</th>
+                                                <th class="text-danger">결석</th>
+                                                <th class="text-danger">조퇴</th>
+                                                <th>벌점</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>2</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>2</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>12</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">카드태깅기록</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-control-sm form-datepicker" style="width: 110px">
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>카드번호</th>
+                                                <th>일자</th>
+                                                <th>시간</th>
+                                                <th>위치</th>
+                                                <th>구분</th>
+                                                <th>수정</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01230401</td>
+                                                <td>Mm/dd</td>
+                                                <td>00:00:00</td>
+                                                <td>N관 402호</td>
+                                                <td>
+                                                    <select name="" id="" class="custom-select custom-select-sm w-auto">
+                                                        <option value="">수강X</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:;" class="text-underline">완료</a>
+                                                </td>
+                                            </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                            <tr>
+                                                <td>01230401</td>
+                                                <td>Mm/dd</td>
+                                                <td>00:00:00</td>
+                                                <td>N관 402호</td>
+                                                <td>입실</td>
+                                                <td>
+                                                    <a href="javascript:;" class="text-underline">수정</a>
+                                                </td>
+                                            </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                            <tr>
+                                                <td>01230401</td>
+                                                <td>Mm/dd</td>
+                                                <td>00:00:00</td>
+                                                <td>N관 402호</td>
+                                                <td>입실</td>
+                                                <td>
+                                                    <a href="javascript:;" class="text-underline">수정</a>
+                                                </td>
+                                            </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                            <tr>
+                                                <td>01230401</td>
+                                                <td>Mm/dd</td>
+                                                <td>00:00:00</td>
+                                                <td>N관 402호</td>
+                                                <td>입실</td>
+                                                <td>
+                                                    <a href="javascript:;" class="text-underline">수정</a>
+                                                </td>
+                                            </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                            <tr>
+                                                <td>01230401</td>
+                                                <td>Mm/dd</td>
+                                                <td>00:00:00</td>
+                                                <td>N관 402호</td>
+                                                <td>입실</td>
+                                                <td>
+                                                    <a href="javascript:;" class="text-underline">수정</a>
+                                                </td>
+                                            </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab3" role="tabpanel">
+                                <div class="p-3">
+                                    <div class="row justify-content-between align-items-end mb-2">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">주간 일정표</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-control-sm form-datepicker" style="width: 110px">
+                                        </div>
+                                    </div>
+                                    <div class="weekly-schedule">
+                                        <table class="table table-bordered table-fixed table-center">
+                                            <colgroup>
+                                                <col style="width: 45px">
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th rowspan="2">교시</th>
+                                                    <th>월</th>
+                                                    <th>화</th>
+                                                    <th>수</th>
+                                                    <th>목</th>
+                                                    <th>금</th>
+                                                </tr>
+                                                <tr class="first-cell">
+                                                    <td>
+                                                        <div class="status font-weight-bold">조퇴</div>
+                                                        <div class="time font-weight-bold">13:00~22:00</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="status font-weight-bold">결석</div>
+                                                        <div class="time font-weight-bold">13:00~22:00</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>1</th>
+                                                    <td class="bg-4">
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">브릿지관 201호</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="bg-1">
+                                                        <div class="subject">영어</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">브릿지관 201호</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>3</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="bg-2">
+                                                        <div class="subject">지구과학2</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">브릿지관 201호</div>
+                                                    </td>
+                                                    <td class="bg-2">
+                                                        <div class="subject">지구과학2</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">브릿지관 201호</div>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4</th>
+                                                    <td class="bg-4">
+                                                        <div class="subject">국어</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">7관 3층</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4.5</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="bg-3">
+                                                        <div class="subject">수학</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">7관 3층</div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>5</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>6</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="bg-1">
+                                                        <div class="subject">영어</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">7관 3층</div>
+                                                    </td>
+                                                    <td class="bg-1">
+                                                        <div class="subject">영어</div>
+                                                        <div class="name">이강사</div>
+                                                        <div class="where">7관 3층</div>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">수강 강의 목록</div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>기간</th>
+                                                <th>구분</th>
+                                                <th>과목</th>
+                                                <th>수업명</th>
+                                                <th>강사명</th>
+                                                <th>요일</th>
+                                                <th>교실</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                            <tr>
+                                                <td>3/1~3/31</td>
+                                                <td>필수</td>
+                                                <td>국어</td>
+                                                <td>
+                                                    <a href="" class="text-underline">S반 국어</a>
+                                                </td>
+                                                <td>김재훈</td>
+                                                <td>화2</td>
+                                                <td>7관 3층</td>
+                                            </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                            <tr>
+                                                <td>3/1~3/31</td>
+                                                <td>필수</td>
+                                                <td>국어</td>
+                                                <td>
+                                                    <a href="" class="text-underline">S반 국어</a>
+                                                </td>
+                                                <td>김재훈</td>
+                                                <td>화2</td>
+                                                <td>7관 3층</td>
+                                            </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab4" role="tabpanel">
+                                <div class="p-3">
+                                    <div class="row justify-content-between align-items-end mb-2">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">합격 결과</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-pass-add">등록</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>연도</th>
+                                                <th>학교</th>
+                                                <th>학과</th>
+                                                <th>전형</th>
+                                                <th>결과</th>
+                                                <th>비교</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                                <tr>
-                                    <td><input type="checkbox" name="demeritAll"></td>
-                                    <td></td>
-                                    <td>브릿지</td>
-                                    <td>S</td>
-                                    <td>김시대1234</td>
-                                    <td>결석</td>
-                                    <td>출결_미착석</td>
-                                    <td>5</td>
-                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
-                                    <td>Mm/dd 00:00</td>
-                                    <td>적용</td>
-                                    <td>UserName(User ID)</td>
-                                </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
 
-                            </tbody>
-                        </table>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <div class="table-title mb-0">시험 결과</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-test-result-add">등록</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>시험일시</th>
+                                                <th>시행처</th>
+                                                <th>시험</th>
+                                                <th>과목</th>
+                                                <th>표준점수</th>
+                                                <th>등급</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <div class="section" id="split-horizontal-3">
+                        <nav class="tab-custom">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-toggle="tab" href="#tab5" role="tab">이슈/소통</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-toggle="tab" href="#tab6" role="tab">알림내역</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-toggle="tab" href="#tab7" role="tab">학생정보</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="tab5" role="tabpanel">
+                                <div class="p-3">
+                                    <div class="table-title">소통 내역 작성</div>
+                                    <form action="">
+                                        <textarea name="" id="" rows="3" class="form-control"></textarea>
+                                        <div class="row justify-content-between align-items-center mt-2">
+                                            <div class="col-auto">
+                                                <select name="" id="" class="custom-select w-auto">
+                                                    <option value="">소통대상</option>
+                                                    <option value="">학부모(부)</option>
+                                                    <option value="">학부모(모)</option>
+                                                    <option value="">학부모(기타)</option>
+                                                    <option value="">본인</option>
+                                                </select>
+                                                <select name="" id="" class="custom-select w-auto">
+                                                    <option value="">구분</option>
+                                                    <option value="">클레임</option>
+                                                    <option value="">단순 문의</option>
+                                                    <option value="">건의 사항</option>
+                                                    <option value="">칭찬</option>
+                                                    <option value="">기타</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-dark">등록</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="table-title mt-3">히스토리 노트</div>
+                                    <div class="list-group">
 
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">학부모(부) 클레임</h5>
+                                                <small>21.11.03 (김시대)</small>
+                                            </div>
+                                            <p>아버님 전화로 연락주심. 클레임 내용은 이러이러했고 대응은 이러이러했음. 학생 주의 필요
+                                            </p>
+                                        </div>
 
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">학부모(부) 클레임</h5>
+                                                <small>21.11.03 (김시대)</small>
+                                            </div>
+                                            <p>아버님 전화로 연락주심. 클레임 내용은 이러이러했고 대응은 이러이러했음. 학생 주의 필요
+                                            </p>
+                                        </div>
 
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">학부모(부) 클레임</h5>
+                                                <small>21.11.03 (김시대)</small>
+                                            </div>
+                                            <p>아버님 전화로 연락주심. 클레임 내용은 이러이러했고 대응은 이러이러했음. 학생 주의 필요
+                                            </p>
+                                        </div>
 
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">학부모(부) 클레임</h5>
+                                                <small>21.11.03 (김시대)</small>
+                                            </div>
+                                            <p>아버님 전화로 연락주심. 클레임 내용은 이러이러했고 대응은 이러이러했음. 학생 주의 필요
+                                            </p>
+                                        </div>
 
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                    </div>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
 
-                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
 
-                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
 
-                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
 
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab6" role="tabpanel">
+                                <div class="p-3">
+                                    <div class="row align-items-center justify-content-between mb-2">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">발송 내역</strong>총 ###건
+                                        </div>
+                                        <div class="col-auto">
+                                            <select name="" id="" class="custom-select custom-select-sm">
+                                                <option value="">문자</option>
+                                                <option value="">푸시</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="main_search_result_list">
+                                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                        <table class="table" id="datatable1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">No</th>
+                                                    <th class="text-center">구분</th>
+                                                    <th class="text-center">발송문구</th>
+                                                    <th class="text-center">수신자구분</th>
+                                                    <th class="text-center">수신여부</th>
+                                                    <th class="text-center">발송일</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">6</td>
+                                                    <td class="text-center">설문</td>
+                                                    <td class="text-center">시대인재 브릿지관입니다.</td>
+                                                    <td class="text-center">본인</td>
+                                                    <td class="text-center">
+                                                        N
+                                                        <br>
+                                                        <a href="javascript:;" class="text-underline"><small>[재발송]</small></a>
+                                                    </td>
+                                                    <td class="text-center">yyyy-mm-dd <br>00:00:00</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">5</td>
+                                                    <td class="text-center">안내</td>
+                                                    <td class="text-center">시대인재 브릿지관입니다.</td>
+                                                    <td class="text-center">학부모</td>
+                                                    <td class="text-center">Y</td>
+                                                    <td class="text-center">yyyy-mm-dd <br> 00:00:00</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">4</td>
+                                                    <td class="text-center">안내</td>
+                                                    <td class="text-center">시대인재 브릿지관입니다.</td>
+                                                    <td class="text-center">학부모</td>
+                                                    <td class="text-center">Y</td>
+                                                    <td class="text-center">yyyy-mm-dd <br> 00:00:00</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">안내</td>
+                                                    <td class="text-center">시대인재 브릿지관입니다.</td>
+                                                    <td class="text-center">학부모</td>
+                                                    <td class="text-center">Y</td>
+                                                    <td class="text-center">yyyy-mm-dd <br> 00:00:00</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center">안내</td>
+                                                    <td class="text-center">시대인재 브릿지관입니다.</td>
+                                                    <td class="text-center">학부모</td>
+                                                    <td class="text-center">Y</td>
+                                                    <td class="text-center">yyyy-mm-dd <br> 00:00:00</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">안내</td>
+                                                    <td class="text-center">시대인재 브릿지관입니다.</td>
+                                                    <td class="text-center">학부모</td>
+                                                    <td class="text-center">Y</td>
+                                                    <td class="text-center">yyyy-mm-dd <br> 00:00:00</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab7" role="tabpanel">
+                                <div class="p-3">
+                                    <div class="table-title">기본정보</div>
+                                    <table class="table table-bordered table-fixed">
+                                        <tbody>
+                                            <tr>
+                                                <th>재원여부</th>
+                                                <td colspan="3"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>담임(오전)</th>
+                                                <td></td>
+                                                <th>담임(오후)</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>학습컨설턴트</th>
+                                                <td></td>
+                                                <th>좌석번호</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>휴대폰 소지</th>
+                                                <td></td>
+                                                <th>학부모번호</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>특이사항</th>
+                                                <td colspan="3"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="table-title mt-3">상세정보</div>
+                                    <table class="table table-bordered table-fixed">
+                                        <tbody>
+                                            <tr>
+                                                <th>생년월일</th>
+                                                <td></td>
+                                                <th>성별</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>거주지</th>
+                                                <td></td>
+                                                <th>출신고교</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>졸업년도</th>
+                                                <td></td>
+                                                <th>계열구분</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>국어선택</th>
+                                                <td></td>
+                                                <th>수학선택</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>탐구1</th>
+                                                <td></td>
+                                                <th>탐구2</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>입학구분</th>
+                                                <td></td>
+                                                <th>장학</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>입학일</th>
+                                                <td></td>
+                                                <th>퇴원일</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>1차 등원일</th>
+                                                <td></td>
+                                                <th>1차 퇴원일</th>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- 컨텐츠 끝 -->
 
@@ -1587,8 +2572,7 @@
         </div>
 
         <!-- modal : 현장 시험_회차 추가 -->
-        <div class="modal" tabindex="-1" id="modal-exam-session-add" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-exam-session-add" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" style="max-width: 340px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -1654,8 +2638,7 @@
         </div>
 
         <!-- modal : 시험 과목 선택 -->
-        <div class="modal" tabindex="-1" id="modal-exam-subject-select" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-exam-subject-select" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -2546,8 +3529,7 @@
         </div>
 
         <!-- modal : 관리자 검색 -->
-        <div class="modal" tabindex="-1" id="modal-manager-search" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-manager-search" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -2603,8 +3585,7 @@
         </div>
 
         <!-- modal : 접근메뉴 등록 -->
-        <div class="modal" tabindex="-1" id="modal-menu-add" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-menu-add" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -2850,8 +3831,7 @@
         </div>
 
         <!-- modal : 담당학생설정-->
-        <div class="modal" tabindex="-1" id="modal-homeroom-teacher" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-homeroom-teacher" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 700px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -2954,8 +3934,7 @@
         </div>
 
         <!-- modal : 과목 선택 -->
-        <div class="modal" tabindex="-1" id="modal-subject-select" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-subject-select" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -3530,8 +4509,7 @@
         </div>
 
         <!-- modal : 평가 요소 등록/수정 -->
-        <div class="modal" tabindex="-1" id="modal-subject-category" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-subject-category" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -4686,8 +5664,7 @@
         </div>
 
         <!-- modal : 입력 완료 -->
-        <div class="modal" tabindex="-1" id="modal-input-confirm" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-input-confirm" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -5204,8 +6181,7 @@
         </div>
 
         <!-- modal : 대체식 사진-->
-        <div class="modal" tabindex="-1" id="modal-alternative-image" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-alternative-image" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -5410,8 +6386,7 @@
         </div>
 
         <!-- modal : 고등학교 검색 -->
-        <div class="modal" tabindex="-1" id="modal-highschool" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-highschool" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -5464,8 +6439,7 @@
         </div>
 
         <!-- modal : 수강과목등록/수정 -->
-        <div class="modal" tabindex="-1" id="modal-class-admin" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-class-admin" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -5572,8 +6546,7 @@
         </div>
 
         <!-- modal : 입시결과등록 -->
-        <div class="modal" tabindex="-1" id="modal-exams-result-add" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-exams-result-add" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -7158,8 +8131,7 @@
         </div>
 
         <!-- modal : 강사 선택 -->
-        <div class="modal" tabindex="-1" id="modal-instructor-search" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-instructor-search" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -7233,8 +8205,7 @@
         </div>
 
         <!-- modal : 수업 회차 조정 -->
-        <div class="modal" tabindex="-1" id="modal-lecture-session-edit" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-lecture-session-edit" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 770px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -7420,8 +8391,7 @@
         </div>
 
         <!-- modal : 수업 교재 추가 -->
-        <div class="modal" tabindex="-1" id="modal-material-add" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-material-add" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -7557,8 +8527,7 @@
         </div>
 
         <!-- modal : 수업 교재 추가_회차선택 -->
-        <div class="modal" tabindex="-1" id="modal-material-session" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-material-session" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -7672,7 +8641,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th rowspan="3" class="bg-5">
+                                    <th rowspan="3" class="bg-6">
                                         브릿지관
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" data-toggle="modal" data-target="#modal-new-class-add">추가</button>
@@ -7699,7 +8668,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr class="bg-5" b>
+                                <tr class="bg-6">
                                     <td>계</td>
                                     <td>3(2)</td>
                                     <td>3(2)</td>
@@ -7711,7 +8680,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <th rowspan="3" class="bg-5">
+                                    <th rowspan="3" class="bg-6">
                                         M3관
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" data-toggle="modal" data-target="#modal-new-class-add">추가</button>
@@ -7738,7 +8707,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr class="bg-5" b>
+                                <tr class="bg-6">
                                     <td>계</td>
                                     <td>3(2)</td>
                                     <td>3(2)</td>
@@ -7750,7 +8719,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <th rowspan="3" class="bg-5">
+                                    <th rowspan="3" class="bg-6">
                                         N관
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" data-toggle="modal" data-target="#modal-new-class-add">추가</button>
@@ -7777,7 +8746,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr class="bg-5" b>
+                                <tr class="bg-6">
                                     <td>계</td>
                                     <td>3(2)</td>
                                     <td>3(2)</td>
@@ -8153,8 +9122,7 @@
         </div>
 
         <!-- modal : 수강생 재배정 -->
-        <div class="modal" tabindex="-1" id="modal-student-assign" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-student-assign" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -8531,8 +9499,7 @@
         </div>
 
         <!-- modal : 보강 개설 -->
-        <div class="modal" tabindex="-1" id="modal-make-up" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-make-up" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" style="max-width: 980px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -8636,8 +9603,7 @@
         </div>
 
         <!-- modal : 충돌 일정 조정 -->
-        <div class="modal" tabindex="-1" id="modal-conflict" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-conflict" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -8959,8 +9925,7 @@
         </div>
 
         <!-- modal : 컨텐츠 회차 조정 -->
-        <div class="modal" tabindex="-1" id="modal-contents-session-edit" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-contents-session-edit" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -9062,8 +10027,7 @@
         </div>
 
         <!-- modal : 신규 회차 등록 -->
-        <div class="modal" tabindex="-1" id="modal-contents-session-add" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-contents-session-add" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -10823,8 +11787,7 @@
         </div>
 
         <!-- modal : 출결 신청 내역 -->
-        <div class="modal" tabindex="-1" id="modal-attendance-history" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-attendance-history" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" style="max-width: 560px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -11264,8 +12227,7 @@
         </div>
 
         <!-- modal : 특이사항 -->
-        <div class="modal" tabindex="-1" id="modal-special-note" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-special-note" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -11483,8 +12445,7 @@
         </div>
 
         <!-- modal : 벌점 부여 확인 알럿 -->
-        <div class="modal" tabindex="-1" id="modal-demerit-alert" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-demerit-alert" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -11508,8 +12469,7 @@
         </div>
 
         <!-- modal : 벌점 부여 취소 알럿 -->
-        <div class="modal" tabindex="-1" id="modal-demerit-cancel-alert" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-demerit-cancel-alert" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -11685,8 +12645,7 @@
         </div>
 
         <!-- modal : 벌점 부여 sub -->
-        <div class="modal" tabindex="-1" id="modal-demerit-sub" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-demerit-sub" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 520px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -11780,7 +12739,339 @@
             </div>
         </div>
 
+        <!-- modal : 챌린지 등록 -->
+        <div class="modal" tabindex="-1" id="modal-challange-add" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">챌린지 등록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 90px;">
+                                <col>
+                                <col style="width: 90px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>챌린지 구분</th>
+                                    <td>조기등원</td>
+                                    <th>보상</th>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th>성공일수</th>
+                                    <td>5</td>
+                                    <th>시작일</th>
+                                    <td>
+                                        <input type="text" class="form-control form-datepicker">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="table-title mt-3">등록할 학생ID</div>
+                        <div class="row row-10">
+                            <div class="col">
+                                <textarea name="" id="" cols="" rows="3" class="form-control" placeholder="학생ID 콤마(,)로 구분해서 넣어주세요."></textarea>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark h-100" style="width: 70px">등록</button>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-2">등록 실패 학생ID – 아래 학생ID 확인후 다시 등록해주세요.</p>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>학생ID</th>
+                                    <th>광/반</th>
+                                    <th>상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>김시대1234</td>
+                                    <td>-</td>
+                                    <td>ID 불일치</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark" onclick="confirm('최시대1234 외 5명 \n챌린지 를 등록하시겠습니까?')">저장</button>
+                        <button type="button" class="btn btn-lightgray" onclick="confirm('최시대1234 외 5명 \n챌린지등록을 취소하시겠습니까?')">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 징계 처리 -->
+        <div class="modal" tabindex="-1" id="modal-punishment" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">징계 처리</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 90px">
+                                <col>
+                                <col style="width: 90px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>징계일</th>
+                                    <td>
+                                        <input type="text" class="form-control form-datepicker">
+                                    </td>
+                                    <th>삭제 별점</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>징계 내용</th>
+                                    <td colspan="3">
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>대상</th>
+                                    <td colspan="3">
+                                        김시대1234(x) 이시대1234(x) 박시대1234(x)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>징계자</th>
+                                    <td colspan="3">
+                                        UserName(ID)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배지 부여 내역 -->
+        <div class="modal" tabindex="-1" id="modal-badge-history" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배지 부여 내역</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-title">
+                            김시대1234 배지 내역
+                        </div>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>배지 구분</th>
+                                    <th>배지명</th>
+                                    <th>누적 배지 수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>03-25</td>
+                                    <td>성적</td>
+                                    <td>열공부엉</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>03-25</td>
+                                    <td>성적</td>
+                                    <td>열공부엉</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배지 목록 -->
+        <div class="modal" tabindex="-1" id="modal-badge-list" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배지 목록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-2">
+                            <select name="" id="" class="custom-select custom-select-sm w-auto">
+                                <option value="">배지 구분</option>
+                            </select>
+                        </div>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>배지 구분</th>
+                                    <th>배지명</th>
+                                    <th>배지 설명(노출 문구)</th>
+                                    <th>배지 이미지</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>성적</td>
+                                    <td>
+                                        <a href="#modal-badge-edit" data-toggle="modal" class="text-underline">열공부엉</a>
+                                    </td>
+                                    <td>월례고사 전과목 1등급 달성</td>
+                                    <td>
+                                        <img src="../assets/images/@badge.png" alt="" style="width: 80px">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                            <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배지 수정 -->
+        <div class="modal" tabindex="-1" id="modal-badge-edit" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배지 수정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 90px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>배지 구분</th>
+                                    <td>성적</td>
+                                </tr>
+                                <tr>
+                                    <th>배지명</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>배지 설명 <br>(노출 문구)</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>배지 이미지</th>
+                                    <td>
+                                        <div class="row row-10">
+                                            <div class="col-auto">
+                                                <img src="../assets/images/@badge.png" alt="" style="width: 80px">
+                                            </div>
+                                            <div class="col">
+                                                <button type="button" class="btn btn-dark btn-sm">이미지 업로드</button>
+                                                <p class="mt-2">이미지 파일명.jpg</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+
+    </script>
 
 </body>
 

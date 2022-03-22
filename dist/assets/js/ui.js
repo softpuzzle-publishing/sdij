@@ -139,15 +139,19 @@ var Common = {
         showMeridian: false,
         defaultTime: '00:00'
       });
-    }); //중첩된 모달이 닫힐때 스타일 삭제 방지
-
-    $('[data-overlap="true"]').on('hidden.bs.modal', function (e) {
-      $('body').addClass('modal-open');
-    }); //열려있는 모달 갯수 파악하여 3중 모달 이상일때 가장 최근 모달 z-index 올림 처리
+    }); //모달 중첩 z-index 조정
 
     $('.modal').on('show.bs.modal', function (e) {
-      if ($('.modal.show').length > 1) {
-        $(this).css('z-index', '1600');
+      var zIndex = 1040 + 10 * $('.modal:visible').length;
+      $(this).css('z-index', zIndex);
+      setTimeout(function () {
+        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+      }, 0);
+    }).on('hidden.bs.modal', function () {
+      if ($('.modal:visible').length > 0) {
+        setTimeout(function () {
+          $(document.body).addClass('modal-open');
+        }, 0);
       }
     });
     $('[data-event="checkAll"]').on('change', function (e) {
