@@ -59,18 +59,6 @@
                                     </div>
                                 </div>
                                 <table class="table table-bordered table-fixed table-center">
-                                    <colgroup>
-                                        <col style="width: 60px">
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                        <col>
-                                    </colgroup>
                                     <thead>
                                         <tr>
                                             <th></th>
@@ -469,7 +457,7 @@
         });
         $('.schedule-highlight .toggler-sub').on('click', function(e){
             e.preventDefault();
-            $(this).next('ul').toggleClass('collapsed');
+            $(this).closest('li').toggleClass('collapsed');
         });
 
         $('.class-schedule tbody td').on('click',function(){
@@ -497,35 +485,10 @@
             /* 과목별 강조 */
             if($('#schedulePoint-3').is(':checked')){
                 $calenderWrap.addClass('highlight-korean highlight-math highlight-english highlight-science highlight-social');
+                console.log('1');
             }else{
                 $calenderWrap.removeClass('highlight-korean highlight-math highlight-english highlight-science highlight-social');
             }
-
-            /* if($('#highlight-korean').is(':checked')){
-                $calenderWrap.addClass('highlight-korean');
-            }else{
-                $calenderWrap.removeClass('highlight-korean');
-            }
-            if($('#highlight-math').is(':checked')){
-                $calenderWrap.addClass('highlight-math');
-            }else{
-                $calenderWrap.removeClass('highlight-math');
-            }
-            if($('#highlight-english').is(':checked')){
-                $calenderWrap.addClass('highlight-english');
-            }else{
-                $calenderWrap.removeClass('highlight-english');
-            }
-            if($('#highlight-science').is(':checked')){
-                $calenderWrap.addClass('highlight-science');
-            }else{
-                $calenderWrap.removeClass('highlight-science');
-            }
-            if($('#highlight-social').is(':checked')){
-                $calenderWrap.addClass('highlight-social');
-            }else{
-                $calenderWrap.removeClass('highlight-social');
-            } */
         });
     </script>
 

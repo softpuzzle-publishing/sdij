@@ -402,7 +402,14 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="table-title">활성 좌석 선택</div>
+                    <div class="row justify-content-between align-items-end mb-2">
+                        <div class="col-auto">
+                            <div class="table-title mb-0">활성 좌석 선택</div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-danger btn-sm" id="btn-seat-reset">Reset</button>
+                        </div>
+                    </div>
                     <div class="seat">
                         <table class="table table-bordered">
                             <thead>
@@ -433,6 +440,9 @@
                             });
                             // enable table plugin
                             selectable.table();
+                            $('#btn-seat-reset').on('click',function(){
+                                selectable.clear()
+                            })
                         </script>
                     </div>
                     <div class="table-title mt-3">좌석 번호 입력</div>

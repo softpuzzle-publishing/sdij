@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">징계관리</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">담임</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">상태</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                    <option value="">징계자</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark mr-3">검색</button>
+
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">대상일</option>
+                                    <option value="">징계일</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                                <span class="mx-2">~</span>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="row align-items-center justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">징계 대상자</strong>총 ###건
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-punishment">징계 처리</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-center" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="punishmentAll"></th>
+                                    <th>No</th>
+                                    <th>관</th>
+                                    <th>반</th>
+                                    <th>학생ID</th>
+                                    <th>좌석번호</th>
+                                    <th>담임(오전/오후)</th>
+                                    <th>대상일</th>
+                                    <th>대상 벌점</th>
+                                    <th>징계 상태</th>
+                                    <th>징계일</th>
+                                    <th>징계 내용</th>
+                                    <th>징계 후 벌점</th>
+                                    <th>징계자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 10; i > 0; i--) {
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="punishmentAll"></td>
+                                    <td>`+i+`</td>
+                                    <td>브릿지</td>
+                                    <td>S</td>
+                                    <td>김시대1234</td>
+                                    <td>134</td>
+                                    <td>홍길동/홍길순</td>
+                                    <td>mm/dd 00:00</td>
+                                    <td>
+                                        <a href="#modal-demerit-history" data-toggle="modal" class="text-underline">22</a>
+                                    </td>
+                                    <td>완료</td>
+                                    <td>mm/dd 00:00</td>
+                                    <td>화장실 청소</td>
+                                    <td>
+                                        <a href="#modal-demerit-history" data-toggle="modal" class="text-underline">10</a>
+                                    </td>
+                                    <td>UserName(userID)</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

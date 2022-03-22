@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">상벌점 관리</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">담임</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">벌점구분</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-3">
+                                    <option value="">벌점</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark mr-3">검색</button>
+
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">부여일</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                                <span class="mx-2">~</span>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark">파일업로드</button>
+                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-demerit">벌점 부여</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">상벌점 부여 목록</strong>총 ###건
+                        </div>
+                        <div class="col">
+                            <select name="" id="" class="custom-select w-auto">
+                                <option value="">상태</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-demerit-cancel-alert">취소 처리</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-center" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" data-event="checkAll" data-target="demeritAll"></th>
+                                    <th>상벌ID</th>
+                                    <th>관</th>
+                                    <th>반</th>
+                                    <th>학생ID</th>
+                                    <th>벌점구분</th>
+                                    <th>사유</th>
+                                    <th>부여벌점</th>
+                                    <th>누적벌점</th>
+                                    <th>부여일</th>
+                                    <th>상태</th>
+                                    <th>등록/수정자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 10; i > 0; i--) {
+                                <tr>
+                                    <td><input type="checkbox" name="demeritAll"></td>
+                                    <td></td>
+                                    <td>브릿지</td>
+                                    <td>S</td>
+                                    <td>김시대1234</td>
+                                    <td>결석</td>
+                                    <td>출결_미착석</td>
+                                    <td>5</td>
+                                    <td><a href="#modal-demerit-history" data-toggle="modal" class="text-underline">11</a></td>
+                                    <td>Mm/dd 00:00</td>
+                                    <td>적용</td>
+                                    <td>UserName(User ID)</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+</body>
+
+</html>

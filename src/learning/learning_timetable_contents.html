@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">컨텐츠일정표</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">과목</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">강사</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto">
+                                    <option value="">준비인증</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark">파일다운로드</button>
+                            <button type="button" class="btn btn-dark ml-1">파일업로드</button>
+                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#">등록</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="fc-toolbar fc-header-toolbar">
+                        <div class="fc-left"></div>
+                        <div class="fc-center">
+                            <div>
+                                <button type="button" class="fc-prev-button fc-button fc-button-primary" aria-label="prev"><span class="fc-icon fc-icon-chevron-left"></span></button>
+                                <h2>1월 1주차 <br><small class="text-danger">휴강: 3월 월례고사</small></h2>
+                                <button type="button" class="fc-next-button fc-button fc-button-primary" aria-label="next"><span class="fc-icon fc-icon-chevron-right"></span></button>
+                            </div>
+                        </div>
+                        <div class="fc-right">
+                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-distribution">수정</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1">배부관리</button>
+                        </div>
+                    </div>
+                    <table class="table table-center">
+                        <thead>
+                            <tr>
+                                <th rowspan="2"><input type="checkbox" data-event="checkAll" data-target="cntScheduleAll"></th>
+                                <th rowspan="2">ID</th>
+                                <th rowspan="2">과목</th>
+                                <th rowspan="2">강사</th>
+                                <th colspan="4">배부 패키지</th>
+                                <th rowspan="2">준비마감</th>
+                                <th rowspan="2">준비인증</th>
+                                <th rowspan="2">배부방식</th>
+                                <th rowspan="2">휴강</th>
+                                <th rowspan="2">배부 유의사항</th>
+                            </tr>
+                            <tr>
+                                <th>컨텐츠</th>
+                                <th>회차</th>
+                                <th>세트</th>
+                                <th>수량</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="cntScheduleAll"></td>
+                                <td></td>
+                                <td>국어</td>
+                                <td></td>
+                                <td>이감 모의고사</td>
+                                <td></td>
+                                <td>문제</td>
+                                <td>132</td>
+                                <td>월 3</td>
+                                <td>완료</td>
+                                <td>라이브러리</td>
+                                <td>있음</td>
+                                <td>
+                                    30분 /시험 종료 후 빠른정답 배부<br>
+                                    *서바 8회 해설서 & PPT 8/29 (일) 웹하드 업로드 예정<br>
+                                    <small class="text-danger">휴강 : 라이브러리 배부 및 월요일 영상 촬영하여 수요일 목동반 지급</small>
+                                </td>
+                            </tr>
+                            @@for (var i = 4; i > 0; i--) {
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="cntScheduleAll"></td>
+                                <td></td>
+                                <td>수학</td>
+                                <td></td>
+                                <td>이감 모의고사</td>
+                                <td></td>
+                                <td>문제,해설</td>
+                                <td>132</td>
+                                <td>월 3</td>
+                                <td>완료</td>
+                                <td>수업배부</td>
+                                <td>없음</td>
+                                <td>
+                                    30분 /시험 종료 후 빠른정답 배부
+                                </td>
+                            </tr>
+                            }
+                        </thead>
+                    </table>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

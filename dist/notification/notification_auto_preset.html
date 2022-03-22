@@ -191,9 +191,9 @@
                                 <a href="javascript:;"><span>학원시간표</span></a>
                                 <ul class="dep2">
                                     <li><a href="../learning/learning_timetable_class.html"><span>수업일정표</span></a></li>
-                                    <li><a href="#"><span>컨텐츠일정표</span></a></li>
-                                    <li><a href="#"><span>변경일정</span></a></li>
-                                    <li><a href="#"><span>주요이벤트</span></a></li>
+                                    <li><a href="../learning/learning_timetable_contents.html"><span>컨텐츠일정표</span></a></li>
+                                    <li><a href="../learning/learning_timetable_change.html"><span>변경일정</span></a></li>
+                                    <li><a href="../learning/learning_timetable_event.html"><span>주요이벤트</span></a></li>
                                 </ul>
                             </li>
                             <li class="has-treeview">
@@ -251,10 +251,10 @@
                             <li class="has-treeview">
                                 <a href="javascript:;"><span>상/벌 관리</span></a>
                                 <ul class="dep2">
-                                    <li><a href="#"><span>상벌점 관리</span></a></li>
-                                    <li><a href="#"><span>챌린지</span></a></li>
-                                    <li><a href="#"><span>징계관리</span></a></li>
-                                    <li><a href="#"><span>부엉이배지</span></a></li>
+                                    <li><a href="../students/students_demerit_manage.html"><span>상벌점 관리</span></a></li>
+                                    <li><a href="../students/students_demerit_challange.html"><span>챌린지</span></a></li>
+                                    <li><a href="../students/students_demerit_punishment.html"><span>징계관리</span></a></li>
+                                    <li><a href="../students/students_demerit_badge.html"><span>부엉이배지</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -7592,7 +7592,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th rowspan="3" class="bg-5">
+                                    <th rowspan="3" class="bg-6">
                                         브릿지관
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" data-toggle="modal" data-target="#modal-new-class-add">추가</button>
@@ -7619,7 +7619,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr class="bg-5" b>
+                                <tr class="bg-6">
                                     <td>계</td>
                                     <td>3(2)</td>
                                     <td>3(2)</td>
@@ -7631,7 +7631,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <th rowspan="3" class="bg-5">
+                                    <th rowspan="3" class="bg-6">
                                         M3관
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" data-toggle="modal" data-target="#modal-new-class-add">추가</button>
@@ -7658,7 +7658,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr class="bg-5" b>
+                                <tr class="bg-6">
                                     <td>계</td>
                                     <td>3(2)</td>
                                     <td>3(2)</td>
@@ -7670,7 +7670,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <th rowspan="3" class="bg-5">
+                                    <th rowspan="3" class="bg-6">
                                         N관
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-sm btn-dark" data-dismiss="modal" data-toggle="modal" data-target="#modal-new-class-add">추가</button>
@@ -7697,7 +7697,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr class="bg-5" b>
+                                <tr class="bg-6">
                                     <td>계</td>
                                     <td>3(2)</td>
                                     <td>3(2)</td>
@@ -11228,6 +11228,801 @@
                     </div>
                     <div class="modal-footer justify-content-center">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">확인</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배부유의사항 수정 -->
+        <div class="modal" tabindex="-1" id="modal-distribution" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배부유의사항 수정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 90px;">
+                                <col>
+                                <col style="width: 90px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>컨텐츠명</th>
+                                    <td>이감모의고사</td>
+                                    <th>회차</th>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <th>배부일정</th>
+                                    <td>3주차</td>
+                                    <th>배부방식</th>
+                                    <td>
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">라이브러리</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>기본</th>
+                                    <td colspan="3">
+                                        <textarea name="" id="" cols="" rows="2" class="form-control"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>휴강</th>
+                                    <td colspan="3">
+                                        <textarea name="" id="" cols="" rows="2" class="form-control text-danger"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>추가</th>
+                                    <td colspan="3">
+                                        <textarea name="" id="" cols="" rows="2" class="form-control"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 주요 이벤트 일정 등록/수정 -->
+        <div class="modal" tabindex="-1" id="modal-main-event" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">일정 등록/수정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 100px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>일정명</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>일자</th>
+                                    <td>
+                                        <div class="row row-5 align-items-center">
+                                            <div class="col">
+                                                <input type="text" class="form-control form-datepicker">
+                                            </div>
+                                            <div class="col-auto">~</div>
+                                            <div class="col">
+                                                <input type="text" class="form-control form-datepicker">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>일정구분</th>
+                                    <td>
+                                        <input type="checkbox" id="scheduleType1" name="scheduleType">
+                                        <label for="scheduleType1" class="text-danger bg-3">D-day</label>
+                                        <input type="checkbox" id="scheduleType2" name="scheduleType">
+                                        <label for="scheduleType2" class="bg-1">학원시험</label>
+                                        <input type="checkbox" id="scheduleType3" name="scheduleType">
+                                        <label for="scheduleType3" class="bg-4">학원일정</label>
+                                        <input type="checkbox" id="scheduleType4" name="scheduleType">
+                                        <label for="scheduleType4">기타</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>휴일구분</th>
+                                    <td>
+                                        <input type="radio" id="holidayType1" name="holidayType">
+                                        <label for="holidayType1" class="text-danger">휴강일</label>
+                                        <input type="radio" id="holidayType2" name="holidayType">
+                                        <label for="holidayType2" class="text-danger">휴원일</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사용여부</th>
+                                    <td>
+                                        <input type="radio" id="schduleUseY" name="schduleUse">
+                                        <label for="schduleUseY">사용</label>
+                                        <input type="radio" id="schduleUseN" name="schduleUse">
+                                        <label for="schduleUseN">미사용</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>대상</th>
+                                    <td>
+                                        <input type="radio" id="schduleTargetAll" name="schduleTarget">
+                                        <label for="schduleTargetAll">전체</label>
+                                        <input type="radio" id="schduleTargetLocation" name="schduleTarget">
+                                        <label for="schduleTargetLocation">지역</label>
+                                        <input type="radio" id="schduleTargetRoom" name="schduleTarget">
+                                        <label for="schduleTargetRoom">관</label>
+                                        <div class="border-top mt-2 pt-2">
+                                            <input type="checkbox" id="">
+                                            <label for="">브릿지</label>
+                                            <input type="checkbox" id="">
+                                            <label for="">엣지</label>
+                                            <input type="checkbox" id="">
+                                            <label for="">N</label>
+                                            <input type="checkbox" id="">
+                                            <label for="">태성</label>
+                                            <input type="checkbox" id="">
+                                            <label for="">M3</label>
+                                            <input type="checkbox" id="">
+                                            <label for="">신관</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 벌점 부여 확인 알럿 -->
+        <div class="modal" tabindex="-1" id="modal-demerit-alert" data-backdrop="static" data-overlap="true">
+            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">벌점 부여</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <p class="mb-2"><strong class="text-info">김시대1234</strong></p>
+                            <p class="font-weight-bold"><strong class="text-danger">무단 이탈</strong>로 <br><strong class="text-danger">벌점 10점</strong>을 부여합니다.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">확인</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 벌점 부여 취소 알럿 -->
+        <div class="modal" tabindex="-1" id="modal-demerit-cancel-alert" data-backdrop="static" data-overlap="true">
+            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">벌점 취소</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <p class="mb-2"><strong class="text-info">김시대1234 외 ##명</strong></p>
+                            <p class="font-weight-bold">벌점 처리를 취소합니다.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">확인</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 벌점 내역 -->
+        <div class="modal" tabindex="-1" id="modal-demerit-history" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">벌점 내역</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-title">
+                            김시대1234 벌점 내역 <span class="font-weight-normal">총 ##건</span>
+                        </div>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>구분</th>
+                                    <th>벌점 사유</th>
+                                    <th>획득</th>
+                                    <th>누적</th>
+                                    <th>부여자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>03-25</td>
+                                    <td><span style="color:#ff4949">결석</span></td>
+                                    <td>무단 이탈</td>
+                                    <td>+10</td>
+                                    <td>+14</td>
+                                    <td>자동</td>
+                                </tr>
+                                <tr>
+                                    <td>03-24</td>
+                                    <td><span style="color:#e4b529">조퇴</span></td>
+                                    <td>무단 이탈</td>
+                                    <td>+10</td>
+                                    <td>+14</td>
+                                    <td>자동</td>
+                                </tr>
+                                <tr>
+                                    <td>03-24</td>
+                                    <td><span style="color:#5b9af8">외출</span></td>
+                                    <td>무단 이탈</td>
+                                    <td>+10</td>
+                                    <td>+14</td>
+                                    <td>자동</td>
+                                </tr>
+                                <tr>
+                                    <td>03-24</td>
+                                    <td><span style="color:#6fc531">지각</span></td>
+                                    <td>무단 이탈</td>
+                                    <td>+10</td>
+                                    <td>+14</td>
+                                    <td>자동</td>
+                                </tr>
+                                <tr>
+                                    <td>03-24</td>
+                                    <td><span>챌린지</span></td>
+                                    <td>무단 이탈</td>
+                                    <td>+10</td>
+                                    <td>+14</td>
+                                    <td>자동</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 벌점 부여 -->
+        <div class="modal" tabindex="-1" id="modal-demerit" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 550px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">벌점 부여</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="mb-2">해당하는 항목을 선택하거나 직접 입력 후 <br>벌점 부여 버튼을 눌러주세요.</p>
+                        <table class="table table-bordered">
+                            <colgroup>
+                                <col>
+                                <col style="width: 85px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="text-center">벌점사유</th>
+                                    <th class="text-center">벌점</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-left"><span class="text-danger">도강 행위(자기 수업이 아닌 타 강의 수강)</span></td>
+                                    <td class="text-center">17점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><span class="text-danger">무단 이탈</span>(있어야 할 장소에 없는 행위)</td>
+                                    <td class="text-center">10점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">출석 기망 (대리 출석/ 출석 문자 조작 행위 등)</td>
+                                    <td class="text-center">5점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><span class="text-danger">학원 건물 내 유의미한 소통행위</span></td>
+                                    <td class="text-center">2점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><span class="text-danger">강사 및 교직원에 대한 태도 불량 및 지시 거부/ 불이행</span></td>
+                                    <td class="text-center">10점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><span class="text-danger">마스크 미착용 (코나 턱에 걸치는 등 올바르지 않은 착용 포함)</span></td>
+                                    <td class="text-center">3점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">복장 불량 및 욕설 등 품위 훼손/ 불량한 행위</td>
+                                    <td class="text-center">2점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">학원 건물 내 또는 학원 반경 50미터 이내 <span class="text-danger">흡연 및 음주</span></td>
+                                    <td class="text-center">14점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">언어/비언어적 폭력 및 가혹 행위/ 절도/ 기물 파손 등 위법 행위</td>
+                                    <td class="text-center">10점</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">
+                                        <input type="text" class="form-control" placeholder="벌점 사유를 직접 입력해주세요">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="form-control d-inline-block text-center mr-1" style="width: 40px"> 점
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-demerit-sub">벌점 부여</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 벌점 부여 sub -->
+        <div class="modal" tabindex="-1" id="modal-demerit-sub" data-backdrop="static" data-overlap="true">
+            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 520px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">벌점 부여</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-title">총 <span>3</span>명에게 벌점을 부여합니다.</div>
+                        <table class="table table-bordered">
+                            <colgroup>
+                                <col style="width: 85px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>벌점</th>
+                                    <td class="font-weight-bold">무단 이탈(10점)</td>
+                                </tr>
+                                <tr>
+                                    <th>대상</th>
+                                    <td class="text-info" id="selectedDemeritStudents"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center mt-3">
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-demerit-alert">벌점부여</button>
+                            <button type="button" class="btn btn-secondary ml-1" data-dismiss="modal">뒤로가기</button>
+                        </div>
+                        <div class="table-title mt-3">대상 추가</div>
+                        <div class="row justify-content-between mb-2">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                        <option value="">관</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                        <option value="">반</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                        <option value="">학생ID</option>
+                                    </select>
+                                    <input type="text" class="form-control form-control-sm w-auto mr-2">
+                                    <button type="button" class="btn btn-dark btn-sm mr-3">검색</button>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+
+                            </div>
+                        </div>
+                        <table class="table table-center" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>학생ID</th>
+                                    <th>관</th>
+                                    <th>반</th>
+                                    <th>좌석번호</th>
+                                    <th>누적 벌점</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="demeritCheck" data-label="김시대1234">
+                                    </td>
+                                    <td>
+                                        <a href="#modal-demerit-history" data-toggle="modal" class="text-underline">김시대1234</a>
+                                    </td>
+                                    <td>신관</td>
+                                    <td>A반</td>
+                                    <td>125</td>
+                                    <td>14점</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script>
+                            $('[name="demeritCheck"]').on('change', function() {
+                                selected = '';
+                                $('[name=demeritCheck]').each(function() {
+                                    if ($(this).is(':checked')) {
+                                        selected += '<span class="selectedInstructor">' + $(this).attr('data-label') + '</span>';
+                                    }
+                                    $('#selectedDemeritStudents').html(selected);
+                                });
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 챌린지 등록 -->
+        <div class="modal" tabindex="-1" id="modal-challange-add" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">챌린지 등록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 90px;">
+                                <col>
+                                <col style="width: 90px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>챌린지 구분</th>
+                                    <td>조기등원</td>
+                                    <th>보상</th>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th>성공일수</th>
+                                    <td>5</td>
+                                    <th>시작일</th>
+                                    <td>
+                                        <input type="text" class="form-control form-datepicker">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="table-title mt-3">등록할 학생ID</div>
+                        <div class="row row-10">
+                            <div class="col">
+                                <textarea name="" id="" cols="" rows="3" class="form-control" placeholder="학생ID 콤마(,)로 구분해서 넣어주세요."></textarea>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark h-100" style="width: 70px">등록</button>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-2">등록 실패 학생ID – 아래 학생ID 확인후 다시 등록해주세요.</p>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>학생ID</th>
+                                    <th>광/반</th>
+                                    <th>상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>김시대1234</td>
+                                    <td>-</td>
+                                    <td>ID 불일치</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark" onclick="confirm('최시대1234 외 5명 \n챌린지 를 등록하시겠습니까?')">저장</button>
+                        <button type="button" class="btn btn-lightgray" onclick="confirm('최시대1234 외 5명 \n챌린지등록을 취소하시겠습니까?')">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 징계 처리 -->
+        <div class="modal" tabindex="-1" id="modal-punishment" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">징계 처리</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 90px">
+                                <col>
+                                <col style="width: 90px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>징계일</th>
+                                    <td>
+                                        <input type="text" class="form-control form-datepicker">
+                                    </td>
+                                    <th>삭제 별점</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>징계 내용</th>
+                                    <td colspan="3">
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>대상</th>
+                                    <td colspan="3">
+                                        김시대1234(x) 이시대1234(x) 박시대1234(x)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>징계자</th>
+                                    <td colspan="3">
+                                        UserName(ID)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배지 부여 내역 -->
+        <div class="modal" tabindex="-1" id="modal-badge-history" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배지 부여 내역</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-title">
+                            김시대1234 배지 내역
+                        </div>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>배지 구분</th>
+                                    <th>배지명</th>
+                                    <th>누적 배지 수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>03-25</td>
+                                    <td>성적</td>
+                                    <td>열공부엉</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>03-25</td>
+                                    <td>성적</td>
+                                    <td>열공부엉</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배지 목록 -->
+        <div class="modal" tabindex="-1" id="modal-badge-list" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배지 목록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-2">
+                            <select name="" id="" class="custom-select custom-select-sm w-auto">
+                                <option value="">배지 구분</option>
+                            </select>
+                        </div>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>배지 구분</th>
+                                    <th>배지명</th>
+                                    <th>배지 설명(노출 문구)</th>
+                                    <th>배지 이미지</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>성적</td>
+                                    <td>
+                                        <a href="#modal-badge-edit" data-toggle="modal" class="text-underline">열공부엉</a>
+                                    </td>
+                                    <td>월례고사 전과목 1등급 달성</td>
+                                    <td>
+                                        <img src="../assets/images/@badge.png" alt="" style="width: 80px">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                            <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                            <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배지 수정 -->
+        <div class="modal" tabindex="-1" id="modal-badge-edit" data-backdrop="static" data-overlap="true">
+            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배지 수정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 90px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>배지 구분</th>
+                                    <td>성적</td>
+                                </tr>
+                                <tr>
+                                    <th>배지명</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>배지 설명 <br>(노출 문구)</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>배지 이미지</th>
+                                    <td>
+                                        <div class="row row-10">
+                                            <div class="col-auto">
+                                                <img src="../assets/images/@badge.png" alt="" style="width: 80px">
+                                            </div>
+                                            <div class="col">
+                                                <button type="button" class="btn btn-dark btn-sm">이미지 업로드</button>
+                                                <p class="mt-2">이미지 파일명.jpg</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
                         <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
                     </div>
                 </div>

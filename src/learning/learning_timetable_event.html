@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">주요이벤트</h2>
+                <div class="p-3">
+                    <div class="fc-toolbar fc-header-toolbar">
+                        <div class="fc-left">
+                            <select name="" id="" class="custom-select w-auto mr-2">
+                                <option value="">브릿지관</option>
+                            </select>
+                        </div>
+                        <div class="fc-center">
+                            <div>
+                                <button type="button" class="fc-prev-button fc-button fc-button-primary" aria-label="prev"><span class="fc-icon fc-icon-chevron-left"></span></button>
+                                <h2>상반기</h2>
+                                <button type="button" class="fc-next-button fc-button fc-button-primary" aria-label="next"><span class="fc-icon fc-icon-chevron-right"></span></button>
+                            </div>
+                        </div>
+                        <div class="fc-right">
+                            <button type="button" class="btn btn-dark">파일다운로드</button>
+                        </div>
+                    </div>
+                    <div class="half-yearly-schedule">
+                        <div class="row row-0">
+                            <div class="col">
+                                <table class="table table-bordered table-center table-fixed">
+                                    <colgroup>
+                                        <col style="width: 40px">
+                                        <col style="width: 40px">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <th colspan="3">2월</th>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 1; i < 20; i++) {
+                                        <tr>
+                                            <td class="text-danger">`+i+`</td>
+                                            <td class="text-danger">일</td>
+                                            <td class="bg-2">
+                                                <a href="#modal-main-event" data-toggle="modal" class="text-underline text-danger">설날</a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <table class="table table-bordered table-center table-fixed">
+                                    <colgroup>
+                                        <col style="width: 40px">
+                                        <col style="width: 40px">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <th colspan="3">3월</th>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 1; i < 32; i++) {
+                                        <tr>
+                                            <td class="text-info">`+i+`</td>
+                                            <td class="text-info">토</td>
+                                            <td class="bg-1">
+                                                <a href="#modal-main-event" data-toggle="modal" class="text-underline">3월 월례고사</a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <table class="table table-bordered table-center table-fixed">
+                                    <colgroup>
+                                        <col style="width: 40px">
+                                        <col style="width: 40px">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <th colspan="3">4월</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>화</td>
+                                            <td data-has-event="false"></td><!-- 빈칸 -->
+                                        </tr>
+                                        @@for (var i = 2; i < 31; i++) {
+                                        <tr>
+                                            <td>`+i+`</td>
+                                            <td>화</td>
+                                            <td class="bg-4">
+                                                <a href="#modal-main-event" data-toggle="modal" class="text-underline">정규반 개강</a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <table class="table table-bordered table-center table-fixed">
+                                    <colgroup>
+                                        <col style="width: 40px">
+                                        <col style="width: 40px">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <th colspan="3">5월</th>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 1; i < 32; i++) {
+                                        <tr>
+                                            <td>`+i+`</td>
+                                            <td>화</td>
+                                            <td>
+                                                <a href="#modal-main-event" data-toggle="modal" class="text-underline text-danger">어린이날</a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <table class="table table-bordered table-center table-fixed">
+                                    <colgroup>
+                                        <col style="width: 40px">
+                                        <col style="width: 40px">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <th colspan="3">6월</th>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 1; i < 31; i++) {
+                                        <tr>
+                                            <td>`+i+`</td>
+                                            <td>화</td>
+                                            <td class="bg-3">
+                                                <a href="#modal-main-event" data-toggle="modal" class="text-underline text-danger">수능일</a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        $('[data-has-event="false"]').on('click',function(){
+            $('#modal-main-event').modal('show');
+        })
+    </script>
+
+</body>
+
+</html>

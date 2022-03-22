@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">부엉이배지</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">담임</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">배지구분</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark mr-3">검색</button>
+
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">부여일</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                                <span class="mx-2">~</span>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-badge-list">배지 목록</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="row align-items-center justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">배지 부여 목록</strong>총 ###건
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-center" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" data-event="checkAll" data-target="badgeAll"></th>
+                                    <th>No</th>
+                                    <th>관</th>
+                                    <th>반</th>
+                                    <th>학생ID</th>
+                                    <th>배지 구분</th>
+                                    <th>배지명</th>
+                                    <th>배지 설명</th>
+                                    <th>부여일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 10; i > 0; i--) {
+                                <tr>
+                                    <td><input type="checkbox" name="badgeAll"></td>
+                                    <td></td>
+                                    <td>브릿지</td>
+                                    <td>S</td>
+                                    <td><a href="#modal-badge-history" class="text-underline" data-toggle="modal">김시대1234</a></td>
+                                    <td>성적</td>
+                                    <td>열공부엉</td>
+                                    <td>월례고사 전과목 1등급 달성</td>
+                                    <td>Mm/dd 00:00</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include('@@webRoot/_include/_pagination.html')
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+</body>
+
+</html>

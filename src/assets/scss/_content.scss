@@ -95,11 +95,12 @@
 .schedule-highlight{
     .toggler{transform: rotate(180deg);line-height: 1;}
     .toggler-sub{
-        vertical-align: middle;
+        transform: rotate(180deg);vertical-align: middle;display: inline-block;
         .material-icons{vertical-align: middle;}
     }
     label{font-weight: 500;}
-    .card{border-radius: 0;
+    .card{
+        border-radius: 0;
         &.collapsed{
             .card-body{display: none}
             .toggler{transform: rotate(0);}
@@ -117,13 +118,17 @@
         padding: 0 1rem 1rem 2.25rem;
         li + li{margin-top: .25rem;}
         ul ul{padding-left: 1.5rem;margin-top: .25rem;}
-        ul.collapsed{display: none;}
+        li.collapsed{
+            ul{display: none;}
+            .toggler-sub{transform: rotate(0);}
+        }
     }
 }
 
 .action{
     display: inline-flex;align-items: center;
-    > span{margin: 0 2px;border: 1px solid #eee;border-radius: 3px;display: inline-block;padding: 3px 5px;color: #d5d5d5;font-size: 12px;line-height: 1;font-weight: 500;
+    > a,
+    > span{margin: 0 2px;border: 1px solid #eee;border-radius: 3px;display: inline-block;padding: 3px 5px;color: #d5d5d5;font-size: 12px;line-height: 1;font-weight: 500;text-decoration: none;
         &.active{
             border-color: $danger;color: $danger;cursor: pointer;
         }
@@ -135,13 +140,19 @@
 .fc-button{
     .fr-icon{vertical-align: top;}
 }
-.fc-prev-button{padding: 3px;margin: 0 10px;}
-.fc-next-button{padding: 3px;margin: 0 10px;}
+.fc-prev-button{padding: 3px;margin: 0 20px 0 0;}
+.fc-next-button{padding: 3px;margin: 0 0 0 20px;}
 .fc-header-toolbar{
+    margin-bottom: 1rem !important;
+    .fc-left{width: 25%;}
     .fc-center{
-        > div{display: flex;align-items: center;}
-        h2{font-size: 18px;}
+        width: 50%;
+        > div{display: flex;align-items: center;justify-content: center;}
+        h2{font-size: 18px;text-align: center;line-height: 1;
+            small{font-size: 13px;font-weight: 500;}
+        }
     }
+    .fc-right{width: 25%;text-align: right;}
 }
 .fc-day-header{padding: 5px 0;}
 .fc-time-grid-event{
@@ -151,7 +162,7 @@
 }
 .fc-event{cursor: pointer;}
 .fc-time-grid .fc-slats td{height: 2.3vh;}
-.fc-button{padding-top: .21em;padding-bottom: .25em;}
+.fc-button{padding-top: .21em;padding-bottom: .25em;border-radius: 0;}
 
 .level-1{border-color: lighten($black,95);background-color: lighten($black,95);color: #444;}
 .level-2{border-color: lighten($black,85);background-color: lighten($black,85);color: #444;}
@@ -317,11 +328,16 @@
 
 .student-assign{
     .table{
-        td{padding-top: .3rem;padding-bottom: 0.3rem;}
+        td{padding-top: .3rem;padding-bottom: .3rem;}
     }
 }
 
 .table-answer-sheet{
     th,
     td{padding-left: .25rem;padding-right: .25rem;}
+}
+
+.half-yearly-schedule{
+    th,
+    td{padding-top: .3rem;padding-bottom: .3rem;}
 }

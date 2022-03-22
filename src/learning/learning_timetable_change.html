@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">변경일정</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">기존일정</option>
+                                    <option value="">변경일정</option>
+                                    <option value="">변경일</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:110px">
+                                <div class="mr-2">~</div>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:110px">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">확정여부</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark">파일다운로드</button>
+                        </div>
+                    </div>
+                </div>
+                <nav class="tab-custom px-5">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab">수업 변경</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab2" role="tab">컨텐츠 변경</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab3" role="tab">일정 충돌</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1" role="tabpanel">
+                            <div class="row justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto">
+                                        <option value="">휴강</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto ml-1">
+                                        <option value="">과목</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto ml-1">
+                                        <option value="">강사</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm">확정</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">등록</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" data-event="checkAll" data-target="changeAll"></th>
+                                            <th>ID</th>
+                                            <th>관</th>
+                                            <th>과목</th>
+                                            <th>강사</th>
+                                            <th>수업명</th>
+                                            <th>기존 일정</th>
+                                            <th>변경 구분</th>
+                                            <th>변경 상세</th>
+                                            <th>변경 일정</th>
+                                            <th>변경 강의실</th>
+                                            <th>확정</th>
+                                            <th>충돌</th>
+                                            <th>변경일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td><input type="checkbox" name="changeAll"></td>
+                                            <td>`+ i +`</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>강의실 변경</td>
+                                            <td>임시 변경</td>
+                                            <td>
+                                                <a href="" class="text-underline">동일</a>
+                                            </td>
+                                            <td>
+                                                <a href="" class="text-underline text-danger">M3관 101호</a>
+                                            </td>
+                                            <td>
+                                                <a href="" class="text-underline">Y</a>
+                                            </td>
+                                            <td>충돌</td>
+                                            <td></td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab2" role="tabpanel">
+                            <div class="row justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto">
+                                        <option value="">과목</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto ml-1">
+                                        <option value="">수급처</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto ml-1">
+                                        <option value="">컨텐츠명</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm">확정</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" data-event="checkAll" data-target="changeAll"></th>
+                                            <th>ID</th>
+                                            <th>과목</th>
+                                            <th>컨텐츠명</th>
+                                            <th>수급처</th>
+                                            <th>회차명</th>
+                                            <th>세트구분</th>
+                                            <th>기존 일정</th>
+                                            <th>변경 일정</th>
+                                            <th>확정</th>
+                                            <th>변경일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td><input type="checkbox" name="changeAll"></td>
+                                            <td>`+ i +`</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>강사 - 김은양T</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>3월 2주</td>
+                                            <td>
+                                                <a href="" class="text-underline">3월 3주</a>
+                                            </td>
+                                            <td>Y</td>
+                                            <td></td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab3" role="tabpanel">
+                            <div class="row align-items-center justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto">
+                                        <option value="">해결여부</option>
+                                    </select>
+                                    <select name="" id="" class="custom-select custom-select-sm d-inline-block w-auto ml-1">
+                                        <option value="">학생ID</option>
+                                        <option value="">강사명</option>
+                                    </select>
+                                    <input type="text" class="form-control form-control-sm d-inline-block w-auto align-middle ml-1">
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">검색</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>학생ID</th>
+                                            <th>소속 관/반</th>
+                                            <th>충돌 수업</th>
+                                            <th>강사명</th>
+                                            <th>충돌 시작일</th>
+                                            <th>충돌 일정</th>
+                                            <th>해결여부</th>
+                                            <th>해결일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>3/14</td>
+                                            <td>월 3-3</td>
+                                            <td>
+                                                <a href="#modal-conflict" class="text-underline" data-toggle="modal">미해결</a>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+        //tab3 show
+        var hash = window.location.hash;
+        $('[href^="' + hash + '"]').tab('show');
+    </script>
+
+</body>
+
+</html>

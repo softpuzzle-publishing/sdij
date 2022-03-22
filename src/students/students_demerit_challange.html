@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">챌린지</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">3월</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3 table-dashboard-style">
+                    <table class="table table-bordered table-center table-fixed">
+                        <thead>
+                            <tr>
+                                <th>관</th>
+                                <th>신청자</th>
+                                <th>진행중</th>
+                                <th>성공</th>
+                                <th>실패</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>브릿지</td>
+                                <td>102</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>M3</td>
+                                <td>102</td>
+                                <td>100</td>
+                                <td>100</td>
+                                <td>50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="hr"></div>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">담임</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">성공</option>
+                                    <option value="">실패</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">학생ID</option>
+                                </select>
+                                <input type="text" class="form-control w-auto mr-2">
+                                <button type="button" class="btn btn-dark mr-3">검색</button>
+
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">시작일</option>
+                                    <option value="">부여일</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                                <span class="mx-2">~</span>
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-challange-add">등록</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="row align-items-center justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">챌린지 목록</strong>총 ###건
+                        </div>
+<!--                         <div class="col">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                    <option value="">성공</option>
+                                    <option value="">실패</option>
+                                </select>
+                                <select name="" id="" class="custom-select custom-select-sm w-auto mr-2">
+                                    <option value="">벌점삭제</option>
+                                </select>
+                            </div>
+                        </div> -->
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-center" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th>관</th>
+                                    <th>반</th>
+                                    <th>학생ID</th>
+                                    <th>좌석번호</th>
+                                    <th>담임(오전/오후)</th>
+                                    <th>챌린지 구분</th>
+                                    <th>일정</th>
+                                    <th>1일차</th>
+                                    <th>2일차</th>
+                                    <th>3일차</th>
+                                    <th>4일차</th>
+                                    <th>5일차</th>
+                                    <th>판정</th>
+                                    <th>벌점 삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @@for (var i = 10; i > 0; i--) {
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>김학생</td>
+                                    <td>112</td>
+                                    <td>김혜빈/이신경</td>
+                                    <td>조기등원</td>
+                                    <td>8/16~8/20</td>
+                                    <td>O</td>
+                                    <td>O</td>
+                                    <td>O</td>
+                                    <td>O</td>
+                                    <td>O</td>
+                                    <td>성공</td>
+                                    <td>Y</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
