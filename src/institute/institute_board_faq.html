@@ -65,41 +65,41 @@
                         <div class="tab-pane show active" id="tab1" role="tabpanel">
                             <div class="main_search_result_list">
                                 <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                <table class="table" id="datatable1">
+                                <table class="table table-center" id="datatable1">
                                     <thead>
                                         <tr>
-                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="faqAll"></th>
-                                            <th class="text-center">No</th>
-                                            <th class="text-center">카테고리</th>
-                                            <th class="text-center">대상 관</th>
-                                            <th class="text-center">제목</th>
-                                            <th class="text-center">공개</th>
-                                            <th class="text-center">등록일/등록자</th>
+                                            <th><input type="checkbox" data-event="checkAll" data-target="faqAll"></th>
+                                            <th>No</th>
+                                            <th>카테고리</th>
+                                            <th>대상 관</th>
+                                            <th>제목</th>
+                                            <th>공개</th>
+                                            <th>등록일/등록자</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="bg-highlight">
-                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                            <td class="text-center">TOP 5</td>
-                                            <td class="text-center">급식</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">
+                                            <td><input type="checkbox" name="faqAll"></td>
+                                            <td>TOP 5</td>
+                                            <td>급식</td>
+                                            <td>S</td>
+                                            <td>
                                                 <a href="#modal-faq-write" data-toggle="modal" class="text-underline">10/30 브릿지관 강기원T 강의실 변동 안내</a>
                                             </td>
-                                            <td class="text-center">Y</td>
-                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                            <td>Y</td>
+                                            <td>2021-12-28 (김시대)</td>
                                         </tr>
                                         @@for (var i = 10; i > 0; i--) {
                                         <tr>
-                                            <td class="text-center"><input type="checkbox" name="faqAll"></td>
-                                            <td class="text-center">`+ i +`</td>
-                                            <td class="text-center">출석</td>
-                                            <td class="text-center">전체</td>
-                                            <td class="text-center">
+                                            <td><input type="checkbox" name="faqAll"></td>
+                                            <td>`+ i +`</td>
+                                            <td>출석</td>
+                                            <td>전체</td>
+                                            <td>
                                                 <a href="#modal-faq-write" data-toggle="modal" class="text-underline">12월 1일부터 각 관 라이브러리가 내년을 위한 정비에 들어갑니다</a>
                                             </td>
-                                            <td class="text-center">Y</td>
-                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                            <td>Y</td>
+                                            <td>2021-12-28 (김시대)</td>
                                         </tr>
                                         }
                                     </tbody>

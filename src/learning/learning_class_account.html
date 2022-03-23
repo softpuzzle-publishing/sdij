@@ -18,7 +18,7 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">학원정보등록</h2>
+                <h2 class="title">수업 결산</h2>
                 <div class="p-3 border-bottom">
                     <div class="row justify-content-between">
                         <div class="col-auto">
@@ -26,24 +26,27 @@
                                 <select name="" id="" class="custom-select w-auto mr-2">
                                     <option value="">관</option>
                                 </select>
-                                <select name="" id="" class="custom-select w-auto">
-                                    <option value="">교실</option>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">영역</option>
                                 </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">과목</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">강사</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-institute-info-add">등록</button>
+                            <button type="button" class="btn btn-dark" data-toggle="modal">파일다운로드</button>
                         </div>
                     </div>
                 </div>
                 <div class="p-3">
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <strong class="mr-2">관</strong>총 ###건
-                        </div>
-                        <div class="col-auto">
-                            <input type="checkbox" id="usableOnly2">
-                            <label for="usableOnly2" class="mb-0">사용 항목만 보기</label>
+                            <strong class="mr-2">수업 내역</strong>총 ###건
                         </div>
                     </div>
                     <div class="main_search_result_list">
@@ -51,28 +54,30 @@
                         <table class="table table-center" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>지역</th>
-                                    <th>관 명</th>
-                                    <th>관 담당자</th>
-                                    <th>보유 교실</th>
-                                    <th>사용</th>
-                                    <th>등록/수정</th>
+                                    <th>월</th>
+                                    <th>관</th>
+                                    <th>강사명</th>
+                                    <th>과목 수</th>
+                                    <th>수업 수</th>
+                                    <th>수업일</th>
+                                    <th>계획 시간(분)</th>
+                                    <th>실제 시간(분)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @@for (var i = 5; i > 0; i--) {
                                 <tr>
-                                    <td>`+ i +`</td>
-                                    <td>대치</td>
+                                    <td>3</td>
+                                    <td>브릿지</td>
                                     <td>
-                                        <a href="#modal-institute-info-add" data-toggle="modal" class="text-underline">브릿지관</a>
+                                        <a href="javascript:;" class="text-underline">김강사</a>
                                     </td>
-                                    <td>김시대</td>
-                                    <td><a href="javascript:;" class="text-underline">101호, 201호</a></td>
-                                    <td>Y</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>24</td>
+                                    <td>2400</td>
                                     <td>
-                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
+                                        <a href="javascript:;" class="text-underline">2300</a>
                                     </td>
                                 </tr>
                                 }
@@ -85,11 +90,7 @@
                 <div class="p-3">
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <strong class="mr-2">교실</strong>총 ###건
-                        </div>
-                        <div class="col-auto">
-                            <input type="checkbox" id="usableOnly">
-                            <label for="usableOnly" class="mb-0">사용 항목만 보기</label>
+                            <strong class="mr-2">수업 상세 내역</strong>총 ###건
                         </div>
                     </div>
                     <div class="main_search_result_list">
@@ -97,35 +98,31 @@
                         <table class="table table-center" id="datatable1">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>관 명</th>
-                                    <th>교실명</th>
-                                    <th>교실 구분</th>
-                                    <th>총 좌석</th>
-                                    <th>사용좌석</th>
-                                    <th>카드체킹기기</th>
-                                    <th>좌석배치표</th>
-                                    <th>사용</th>
-                                    <th>등록/수정</th>
+                                    <th>월</th>
+                                    <th>관</th>
+                                    <th>강사명</th>
+                                    <th>과목</th>
+                                    <th>선택구분</th>
+                                    <th>쉅명</th>
+                                    <th>계획수업일</th>
+                                    <th>실제수업일</th>
+                                    <th>계획 시간(분)</th>
+                                    <th>실제 시간(분)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @@for (var i = 10; i > 0; i--) {
                                 <tr>
-                                    <td>`+ i +`</td>
-                                    <td>브릿지관</td>
-                                    <td>101호</td>
-                                    <td>강의실</td>
+                                    <td>3</td>
+                                    <td>브릿지</td>
+                                    <td>김강사</td>
+                                    <td>수학(종합)</td>
+                                    <td>필수</td>
+                                    <td>S반 수학</td>
+                                    <td>3/1</td>
+                                    <td>3/1</td>
                                     <td>100</td>
-                                    <td>60</td>
-                                    <td>ASND2f</td>
-                                    <td>
-                                        <a href="#modal-seat" data-toggle="modal" class="text-underline">등록</a>
-                                    </td>
-                                    <td>Y</td>
-                                    <td>
-                                        <div class="text-nowrap">Yy/mm/dd(김시대)</div>
-                                    </td>
+                                    <td>100</td>
                                 </tr>
                                 }
                             </tbody>

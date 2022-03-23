@@ -351,7 +351,7 @@ $hr-margin-y:                 $spacer !default;
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
 
-$table-cell-padding:          .5rem !default;
+$table-cell-padding:          .4rem !default;
 $table-cell-padding-sm:       .3rem !default;
 
 $table-color:                 $body-color !default;
@@ -364,7 +364,7 @@ $table-active-bg:             $table-hover-bg !default;
 $table-border-width:          $border-width !default;
 $table-border-color:          $border-color !default;
 
-$table-head-bg:               #fafafa !default;
+$table-head-bg:               #f8f8f8 !default;
 $table-head-color:            $gray-700 !default;
 $table-th-font-weight:        null !default;
 
@@ -850,7 +850,7 @@ $card-border-width:                 $border-width !default;
 $card-border-radius:                .25rem !default;
 $card-border-color:                 rgba($black, .125) !default;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
-$card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-bg:                       rgba($black, .04) !default;
 $card-cap-color:                    null !default;
 $card-height:                       null !default;
 $card-color:                        null !default;

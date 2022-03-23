@@ -24,7 +24,7 @@ var Aside = {
 	},
 	quickmenu : function(){
 		$(".btn-quick-expand, .quick-menu > strong").on("click", function (e) {
-			e.preventDefault();
+		e.preventDefault();
 			$(".quick-menu").toggleClass("active");
 		});
 	},
@@ -65,6 +65,8 @@ var Common = {
 	init: function () {
 		this.scrolling();
 		this.splitGird();
+		this.datePicker();
+		this.timePicker();
 		this.event();
 		window.addEventListener('mousewheel', Common.scrolling);
 		window.addEventListener('touchmove', Common.scrolling);
@@ -112,16 +114,7 @@ var Common = {
 			});
 		}
 	},
-	event: function () {
-		$('.collapse').collapse();
-
-		$('[data-toggle="tooltip"]').tooltip();
-
-		//custom scroll
-		$(".overflow-y-scroll").mCustomScrollbar({
-			theme:"dark"
-		});
-
+	datePicker: function () {
 		//datepicker
 		var currentDate = new Date();
 		$('.form-datepicker').datepicker({
@@ -129,19 +122,20 @@ var Common = {
 			changeMonth: true,
 			changeYear: true,
 			monthNames: ["01","02","03","04","05","06","07","08","09","10","11","12"],
-            monthNamesShort: ["01","02","03","04","05","06","07","08","09","10","11","12"],
-            dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토"],
-            showMonthAfterYear:true,
-            showOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
+			monthNamesShort: ["01","02","03","04","05","06","07","08","09","10","11","12"],
+			dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토"],
+			showMonthAfterYear:true,
+			showOtherMonths: true,
+			changeMonth: true,
+			changeYear: true,
 			dateFormat: "yy-mm-dd",
 			gotoCurrent: true,
 			beforeShow: function(input, inst) {
 				$('#ui-datepicker-div').addClass('datepicker-box');
 			},
 		}).datepicker('setDate', 'today');
-
+	},
+	timePicker: function () {
 		//timepicker
 		$('.form-timepicker').each(function () {
 			$(this).timepicker({
@@ -149,6 +143,14 @@ var Common = {
 				defaultTime: '00:00'
 			});
 		})
+	},
+	event: function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		//custom scroll
+		$(".overflow-y-scroll").mCustomScrollbar({
+			theme:"dark"
+		});
 
         //모달 중첩 z-index 조정
         $('.modal').on('show.bs.modal', function (e) {
@@ -165,6 +167,7 @@ var Common = {
 			}
 		});
 
+		//테이블 내 체크박스 전체 선택
 		$('[data-event="checkAll"]').on('change', function (e) {
 			e.preventDefault();
 			var target = $(this).attr('data-target')
@@ -190,6 +193,7 @@ var Common = {
 			}
 		});
 
+		//accordion style
 		$('.list-group-toggle a.list-group-item').on('click', function (e) {
 			e.preventDefault();
 			$(this).closest('.item-wrap').siblings('.item-wrap').removeClass('active');

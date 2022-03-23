@@ -63,6 +63,8 @@ var Common = {
   init: function init() {
     this.scrolling();
     this.splitGird();
+    this.datePicker();
+    this.timePicker();
     this.event();
     window.addEventListener('mousewheel', Common.scrolling);
     window.addEventListener('touchmove', Common.scrolling);
@@ -110,16 +112,10 @@ var Common = {
       });
     }
   },
-  event: function event() {
+  datePicker: function datePicker() {
     var _$$datepicker;
 
-    $('.collapse').collapse();
-    $('[data-toggle="tooltip"]').tooltip(); //custom scroll
-
-    $(".overflow-y-scroll").mCustomScrollbar({
-      theme: "dark"
-    }); //datepicker
-
+    //datepicker
     var currentDate = new Date();
     $('.form-datepicker').datepicker((_$$datepicker = {
       defaultDate: +7,
@@ -132,13 +128,22 @@ var Common = {
       showOtherMonths: true
     }, _defineProperty(_$$datepicker, "changeMonth", true), _defineProperty(_$$datepicker, "changeYear", true), _defineProperty(_$$datepicker, "dateFormat", "yy-mm-dd"), _defineProperty(_$$datepicker, "gotoCurrent", true), _defineProperty(_$$datepicker, "beforeShow", function beforeShow(input, inst) {
       $('#ui-datepicker-div').addClass('datepicker-box');
-    }), _$$datepicker)).datepicker('setDate', 'today'); //timepicker
-
+    }), _$$datepicker)).datepicker('setDate', 'today');
+  },
+  timePicker: function timePicker() {
+    //timepicker
     $('.form-timepicker').each(function () {
       $(this).timepicker({
         showMeridian: false,
         defaultTime: '00:00'
       });
+    });
+  },
+  event: function event() {
+    $('[data-toggle="tooltip"]').tooltip(); //custom scroll
+
+    $(".overflow-y-scroll").mCustomScrollbar({
+      theme: "dark"
     }); //모달 중첩 z-index 조정
 
     $('.modal').on('show.bs.modal', function (e) {
@@ -153,7 +158,8 @@ var Common = {
           $(document.body).addClass('modal-open');
         }, 0);
       }
-    });
+    }); //테이블 내 체크박스 전체 선택
+
     $('[data-event="checkAll"]').on('change', function (e) {
       e.preventDefault();
       var target = $(this).attr('data-target');
@@ -176,7 +182,8 @@ var Common = {
           $($(this).attr('data-byte-target')).html();
         }
       }
-    });
+    }); //accordion style
+
     $('.list-group-toggle a.list-group-item').on('click', function (e) {
       e.preventDefault();
       $(this).closest('.item-wrap').siblings('.item-wrap').removeClass('active');

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">컨텐츠 배부</h2>
+                <div class="p-3 border-bottom">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">관</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">교시</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">과목</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">준비상태</option>
+                                </select>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark" data-toggle="modal">목록 인쇄</button>
+                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-additional-distribution">추가 배부</button>
+                            <button type="button" class="btn btn-dark ml-1" data-toggle="modal" data-target="#modal-distribution-card-manage">배부 카드 관리</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <table class="table table-center table-bordered" id="datatable1">
+                        <thead>
+                            <tr>
+                                <th>교시</th>
+                                <th>강사명</th>
+                                <th>수업명</th>
+                                <th>준비상태</th>
+                                <th colspan="2">배부컨텐츠</th>
+                                <th>관/교실</th>
+                                <th>수강</th>
+                                <th>배부</th>
+                                <th>추가배부</th>
+                                <th>미수령</th>
+                                <th>배부상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @@for (var i = 1; i < 4; i++) {
+                            <tr>
+                                <td rowspan="8">`+i+`</td>
+                                <td rowspan="8">오렌지</td>
+                                <td rowspan="8">S반 영어</td>
+                                <td rowspan="8"><a href="" class="text-underline">준비중</a></td>
+                                <td rowspan="2">신규</td>
+                                <td rowspan="2">- 교재명</td>
+                                <td class="bg-6">계</td>
+                                <td class="bg-6">1</td>
+                                <td class="bg-6">1</td>
+                                <td class="bg-6">-</td>
+                                <td class="bg-6">-</td>
+                                <td class="bg-6">최종완료</td>
+                            </tr>
+                            <tr>
+                                <td>M3관 101호 (현장)</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>MM/DD 00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">수업전</td>
+                                <td rowspan="3">- 교재명 2회차</td>
+                                <td class="bg-6">계</td>
+                                <td class="bg-6">1</td>
+                                <td class="bg-6">1</td>
+                                <td class="bg-6">-</td>
+                                <td class="bg-6">-</td>
+                                <td class="bg-6">1차완료</td>
+                            </tr>
+                            <tr>
+                                <td>M3관 101호 (현장)</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>MM/DD 00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>M3관 102호 (중계1)</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>MM/DD 00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">수업후</td>
+                                <td rowspan="3">- 교재명(문제) 2회차 <br>- 교재명(해설) 1회차</td>
+                                <td class="bg-6">계</td>
+                                <td class="bg-6">1</td>
+                                <td class="bg-6">1</td>
+                                <td class="bg-6">-</td>
+                                <td class="bg-6">-</td>
+                                <td class="bg-6">1차완료</td>
+                            </tr>
+                            <tr>
+                                <td>M3관 101호 (현장)</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>MM/DD 00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>M3관 102호 (중계1)</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>MM/DD 00:00:00</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

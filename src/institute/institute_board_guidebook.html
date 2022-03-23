@@ -65,30 +65,30 @@
                         <div class="tab-pane show active" id="tab1" role="tabpanel">
                             <div class="main_search_result_list">
                                 <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                <table class="table" id="datatable1">
+                                <table class="table table-center" id="datatable1">
                                     <thead>
                                         <tr>
-                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="guidebookAll"></th>
-                                            <th class="text-center">No</th>
-                                            <th class="text-center">카테고리</th>
-                                            <th class="text-center">대상 관</th>
-                                            <th class="text-center">제목</th>
-                                            <th class="text-center">공개</th>
-                                            <th class="text-center">등록일/등록자</th>
+                                            <th><input type="checkbox" data-event="checkAll" data-target="guidebookAll"></th>
+                                            <th>No</th>
+                                            <th>카테고리</th>
+                                            <th>대상 관</th>
+                                            <th>제목</th>
+                                            <th>공개</th>
+                                            <th>등록일/등록자</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @@for (var i = 10; i > 0; i--) {
                                         <tr>
-                                            <td class="text-center"><input type="checkbox" name="guidebookAll"></td>
-                                            <td class="text-center">`+ i +`</td>
-                                            <td class="text-center">컨텐츠</td>
-                                            <td class="text-center">전체</td>
-                                            <td class="text-center">
+                                            <td><input type="checkbox" name="guidebookAll"></td>
+                                            <td>`+ i +`</td>
+                                            <td>컨텐츠</td>
+                                            <td>전체</td>
+                                            <td>
                                                 <a href="#modal-guidebook-write" data-toggle="modal" class="text-underline">내용내용내용</a>
                                             </td>
-                                            <td class="text-center">Y</td>
-                                            <td class="text-center">2021-12-28 (김시대)</td>
+                                            <td>Y</td>
+                                            <td>2021-12-28 (김시대)</td>
                                         </tr>
                                         }
                                     </tbody>

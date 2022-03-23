@@ -43,7 +43,7 @@
 .bg-3{background: #fff3cd;}
 .bg-4{background: #e6eefa;}
 .bg-5{background: #f6e0ff}
-.bg-6{background: #f3f3f3 !important;}
+.bg-6{background: #f1f1f1 !important;}
 
 .weekly-schedule{
     line-height: 1.2;font-size: 12px;
@@ -60,6 +60,12 @@
     }
     .where + .subject{margin-top: .25rem;}
     .first-cell td{height: 30px !important;padding: 3px !important;}
+    &.mini{
+        .table{height: 340px;}
+        tbody{
+            th,td{height: 45px;}
+        }
+    }
 }
 
 .class-schedule{
@@ -341,4 +347,8 @@
 .half-yearly-schedule{
     th,
     td{padding-top: .3rem;padding-bottom: .3rem;}
+}
+
+.collapsed{
+    i.fa-caret-up{transform: rotate(180deg);}
 }
