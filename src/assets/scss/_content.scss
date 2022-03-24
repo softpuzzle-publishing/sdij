@@ -73,6 +73,10 @@
     .table{
         th,
         td{padding: 5px;position: relative;}
+        tbody{
+            th,
+            td{height: 80px;}
+        }
     }
     .fc-header-toolbar{
         > div{flex-basis: 0;flex-grow: 1;}

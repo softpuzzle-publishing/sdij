@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-Compatible" content="IE=edge">
     <title>시대인재N 관리자</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,  viewport-fit=cover'">
     <meta name="format-detection" content="telephone=no">
 
     <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16">
@@ -208,7 +207,7 @@
                                 <ul class="dep2">
                                     <li><a href="../learning/learning_class_instructor.html"><span>강사 관리</span></a></li>
                                     <li><a href="../learning/learning_class_contents_distribution.html"><span>컨텐츠 배부</span></a></li>
-                                    <li><a href="#"><span>수업 출결</span></a></li>
+                                    <li><a href="../learning/learning_class_attendance.html"><span>수업 출결</span></a></li>
                                     <li><a href="../learning/learning_class_account.html"><span>수업 결산</span></a></li>
                                 </ul>
                             </li>
@@ -8180,7 +8179,7 @@
                             </div>
                             <div class="col-auto">
                                 <button type="button" class="btn btn-dark btn-sm mr-1" data-toggle="modal" data-target="#modal-class-admin">수정</button>
-                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-exams-result-add">입시결과등록</button>
+                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-pass-add">입시결과등록</button>
                             </div>
                         </div>
                         <table class="table table-bordered table-fixed mt-2">
@@ -12184,7 +12183,7 @@
         </div>
 
         <!-- modal : 출결 신청 수정 -->
-        <div class="modal" tabindex="-1" id="modal-attendance-edit" data-backdrop="static">
+        <div class="modal" tabindex="-1" id="modal-attendance-add-edit" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 520px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -13891,7 +13890,7 @@
 
         <!-- modal : 수업출결-모바일2 -->
         <div class="modal" tabindex="-1" id="modal-attendance-mobile2" data-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 560px">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">수업출결-모바일2</h5>
@@ -13932,14 +13931,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered table-fixed mt-3">
-                            <colgroup>
-                                <col style="width: 110px">
-                                <col>
-                            </colgroup>
-                            <tbody>
                                 <tr>
                                     <th>변동 사항</th>
                                     <td>
@@ -13956,14 +13947,6 @@
                                         </select>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered table-fixed mt-3">
-                            <colgroup>
-                                <col style="width: 110px">
-                                <col>
-                            </colgroup>
-                            <tbody>
                                 <tr>
                                     <th>변동 사유</th>
                                     <td>
@@ -13999,7 +13982,7 @@
 
         <!-- modal : 수업출결-모바일3 -->
         <div class="modal" tabindex="-1" id="modal-attendance-mobile3" data-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" style="max-width: 420px">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 560px">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">수업출결-모바일3</h5>
@@ -14060,8 +14043,9 @@
                         </table>
                         <script>
                             $('#table1 > tbody > tr').on('click', function() {
-                                $(this).siblings('tr').removeClass('bg-highlight');
-                                $(this).addClass('bg-highlight');
+                                $(this).siblings('tr').removeClass('selected');
+                                $(this).addClass('selected');
+                                $('#distributionModalList').collapse(); //리스트 열기
                             });
                         </script>
                         <div class="py-3 text-center">
@@ -14629,6 +14613,69 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 준비 상태 등록 -->
+        <div class="modal" tabindex="-1" id="modal-preparation" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">준비 상태 등록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed mb-3">
+                            <colgroup>
+                                <col style="width: 100px">
+                                <col>
+                                <col style="width: 100px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>수업명</th>
+                                    <td>S반 영어 (오렌지)</td>
+                                    <th>수업 일시</th>
+                                    <td>4주차 목요일 3교시</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>컨텐츠명</th>
+                                    <th>인증</th>
+                                    <th>수량</th>
+                                    <th>인증자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>신규</td>
+                                    <td>- 교재명</td>
+                                    <td>
+                                        <img src="../assets/images/@landscape.jpg" alt="" style="max-height: 90px">
+                                    </td>
+                                    <td>1</td>
+                                    <td>김시대 <br>Mm/dd 00:00:00</td>
+                                </tr>
+                                <tr>
+                                    <td>수업후</td>
+                                    <td>- 교재명(문제) 2회차 <br>- 교재명(해설) 1회차</td>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary btn-sm">파일 선택</button>
+                                    </td>
+                                    <td>108</td>
+                                    <td>김시대 <br>Mm/dd 00:00:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

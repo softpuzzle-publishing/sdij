@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-Compatible" content="IE=edge">
     <title>시대인재N 관리자</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,  viewport-fit=cover'">
     <meta name="format-detection" content="telephone=no">
 
     <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16">
@@ -207,8 +206,8 @@
                                 <a href="javascript:;"><span>수업/강사관리</span></a>
                                 <ul class="dep2">
                                     <li><a href="../learning/learning_class_instructor.html"><span>강사 관리</span></a></li>
-                                    <li><a href="#"><span>컨텐츠 배부</span></a></li>
-                                    <li><a href="#"><span>수업 출결</span></a></li>
+                                    <li><a href="../learning/learning_class_contents_distribution.html"><span>컨텐츠 배부</span></a></li>
+                                    <li><a href="../learning/learning_class_attendance.html"><span>수업 출결</span></a></li>
                                     <li><a href="../learning/learning_class_account.html"><span>수업 결산</span></a></li>
                                 </ul>
                             </li>
@@ -310,7 +309,7 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">수업 결산</h2>
+                <h2 class="title">수업 출결</h2>
                 <div class="p-3 border-bottom">
                     <div class="row justify-content-between">
                         <div class="col-auto">
@@ -319,387 +318,402 @@
                                     <option value="">관</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">영역</option>
+                                    <option value="">교실</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
+                                    <option value="">교시</option>
+                                </select>
+                                <select name="" id="" class="custom-select w-auto mr-5">
                                     <option value="">과목</option>
                                 </select>
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">강사</option>
-                                </select>
-                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-dark" data-toggle="modal">파일다운로드</button>
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-attendance-mobile1">모바일버전</button>
                         </div>
                     </div>
                 </div>
-                <div class="p-3">
-                    <div class="row align-items-center mb-2">
-                        <div class="col-auto">
-                            <strong class="mr-2">수업 내역</strong>총 ###건
+                <div class="split-horizontal">
+                    <div class="section" id="split-horizontal-1">
+                        <div class="p-3">
+                            <div class="row align-items-center justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">수업</strong>총 ###건
+                                </div>
+                                <div class="col-auto">
+                                    <input type="checkbox" id="finishClass">
+                                    <label for="finishClass" class="mb-0">완료 수업 보지 않기</label>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center table-hover" id="datatable2">
+                                    <thead>
+                                        <tr>
+                                            <th>관</th>
+                                            <th>교시</th>
+                                            <th>강사명</th>
+                                            <th>수업명</th>
+                                            <th>교실</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                        <tr class="cursor-pointer">
+                                            <td>M3</td>
+                                            <td>1</td>
+                                            <td>오렌지</td>
+                                            <td>D반 영어</td>
+                                            <td>M관 201호 | M관 202호</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    <div class="main_search_result_list">
-                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table table-center" id="datatable1">
-                            <thead>
-                                <tr>
-                                    <th>월</th>
-                                    <th>관</th>
-                                    <th>강사명</th>
-                                    <th>과목 수</th>
-                                    <th>수업 수</th>
-                                    <th>수업일</th>
-                                    <th>계획 시간(분)</th>
-                                    <th>실제 시간(분)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <div class="section" id="split-horizontal-2">
+                        <div class="p-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center align-items-center font-size-14px mb-3">
+                                        <strong>목요일 1교시</strong>
+                                        <small class="text-muted mx-2">|</small>
+                                        <strong>오렌지</strong>
+                                        <small class="text-muted mx-2">|</small>
+                                        <strong>D반 영어</strong>
+                                    </div>
+                                </div>
+                                <div class="col-auto text-right">
+                                    <button type="button" class="btn btn-dark btn-sm">저장</button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-fixed mb-3">
+                                <colgroup>
+                                    <col style="width: 100px">
+                                    <col>
+                                    <col style="width: 100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>수업 회차</th>
+                                        <td>3회차 - 3/16(수) 3-3교시</td>
+                                        <th>변동 사항</th>
+                                        <td>
+                                            <div class="row row-5">
+                                                <div class="col-auto">
+                                                    <select name="" id="" class="custom-select">
+                                                        <option value="">강의 취소</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>수업 진행 시간</th>
+                                        <td>
+                                            <div class="row row-5 align-items-center">
+                                                <div class="col-auto">
+                                                    <select name="" id="" class="custom-select">
+                                                        <option value="">미진행</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control text-center d-inline-block" value="0" style="width: 60px">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>보강 여부</th>
+                                        <td>
+                                            <select name="" id="" class="custom-select">
+                                                <option value="">보강 예정</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>기타 특이사항</th>
+                                        <td colspan="3">
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>공지 요청사항</th>
+                                        <td colspan="3">
+                                            <div class="row row-5 align-items-center">
+                                                <div class="col">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="checkbox" id="connectingNotify2">
+                                                    <label for="connectingNotify2" class="mb-0">연결 수업에 공지</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-center table-hover" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>중계 여부</th>
+                                        <th>교실</th>
+                                        <th>정원</th>
+                                        <th>출석</th>
+                                        <th>지각</th>
+                                        <th>오류</th>
+                                        <th>미입실</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <td>계</td>
+                                        <td></td>
+                                        <td><a href="javascript:;" class="text-underline">64</a></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">김강사</a>
-                                    </td>
-                                    <td>1</td>
-                                    <td>3</td>
-                                    <td>24</td>
-                                    <td>2400</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">2300</a>
-                                    </td>
-                                </tr>
+                                    <tr class="cursor-pointer">
+                                        <td>현장</td>
+                                        <td>M관 201호</td>
+                                        <td><a href="javascript:;" class="text-underline">32</a></td>
+                                        <td><a href="javascript:;" class="text-underline">28</a></td>
+                                        <td><a href="javascript:;" class="text-underline">2</a></td>
+                                        <td><a href="javascript:;" class="text-underline">1</a></td>
+                                        <td><a href="javascript:;" class="text-underline">1</a></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">김강사</a>
-                                    </td>
-                                    <td>1</td>
-                                    <td>3</td>
-                                    <td>24</td>
-                                    <td>2400</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">2300</a>
-                                    </td>
-                                </tr>
+                                    <tr class="cursor-pointer">
+                                        <td>현장</td>
+                                        <td>M관 201호</td>
+                                        <td><a href="javascript:;" class="text-underline">32</a></td>
+                                        <td><a href="javascript:;" class="text-underline">28</a></td>
+                                        <td><a href="javascript:;" class="text-underline">2</a></td>
+                                        <td><a href="javascript:;" class="text-underline">1</a></td>
+                                        <td><a href="javascript:;" class="text-underline">1</a></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">김강사</a>
-                                    </td>
-                                    <td>1</td>
-                                    <td>3</td>
-                                    <td>24</td>
-                                    <td>2400</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">2300</a>
-                                    </td>
-                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-center mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>관</th>
+                                        <th>학생ID</th>
+                                        <th>교실</th>
+                                        <th>카드번호</th>
+                                        <th>태깅시간</th>
+                                        <th>태깅 구분</th>
+                                        <th>수령</th>
+                                        <th>수정</th>
+                                        <th>수정사유</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">김강사</a>
-                                    </td>
-                                    <td>1</td>
-                                    <td>3</td>
-                                    <td>24</td>
-                                    <td>2400</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">2300</a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>배부</td>
+                                        <td>M3</td>
+                                        <td>김시대1234</td>
+                                        <td>201호</td>
+                                        <td>1234567</td>
+                                        <td>00:00:00</td>
+                                        <td>수업전 배부</td>
+                                        <td></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수정</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">카드 손상</a></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">김강사</a>
-                                    </td>
-                                    <td>1</td>
-                                    <td>3</td>
-                                    <td>24</td>
-                                    <td>2400</td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">2300</a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>배부</td>
+                                        <td>M3</td>
+                                        <td>김시대1234</td>
+                                        <td>201호</td>
+                                        <td>1234567</td>
+                                        <td>00:00:00</td>
+                                        <td>수업전 배부</td>
+                                        <td></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수정</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">카드 손상</a></td>
+                                    </tr>
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                    <tr>
+                                        <td>배부</td>
+                                        <td>M3</td>
+                                        <td>김시대1234</td>
+                                        <td>201호</td>
+                                        <td>1234567</td>
+                                        <td>00:00:00</td>
+                                        <td>수업전 배부</td>
+                                        <td></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수정</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">카드 손상</a></td>
+                                    </tr>
 
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <tr>
+                                        <td>배부</td>
+                                        <td>M3</td>
+                                        <td>김시대1234</td>
+                                        <td>201호</td>
+                                        <td>1234567</td>
+                                        <td>00:00:00</td>
+                                        <td>수업전 배부</td>
+                                        <td></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수정</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">카드 손상</a></td>
+                                    </tr>
 
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <tr>
+                                        <td>배부</td>
+                                        <td>M3</td>
+                                        <td>김시대1234</td>
+                                        <td>201호</td>
+                                        <td>1234567</td>
+                                        <td>00:00:00</td>
+                                        <td>수업전 배부</td>
+                                        <td></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수정</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">카드 손상</a></td>
+                                    </tr>
 
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="hr"></div>
-                <div class="p-3">
-                    <div class="row align-items-center mb-2">
-                        <div class="col-auto">
-                            <strong class="mr-2">수업 상세 내역</strong>총 ###건
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="main_search_result_list">
-                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                        <table class="table table-center" id="datatable1">
-                            <thead>
-                                <tr>
-                                    <th>월</th>
-                                    <th>관</th>
-                                    <th>강사명</th>
-                                    <th>과목</th>
-                                    <th>선택구분</th>
-                                    <th>쉅명</th>
-                                    <th>계획수업일</th>
-                                    <th>실제수업일</th>
-                                    <th>계획 시간(분)</th>
-                                    <th>실제 시간(분)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>브릿지</td>
-                                    <td>김강사</td>
-                                    <td>수학(종합)</td>
-                                    <td>필수</td>
-                                    <td>S반 수학</td>
-                                    <td>3/1</td>
-                                    <td>3/1</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-
-                            <li class="page-item"><a class="page-link" href="#">9</a></li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
-                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
-                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
                 <!-- 컨텐츠 끝 -->
 
@@ -8088,7 +8102,7 @@
                             </div>
                             <div class="col-auto">
                                 <button type="button" class="btn btn-dark btn-sm mr-1" data-toggle="modal" data-target="#modal-class-admin">수정</button>
-                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-exams-result-add">입시결과등록</button>
+                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-pass-add">입시결과등록</button>
                             </div>
                         </div>
                         <table class="table table-bordered table-fixed mt-2">
@@ -12092,7 +12106,7 @@
         </div>
 
         <!-- modal : 출결 신청 수정 -->
-        <div class="modal" tabindex="-1" id="modal-attendance-edit" data-backdrop="static">
+        <div class="modal" tabindex="-1" id="modal-attendance-add-edit" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 520px">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -13799,7 +13813,7 @@
 
         <!-- modal : 수업출결-모바일2 -->
         <div class="modal" tabindex="-1" id="modal-attendance-mobile2" data-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 560px">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">수업출결-모바일2</h5>
@@ -13840,14 +13854,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered table-fixed mt-3">
-                            <colgroup>
-                                <col style="width: 110px">
-                                <col>
-                            </colgroup>
-                            <tbody>
                                 <tr>
                                     <th>변동 사항</th>
                                     <td>
@@ -13864,14 +13870,6 @@
                                         </select>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered table-fixed mt-3">
-                            <colgroup>
-                                <col style="width: 110px">
-                                <col>
-                            </colgroup>
-                            <tbody>
                                 <tr>
                                     <th>변동 사유</th>
                                     <td>
@@ -13907,7 +13905,7 @@
 
         <!-- modal : 수업출결-모바일3 -->
         <div class="modal" tabindex="-1" id="modal-attendance-mobile3" data-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" style="max-width: 420px">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 560px">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">수업출결-모바일3</h5>
@@ -13968,8 +13966,9 @@
                         </table>
                         <script>
                             $('#table1 > tbody > tr').on('click', function() {
-                                $(this).siblings('tr').removeClass('bg-highlight');
-                                $(this).addClass('bg-highlight');
+                                $(this).siblings('tr').removeClass('selected');
+                                $(this).addClass('selected');
+                                $('#distributionModalList').collapse(); //리스트 열기
                             });
                         </script>
                         <div class="py-3 text-center">
@@ -14039,10 +14038,578 @@
                 </div>
             </div>
         </div>
+
+        <!-- modal : 배부카드관리 -->
+        <div class="modal" tabindex="-1" id="modal-distribution-card-manage" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배부카드관리</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row justify-content-between align-items-end mb-2">
+                            <div class="col-auto">
+                                <div class="table-title mb-0">배부 카드 목록</div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-enroll-card-add">추가</button>
+                            </div>
+                        </div>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>관</th>
+                                    <th>구분</th>
+                                    <th>카드번호</th>
+                                    <th>사용여부</th>
+                                    <th>사용자</th>
+                                    <th>관리자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>수업전</td>
+                                    <td>01234567</td>
+                                    <td>Y</td>
+                                    <td>김시대, 이시대</td>
+                                    <td>박시대</td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>수업전</td>
+                                    <td>01234567</td>
+                                    <td>Y</td>
+                                    <td>김시대, 이시대</td>
+                                    <td>박시대</td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>수업전</td>
+                                    <td>01234567</td>
+                                    <td>Y</td>
+                                    <td>김시대, 이시대</td>
+                                    <td>박시대</td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>수업전</td>
+                                    <td>01234567</td>
+                                    <td>Y</td>
+                                    <td>김시대, 이시대</td>
+                                    <td>박시대</td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>수업전</td>
+                                    <td>01234567</td>
+                                    <td>Y</td>
+                                    <td>김시대, 이시대</td>
+                                    <td>박시대</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 출결 수정 -->
+        <div class="modal" tabindex="-1" id="modal-attendance-edit" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 480px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">출결 수정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-title">김시대0123_D반 영어 (오렌지) 출결 수정</div>
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 100px">
+                                <col>
+                                <col style="width: 100px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>태깅 카드</th>
+                                    <td></td>
+                                    <th>태깅 시간</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>태깅 구분</th>
+                                    <td>
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">미입실</option>
+                                            <option value="">정상</option>
+                                            <option value="">지각</option>
+                                        </select>
+                                    </td>
+                                    <th>수정 태깅 시간</th>
+                                    <td>
+                                        <input type="text" class="form-control" value="00:00:00">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>수령 여부</th>
+                                    <td>
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">Y</option>
+                                            <option value="">N</option>
+                                        </select>
+                                    </td>
+                                    <th>수정자</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>수정 사유</th>
+                                    <td colspan="3">
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark" onclick="confirm('정산에 반영되는 중요 데이터입니다. \n수업 미진행 - 0분으로 기록해도 좋습니까?')">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 추가배부관리 -->
+        <div class="modal" tabindex="-1" id="modal-additional-distribution" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">추가배부관리</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <nav class="tab-custom">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-toggle="tab" href="#tab-modal-3-1" role="tab">개별 배부</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-toggle="tab" href="#tab-modal-3-2" role="tab">파일 업로드</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="p-3">
+                            <div class="tab-content">
+                                <div class="tab-pane show active" id="tab-modal-3-1" role="tabpanel">
+                                    <div class="text-center mb-3">
+                                        <div class="row row-5 justify-content-center mb-3">
+                                            <div class="col-auto">
+                                                <select name="" id="" class="custom-select">
+                                                    <option value="">관</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-auto">
+                                                <input type="text" class="form-control w-auto" placeholder="학생 이름">
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-dark">검색</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>학생ID</th>
+                                                <th>관/반</th>
+                                                <th>미배부 컨텐츠</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td><a href="javascript:;" class="text-underline">김시대1234</a></td>
+                                                <td>M3관 S반</td>
+                                                <td>3</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row justify-content-between align-items-end mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">김시대0123 미수령 교재</strong>총 ###건
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark btn-sm">배부처리</button>
+                                        </div>
+                                    </div>
+                                    <table class="table table-center">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" data-event="checkAll" data-target="additionalDistribution"></th>
+                                                <th>No</th>
+                                                <th>교재명(세트)</th>
+                                                <th>회차</th>
+                                                <th>배부일자</th>
+                                                <th>미수령 사유</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td><input type="checkbox" name="additionalDistribution"></td>
+                                                <td>5</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>3/8</td>
+                                                <td>결석(신청)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><input type="checkbox" name="additionalDistribution"></td>
+                                                <td>4</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>3/8</td>
+                                                <td>결석(신청)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><input type="checkbox" name="additionalDistribution"></td>
+                                                <td>3</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>3/8</td>
+                                                <td>결석(신청)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><input type="checkbox" name="additionalDistribution"></td>
+                                                <td>2</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>3/8</td>
+                                                <td>결석(신청)</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><input type="checkbox" name="additionalDistribution"></td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>3/8</td>
+                                                <td>결석(신청)</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="tab-pane" id="tab-modal-3-2" role="tabpanel">
+                                    <table class="table table-bordered table-fixed">
+                                        <colgroup>
+                                            <col style="width: 100px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>대상 관</th>
+                                                <td>
+                                                    <select name="" id="" class="custom-select">
+                                                        <option value="">관</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>대상 목록</th>
+                                                <td>
+                                                    <button type="button" class="btn btn-secondary">파일 다운로드</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>파일 선택</th>
+                                                <td>
+                                                    <div class="row row-5">
+                                                        <div class="col">
+                                                            <input type="file" class="form-control">
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button type="button" class="btn btn-dark">
+                                                                <span class="material-icons align-middle">upload_file</span> 파일 등록
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button type="button" class="btn btn-secondary">파일 삭제</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row align-items-center mb-2 mt-3">
+                                        <div class="col-auto">
+                                            <strong class="mr-2">추가 배부 리스트</strong>총 ###건
+                                        </div>
+                                    </div>
+                                    <table class="table table-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>학생ID</th>
+                                                <th>교재명(세트)</th>
+                                                <th>회차</th>
+                                                <th>추가배부</th>
+                                                <th>추가배부일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>5</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>완료</td>
+                                                <td>3/8</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>완료</td>
+                                                <td>3/8</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>완료</td>
+                                                <td>3/8</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>완료</td>
+                                                <td>3/8</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>완료</td>
+                                                <td>3/8</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 준비 상태 등록 -->
+        <div class="modal" tabindex="-1" id="modal-preparation" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">준비 상태 등록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-fixed mb-3">
+                            <colgroup>
+                                <col style="width: 100px">
+                                <col>
+                                <col style="width: 100px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>수업명</th>
+                                    <td>S반 영어 (오렌지)</td>
+                                    <th>수업 일시</th>
+                                    <td>4주차 목요일 3교시</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>컨텐츠명</th>
+                                    <th>인증</th>
+                                    <th>수량</th>
+                                    <th>인증자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>신규</td>
+                                    <td>- 교재명</td>
+                                    <td>
+                                        <img src="../assets/images/@landscape.jpg" alt="" style="max-height: 90px">
+                                    </td>
+                                    <td>1</td>
+                                    <td>김시대 <br>Mm/dd 00:00:00</td>
+                                </tr>
+                                <tr>
+                                    <td>수업후</td>
+                                    <td>- 교재명(문제) 2회차 <br>- 교재명(해설) 1회차</td>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary btn-sm">파일 선택</button>
+                                    </td>
+                                    <td>108</td>
+                                    <td>김시대 <br>Mm/dd 00:00:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-
+        $('#datatable2 > tbody > tr').on('click', function() {
+            $(this).siblings('tr').removeClass('selected');
+            $(this).addClass('selected');
+        });
     </script>
 
 </body>
