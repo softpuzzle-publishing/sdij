@@ -15133,6 +15133,10 @@
     <script src='../assets/lib/fullcalendar/timegrid/main.js'></script>
 
     <script>
+        //tab3 show
+        var hash = window.location.hash;
+        $('[href^="' + hash + '"]').tab('show');
+
         var calendarEl = document.getElementById('calendar');
         var calendar;
         //보강 개설 팝업 열때
