@@ -140,6 +140,9 @@ textarea.form-control{resize: none;}
 .pagination{
     margin-top: 1rem;justify-content:center; width:100%;
     .page-link{width: 32px;height: 32px;padding: 0;display: flex;align-items: center;justify-content: center;}
+    @media screen and (max-width: 768px) {
+        .page-link{width: 28px;height: 28px;}
+    }
 }
 
 .mCSB_scrollTools{width: 12px;}
@@ -181,6 +184,9 @@ textarea.form-control{resize: none;}
 
 .title{
     font-size: 24px;font-weight: 700;padding: 1rem;border-bottom: 1px solid #ddd;
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 .sub-title{
