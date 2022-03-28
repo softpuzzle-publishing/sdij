@@ -252,6 +252,10 @@
     @@include('@@webRoot/_include/_modal.html')
 
     <script>
+        setTimeout(function(){
+            splitH.setSizes([40, 60])
+        },100);
+
         $('#datatable2 > tbody > tr').on('click',function(){
             $(this).siblings('tr').removeClass('selected');
             $(this).addClass('selected');

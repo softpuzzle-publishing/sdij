@@ -73,44 +73,6 @@ input[type=radio]{
     label + &{margin-left: 12px;}
 }
 
-.custom-checkbox.without-label{
-    padding-left: 0;min-height: 1rem;font-size: 0;
-    .custom-control-input{width: 1rem;height: 1rem;}
-    .custom-control-label::before{left: 0;}
-    .custom-control-label::after{left: 0;}
-}
-
-.checkbox-inline{
-    position: relative;cursor: pointer;padding-top: 0!important;min-height: 16px;line-height: 16px;padding-left: 25px;margin-bottom: 0;
-    input{
-        position: absolute;top: 0;bottom: 0;width: 16px;height: 16px;left: 0;-webkit-appearance: none;-moz-appearance: none;-o-appearance: none;appearance:none;
-        &:before{
-            content: '';display: inline-block;width: 16px;height: 16px;background: #fff;position: absolute;border: 1px solid $input-border-color;transition: all .2s;
-        }
-        &:after{
-            content: '';position: absolute;width: 16px;height: 16px;left: 0;right: 0;text-align:center;
-        }
-        &:checked:before{
-            background: $primary;border-color: $primary;
-        }
-        &:checked:after{
-            content: '\2713';color: #fff;
-        }
-    }
-    &.without-label{padding-left: 16px;}
-    &.radio input{
-        &:before{
-            border-radius: 50%;
-        }
-        &:after{
-            width: 6px;height: 6px;border-radius: 50%;left: 5px;top: 5px;
-        }
-        &:checked:after{
-            content: '';background: #fff;
-        }
-    }
-}
-
 .form-datepicker{
     background: #fff url('../images/icon-calendar.svg') no-repeat right .5rem top 50%;padding-right: 28px;
     &.form-control-sm{background-size: auto 13px;}
@@ -178,14 +140,6 @@ textarea.form-control{resize: none;}
 .pagination{
     margin-top: 1rem;justify-content:center; width:100%;
     .page-link{width: 32px;height: 32px;padding: 0;display: flex;align-items: center;justify-content: center;}
-}
-
-.modal-backdrop ~ .modal-backdrop{
-    z-index: 1051;
-    ~ .modal-backdrop{z-index: 1053;}
-}
-.modal[data-overlap=true]{
-    z-index: 1052;
 }
 
 .mCSB_scrollTools{width: 12px;}
