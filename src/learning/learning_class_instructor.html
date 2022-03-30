@@ -162,9 +162,9 @@
                                         <tr>
                                             <th>No</th>
                                             <th>관</th>
-                                            <th>구분</th>
                                             <th>수업명</th>
                                             <th>요일</th>
+                                            <th>상태</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -172,9 +172,9 @@
                                         <tr>
                                             <td>`+ i +`</td>
                                             <td>브릿지</td>
-                                            <td>필수</td>
                                             <td>S반 수학</td>
                                             <td>월3</td>
+                                            <td>진행중</td>
                                         </tr>
                                         }
                                     </tbody>
@@ -201,7 +201,7 @@
                                             <div class="table-title mb-0">기본 정보</div>
                                         </div>
                                         <div class="col-auto">
-                                            <button type="button" class="btn btn-dark btn-sm">수정</button>
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-new-class-add">수정</button>
                                         </div>
                                     </div>
                                     <table class="table table-bordered table-fixed">
@@ -245,7 +245,7 @@
                                             <tr>
                                                 <th>설명</th>
                                                 <td colspan="3">
-                                                    <input type="text" class="form-control">
+                                                    -
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -699,7 +699,7 @@
                                             <div class="table-title mb-0">수업 관련 정보</div>
                                         </div>
                                         <div class="col-auto">
-                                            <a href="javascript:;" target="_blank" class="btn btn-dark btn-sm">수정</a>
+                                            <a href="javascript:;" class="btn btn-dark btn-sm">수정</a>
                                         </div>
                                     </div>
                                     <table class="table table-bordered table-fixed">

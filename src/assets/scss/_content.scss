@@ -83,6 +83,7 @@
         .fc-center > div{justify-content: center;}
         .fc-right{text-align: right;}
     }
+    [data-subject]{color: $dark;}
     &.highlight-korean [data-subject=korean]{background: #eaffdb;}
     &.highlight-math [data-subject=math]{background: #ffe3e3;}
     &.highlight-english [data-subject=english]{background: #fff3cd;}
@@ -98,7 +99,7 @@
         > div{color: $green;font-weight: 700;}
     }
     td.clicked{
-        background: #687077;
+        background: #687077 !important;
         > div{color: #fff;}
     }
 }
@@ -175,16 +176,16 @@
 .fc-time-grid .fc-slats td{height: 2.3vh;}
 .fc-button{padding-top: .21em;padding-bottom: .25em;border-radius: 0;}
 
-.level-1{border-color: lighten($black,95);background-color: lighten($black,95);color: #444;}
-.level-2{border-color: lighten($black,85);background-color: lighten($black,85);color: #444;}
-.level-3{border-color: lighten($black,70);background-color: lighten($black,70);color: #444;}
-.level-4{border-color: lighten($black,60);background-color: lighten($black,60);color: #444;}
+.level-1{border-color: lighten($black,95);background-color: lighten($black,95);color: #444 !important;}
+.level-2{border-color: lighten($black,85);background-color: lighten($black,85);color: #444 !important;}
+.level-3{border-color: lighten($black,70);background-color: lighten($black,70);color: #444 !important;}
+.level-4{border-color: lighten($black,60);background-color: lighten($black,60);color: #444 !important;}
 .scheduled{border-color: #4c90f9;background-color: #4c90f9;color: #fff !important;}
 
 .make-up{
     .fc-header-toolbar{
         .fc-center{
-            h2{font-size: 16px;}
+            h2{font-size: 16px;white-space: nowrap;}
         }
     }
     .fc-time-grid-event{

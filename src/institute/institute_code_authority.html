@@ -121,6 +121,8 @@
                                         <colgroup>
                                             <col style="width: 100px">
                                             <col>
+                                            <col style="width: 100px">
+                                            <col>
                                         </colgroup>
                                         <tbody>
                                             <tr>
@@ -128,8 +130,6 @@
                                                 <td>
                                                     <input type="text" class="form-control">
                                                 </td>
-                                            </tr>
-                                            <tr>
                                                 <th>ID</th>
                                                 <td>
                                                     <div class="row row-5">
@@ -143,8 +143,21 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <th>소속 관</th>
+                                                <td colspan="3">
+                                                    <div class="row row-15 align-items-center">
+                                                        <div class="col-auto">
+                                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-block-select">선택</button>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>브릿지(대치)</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <th>부서/직무</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <div class="row row-5">
                                                         <div class="col-auto">
                                                             <select name="" id="" class="custom-select">
@@ -159,7 +172,7 @@
                                             </tr>
                                             <tr>
                                                 <th>연락처</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <div class="row row-5">
                                                         <div class="col">
                                                             <input type="text" class="form-control">
@@ -172,7 +185,7 @@
                                             </tr>
                                             <tr>
                                                 <th>사용여부</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <input type="radio" name="AuthorUse" id="AuthorUseY">
                                                     <label for="AuthorUseY">사용</label>
                                                     <input type="radio" name="AuthorUse" id="AuthorUseN">
@@ -181,7 +194,7 @@
                                             </tr>
                                             <tr>
                                                 <th>기간제한</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <div class="row row-5 align-items-center">
                                                         <div class="col">
                                                             <input type="text" class="form-control form-datepicker">

@@ -73,7 +73,7 @@
                                     </select>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-dark btn-sm">확정</button>
+                                    <button type="button" class="btn btn-dark btn-sm" onclick="confirm('변동사항을 정말 확정하시겠습니까? \n자동으로 공지가 진행될 수 있습니다.')">확정</button>
                                     <button type="button" class="btn btn-dark btn-sm ml-1">등록</button>
                                 </div>
                             </div>
@@ -111,15 +111,13 @@
                                             <td>강의실 변경</td>
                                             <td>임시 변경</td>
                                             <td>
-                                                <a href="" class="text-underline">동일</a>
+                                                <a href="#modal-make-up" class="text-underline text-danger" data-toggle="modal">3/4(금) 2-2</a>
                                             </td>
                                             <td>
-                                                <a href="" class="text-underline text-danger">M3관 101호</a>
+                                                <a href="#" data-toggle="modal" class="text-underline text-danger">M3관 101호</a>
                                             </td>
-                                            <td>
-                                                <a href="" class="text-underline">Y</a>
-                                            </td>
-                                            <td>충돌</td>
+                                            <td>Y</td>
+                                            <td><a href="learning_timetable_change.html#tab3" target="_blank" class="text-underline">충돌</a></td>
                                             <td></td>
                                         </tr>
                                         }
@@ -141,7 +139,7 @@
                                     </select>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-dark btn-sm">확정</button>
+                                    <button type="button" class="btn btn-dark btn-sm" onclick="confirm('변동사항을 정말 확정하시겠습니까? \n자동으로 공지가 진행될 수 있습니다.')">확정</button>
                                 </div>
                             </div>
                             <div class="main_search_result_list">
@@ -174,7 +172,7 @@
                                             <td></td>
                                             <td>3월 2주</td>
                                             <td>
-                                                <a href="" class="text-underline">3월 3주</a>
+                                                <a href="#modal-new-contents-add" data-toggle="modal" class="text-underline">3월 3주</a>
                                             </td>
                                             <td>Y</td>
                                             <td></td>

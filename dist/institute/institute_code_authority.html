@@ -581,6 +581,8 @@
                                         <colgroup>
                                             <col style="width: 100px">
                                             <col>
+                                            <col style="width: 100px">
+                                            <col>
                                         </colgroup>
                                         <tbody>
                                             <tr>
@@ -588,8 +590,6 @@
                                                 <td>
                                                     <input type="text" class="form-control">
                                                 </td>
-                                            </tr>
-                                            <tr>
                                                 <th>ID</th>
                                                 <td>
                                                     <div class="row row-5">
@@ -603,8 +603,21 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <th>소속 관</th>
+                                                <td colspan="3">
+                                                    <div class="row row-15 align-items-center">
+                                                        <div class="col-auto">
+                                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-block-select">선택</button>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>브릿지(대치)</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <th>부서/직무</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <div class="row row-5">
                                                         <div class="col-auto">
                                                             <select name="" id="" class="custom-select">
@@ -619,7 +632,7 @@
                                             </tr>
                                             <tr>
                                                 <th>연락처</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <div class="row row-5">
                                                         <div class="col">
                                                             <input type="text" class="form-control">
@@ -632,7 +645,7 @@
                                             </tr>
                                             <tr>
                                                 <th>사용여부</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <input type="radio" name="AuthorUse" id="AuthorUseY">
                                                     <label for="AuthorUseY">사용</label>
                                                     <input type="radio" name="AuthorUse" id="AuthorUseN">
@@ -641,7 +654,7 @@
                                             </tr>
                                             <tr>
                                                 <th>기간제한</th>
-                                                <td>
+                                                <td colspan="3">
                                                     <div class="row row-5 align-items-center">
                                                         <div class="col">
                                                             <input type="text" class="form-control form-datepicker">
@@ -2491,6 +2504,73 @@
                                 $(this).toggleClass('selected');
                             });
                         </script>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 관 선택 -->
+        <div class="modal" tabindex="-1" id="modal-block-select" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">관 선택</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-center">
+                            <colgroup>
+                                <col style="width: 45px;">
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>지역</th>
+                                    <th>관 명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td><input type="checkbox" name="blockAll"></td>
+                                    <td>대치</td>
+                                    <td>브릿지</td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" name="blockAll"></td>
+                                    <td>대치</td>
+                                    <td>브릿지</td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" name="blockAll"></td>
+                                    <td>대치</td>
+                                    <td>브릿지</td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" name="blockAll"></td>
+                                    <td>대치</td>
+                                    <td>브릿지</td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" name="blockAll"></td>
+                                    <td>대치</td>
+                                    <td>브릿지</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                     <div class="modal-footer justify-content-center">
                         <button type="button" class="btn btn-dark">저장</button>
@@ -12920,7 +13000,7 @@
                                         <input type="radio" id="holidayType1" name="holidayType">
                                         <label for="holidayType1" class="text-danger">휴강일</label>
                                         <input type="radio" id="holidayType2" name="holidayType">
-                                        <label for="holidayType2" class="text-danger">휴원일</label>
+                                        <label for="holidayType2" class="text-danger bg-2">휴원일</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -13313,7 +13393,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>학생ID</th>
-                                    <th>광/반</th>
+                                    <th>관/반</th>
                                     <th>상태</th>
                                 </tr>
                             </thead>
@@ -13653,6 +13733,10 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -13709,7 +13793,7 @@
                             </thead>
                             <tbody>
 
-                                <tr data-dismiss="modal" data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
+                                <tr data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
                                     <td>M3</td>
                                     <td>1</td>
                                     <td>오렌지</td>
@@ -13717,7 +13801,7 @@
                                     <td>M관 201호 <br>M관 202호</td>
                                 </tr>
 
-                                <tr data-dismiss="modal" data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
+                                <tr data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
                                     <td>M3</td>
                                     <td>1</td>
                                     <td>오렌지</td>
@@ -13725,7 +13809,7 @@
                                     <td>M관 201호 <br>M관 202호</td>
                                 </tr>
 
-                                <tr data-dismiss="modal" data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
+                                <tr data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
                                     <td>M3</td>
                                     <td>1</td>
                                     <td>오렌지</td>
@@ -13733,7 +13817,7 @@
                                     <td>M관 201호 <br>M관 202호</td>
                                 </tr>
 
-                                <tr data-dismiss="modal" data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
+                                <tr data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
                                     <td>M3</td>
                                     <td>1</td>
                                     <td>오렌지</td>
@@ -13741,7 +13825,7 @@
                                     <td>M관 201호 <br>M관 202호</td>
                                 </tr>
 
-                                <tr data-dismiss="modal" data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
+                                <tr data-toggle="modal" data-target="#modal-attendance-mobile2" class="cursor-pointer">
                                     <td>M3</td>
                                     <td>1</td>
                                     <td>오렌지</td>
@@ -13988,7 +14072,7 @@
                                         <td>5</td>
                                         <td>김시대1234</td>
                                         <td>12345678</td>
-                                        <td><a href="" class="text-underline">수업전 배부</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수업전 배부</a></td>
                                         <td>배부</td>
                                     </tr>
 
@@ -13996,7 +14080,7 @@
                                         <td>4</td>
                                         <td>김시대1234</td>
                                         <td>12345678</td>
-                                        <td><a href="" class="text-underline">수업전 배부</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수업전 배부</a></td>
                                         <td>배부</td>
                                     </tr>
 
@@ -14004,7 +14088,7 @@
                                         <td>3</td>
                                         <td>김시대1234</td>
                                         <td>12345678</td>
-                                        <td><a href="" class="text-underline">수업전 배부</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수업전 배부</a></td>
                                         <td>배부</td>
                                     </tr>
 
@@ -14012,7 +14096,7 @@
                                         <td>2</td>
                                         <td>김시대1234</td>
                                         <td>12345678</td>
-                                        <td><a href="" class="text-underline">수업전 배부</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수업전 배부</a></td>
                                         <td>배부</td>
                                     </tr>
 
@@ -14020,7 +14104,7 @@
                                         <td>1</td>
                                         <td>김시대1234</td>
                                         <td>12345678</td>
-                                        <td><a href="" class="text-underline">수업전 배부</a></td>
+                                        <td><a href="#modal-attendance-edit" data-toggle="modal" class="text-underline">수업전 배부</a></td>
                                         <td>배부</td>
                                     </tr>
 
@@ -14187,7 +14271,7 @@
                         </table>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-dark" onclick="confirm('정산에 반영되는 중요 데이터입니다. \n수업 미진행 - 0분으로 기록해도 좋습니까?')">저장</button>
+                        <button type="button" class="btn btn-dark">저장</button>
                         <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
                     </div>
                 </div>
