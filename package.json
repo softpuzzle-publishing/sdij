@@ -18,8 +18,9 @@
     "gulp-connect": "^5.7.0",
     "gulp-file-include": "^2.3.0",
     "gulp-html-beautify": "^1.0.1",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.32.13"
   }
 }
