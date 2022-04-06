@@ -3431,14 +3431,14 @@
                                     <th>지역</th>
                                     <td>
                                         <div class="row row-5 align-items-center">
-                                            <div class="col-auto">
+                                            <div class="col">
                                                 <select name="" id="area" class="custom-select">
                                                     <option value="">대치</option>
-                                                    <option value="입력">입력</option>
+                                                    <option value="">목동</option>
                                                 </select>
                                             </div>
-                                            <div class="col">
-                                                <input type="text" class="form-control" id="areaEtcInput">
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-area-add">추가</button>
                                             </div>
                                         </div>
                                         <script>
@@ -3717,9 +3717,59 @@
             </div>
         </div>
 
+        <!-- modal : 지역 생성 -->
+        <div class="modal" tabindex="-1" id="modal-area-add" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">지역 생성</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <div class="row row-5 justify-content-center mb-3">
+                                <div class="col-auto">
+                                    <input type="text" class="form-control w-auto" placeholder="지역명">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark">등록</button>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>지역명</th>
+                                    <th>소속 관</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>대치</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>목동</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- modal : 직원 검색 -->
-        <div class="modal" tabindex="-1" id="modal-staff-search" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-staff-search" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -3775,8 +3825,7 @@
         </div>
 
         <!-- modal : 좌석표 등록 -->
-        <div class="modal" tabindex="-1" id="modal-seat" data-backdrop="static" data-overlap="true">
-            <!-- 중첩모달일 경우 data-overlap="true" 추가 -->
+        <div class="modal" tabindex="-1" id="modal-seat" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -4816,7 +4865,26 @@
                                 <tr>
                                     <th>학년구분</th>
                                     <td>
-                                        <input type="text" class="form-control">
+                                        <div class="row row-5 align-items-center">
+                                            <div class="col-auto">
+                                                <select name="" id="subjectGrade" class="custom-select">
+                                                    <option value=""></option>
+                                                    <option value="입력">입력</option>
+                                                </select>
+                                                <script>
+                                                    $('#subjectGrade').on('change', function() {
+                                                        if ($(this).val() == '입력') {
+                                                            $('#subjectGradeInput').attr('disabled', false).focus();
+                                                        } else {
+                                                            $('#subjectGradeInput').val('').attr('disabled', true);
+                                                        }
+                                                    })
+                                                </script>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" id="subjectGradeInput" disabled>
+                                            </div>
+                                        </div>
                                     </td>
                                     <th>사용 여부</th>
                                     <td>
@@ -7811,13 +7879,44 @@
                             </colgroup>
                             <tbody>
                                 <tr>
+                                    <th>운영계획</th>
+                                    <td>
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">대치 정규(2022)</option>
+                                        </select>
+                                    </td>
+                                    <th>분반그룹</th>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th>학생명</th>
                                     <td>
                                         <input type="text" class="form-control required">
                                     </td>
                                     <th>학생ID</th>
                                     <td>
-
+                                        <div class="row row-5 align-items-center">
+                                            <div class="col">
+                                                김학생1234
+                                            </div>
+                                            <div class="col-auto">
+                                                <input type="file" class="sr-only">
+                                                <button type="button" class="btn btn-secondary" id="btn-photo-upload">사진등록</button>
+                                                <!-- <button type="button" class="btn btn-secondary ml-1" id="btn-photo-del" role="button">삭제</button> -->
+                                                <script>
+                                                    $('#btn-photo-upload').on('click', function(e) {
+                                                        e.preventDefault();
+                                                        $(this).prev('input[type=file]').click();
+                                                    });
+                                                    $('#btn-photo-del').on('click', function(e) {
+                                                        e.preventDefault();
+                                                        $('#instructor-profile').find('img').remove();
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -7851,21 +7950,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>사진 등록</th>
+                                    <th>탐구 반</th>
                                     <td>
-                                        <input type="file" class="sr-only">
-                                        <button type="button" class="btn btn-secondary" id="btn-photo-upload">등록</button>
-                                        <!-- <button type="button" class="btn btn-secondary ml-1" id="btn-photo-del" role="button">삭제</button> -->
-                                        <script>
-                                            $('#btn-photo-upload').on('click', function(e) {
-                                                e.preventDefault();
-                                                $(this).prev('input[type=file]').click();
-                                            });
-                                            $('#btn-photo-del').on('click', function(e) {
-                                                e.preventDefault();
-                                                $('#instructor-profile').find('img').remove();
-                                            });
-                                        </script>
+                                        <div class="row row-5">
+                                            <div class="col">
+                                                <select name="" id="" class="custom-select">
+                                                    <option value="">탐구1</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <select name="" id="" class="custom-select">
+                                                    <option value="">탐구2</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </td>
                                     <th>출결카드</th>
                                     <td>
@@ -8105,7 +8203,7 @@
 
         <!-- modal : 출결 카드 등록 -->
         <div class="modal" tabindex="-1" id="modal-enroll-card-add" data-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md" style="max-width: 560px">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">출결 카드 등록</h5>
@@ -8123,14 +8221,8 @@
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>카드구분</th>
-                                    <td>
-                                        <select name="" id="" class="custom-select">
-                                            <option value="">학생 출결</option>
-                                        </select>
-                                    </td>
                                     <th>카드사용자</th>
-                                    <td>
+                                    <td colspan="3">
                                         <div class="row row-5">
                                             <div class="col">
                                                 <input type="text" class="form-control">
@@ -10305,54 +10397,6 @@
                                         </select>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                        <div class="table-title mt-3">배부 정보</div>
-                        <table class="table table-bordered table-fixed mt-2">
-                            <colgroup>
-                                <col style="width: 100px;">
-                                <col>
-                                <col style="width: 100px;">
-                                <col>
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th>배부시작</th>
-                                    <td>
-                                        <select name="" id="" class="custom-select">
-                                            <option value="">3주차</option>
-                                        </select>
-                                    </td>
-                                    <th>배부 기준일</th>
-                                    <td>
-                                        <select name="" id="" class="custom-select">
-                                            <option value="">수업일</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>배부종료</th>
-                                    <td>
-                                        <select name="" id="" class="custom-select">
-                                            <option value="">8주차</option>
-                                        </select>
-                                    </td>
-                                    <th>배부 분량</th>
-                                    <td>
-                                        <div class="row row-5 align-items-center">
-                                            <div class="col">
-                                                <select name="" id="" class="custom-select">
-                                                    <option value="">매주</option>
-                                                </select>
-                                            </div>
-                                            <div class="col">
-                                                <select name="" id="" class="custom-select">
-                                                    <option value="">2회</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <th>배부가이드</th>
                                     <td colspan="3">
@@ -10380,6 +10424,60 @@
                                             <option value="">지급</option>
                                         </select>
                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row justify-content-between align-items-end mb-2 mt-3">
+                            <div class="col-auto">
+                                <div class="table-title mb-0">배부 일정</div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-dark btn-sm">추가</button>
+                            </div>
+                        </div>
+                        <table class="table table-center table-fixed">
+                            <colgroup>
+                                <col style="width: 100px;">
+                                <col>
+                                <col style="width: 130px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>날짜</th>
+                                    <th>배부 회차수</th>
+                                    <th>배부 상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>1주차</td>
+                                    <td>2/22 - 2/28</td>
+                                    <td><input type="text" class="form-control text-center" value="1"></td>
+                                    <td>완료</td>
+                                </tr>
+
+                                <tr>
+                                    <td>2주차</td>
+                                    <td>2/22 - 2/28</td>
+                                    <td><input type="text" class="form-control text-center" value="1"></td>
+                                    <td>완료</td>
+                                </tr>
+
+                                <tr>
+                                    <td>3주차</td>
+                                    <td>2/22 - 2/28</td>
+                                    <td><input type="text" class="form-control text-center" value="1"></td>
+                                    <td>완료</td>
+                                </tr>
+
+                                <tr>
+                                    <td>4주차</td>
+                                    <td>2/22 - 2/28</td>
+                                    <td><input type="text" class="form-control text-center"></td>
+                                    <td>배부전</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -13875,12 +13973,14 @@
                                     <th>지각</th>
                                     <th>오류</th>
                                     <th>미입실</th>
+                                    <th>배부상태</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <td>계</td>
                                     <td>64</td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -13896,6 +13996,7 @@
                                     <td>2</td>
                                     <td>1</td>
                                     <td>1</td>
+                                    <td><a href="#modal-distribution-state" class="text-underline" data-toggle="modal">배부 전</a></td>
                                 </tr>
 
                                 <tr class="cursor-pointer">
@@ -13905,6 +14006,7 @@
                                     <td>2</td>
                                     <td>1</td>
                                     <td>1</td>
+                                    <td><a href="#modal-distribution-state" class="text-underline" data-toggle="modal">배부 전</a></td>
                                 </tr>
 
                             </tbody>
@@ -13979,6 +14081,58 @@
                     <div class="modal-footer justify-content-center">
                         <button type="button" class="btn btn-lightgray" data-dismiss="modal">이전</button>
                         <button type="button" class="btn btn-dark">저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : 배부 상태 변경 -->
+        <div class="modal" tabindex="-1" id="modal-distribution-state" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">배부 상태 변경</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="font-weight-bold">오렌지T 1교시 수업 <br>교재명(문제) 2회차, 교재명(해설) 1회차</p>
+                        <p class="mt-2 mb-3">컨텐츠의 배부 상태를 변경할까요?</p>
+                        <table class="table table-bordered table-fixed">
+                            <colgroup>
+                                <col style="width: 110px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>상태값 변경</th>
+                                    <td>
+                                        <div class="row row-20 align-items-center">
+                                            <div class="col-auto">배부 전</div>
+                                            <div class="col-auto"><i class="material-icons font-size-16px align-middle">arrow_forward</i></div>
+                                            <div class="col-auto text-danger">1차 완료</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상태 변경 기준시</th>
+                                    <td>
+                                        Mm/dd 00:00:00
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상태 변경자</th>
+                                    <td>
+                                        김시대(aasdf123)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-dark">저장</button>
+                        <button type="button" class="btn btn-lightgray" data-dismiss="modal">취소</button>
                     </div>
                 </div>
             </div>

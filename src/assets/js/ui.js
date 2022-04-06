@@ -60,8 +60,8 @@ var Aside = {
 	}
 };
 
-var splitH;
 var Common = {
+    splitH: '',
 	init: function () {
 		this.scrolling();
 		this.splitGird();
@@ -102,7 +102,7 @@ var Common = {
 				var item = '#'+ $(this).attr('id');
 				horizontalItems.push(item);
 			});
-			splitH = Split(horizontalItems, {
+			this.splitH = Split(horizontalItems, {
 				direction: 'horizontal',
 				gutterSize: 8,
 				minSize: 435,

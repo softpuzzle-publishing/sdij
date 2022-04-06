@@ -177,6 +177,7 @@
                                         <th>지각</th>
                                         <th>오류</th>
                                         <th>미입실</th>
+                                        <th>배부상태</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -184,6 +185,7 @@
                                         <td>계</td>
                                         <td></td>
                                         <td><a href="javascript:;" class="text-underline">64</a></td>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -200,6 +202,7 @@
                                         <td><a href="javascript:;" class="text-underline">2</a></td>
                                         <td><a href="javascript:;" class="text-underline">1</a></td>
                                         <td><a href="javascript:;" class="text-underline">1</a></td>
+                                        <td><a href="#modal-distribution-state" class="text-underline" data-toggle="modal">배부 전</a></td>
                                     </tr>
                                     }
                                 </tbody>
@@ -253,7 +256,7 @@
 
     <script>
         setTimeout(function(){
-            splitH.setSizes([40, 60])
+            Common.splitH.setSizes([40, 60])
         },100);
 
         $('#datatable2 > tbody > tr').on('click',function(){
