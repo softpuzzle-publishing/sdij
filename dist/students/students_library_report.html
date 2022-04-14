@@ -8639,7 +8639,7 @@
                                     <td>
                                         <div class="row row-5 align-items-center">
                                             <div class="col">
-                                                <input type="text" class="form-control form-datepicker">
+                                                <input type="text" class="form-control form-datepicker" value="2022-01-01">
                                             </div>
                                             <div class="col-auto">~</div>
                                             <div class="col">
@@ -9045,7 +9045,7 @@
                             </tbody>
                         </table>
                         <div class="text-right mt-3 mb-2">
-                            <button type="button" class="btn btn-dark btn-sm">추가</button>
+                            <button type="button" class="btn btn-dark btn-sm" id="btn-row-add">추가</button>
                         </div>
                         <table class="table table-center table-fixed">
                             <colgroup>
@@ -9066,71 +9066,8 @@
                                     <th>수정</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <input type="text" class="form-control form-datepicker" value="2022-04-01">
-                                    </td>
-                                    <td>
-                                        <div class="row row-5 justify-content-center">
-                                            <div class="col">
-                                                <select name="" id="classTime3" class="custom-select">
-                                                    <option value="">선택</option>
-                                                    <option value="1교시" selected>1교시</option>
-                                                    <option value="2교시">2교시</option>
-                                                    <option value="3교시">3교시</option>
-                                                    <option value="입력">입력</option>
-                                                </select>
-                                            </div>
-                                            <div class="col">
-                                                <div class="input-group bootstrap-timepicker timepicker">
-                                                    <input type="text" class="form-control form-timepicker" disabled id="classTimeInput3" value="08:30">
-                                                    <a hre="javascript:;" class="input-group-addon"><i class="far fa-clock"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <script>
-                                            $('#classTime3').on('change', function() {
-                                                if ($(this).val() == '입력') {
-                                                    $('#classTimeInput3').val('00:00').attr('disabled', false).focus();
-                                                } else if ($(this).val() == '1교시') {
-                                                    $('#classTimeInput3').val('08:30').attr('disabled', true);
-                                                } else if ($(this).val() == '2교시') {
-                                                    $('#classTimeInput3').val('09:30').attr('disabled', true);
-                                                } else if ($(this).val() == '3교시') {
-                                                    $('#classTimeInput3').val('10:30').attr('disabled', true);
-                                                }
-                                            })
-                                        </script>
-                                    </td>
-                                    <td>
-                                        <select name="" id="" class="custom-select">
-                                            <option value="">강사명</option>
-                                            <option value="" selected>김시대</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <div class="row row-5">
-                                            <div class="col">
-                                                <select name="" id="" class="custom-select">
-                                                    <option value="">관</option>
-                                                    <option value="" selected>S관</option>
-                                                </select>
-                                            </div>
-                                            <div class="col">
-                                                <select name="" id="" class="custom-select">
-                                                    <option value="">교실명</option>
-                                                    <option value="" selected>201호</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="javascript:;" class="text-underline">삭제</a>
-                                    </td>
-                                </tr>
-                                <tr>
+                            <tbody id="target-body">
+                                <tr id="row-template">
                                     <td>2</td>
                                     <td>
                                         <input type="text" class="form-control form-datepicker">
@@ -9148,7 +9085,7 @@
                                             </div>
                                             <div class="col">
                                                 <div class="input-group bootstrap-timepicker timepicker">
-                                                    <input type="text" class="form-control form-timepicker" disabled id="classTimeInput4">
+                                                    <input type="text" class="form-control form-timepicker" id="classTimeInput4">
                                                     <a hre="javascript:;" class="input-group-addon"><i class="far fa-clock"></i></a>
                                                 </div>
                                             </div>

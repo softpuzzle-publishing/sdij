@@ -116,24 +116,29 @@ var Common = {
 	},
 	datePicker: function () {
 		//datepicker
-		var currentDate = new Date();
-		$('.form-datepicker').datepicker({
-			defaultDate: +7,
-			changeMonth: true,
-			changeYear: true,
-			monthNames: ["01","02","03","04","05","06","07","08","09","10","11","12"],
-			monthNamesShort: ["01","02","03","04","05","06","07","08","09","10","11","12"],
-			dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토"],
-			showMonthAfterYear:true,
-			showOtherMonths: true,
-			changeMonth: true,
-			changeYear: true,
-			dateFormat: "yy-mm-dd",
-			gotoCurrent: true,
-			beforeShow: function(input, inst) {
-				$('#ui-datepicker-div').addClass('datepicker-box');
-			},
-		}).datepicker('setDate', 'today');
+        var currentDate = new Date();
+        $(document).on('focus', '.form-datepicker', function () {
+            $(this).datepicker({
+                defaultDate: +7,
+                changeMonth: true,
+                changeYear: true,
+                monthNames: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
+                monthNamesShort: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
+                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+                showMonthAfterYear: true,
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: "yy-mm-dd",
+                gotoCurrent: true,
+                beforeShow: function (input, inst) {
+                    $('#ui-datepicker-div').addClass('datepicker-box');
+                },
+            });
+        });
+        $(document).on('focusout', '.form-datepicker', function () {
+            $(this).datepicker('destroy');
+        })
 	},
 	timePicker: function () {
 		//timepicker

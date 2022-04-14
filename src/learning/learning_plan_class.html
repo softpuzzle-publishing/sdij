@@ -283,6 +283,12 @@
             calendar.destroy();
         });
 
+        $('#btn-row-add').on('click',function(){
+            $('#target-body').append($('#row-template').clone());
+            $('#target-body').find('.form-datepicker').removeClass('hasDatepicker').removeAttr('id').datepicker('destroy');
+            Common.datePicker();
+            Common.timePicker();
+        });
     </script>
 
 </body>
