@@ -40,20 +40,20 @@ var Aside = {
         if ($(this).text() == title) {
           $active = $(this);
           $activeDep1 = $(this).closest('.dep1');
+          $activeDep1.show();
+          $(".gnb a").each(function () {
+            if ($(this).attr("data-gnb-code") == $activeDep1.attr("data-gnb-code")) {
+              $(this).parent("li").addClass("active");
+            }
+          });
+          $active.parents("li").addClass("active");
+          $active.parents(".has-treeview").addClass("open");
+          $(".dep1").css("opacity", "1");
+          $(".sidebar .has-treeview > a").on("click", function (e) {
+            e.preventDefault();
+            $(this).closest("li").toggleClass("open");
+          });
         }
-      });
-      $activeDep1.show();
-      $('.gnb a').each(function () {
-        if ($(this).attr('data-gnb-code') == $activeDep1.attr('data-gnb-code')) {
-          $(this).parent('li').addClass('active');
-        }
-      });
-      $active.parents('li').addClass('active');
-      $active.parents('.has-treeview').addClass('open');
-      $('.dep1').css('opacity', '1');
-      $('.sidebar .has-treeview > a').on('click', function (e) {
-        e.preventDefault();
-        $(this).closest('li').toggleClass('open');
       });
     }
   }

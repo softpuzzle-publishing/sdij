@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">대량업로드</h2>
+                <div class="p-3">
+                    <nav class="nav step-indicator mb-3" role="tablist">
+                        <a class="active" data-toggle="tab" href="#step-1" role="tab">
+                            <div class="step"><i class="far fa-file-excel"></i></div>
+                            <div class="caption hidden-xs hidden-sm">Step <span>1</span>: <span>파일 선택</span></div>
+                        </a>
+                        <a class="" data-toggle="tab" href="#step-2" role="tab">
+                            <div class="step"><i class="fas fa-file-upload"></i></div>
+                            <div class="caption hidden-xs hidden-sm">Step <span>2</span>: <span>업로드 데이터 확인</span></div>
+                        </a>
+                        <a class="" data-toggle="tab" href="#step-3" role="tab">
+                            <div class="step"><i class="fas fa-database"></i></div>
+                            <div class="caption hidden-xs hidden-sm">Step <span>3</span>: <span>관리자 데이터 확인</span></div>
+                        </a>
+                        <a class="" data-toggle="tab" href="#step-4" role="tab">
+                            <div class="step"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="caption hidden-xs hidden-sm">Step <span>4</span>: <span>미등록 데이터 처리</span></div>
+                        </a>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane show active" id="step-1" role="tabpanel">
+                            <div class="row align-items-center justify-content-end mb-2">
+                                <div class="col-auto">
+                                    <button class="btn btn-dark btn-sm">샘플파일</button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <colgroup>
+                                    <col style="width: 150px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>구분</th>
+                                        <td>
+                                            <select name="" id="" class="custom-select w-auto">
+                                                <option value="">신규등록</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>파일 선택</th>
+                                        <td>
+                                            <input type="file" class="form-control">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row align-items-center justify-content-end mt-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark" id="btn-next-1">다음</button>
+                                    <button type="button" class="btn btn-lightgray ml-1">취소</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="step-2" role="tabpanel">
+                            <table class="table table-bordered">
+                                <colgroup>
+                                    <col style="width: 150px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>구분</th>
+                                        <td>신규등록</td>
+                                    </tr>
+                                    <tr>
+                                        <th>파일 선택</th>
+                                        <td>2022 신규 입학생.xls</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row align-items-center justify-content-between mt-3 mb-2">
+                                <div class="col-auto">
+                                    <p class="font-weight-medium">아래 항목들이 관리자에 업로드 됩니다. 오류가 있는 항목을 제외 후 업로드를 진행하시겠습니까? </p>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark" id="btn-next-2">다음</button>
+                                    <button type="button" class="btn btn-secondary ml-1">이전</button>
+                                </div>
+                            </div>
+                            <div class="table-overflow-scroll">
+                                <table class="table table-center">
+                                    <thead>
+                                        <tr>
+                                            <th>학생ID</th>
+                                            <th>학생이름</th>
+                                            <th>학부모번호</th>
+                                            <th>카드번호</th>
+                                            <th>지역</th>
+                                            <th>관</th>
+                                            <th>반</th>
+                                            <th>좌석번호</th>
+                                            <th>학생ID</th>
+                                            <th>학생이름</th>
+                                            <th>학부모번호</th>
+                                            <th>카드번호</th>
+                                            <th>지역</th>
+                                            <th>관</th>
+                                            <th>반</th>
+                                            <th>좌석번호</th>
+                                            <th>학생ID</th>
+                                            <th>학생이름</th>
+                                            <th>학부모번호</th>
+                                            <th>카드번호</th>
+                                            <th>지역</th>
+                                            <th>관</th>
+                                            <th>반</th>
+                                            <th>좌석번호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 10; i > 0; i--) {
+                                        <tr>
+                                            <td>김시대0123</td>
+                                            <td>김시대</td>
+                                            <td>010-0000-0123</td>
+                                            <td>01234567</td>
+                                            <td>대치</td>
+                                            <td>M3</td>
+                                            <td>S</td>
+                                            <td>012</td>
+                                            <td>김시대0123</td>
+                                            <td>김시대</td>
+                                            <td>010-0000-0123</td>
+                                            <td>01234567</td>
+                                            <td>대치</td>
+                                            <td>M3</td>
+                                            <td>S</td>
+                                            <td>012</td>
+                                            <td>김시대0123</td>
+                                            <td>김시대</td>
+                                            <td>010-0000-0123</td>
+                                            <td>01234567</td>
+                                            <td>대치</td>
+                                            <td>M3</td>
+                                            <td>S</td>
+                                            <td>012</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="font-weight-medium mt-3"><i class="fas fa-exclamation text-danger mr-1"></i> 계속시 아래 항목들은 등록되지 않습니다.</p>
+                            <table class="table table-center mt-2">
+                                <thead>
+                                    <tr>
+                                        <th>행</th>
+                                        <th>학생ID</th>
+                                        <th>관</th>
+                                        <th>항목</th>
+                                        <th>업로드데이터</th>
+                                        <th>문제상황</th>
+                                        <th>비교데이터</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>김시대1234</td>
+                                        <td>M3</td>
+                                        <td>학생ID</td>
+                                        <td><strong class="text-danger">김시대1234</strong></td>
+                                        <td><strong class="text-danger">중복</strong>: 50행</td>
+                                        <td>김시대1234</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong class="text-danger">2</strong></td>
+                                        <td>김시대1234</td>
+                                        <td>M3</td>
+                                        <td>학생ID</td>
+                                        <td>김시대1234</td>
+                                        <td>중복: 50행</td>
+                                        <td>김시대1234</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="step-3" role="tabpanel">
+                            <table class="table table-bordered">
+                                <colgroup>
+                                    <col style="width: 150px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>구분</th>
+                                        <td>신규등록</td>
+                                    </tr>
+                                    <tr>
+                                        <th>파일 선택</th>
+                                        <td>2022 신규 입학생.xls</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row align-items-center justify-content-between mt-3 mb-2">
+                                <div class="col-auto">
+                                    <p class="font-weight-medium">이전 업로드 된 데이터와 일부 항목의 정보값이 다릅니다! 해당 데이터를 제외 후 업로드를 진행하시겠습니까?</p>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark" id="btn-next-3">다음</button>
+                                    <button type="button" class="btn btn-secondary ml-1">이전</button>
+                                </div>
+                            </div>
+                            <table class="table table-center mt-2">
+                                <thead>
+                                    <tr>
+                                        <th>Np</th>
+                                        <th>학생ID</th>
+                                        <th>관/반</th>
+                                        <th>항목</th>
+                                        <th>업로드데이터</th>
+                                        <th>문제상황</th>
+                                        <th>비교데이터</th>
+                                        <th>조치</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>김시대1234</td>
+                                        <td>M3</td>
+                                        <td>학생ID</td>
+                                        <td><strong class="text-danger">김시대1234</strong></td>
+                                        <td><strong class="text-danger">중복</strong>: 50행</td>
+                                        <td>김시대1234</td>
+                                        <td>
+                                            <select name="" id="" class="custom-select custom-select-sm w-auto">
+                                                <option value="">덮어쓰기</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong class="text-danger">2</strong></td>
+                                        <td>김시대1234</td>
+                                        <td>M3</td>
+                                        <td>학생ID</td>
+                                        <td>김시대1234</td>
+                                        <td>중복: 50행</td>
+                                        <td>김시대1234</td>
+                                        <td>
+                                            <select name="" id="" class="custom-select custom-select-sm w-auto">
+                                                <option value="">덮어쓰기</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="step-4" role="tabpanel">
+                            <table class="table table-bordered">
+                                <colgroup>
+                                    <col style="width: 150px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>구분</th>
+                                        <td>신규등록</td>
+                                    </tr>
+                                    <tr>
+                                        <th>파일 선택</th>
+                                        <td>2022 신규 입학생.xls</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="row align-items-end justify-content-between mt-3 mb-2">
+                                <div class="col-auto">
+                                    <p class="font-weight-medium">오류 등으로 등록되지 않은 데이터를 확인하세요. <br>작업 후 추가 업로드를 하려면, 데이터를 다운로드 하세요.</p>
+                                    <div class="mt-2">
+                                        <button type="button" class="btn btn-dark">미등록 파일 다운로드</button>
+                                        <button type="button" class="btn btn-dark ml-1">등록 파일 다운로드</button>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark" id="btn-next-4">처리완료</button>
+                                    <button type="button" class="btn btn-lightgray ml-1">취소</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    <script>
+        $('#btn-next-1').on('click', function(e){
+            e.preventDefault();
+            $('[href="#step-2"]').tab('show');
+        });
+        $('#btn-next-2').on('click', function (e) {
+            e.preventDefault();
+            $('[href="#step-3"]').tab('show');
+        });
+        $('#btn-next-3').on('click', function (e) {
+            e.preventDefault();
+            $('[href="#step-4"]').tab('show');
+        });
+    </script>
+
+</body>
+
+</html>
