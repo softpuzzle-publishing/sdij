@@ -200,3 +200,18 @@ footer{
     .inner{margin-left: $asideWidth;padding: 0 1rem;border-top: 1px solid #ddd;height: 40px;display: flex;align-items: center;justify-content: center;}
     p{text-align: center;color: #999;}
 }
+
+.sort-down {
+    background: url(../images/caret-down-fill.svg) no-repeat center;
+    background-size: cover;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+.sort-up {
+    background: url(../images/caret-up-fill.svg) no-repeat center;
+    background-size: cover;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}

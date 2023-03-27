@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+
+        <div id="container-block">
+
+            @@include('@@webRoot/_include/_aside.html')
+
+            <main id="content" role="main">
+
+                <!-- 컨텐츠 시작 -->
+                <h2 class="title">상담통계</h2>
+                <nav class="tab-custom px-5">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1-1" role="tab">관통계</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab1-2" role="tab">개인통계</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1-1" role="tabpanel">
+                            <div class="row justify-content-between mb-2">
+                                    <div class="col-auto">
+                                        <div class="d-flex align-items-center">
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">지역</option>
+                                            </select>
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">구분</option>
+                                            </select>
+                                            <select name="" id="" class="custom-select w-auto mr-2">
+                                                <option value="">1월</option>
+                                                <option value="">2월</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">상담 지표 통계</strong> *괄호 내 숫자는 전월 동기 지표입니다.
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">다운로드</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center mb-2" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-6">관</th>
+                                            <th class="bg-6">구분</th>
+                                            <th class="bg-6">담당인원평균</th>
+                                            <th class="bg-6">상담율</th>
+                                            <th class="bg-6">평균횟수</th>
+                                            <th class="bg-6">평균시간</th>
+                                            <th class="bg-6">평점평균</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="2">S관</td>
+                                            <td>컨설턴트</td>
+                                            <td>87.4</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>담임</td>
+                                            <td>120.1</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">M3관</td>
+                                            <td>컨설턴트</td>
+                                            <td>87.4</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>담임</td>
+                                            <td>120.1</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">W관</td>
+                                            <td>컨설턴트</td>
+                                            <td>87.4</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>담임</td>
+                                            <td>120.1</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        <tr style="background-color: #fbfbfb;">
+                                            <td rowspan="2">평균</td>
+                                            <td>컨설턴트</td>
+                                            <td>87.4</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        <tr style="background-color: #fbfbfb;">
+                                            <td>담임</td>
+                                            <td>120.1</td>
+                                            <td>80% (74%)</td>
+                                            <td>1.4 (1.1)</td>
+                                            <td>46M (42M)</td>
+                                            <td>4.2 (4.4)</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">평가 항목 통계</strong>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">다운로드</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list mb-2">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-6">관</th>
+                                            <th class="bg-6">구분</th>
+                                            <th class="bg-6"><span>태도<span style="margin-left: 5px; vertical-align: middle;"><span><i class="sort-down" /></span></span></span></th>
+                                            <th class="bg-6"><span>전문성<span style="margin-left: 5px; "><span><i class="sort-up" /></span></span></span></th>
+                                            <th class="bg-6">경청/공감</th>
+                                            <th class="bg-6">시간엄수</th>
+                                            <th style="background-color: #fbfbfb;">총계</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="2">S관</td>
+                                            <td>컨설턴트</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>담임</td>
+                                            <td>4.5</td>
+                                            <td class="text-danger">4.1</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">M3관</td>
+                                            <td>컨설턴트</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td class="text-info">4.9</td>
+                                            <td>4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>담임</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                        </tr>
+                                        <tr style="background-color: #fbfbfb;">
+                                            <td rowspan="2">평균</td>
+                                            <td>컨설턴트</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                        </tr>
+                                        <tr style="background-color: #fbfbfb;">
+                                            <td>담임</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">추가 의견</strong>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center table-fixed" id="datatable1">
+                                    <colgroup>
+                                        <col style="width: 200px;">
+                                        <col style="width: 200px;">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-6">관</th>
+                                            <th class="bg-6">등록일</th>
+                                            <th class="bg-6">개선의견</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>S관</td>
+                                            <td>2023-01-23</td>
+                                            <td>개선의견있어요~~</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab1-2" role="tabpanel">
+                            <div class="row justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center">
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">김가희</option>
+                                        </select>
+                                        <select name="" id="" class="custom-select w-auto mr-2">
+                                            <option value="">전체</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">상담 지표 통계</strong>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">다운로드</button>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center mb-2" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-6">주차</th>
+                                            <th class="bg-6">담당인원</th>
+                                            <th class="bg-6">상담인원</th>
+                                            <th class="bg-6">월누적상담자</th>
+                                            <th class="bg-6">미진행</th>
+                                            <th class="bg-6">평균시간</th>
+                                            <th class="bg-6">평점 (평균)</th>
+                                            <th class="bg-6">태도</th>
+                                            <th class="bg-6">전문성</th>
+                                            <th class="bg-6">경청/공감</th>
+                                            <th class="bg-6">시간엄수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2/5~2/11</td>
+                                            <td>87.4</td>
+                                            <td>2</td>
+                                            <td>32</td>
+                                            <td>21</td>
+                                            <td>46M</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1/29~2/4</td>
+                                            <td>120.1</td>
+                                            <td>2</td>
+                                            <td>32</td>
+                                            <td>21</td>
+                                            <td>46M</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1/22~1/28</td>
+                                            <td>87.4</td>
+                                            <td>2</td>
+                                            <td>32</td>
+                                            <td>21</td>
+                                            <td>46M</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1/15~1/21</td>
+                                            <td>120.1</td>
+                                            <td>2</td>
+                                            <td>32</td>
+                                            <td>21</td>
+                                            <td>46M</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1/8~1/14</td>
+                                            <td>87.4</td>
+                                            <td>2</td>
+                                            <td>32</td>
+                                            <td>21</td>
+                                            <td>46M</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1/1~1/7</td>
+                                            <td>120.1</td>
+                                            <td>2</td>
+                                            <td>32</td>
+                                            <td>21</td>
+                                            <td>46M</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                            <td>4.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color: #fbfbfb;">누적</td>
+                                            <td style="background-color: #fbfbfb;">120.4</td>
+                                            <td style="background-color: #fbfbfb;">42</td>
+                                            <td style="background-color: #fbfbfb;">32</td>
+                                            <td style="background-color: #fbfbfb;">21</td>
+                                            <td style="background-color: #fbfbfb;">46M</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                            <td style="background-color: #fbfbfb;">4.5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row align-items-end justify-content-between mb-2">
+                                <div class="col-auto">
+                                    <strong class="mr-2">개별 후기</strong>
+                                </div>
+                            </div>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <colgroup>
+                                        <col style="width: 45px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col style="width: 1000px;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-6">No</th>
+                                            <th class="bg-6">등록일</th>
+                                            <th class="bg-6">평가1</th>
+                                            <th class="bg-6">평가2</th>
+                                            <th class="bg-6">평가3</th>
+                                            <th class="bg-6">평가4</th>
+                                            <th class="bg-6">개선의견</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @@for (var i = 5; i > 0; i--) {
+                                        <tr>
+                                            <td>`+ i +`</td>
+                                            <td>2023-01-23</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                            <td>개선의견있어요~~</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 컨텐츠 끝 -->
+
+            </main>
+
+        </div>
+
+        @@include('@@webRoot/_include/_footer.html')
+
+    </div>
+
+    @@include('@@webRoot/_include/_modal.html')
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

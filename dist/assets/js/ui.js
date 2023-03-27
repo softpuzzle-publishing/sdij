@@ -1,13 +1,14 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var html = document.querySelector('html');
 var body = document.querySelector('body');
 var Header = {
   init: function init() {
     this.menu();
-
     if ($('h2.title').length > 0) {
       $('title').text($('h2.title').text() + ' | 시대인재N 관리자');
     }
@@ -76,14 +77,13 @@ var Common = {
     var scrollTop = $(window).scrollTop();
     var gnbTop = $('#header').height();
     gnbTop = Number(gnbTop);
-
     if (scrollTop > 0) {
       $('html').addClass('is-scrolled');
     } else {
       $('html').removeClass('is-scrolled');
-    } //scrollbar bottom check
+    }
 
-
+    //scrollbar bottom check
     if ($('html').hasClass('is-scrolled')) {
       if ($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
         $('html').addClass('is-bottom');
@@ -95,7 +95,6 @@ var Common = {
   splitGird: function splitGird() {
     // 좌우 split
     var horizontalItems = [];
-
     if ($('[id^="split-horizontal"]').length > 0) {
       $('[id^="split-horizontal"]').each(function () {
         var item = '#' + $(this).attr('id');
@@ -117,7 +116,6 @@ var Common = {
     var currentDate = new Date();
     $(document).on('focus', '.form-datepicker', function () {
       var _$$datepicker;
-
       $(this).datepicker((_$$datepicker = {
         defaultDate: +7,
         changeMonth: true,
@@ -145,12 +143,14 @@ var Common = {
     });
   },
   event: function event() {
-    $('[data-toggle="tooltip"]').tooltip(); //custom scroll
+    $('[data-toggle="tooltip"]').tooltip();
 
+    //custom scroll
     $(".overflow-y-scroll").mCustomScrollbar({
       theme: "dark"
-    }); //모달 중첩 z-index 조정
+    });
 
+    //모달 중첩 z-index 조정
     $('.modal').on('show.bs.modal', function (e) {
       var zIndex = 1040 + 10 * $('.modal:visible').length;
       $(this).css('z-index', zIndex);
@@ -163,32 +163,33 @@ var Common = {
           $(document.body).addClass('modal-open');
         }, 0);
       }
-    }); //테이블 내 체크박스 전체 선택
+    });
 
+    //테이블 내 체크박스 전체 선택
     $('[data-event="checkAll"]').on('change', function (e) {
       e.preventDefault();
       var target = $(this).attr('data-target');
-
       if ($(this).is(':checked')) {
         $('[name=' + target + ']').prop('checked', true);
       } else {
         $('[name=' + target + ']').prop('checked', false);
       }
-    }); //입력폼 max 체크
+    });
 
+    //입력폼 max 체크
     $('textarea, input').on("input", function () {
       if ($(this).attr('maxlength') !== "") {
         var maxlength = $(this).attr("maxlength");
         var content = $(this).val();
         $($(this).attr('data-byte-target')).html(content.length);
-
         if (content.length > maxlength) {
           $(this).val(content.substring(0, maxlength));
           $($(this).attr('data-byte-target')).html();
         }
       }
-    }); //accordion style
+    });
 
+    //accordion style
     $('.list-group-toggle a.list-group-item').on('click', function (e) {
       e.preventDefault();
       $(this).closest('.item-wrap').siblings('.item-wrap').removeClass('active');

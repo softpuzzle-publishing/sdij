@@ -227,7 +227,6 @@
                                 <ul class="dep2">
                                     <li><a href="../grade/grade_consulting_calendar.html"><span>상담캘린더</span></a></li>
                                     <li><a href="../grade/grade_consulting_history.html"><span>상담기록</span></a></li>
-                                    <li><a href="../grade/grade_consulting_statistics.html"><span>상담통계</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -310,293 +309,363 @@
             <main id="content" role="main">
 
                 <!-- 컨텐츠 시작 -->
-                <h2 class="title">몰입도 리포트</h2>
+                <h2 class="title">시험 회차 관리</h2>
                 <div class="p-3 border-bottom">
                     <div class="row justify-content-between">
                         <div class="col-auto">
                             <div class="d-flex align-items-center">
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">관</option>
+                                    <option value="">시험</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">반</option>
+                                    <option value="">과목</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">교실</option>
-                                </select>
-                                <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">담임</option>
-                                </select>
-                                <select name="" id="" class="custom-select w-auto mr-5">
                                     <option value="">상태</option>
                                 </select>
                                 <select name="" id="" class="custom-select w-auto mr-2">
-                                    <option value="">학생ID</option>
+                                    <option value="">시행일</option>
+                                    <option value="">등록일</option>
                                 </select>
-                                <input type="text" class="form-control w-auto mr-2">
-                                <button type="button" class="btn btn-dark mr-5">검색</button>
-                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
-                                <span class="mx-2">~</span>
-                                <input type="text" class="form-control form-datepicker" style="width: 120px;">
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <div class="mr-2">~</div>
+                                <input type="text" class="form-control form-datepicker mr-2" style="width:120px">
+                                <button type="button" class="btn btn-dark">검색</button>
                             </div>
-                        </div>
-                        <div class="col-auto">
                         </div>
                     </div>
                 </div>
-                <div class="split-horizontal">
-                    <div class="section" id="split-horizontal-1">
-                        <div class="p-3">
-                            <div class="row align-items-center justify-content-between mb-2">
+                <div class="p-3">
+                    <div class="row align-items-end justify-content-between mb-2">
+                        <div class="col-auto">
+                            <strong class="mr-2">시험 회차</strong> 총 ###건
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-dark btn-sm">파일업로드</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1">파일다운로드</button>
+                            <button type="button" class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#modal-exam-add">등록</button>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-center" id="datatable1">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>시험</th>
+                                    <th>영역</th>
+                                    <th>회차</th>
+                                    <th>시행일</th>
+                                    <th>사용 컨텐츠</th>
+                                    <th>상태</th>
+                                    <th>총인원</th>
+                                    <th>응시인원</th>
+                                    <th>문항정보</th>
+                                    <th>OMR 입력</th>
+                                    <th>성적</th>
+                                    <th>부엉이 포스트</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td><a href="#modal-question-add" class="text-underline" data-toggle="modal">등록</a></td>
+                                    <td><a href="#modal-omr-add" class="text-underline" data-toggle="modal">등록</a></td>
+                                    <td><a href="javascript:;" class="text-underline">계산</a>(<a href="javascript:;" class="text-underline">보기</a>)</td>
+                                    <td><a href="javascript:;" class="text-underline" onclick="confirm('발행된 부엉이 포스트를 숨깁니다.');">공개</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td>30</td>
+                                    <td>210</td>
+                                    <td><a href="javascript:;" class="text-underline">계산</a></td>
+                                    <td><a href="javascript:;" class="text-underline" onclick="confirm('학생에게 부엉이 포스트가 노출됩니다.');">미공개</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td>30</td>
+                                    <td>210</td>
+                                    <td><a href="javascript:;" class="text-underline">계산</a></td>
+                                    <td><a href="javascript:;" class="text-underline" onclick="confirm('학생에게 부엉이 포스트가 노출됩니다.');">미공개</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td>30</td>
+                                    <td>210</td>
+                                    <td><a href="javascript:;" class="text-underline">계산</a></td>
+                                    <td><a href="javascript:;" class="text-underline" onclick="confirm('학생에게 부엉이 포스트가 노출됩니다.');">미공개</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td>30</td>
+                                    <td>210</td>
+                                    <td><a href="javascript:;" class="text-underline">계산</a></td>
+                                    <td><a href="javascript:;" class="text-underline" onclick="confirm('학생에게 부엉이 포스트가 노출됩니다.');">미공개</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">재종 서바이벌</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">수학</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:;" class="text-underline">3회</a>
+                                    </td>
+                                    <td>3월 2주</td>
+                                    <td>서바이벌N</td>
+                                    <td>시험예정</td>
+                                    <td>270</td>
+                                    <td>266</td>
+                                    <td>30</td>
+                                    <td>210</td>
+                                    <td><a href="javascript:;" class="text-underline">계산</a></td>
+                                    <td><a href="javascript:;" class="text-underline" onclick="confirm('학생에게 부엉이 포스트가 노출됩니다.');">미공개</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                        <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                        <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="hr"></div>
+                <nav class="tab-custom px-5">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-toggle="tab" href="#tab1-1" role="tab">OMR 등록</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-toggle="tab" href="#tab1-2" role="tab">문항 정보</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="p-3">
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="tab1-1" role="tabpanel">
+                            <div class="row align-items-end justify-content-between mb-2">
                                 <div class="col-auto">
-                                    <strong class="mr-2">리포트</strong>총 ###건
+                                    <strong class="mr-2">OMR 입력</strong> 총 ###건
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-dark btn-sm">파일다운로드</button>
-                                    <button type="button" class="btn btn-dark btn-sm ml-1">리포트 발송</button>
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#modal-omr-add">파일업로드</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">파일다운로드</button>
                                 </div>
                             </div>
                             <div class="main_search_result_list">
                                 <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
-                                <table class="table" id="datatable1">
+                                <table class="table table-center" id="datatable1">
                                     <thead>
                                         <tr>
-                                            <th class="text-center"><input type="checkbox" data-event="checkAll" data-target="reportAll"></th>
-                                            <th class="text-center">관</th>
-                                            <th class="text-center">반</th>
-                                            <th class="text-center">학생ID</th>
-                                            <th class="text-center">좌석</th>
-                                            <th class="text-center">월</th>
-                                            <th class="text-center">화</th>
-                                            <th class="text-center">수</th>
-                                            <th class="text-center">목</th>
-                                            <th class="text-center">금</th>
-                                            <th class="text-center">상태</th>
+                                            <th>No</th>
+                                            <th>시험</th>
+                                            <th>영역</th>
+                                            <th>회차</th>
+                                            <th>교실</th>
+                                            <th>수업명</th>
+                                            <th>시험 일시</th>
+                                            <th>총인원</th>
+                                            <th>출석인원</th>
+                                            <th>OMR</th>
+                                            <th>상태</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="selected">
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
+
+                                        <tr>
+                                            <td>5</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>수학</td>
+                                            <td>1</td>
+                                            <td>브릿지 201호</td>
+                                            <td>S반 영어 서바이벌</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
 
                                         <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
+                                            <td>4</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>수학</td>
+                                            <td>1</td>
+                                            <td>브릿지 201호</td>
+                                            <td>S반 영어 서바이벌</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
 
                                         <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
+                                            <td>3</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>수학</td>
+                                            <td>1</td>
+                                            <td>브릿지 201호</td>
+                                            <td>S반 영어 서바이벌</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
 
                                         <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
+                                            <td>2</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>수학</td>
+                                            <td>1</td>
+                                            <td>브릿지 201호</td>
+                                            <td>S반 영어 서바이벌</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
 
                                         <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center"><input type="checkbox" name="reportAll"></td>
-                                            <td class="text-center">M3</td>
-                                            <td class="text-center">S</td>
-                                            <td class="text-center">김시대1234</td>
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">8.5</td>
-                                            <td class="text-center">확정</td>
+                                            <td>1</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>수학</td>
+                                            <td>1</td>
+                                            <td>브릿지 201호</td>
+                                            <td>S반 영어 서바이벌</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
 
                                     </tbody>
@@ -655,189 +724,179 @@
                                 </ul>
                             </nav>
                         </div>
-                    </div>
-                    <div class="section" id="split-horizontal-2">
-                        <div class="report p-3">
-                            <div class="row justify-content-between align-items-end mb-2">
+                        <div class="tab-pane" id="tab1-2" role="tabpanel">
+                            <div class="row align-items-end justify-content-between mb-2">
                                 <div class="col-auto">
-                                    <div class="table-title mb-0">시대인재N 재수종합</div>
+                                    <strong class="mr-2">문항 정보</strong> 총 ###건
                                 </div>
                                 <div class="col-auto">
-                                    <select name="" id="" class="custom-select w-auto custom-select-sm">
-                                        <option value="">mm/dd ~ mm/dd</option>
-                                    </select>
-                                    <button type="button" class="btn btn-dark btn-sm ml-1">월별 추이</button>
+                                    <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="">파일업로드</button>
+                                    <button type="button" class="btn btn-dark btn-sm ml-1">파일다운로드</button>
                                 </div>
                             </div>
-                            <div class="text-center mb-3 mt-3">
-                                <h3>자습 몰입도 주간리포트</h3>
-                            </div>
-                            <table class="table table-bordered table-fixed table-center">
-                                <colgroup>
-                                    <col style="width: 100px">
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>이름</th>
-                                        <th>반</th>
-                                        <th>좌석번호</th>
-                                        <th>계열</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>조성현</td>
-                                        <td>J</td>
-                                        <td>221</td>
-                                        <td>자연계</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <h4 class="mt-4 mb-3">일간 자습 몰입도</h4>
-                            <div class="chart">
-                                <canvas id="myChart1" width="600" height="220"></canvas>
-                                <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-                                <script>
-                                    const ctx = document.getElementById('myChart1');
-                                    const myChart1 = new Chart(ctx, {
-                                        type: 'bar',
-                                        data: {
-                                            labels: ['월', '화', '수', '목', '금'],
-                                            datasets: [{
-                                                    label: 'ㅇㅇㅇ 학생',
-                                                    data: [7, 8, 6, 7, 7, 8],
-                                                    borderColor: 'rgba(255, 99, 132, 1)',
-                                                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                                                },
-                                                {
-                                                    label: '몰입도 상위 50% 평균',
-                                                    data: [7.5, 8, 6.4, 7.6, 7.1, 7.7, ],
-                                                    borderColor: 'rgba(54, 162, 235, 1)',
-                                                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                                                },
-                                                {
-                                                    label: '9월 월례고사 상위 30% 평균',
-                                                    data: [8, 8.2, 5, 7, 7.7, 6.7, ],
-                                                    borderColor: 'rgba(255, 206, 86, 1)',
-                                                    backgroundColor: 'rgba(255, 206, 86, 0.5)',
-                                                },
-                                            ]
-                                        },
-                                        options: {
-                                            //responsive: false,
-                                            scales: {
-                                                y: {
-                                                    beginAtZero: true
-                                                }
-                                            },
-                                            plugins: {
-                                                legend: {
-                                                    position: 'bottom'
-                                                }
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
-                            <h4 class="mt-4 mb-3">시간대별 주간 자습 몰입 현황</h4>
-                            <table class="table table-bordered table-fixed table-center">
-                                <colgroup>
-                                    <col style="width: 100px">
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>시간</th>
-                                        <th>ㅇㅇㅇ 학생</th>
-                                        <th>몰입도 상위 30%</th>
-                                        <th>9월 월례 상위 30%</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>3교시</td>
-                                        <td>8.7</td>
-                                        <td>8.3</td>
-                                        <td>8.6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4교시</td>
-                                        <td>8.7</td>
-                                        <td>8.3</td>
-                                        <td>8.6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5교시</td>
-                                        <td>8.7</td>
-                                        <td>8.3</td>
-                                        <td>8.6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6교시</td>
-                                        <td>8.7</td>
-                                        <td>8.3</td>
-                                        <td>8.6</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <h4 class="mt-4 mb-3">요일/시간별 학습 몰입도 현황</h4>
-                            <table class="table table-bordered table-fixed table-center">
-                                <colgroup>
-                                    <col style="width: 140px">
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>웛요일</th>
-                                        <th>화요일</th>
-                                        <th>수요일</th>
-                                        <th>목요일</th>
-                                        <th>금요일</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>3교시 <br>(13:20~15:00)</td>
-                                        <td>8.7</td>
-                                        <td>공휴일</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4교시 <br>(13:20~15:00)</td>
-                                        <td>8.7</td>
-                                        <td>공휴일</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5교시 <br>(13:20~15:00)</td>
-                                        <td>8.7</td>
-                                        <td>공휴일</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6교시 <br>(13:20~15:00)</td>
-                                        <td>8.7</td>
-                                        <td>공휴일</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                        <td>수업</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <h4 class="mt-4 mb-3">평점 평가 기준</h4>
+                            <div class="main_search_result_list">
+                                <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                                <table class="table table-center" id="datatable1">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>시험</th>
+                                            <th>과목(선택)</th>
+                                            <th>회차</th>
+                                            <th>문번</th>
+                                            <th>배점</th>
+                                            <th>정답</th>
+                                            <th>과목</th>
+                                            <th>평가요소(대)</th>
+                                            <th>평가요소(중)</th>
+                                            <th>평가요소(소)</th>
+                                            <th>문제 유형</th>
+                                            <th>난이도</th>
+                                            <th>킬러 여부</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
+                                        <tr>
+                                            <td>5</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>국어(언매)</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>영어</td>
+                                            <td>듣기/말하기</td>
+                                            <td>말하기</td>
+                                            <td></td>
+                                            <td>객관식</td>
+                                            <td>A</td>
+                                            <td>킬러</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>4</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>국어(언매)</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>영어</td>
+                                            <td>듣기/말하기</td>
+                                            <td>말하기</td>
+                                            <td></td>
+                                            <td>객관식</td>
+                                            <td>A</td>
+                                            <td>킬러</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>3</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>국어(언매)</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>영어</td>
+                                            <td>듣기/말하기</td>
+                                            <td>말하기</td>
+                                            <td></td>
+                                            <td>객관식</td>
+                                            <td>A</td>
+                                            <td>킬러</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>국어(언매)</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>영어</td>
+                                            <td>듣기/말하기</td>
+                                            <td>말하기</td>
+                                            <td></td>
+                                            <td>객관식</td>
+                                            <td>A</td>
+                                            <td>킬러</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>재종 서바이벌</td>
+                                            <td>국어(언매)</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>영어</td>
+                                            <td>듣기/말하기</td>
+                                            <td>말하기</td>
+                                            <td></td>
+                                            <td>객관식</td>
+                                            <td>A</td>
+                                            <td>킬러</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M10.858 11.498 5.499 5.997l5.359-5.5" />
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="M5.858 11.498.499 5.997l5.359-5.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">8</a></li>
+
+                                    <li class="page-item"><a class="page-link" href="#">9</a></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.359 5.5-5.359 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="12.5">
+                                                <path stroke="#000" fill="none" d="m2.141.497 5.358 5.5-5.358 5.501" />
+                                                <path stroke="#000" fill="none" d="m7.141.497 5.358 5.5-5.358 5.501" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -14892,6 +14951,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+    </script>
 
 </body>
 
